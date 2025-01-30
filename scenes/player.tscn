@@ -34,9 +34,10 @@ offset = Vector2(0, 0)
 rotation = 0.0
 scale = Vector2(1, 1)
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("jump_buffer_timer")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("jump_buffer_timer", "Kyote")]
 script = ExtResource("1_l73r6")
 jump_buffer_timer = NodePath("JumpBufferTimer")
+Kyote = NodePath("Kyote")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_rh5mj")
@@ -47,3 +48,9 @@ texture = SubResource("Texture2D_7im1b")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="JumpBufferTimer" type="Timer" parent="."]
+wait_time = 0.108
+one_shot = true
+
+[node name="Kyote" type="Timer" parent="."]
+wait_time = 0.25
+one_shot = true

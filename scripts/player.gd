@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 @export var jump_buffer_timer: Timer
+@export var Kyote: Timer
 
 
 const SPEED = 350.0 # Base horizontal movement speed
@@ -17,22 +18,34 @@ const INPUT_BUFFER_PATIENCE = 0.1 # Input queue patience time
 const COYOTE_TIME = 0.08 # Coyote patience time
 
 const gravity_strength = 3000
-
-var input_buffer : Timer # Reference to the input queue timer
-var coyote_timer : Timer # Reference to the coyote timer
+var can_kyote: bool = false
 var coyote_jump_available := true
 
+var kyote_timer_reset = true
 
 var timer = Timer.new()
 
 
 func _process(delta: float) -> void:
+	
+	var input_chosen = Input.get_axis("move_left", "move_right")
 	var hit_jump = Input.is_action_just_pressed("player_jump")
+	
+	if is_on_floor():
+		can_kyote = true
+		kyote_timer_reset = true
+		
+	if can_kyote == true and velocity.y > 0 and kyote_timer_reset == true:
+		Kyote.start()
+		kyote_timer_reset = false
+		
+	if not is_on_floor() and can_kyote == true and hit_jump and Kyote.time_left > 0:
+		velocity.y = JUMP_VELOCITY
+		
 	if not is_on_floor():
 		velocity.y += gravity_strength * delta
-	
+		
 	if not is_on_floor() and hit_jump:
-		print("Air Jump")
 		jump_buffer_timer.start()
 		
 	if is_on_floor() and jump_buffer_timer.time_left >  0:
@@ -40,10 +53,8 @@ func _process(delta: float) -> void:
 		jump_buffer_timer.stop()
 	
 	
-	var input_chosen = Input.get_axis("move_left", "move_right")
 	velocity.x = 500 * input_chosen
-	#print(velocity.x)
 	if hit_jump and is_on_floor():
+		can_kyote = false
 		velocity.y = JUMP_VELOCITY
-		#print(velocity.y)
 	move_and_slide()

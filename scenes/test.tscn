@@ -46,5 +46,20 @@ position = Vector2(-0.500008, 25.5)
 scale = Vector2(3.41406, 0.554688)
 texture = SubResource("Texture2D_g27ne")
 
+[node name="Sprite2D2" type="Sprite2D" parent="Floor"]
+position = Vector2(2, 243)
+scale = Vector2(3.41406, 0.554688)
+texture = SubResource("Texture2D_g27ne")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Floor"]
+position = Vector2(-4, 449)
+scale = Vector2(3.41406, 0.554688)
+texture = SubResource("Texture2D_g27ne")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Floor"]
+position = Vector2(-7, 653)
+scale = Vector2(3.41406, 0.554688)
+texture = SubResource("Texture2D_g27ne")
+
 [node name="Player" parent="." instance=ExtResource("1_ul5aj")]
-position = Vector2(0, -118)
+position = Vector2(-4, -171)

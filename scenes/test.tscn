@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://br85yumpnqgit"]
+
+[ext_resource type="PackedScene" uid="uid://dpkwg527it5ai" path="res://scenes/player.tscn" id="1_ul5aj"]
+[ext_resource type="Script" path="res://addons/shape_texture_2d/shape_texture_2d.gd" id="2_pirk4"]
+[ext_resource type="Script" path="res://addons/shape_texture_2d/drawable_rectangle.gd" id="3_v07sq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n3i5c"]
+size = Vector2(438, 72)
+
+[sub_resource type="Resource" id="Resource_3wt0m"]
+script = ExtResource("3_v07sq")
+corner_rounding = 0.0
+
+[sub_resource type="Texture2D" id="Texture2D_g27ne"]
+resource_local_to_scene = false
+resource_name = ""
+script = ExtResource("2_pirk4")
+size = Vector2i(128, 128)
+shape = SubResource("Resource_3wt0m")
+fill_type = 0
+fill_color = Color(1, 1, 1, 1)
+fill_from = Vector2(0, 0)
+fill_to = Vector2(1, 0)
+fill_repeat = "pad"
+stroke_type = 0
+stroke_width = 0.0
+stroke_color = Color(0, 0, 0, 1)
+stroke_from = Vector2(0, 0)
+stroke_to = Vector2(1, 0)
+stroke_repeat = "pad"
+stroke_joint = "round"
+offset = Vector2(0, 0)
+rotation = 0.0
+scale = Vector2(1, 1)
+
+[node name="SceneRoot" type="Node2D"]
+
+[node name="Floor" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor"]
+position = Vector2(0, 26)
+shape = SubResource("RectangleShape2D_n3i5c")
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor"]
+position = Vector2(-0.500008, 25.5)
+scale = Vector2(3.41406, 0.554688)
+texture = SubResource("Texture2D_g27ne")
+
+[node name="Player" parent="." instance=ExtResource("1_ul5aj")]
+position = Vector2(0, -118)

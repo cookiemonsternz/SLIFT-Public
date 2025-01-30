@@ -34,7 +34,8 @@ offset = Vector2(0, 0)
 rotation = 0.0
 scale = Vector2(1, 1)
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("jump_buffer_timer", "Kyote")]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("jump_buffer_timer", "Kyote") groups=["Player"]]
+collision_mask = 5
 script = ExtResource("1_l73r6")
 jump_buffer_timer = NodePath("JumpBufferTimer")
 Kyote = NodePath("Kyote")

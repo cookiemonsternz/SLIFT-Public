@@ -1,0 +1,20 @@
+[gd_scene load_steps=3 format=3 uid="uid://kg0j10dirld4"]
+
+[ext_resource type="Script" path="res://scenes/light.gd" id="1_7qyk1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f3dhg"]
+size = Vector2(61, 51)
+
+[node name="Node2D" type="Area2D" node_paths=PackedStringArray("exposure_data")]
+script = ExtResource("1_7qyk1")
+exposure_data = NodePath("Exposure")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_f3dhg")
+
+[node name="Exposure" type="Timer" parent="."]
+wait_time = 0.1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="Exposure" to="." method="_on_exposure_timeout"]

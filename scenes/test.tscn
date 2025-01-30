@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://br85yumpnqgit"]
+[gd_scene load_steps=8 format=3 uid="uid://br85yumpnqgit"]
 
 [ext_resource type="PackedScene" uid="uid://dpkwg527it5ai" path="res://scenes/player.tscn" id="1_ul5aj"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/shape_texture_2d.gd" id="2_pirk4"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/drawable_rectangle.gd" id="3_v07sq"]
+[ext_resource type="PackedScene" uid="uid://kg0j10dirld4" path="res://scenes/light.tscn" id="4_637dr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3i5c"]
 size = Vector2(438, 72)
@@ -46,20 +47,8 @@ position = Vector2(-0.500008, 25.5)
 scale = Vector2(3.41406, 0.554688)
 texture = SubResource("Texture2D_g27ne")
 
-[node name="Sprite2D2" type="Sprite2D" parent="Floor"]
-position = Vector2(2, 243)
-scale = Vector2(3.41406, 0.554688)
-texture = SubResource("Texture2D_g27ne")
-
-[node name="Sprite2D3" type="Sprite2D" parent="Floor"]
-position = Vector2(-4, 449)
-scale = Vector2(3.41406, 0.554688)
-texture = SubResource("Texture2D_g27ne")
-
-[node name="Sprite2D4" type="Sprite2D" parent="Floor"]
-position = Vector2(-7, 653)
-scale = Vector2(3.41406, 0.554688)
-texture = SubResource("Texture2D_g27ne")
-
 [node name="Player" parent="." instance=ExtResource("1_ul5aj")]
-position = Vector2(-4, -171)
+position = Vector2(-10, -175)
+
+[node name="Node2D" parent="." instance=ExtResource("4_637dr")]
+position = Vector2(170, -88)

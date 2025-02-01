@@ -36,9 +36,9 @@ offset = Vector2(0, 0)
 rotation = 0.0
 scale = Vector2(1, 1)
 
-[sub_resource type="Curve" id="Curve_46ttg"]
+[sub_resource type="Curve" id="Curve_5ylw7"]
 min_value = -1.0
-_data = [Vector2(0, -0.010989), 0.0, 3.47741, 0, 0, Vector2(0.286517, -0.494505), 0.0, 0.0, 0, 0, Vector2(0.696629, 0.406593), 0.0, 0.0, 0, 0, Vector2(1, 0), -1.34025, 0.0, 1, 0]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.320225, 0.648352), 0.0, 0.0, 0, 0, Vector2(0.724719, -0.560439), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
 point_count = 4
 
 [sub_resource type="Curve" id="Curve_gldd0"]
@@ -57,6 +57,7 @@ raycast = NodePath("Grapple Components/RayCast2D")
 player_physics_follow = NodePath("Grapple Components/PlayerPhysicsFollow")
 launch_type = 1
 launch_speed = 20.0
+damping = 0.9
 jump_buffer_timer = NodePath("JumpBufferTimer")
 coyote_time_timer = NodePath("CoyoteTimeTimer")
 gravity_strength = 700.0
@@ -82,12 +83,19 @@ one_shot = true
 [node name="GrappleOrigin" type="Marker2D" parent="Grapple Components"]
 
 [node name="Rope" parent="Grapple Components" node_paths=PackedStringArray("grapple_origin", "player") instance=ExtResource("4_yprrp")]
+z_index = -1
+width = 4.0
+default_color = Color(0, 0, 0, 1)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
 grapple_origin = NodePath("../GrappleOrigin")
 player = NodePath("../..")
-animation_curve = SubResource("Curve_46ttg")
+animation_curve = SubResource("Curve_5ylw7")
 animation_scale = 8.461
 rope_progression_curve = SubResource("Curve_gldd0")
-rope_progression_speed = 11.393
+rope_progression_speed = 9.0
 
 [node name="RayCast2D" type="RayCast2D" parent="Grapple Components"]
 

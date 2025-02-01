@@ -12,10 +12,13 @@ extends CharacterBody2D
 @export_subgroup("Distance")
 @export var has_max_distance: bool = false
 @export var max_distance: float = 1000
+@export var rest_distance: float = 250
 
 @export_subgroup("Launching")
 @export var launch_type: LaunchType = LaunchType.Transform_Launch
 @export var launch_speed: float = 1
+@export var damping: float = 1
+@export var bias: float = 0
 
 enum LaunchType {
 	Transform_Launch,
@@ -148,7 +151,7 @@ func set_grapple_target() -> void:
 func grapple() -> void:
 	match (launch_type):
 		LaunchType.Physics_Launch:
-			spring_joint = create_spring_joint(global_position, grapple_target_position, player_physics_follow, grapple_target, 100)
+			spring_joint = create_spring_joint(global_position, grapple_target_position, player_physics_follow, grapple_target, grapple_distance_vector.length() - rest_distance)
 			current_move_mode = MoveStates.AIR
 
 func create_spring_joint(point_a: Vector2, point_b: Vector2, body_a: PhysicsBody2D, body_b: PhysicsBody2D, rest_length: float) -> DampedSpringJoint2D:
@@ -156,9 +159,13 @@ func create_spring_joint(point_a: Vector2, point_b: Vector2, body_a: PhysicsBody
 	var spring = DampedSpringJoint2D.new()
 	
 	spring.length = grapple_distance_vector.length()
-	spring.rest_length = rest_length
+	spring.rest_length = max(rest_length, 30)
 	
 	spring.stiffness = launch_speed
+	
+	spring.damping = damping
+	
+	spring.bias = bias
 	
 	spring.global_position = point_a
 	spring.look_at(point_b)

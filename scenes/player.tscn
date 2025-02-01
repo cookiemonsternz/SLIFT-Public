@@ -53,10 +53,10 @@ height = 128.0
 script = ExtResource("1_l73r6")
 jump_buffer_timer = NodePath("JumpBufferTimer")
 Kyote = NodePath("Kyote")
-grapple_origin = NodePath("Grapple Componenets/GrappleOrigin")
-rope = NodePath("Grapple Componenets/Rope")
-raycast = NodePath("Grapple Componenets/RayCast2D")
-player_physics_follow = NodePath("Grapple Componenets/PlayerPhysicsFollow")
+grapple_origin = NodePath("Grapple Components/GrappleOrigin")
+rope = NodePath("Grapple Components/Rope")
+raycast = NodePath("Grapple Components/RayCast2D")
+player_physics_follow = NodePath("Grapple Components/PlayerPhysicsFollow")
 launch_type = 1
 launch_speed = 15.0
 
@@ -76,11 +76,11 @@ one_shot = true
 wait_time = 0.25
 one_shot = true
 
-[node name="Grapple Componenets" type="Node2D" parent="."]
+[node name="Grapple Components" type="Node2D" parent="."]
 
-[node name="GrappleOrigin" type="Marker2D" parent="Grapple Componenets"]
+[node name="GrappleOrigin" type="Marker2D" parent="Grapple Components"]
 
-[node name="Rope" parent="Grapple Componenets" node_paths=PackedStringArray("grapple_origin", "player") instance=ExtResource("4_yprrp")]
+[node name="Rope" parent="Grapple Components" node_paths=PackedStringArray("grapple_origin", "player") instance=ExtResource("4_yprrp")]
 grapple_origin = NodePath("../GrappleOrigin")
 player = NodePath("../..")
 animation_curve = SubResource("Curve_46ttg")
@@ -88,9 +88,9 @@ animation_scale = 8.461
 rope_progression_curve = SubResource("Curve_gldd0")
 rope_progression_speed = 11.393
 
-[node name="RayCast2D" type="RayCast2D" parent="Grapple Componenets"]
+[node name="RayCast2D" type="RayCast2D" parent="Grapple Components"]
 
-[node name="PlayerPhysicsFollow" type="RigidBody2D" parent="Grapple Componenets"]
+[node name="PlayerPhysicsFollow" type="RigidBody2D" parent="Grapple Components"]
 top_level = true
 collision_layer = 2
 collision_mask = 0
@@ -98,5 +98,5 @@ mass = 0.306
 lock_rotation = true
 script = ExtResource("5_74d1f")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Grapple Componenets/PlayerPhysicsFollow"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grapple Components/PlayerPhysicsFollow"]
 shape = SubResource("CapsuleShape2D_dwb36")

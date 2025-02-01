@@ -1,9 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://bjk2n8cwtbfil"]
+[gd_scene load_steps=12 format=3 uid="uid://dpkwg527it5ai"]
 
 [ext_resource type="Script" path="res://addons/shape_texture_2d/shape_texture_2d.gd" id="1_42r4y"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_l73r6"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/drawable_capsule.gd" id="2_61cpy"]
-[ext_resource type="PackedScene" uid="uid://cbfarsdxo3xll" path="res://scenes/rope.tscn" id="4_yprrp"]
+[ext_resource type="PackedScene" path="res://scenes/rope.tscn" id="4_yprrp"]
 [ext_resource type="Script" path="res://scripts/player_physics_follow.gd" id="5_74d1f"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rh5mj"]

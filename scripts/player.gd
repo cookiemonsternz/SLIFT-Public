@@ -77,6 +77,9 @@ func _process(delta: float) -> void:
 			var hit_jump = Input.is_action_just_pressed("player_jump")
 			var is_on_floor = is_on_floor()
 			
+			if light_exposure >= 20:
+				modulate = Color(1.0, 0.0, 0.0)
+			
 			if is_on_floor:
 				can_coyote = true
 				coyote_timer_reset = true
@@ -166,6 +169,8 @@ func create_spring_joint(point_a: Vector2, point_b: Vector2, body_a: PhysicsBody
 	spring.damping = damping
 	
 	spring.bias = bias
+	
+	spring.disable_collision = false
 	
 	spring.global_position = point_a
 	spring.look_at(point_b)

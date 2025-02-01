@@ -49,5 +49,7 @@ grapple_left={
 
 [layer_names]
 
-2d_physics/layer_1="Player"
+2d_physics/layer_1="Platforms"
+2d_physics/layer_2="Rigidbodies"
 2d_physics/layer_3="Light"
+2d_physics/layer_4="Player"

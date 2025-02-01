@@ -1,10 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://bjk2n8cwtbfil"]
+[gd_scene load_steps=11 format=3 uid="uid://bjk2n8cwtbfil"]
 
 [ext_resource type="Script" path="res://addons/shape_texture_2d/shape_texture_2d.gd" id="1_42r4y"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_l73r6"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/drawable_capsule.gd" id="2_61cpy"]
 [ext_resource type="PackedScene" uid="uid://cbfarsdxo3xll" path="res://scenes/rope.tscn" id="4_yprrp"]
-[ext_resource type="Script" path="res://scripts/player_physics_follow.gd" id="5_74d1f"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rh5mj"]
 radius = 31.0
@@ -56,9 +55,17 @@ Kyote = NodePath("Kyote")
 grapple_origin = NodePath("Grapple Componenets/GrappleOrigin")
 rope = NodePath("Grapple Componenets/Rope")
 raycast = NodePath("Grapple Componenets/RayCast2D")
-player_physics_follow = NodePath("Grapple Componenets/PlayerPhysicsFollow")
+player_physics_follow = NodePath("Grapple Componenets/PlayerGrappleOriginFollow")
+rotate_over_time = null
+rotation_speed = null
+has_max_distance = null
+max_distance = null
+launch_to_point = null
 launch_type = 1
-launch_speed = 15.0
+launch_speed = null
+auto_configure_distance = null
+target_distance = null
+target_stiffness = null
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_rh5mj")
@@ -67,6 +74,7 @@ shape = SubResource("CapsuleShape2D_rh5mj")
 texture = SubResource("Texture2D_7im1b")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(0.315, 0.315)
 
 [node name="JumpBufferTimer" type="Timer" parent="."]
 wait_time = 0.108
@@ -76,7 +84,7 @@ one_shot = true
 wait_time = 0.25
 one_shot = true
 
-[node name="Grapple Componenets" type="Node2D" parent="."]
+[node name="Grapple Componenets" type="Node" parent="."]
 
 [node name="GrappleOrigin" type="Marker2D" parent="Grapple Componenets"]
 
@@ -90,13 +98,10 @@ rope_progression_speed = 11.393
 
 [node name="RayCast2D" type="RayCast2D" parent="Grapple Componenets"]
 
-[node name="PlayerPhysicsFollow" type="RigidBody2D" parent="Grapple Componenets"]
+[node name="PlayerGrappleOriginFollow" type="RigidBody2D" parent="Grapple Componenets"]
 top_level = true
 collision_layer = 2
 collision_mask = 0
-mass = 0.306
-lock_rotation = true
-script = ExtResource("5_74d1f")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Grapple Componenets/PlayerPhysicsFollow"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Grapple Componenets/PlayerGrappleOriginFollow"]
 shape = SubResource("CapsuleShape2D_dwb36")

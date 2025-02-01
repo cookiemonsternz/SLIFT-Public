@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://br85yumpnqgit"]
 
-[ext_resource type="PackedScene" uid="uid://dpkwg527it5ai" path="res://scenes/player.tscn" id="1_ul5aj"]
+[ext_resource type="PackedScene" uid="uid://bjk2n8cwtbfil" path="res://scenes/player.tscn" id="1_ul5aj"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/shape_texture_2d.gd" id="2_pirk4"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/drawable_rectangle.gd" id="3_v07sq"]
 [ext_resource type="PackedScene" uid="uid://kg0j10dirld4" path="res://scenes/light.tscn" id="4_637dr"]
@@ -49,6 +49,15 @@ texture = SubResource("Texture2D_g27ne")
 
 [node name="Player" parent="." instance=ExtResource("1_ul5aj")]
 position = Vector2(-10, -175)
+rotate_over_time = true
+rotation_speed = 4.0
+has_max_distance = false
+max_distance = 1000.0
+launch_to_point = true
+launch_speed = 1.0
+auto_configure_distance = false
+target_distance = 3.0
+target_stiffness = 1.0
 
 [node name="Node2D" parent="." instance=ExtResource("4_637dr")]
 position = Vector2(170, -88)

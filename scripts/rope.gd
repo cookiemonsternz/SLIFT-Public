@@ -53,7 +53,7 @@ func _process(delta: float) -> void:
 func draw_rope(delta: float) -> void:
 	if not straight_line:
 		if len(self.points) != 0:
-			if to_global(points[len(points) - 1]).x == player.grapple_target_position.x:
+			if to_global(points[len(points) - 1]).distance_to(player.grapple_target_position) < 8:
 				straight_line = true
 				player.grapple()
 			else:

@@ -4,3 +4,4 @@
 
 [node name="Rope" type="Line2D"]
 script = ExtResource("1_uhtba")
+precision = 100

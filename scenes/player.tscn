@@ -49,12 +49,13 @@ point_count = 2
 radius = 32.0
 height = 128.0
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("grapple_origin", "rope", "raycast", "player_physics_follow", "jump_buffer_timer", "coyote_time_timer") groups=["Player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("grapple_origin", "rope1", "rope2", "raycast", "player_physics_follow", "jump_buffer_timer", "coyote_time_timer") groups=["Player"]]
 collision_layer = 8
 collision_mask = 13
 script = ExtResource("1_l73r6")
 grapple_origin = NodePath("Grapple Components/GrappleOrigin")
-rope = NodePath("Grapple Components/Rope")
+rope1 = NodePath("Grapple Components/Rope1")
+rope2 = NodePath("Grapple Components/Rope2")
 raycast = NodePath("Grapple Components/RayCast2D")
 player_physics_follow = NodePath("Grapple Components/PlayerPhysicsFollow")
 launch_type = 1
@@ -84,7 +85,7 @@ one_shot = true
 
 [node name="GrappleOrigin" type="Marker2D" parent="Grapple Components"]
 
-[node name="Rope" parent="Grapple Components" node_paths=PackedStringArray("grapple_origin", "player") instance=ExtResource("4_yprrp")]
+[node name="Rope1" parent="Grapple Components" node_paths=PackedStringArray("grapple_origin", "player") instance=ExtResource("4_yprrp")]
 z_index = -1
 width = 4.0
 default_color = Color(0, 0, 0, 1)
@@ -94,6 +95,22 @@ end_cap_mode = 2
 antialiased = true
 grapple_origin = NodePath("../GrappleOrigin")
 player = NodePath("../..")
+animation_curve = SubResource("Curve_5ylw7")
+animation_scale = 8.461
+rope_progression_curve = SubResource("Curve_gldd0")
+rope_progression_speed = 9.0
+
+[node name="Rope2" parent="Grapple Components" node_paths=PackedStringArray("grapple_origin", "player") instance=ExtResource("4_yprrp")]
+z_index = -1
+width = 4.0
+default_color = Color(0, 0, 0, 1)
+joint_mode = 2
+begin_cap_mode = 2
+end_cap_mode = 2
+antialiased = true
+grapple_origin = NodePath("../GrappleOrigin")
+player = NodePath("../..")
+side = 1
 animation_curve = SubResource("Curve_5ylw7")
 animation_scale = 8.461
 rope_progression_curve = SubResource("Curve_gldd0")

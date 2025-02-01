@@ -5,6 +5,7 @@ extends Line2D
 @export var player: CharacterBody2D
 
 @export_group("General Settings")
+@export var side: Grapples
 @export var precision: int = 40
 @export_range(0, 20) var straighten_line_speed: float = 5
 
@@ -17,6 +18,11 @@ var wave_size: float = 0
 @export_group("Rope Progression")
 @export var rope_progression_curve: Curve
 @export_range(1, 50) var rope_progression_speed: float = 1
+
+enum Grapples {
+	Left,
+	Right
+}
 
 var move_time: float = 0
 
@@ -53,9 +59,9 @@ func _process(delta: float) -> void:
 func draw_rope(delta: float) -> void:
 	if not straight_line:
 		if len(self.points) != 0:
-			if to_global(points[len(points) - 1]).distance_to(player.grapple_target_position) < 8:
+			if to_global(points[len(points) - 1]).distance_to(player.grapple_target_positions[side]) < 20:
 				straight_line = true
-				player.grapple()
+				player.grapple(side)
 			else:
 				draw_rope_waves()
 	else:
@@ -65,20 +71,20 @@ func draw_rope(delta: float) -> void:
 		else:
 			wave_size = 0
 			if len(self.points) != 2:
-				self.points = [grapple_origin.global_position, player.grapple_target_position]
+				self.points = [grapple_origin.global_position, player.grapple_target_positions[side]]
 			draw_rope_no_waves()
 
 func draw_rope_waves() -> void:
 	for i in range (0, precision):
 		var delta = float(i) / (precision - 1.0)
-		var offset = perpendicular_vector(player.grapple_distance_vector).normalized() * animation_curve.sample_baked(delta) * wave_size
-		var target_position = grapple_origin.global_position.lerp(player.grapple_target_position, delta) + offset * animation_scale
+		var offset = perpendicular_vector(player.grapple_distance_vectors[side]).normalized() * animation_curve.sample_baked(delta) * wave_size
+		var target_position = grapple_origin.global_position.lerp(player.grapple_target_positions[side], delta) + offset * animation_scale
 		var current_position = grapple_origin.global_position.lerp(target_position, rope_progression_curve.sample_baked(move_time * rope_progression_speed))
 		set_point_position(i, to_local(current_position))
 
 func draw_rope_no_waves():
 	set_point_position(0, to_local(grapple_origin.global_position))
-	set_point_position(1, to_local(player.grapple_target_position))
+	set_point_position(1, to_local(player.grapple_target_positions[side]))
 
 
 func perpendicular_vector(v: Vector2) -> Vector2:

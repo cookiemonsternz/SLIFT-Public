@@ -5,7 +5,8 @@ extends CharacterBody2D
 
 @export_subgroup("References")
 @export var grapple_origin: Node2D
-@export var rope: Line2D
+@export var rope1: Line2D
+@export var rope2: Line2D
 @export var raycast: RayCast2D
 @export var player_physics_follow: RigidBody2D
 
@@ -25,15 +26,19 @@ enum LaunchType {
 	Physics_Launch
 }
 
-var grapple_distance_vector: Vector2
-var grapple_target_position: Vector2
+enum Grapples {
+	Left,
+	Right
+}
+
+var grapple_distance_vectors: Array[Vector2] = [Vector2.ZERO, Vector2.ZERO]
+var grapple_target_positions: Array[Vector2] = [Vector2.ZERO, Vector2.ZERO]
 
 # The target body which the grapple connects to
-var grapple_target: PhysicsBody2D
+var grapple_targets: Array[PhysicsBody2D] = [null, null]
 # Normally null, init a new one when we need it
 # Need to refactor this if we want multiple grapples (l/r)
-var spring_joint: DampedSpringJoint2D
-
+var spring_joints: Array[DampedSpringJoint2D] = [null, null]
 
 #### Player Movement ####
 @export_group("Player Movement")
@@ -120,7 +125,9 @@ func _physics_process(_delta: float) -> void:
 			player_physics_follow.set_pos(global_position)
 			player_physics_follow.set_vel(velocity)
 		MoveStates.AIR:
-			pass
+			if not Input.is_action_pressed("grapple_left") and not Input.is_action_pressed("grapple_right"):
+				current_move_mode = MoveStates.GROUND
+				velocity = player_physics_follow.linear_velocity
 			#if spring_joint != null and spring_joint.length >= 30:
 				#print(spring_joint.length)
 				#spring_joint.length -= 5
@@ -128,40 +135,59 @@ func _physics_process(_delta: float) -> void:
 
 func handle_grapple_input():
 	if Input.is_action_just_pressed("grapple_left"):
-		set_grapple_target()
-
+		set_grapple_target(Grapples.Left)
 	elif Input.is_action_just_released("grapple_left"):
-		rope.disable()
-		if spring_joint != null:
-			spring_joint.queue_free()
-			current_move_mode = MoveStates.GROUND
-			velocity = player_physics_follow.linear_velocity
+		rope1.disable()
+		if spring_joints[0] != null:
+			spring_joints[0].queue_free()
+	
+	if Input.is_action_just_pressed("grapple_right"):
+		set_grapple_target(Grapples.Right)
+	elif Input.is_action_just_released("grapple_right"):
+		rope2.disable()
+		if spring_joints[1] != null:
+			spring_joints[1].queue_free()
 
 
 # Gets the body to connect to, and sets the grapple_target_position
-func set_grapple_target() -> void:
+func set_grapple_target(side: int) -> void:
 	var distance_vector = get_global_mouse_position() - global_position
 	raycast.target_position = to_local(distance_vector * 100)
 	raycast.force_raycast_update()
 	if raycast.is_colliding():
 		if raycast.get_collision_point().distance_to(global_position) <= max_distance or not has_max_distance:
-			grapple_target_position = raycast.get_collision_point()
-			grapple_distance_vector = grapple_target_position - global_position
-			grapple_target = raycast.get_collider()
-			rope.enable()
+			match side:
+				Grapples.Left:
+					grapple_target_positions[0] = raycast.get_collision_point()
+					grapple_distance_vectors[0] = grapple_target_positions[0] - global_position
+					grapple_targets[0] = raycast.get_collider()
+					rope1.enable()
+				Grapples.Right:
+					grapple_target_positions[1] = raycast.get_collision_point()
+					grapple_distance_vectors[1] = grapple_target_positions[1] - global_position
+					grapple_targets[1] = raycast.get_collider()
+					rope2.enable()
 
 # Creates a spring joint between the player and the grapple target
-func grapple() -> void:
+func grapple(side: int) -> void:
 	match (launch_type):
 		LaunchType.Physics_Launch:
-			spring_joint = create_spring_joint(global_position, grapple_target_position, player_physics_follow, grapple_target, grapple_distance_vector.length() - rest_distance)
+			match side:
+				Grapples.Left:
+					spring_joints[0] = create_spring_joint(global_position, grapple_target_positions[0], player_physics_follow, grapple_targets[0], grapple_distance_vectors[0].length(), grapple_distance_vectors[0].length() - rest_distance)
+					if spring_joints[1] != null:
+						spring_joints[1].rest_length = grapple_distance_vectors[0].length() - rest_distance
+				Grapples.Right:
+					spring_joints[1] = create_spring_joint(global_position, grapple_target_positions[1], player_physics_follow, grapple_targets[1], grapple_distance_vectors[1].length(), grapple_distance_vectors[1].length() - rest_distance)
+					if spring_joints[0] != null:
+						spring_joints[0].rest_length = grapple_distance_vectors[1].length() - rest_distance
 			current_move_mode = MoveStates.AIR
 
-func create_spring_joint(point_a: Vector2, point_b: Vector2, body_a: PhysicsBody2D, body_b: PhysicsBody2D, rest_length: float) -> DampedSpringJoint2D:
+func create_spring_joint(point_a: Vector2, point_b: Vector2, body_a: PhysicsBody2D, body_b: PhysicsBody2D, length: float, rest_length: float) -> DampedSpringJoint2D:
 	print("Making spring joint")
 	var spring = DampedSpringJoint2D.new()
 	
-	spring.length = grapple_distance_vector.length()
+	spring.length = length
 	spring.rest_length = max(rest_length, 30)
 	
 	spring.stiffness = launch_speed

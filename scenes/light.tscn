@@ -5,11 +5,11 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_f3dhg"]
 size = Vector2(61, 51)
 
-[node name="Light" type="Area2D" node_paths=PackedStringArray("exposure_data")]
+[node name="Light" type="Area2D" node_paths=PackedStringArray("exposure_delay_timer")]
 collision_layer = 4
 collision_mask = 12
 script = ExtResource("1_7qyk1")
-exposure_data = NodePath("ExposureDelay")
+exposure_delay_timer = NodePath("ExposureDelay")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_f3dhg")

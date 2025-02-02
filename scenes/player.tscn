@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://addons/shape_texture_2d/drawable_capsule.gd" id="2_61cpy"]
 [ext_resource type="PackedScene" uid="uid://cbfarsdxo3xll" path="res://scenes/rope.tscn" id="4_yprrp"]
 [ext_resource type="Script" path="res://scripts/player_physics_follow.gd" id="5_74d1f"]
-[ext_resource type="PackedScene" uid="uid://2yvmq877upop" path="res://scenes/health_component.tscn" id="6_xgtbg"]
+[ext_resource type="PackedScene" path="res://scenes/health_component.tscn" id="6_xgtbg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rh5mj"]
 radius = 31.0
@@ -46,9 +46,8 @@ point_count = 4
 _data = [Vector2(0, 0), 0.0, 1.0, 0, 1, Vector2(1, 1), 1.0, 0.0, 1, 0]
 point_count = 2
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_dwb36"]
-radius = 32.0
-height = 128.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_17qc7"]
+size = Vector2(46, 108)
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("grapple_origin", "rope1", "rope2", "raycast", "player_physics_follow", "jump_buffer_timer", "coyote_time_timer", "ground_cast", "health_component", "do_delete_timer") groups=["Player"]]
 collision_layer = 8
@@ -132,7 +131,7 @@ lock_rotation = true
 script = ExtResource("5_74d1f")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Grapple Components/PlayerPhysicsFollow"]
-shape = SubResource("CapsuleShape2D_dwb36")
+shape = SubResource("RectangleShape2D_17qc7")
 
 [node name="Health Component" parent="." instance=ExtResource("6_xgtbg")]
 

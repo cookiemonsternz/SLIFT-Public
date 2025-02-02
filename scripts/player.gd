@@ -60,6 +60,7 @@ var spring_joints: Array[DampedSpringJoint2D] = [null, null]
 
 @export_group("")
 @export var health_component: Node
+@export var do_delete_timer: Timer
 
 var can_coyote: bool = false
 var coyote_jump_available := true
@@ -122,16 +123,14 @@ func _process(delta: float) -> void:
 			
 			move_and_slide()
 		MoveStates.AIR:
-			
-			#if ground_cast.is_colliding():
-				#current_move_mode = MoveStates.GROUND
-				#velocity.y = 0
-				#if spring_joints[1] != null:
-					#spring_joints[1].queue_free()
-					#rope2.disable()
-				#if spring_joints[0] != null:
-					#spring_joints[0].queue_free()
-					#rope1.disable()
+			if ground_cast.is_colliding() and do_delete_timer.is_stopped():
+				current_move_mode = MoveStates.GROUND
+				if spring_joints[1] != null:
+					spring_joints[1].queue_free()
+					rope2.disable()
+				if spring_joints[0] != null:
+					spring_joints[0].queue_free()
+					rope1.disable()
 			
 			global_position = player_physics_follow.global_position
 	
@@ -192,6 +191,7 @@ func set_grapple_target(side: int) -> void:
 func grapple(side: int) -> void:
 	match (launch_type):
 		LaunchType.Physics_Launch:
+			do_delete_timer.start()
 			match side:
 				Grapples.Left:
 					spring_joints[0] = create_spring_joint(global_position, grapple_target_positions[0], player_physics_follow, grapple_targets[0], grapple_distance_vectors[0].length(), grapple_distance_vectors[0].length() - rest_distance)

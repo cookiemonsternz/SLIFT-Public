@@ -58,7 +58,9 @@ var spring_joints: Array[DampedSpringJoint2D] = [null, null]
 @export var move_speed = 500.0 # Movement speed
 @export var coyote_time_time = 0.1 # Time in seconds to allow a coyote jump
 
-var can_delete = false
+@export_group("")
+@export var health_component: Node
+
 var can_coyote: bool = false
 var coyote_jump_available := true
 var coyote_timer_reset := true
@@ -167,9 +169,11 @@ func handle_grapple_input():
 
 # Gets the body to connect to, and sets the grapple_target_position
 func set_grapple_target(side: int) -> void:
-	var distance_vector = get_global_mouse_position() - global_position
-	raycast.target_position = to_local(distance_vector * 100)
+	var direction_vector = get_global_mouse_position() - global_position
+	raycast.target_position = to_local(direction_vector * 100)
+	
 	raycast.force_raycast_update()
+	
 	if raycast.is_colliding():
 		if raycast.get_collision_point().distance_to(global_position) <= max_distance or not has_max_distance:
 			match side:
@@ -191,12 +195,12 @@ func grapple(side: int) -> void:
 			match side:
 				Grapples.Left:
 					spring_joints[0] = create_spring_joint(global_position, grapple_target_positions[0], player_physics_follow, grapple_targets[0], grapple_distance_vectors[0].length(), grapple_distance_vectors[0].length() - rest_distance)
-					if spring_joints[1] != null:
-						spring_joints[1].rest_length = grapple_distance_vectors[0].length() - rest_distance
+					#if spring_joints[1] != null:
+						#spring_joints[1].rest_length = grapple_distance_vectors[0].length() - rest_distance
 				Grapples.Right:
 					spring_joints[1] = create_spring_joint(global_position, grapple_target_positions[1], player_physics_follow, grapple_targets[1], grapple_distance_vectors[1].length(), grapple_distance_vectors[1].length() - rest_distance)
-					if spring_joints[0] != null:
-						spring_joints[0].rest_length = grapple_distance_vectors[1].length() - rest_distance
+					#if spring_joints[0] != null:
+						#spring_joints[0].rest_length = grapple_distance_vectors[1].length() - rest_distance
 			current_move_mode = MoveStates.AIR
 
 func create_spring_joint(point_a: Vector2, point_b: Vector2, body_a: PhysicsBody2D, body_b: PhysicsBody2D, length: float, rest_length: float) -> DampedSpringJoint2D:

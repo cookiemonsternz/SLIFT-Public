@@ -10,6 +10,7 @@ extends CharacterBody2D
 @export var raycast: RayCast2D
 @export var player_physics_follow: RigidBody2D
 
+
 @export_subgroup("Distance")
 @export var has_max_distance: bool = false
 @export var max_distance: float = 1000
@@ -46,6 +47,7 @@ var spring_joints: Array[DampedSpringJoint2D] = [null, null]
 @export_subgroup("References")
 @export var jump_buffer_timer: Timer
 @export var coyote_time_timer: Timer
+@export var ground_cast: RayCast2D
 
 @export_subgroup("Jumping")
 @export var jump_velocity = -700.0 # Maximum jump strength
@@ -56,7 +58,7 @@ var spring_joints: Array[DampedSpringJoint2D] = [null, null]
 @export var move_speed = 500.0 # Movement speed
 @export var coyote_time_time = 0.1 # Time in seconds to allow a coyote jump
 
-
+var can_delete = false
 var can_coyote: bool = false
 var coyote_jump_available := true
 var coyote_timer_reset := true
@@ -81,6 +83,8 @@ func _process(delta: float) -> void:
 			var input_chosen = Input.get_axis("move_left", "move_right")
 			var hit_jump = Input.is_action_just_pressed("player_jump")
 			var is_on_floor = is_on_floor()
+			
+			
 			
 			if light_exposure >= 20:
 				modulate = Color(1.0, 0.0, 0.0)
@@ -110,12 +114,23 @@ func _process(delta: float) -> void:
 				can_coyote = false
 				velocity.y = jump_velocity
 			
-			velocity.x += move_speed * input_chosen
+			velocity.x = move_speed * input_chosen
 			
 			velocity *= 0.99
 			
 			move_and_slide()
 		MoveStates.AIR:
+			
+			#if ground_cast.is_colliding():
+				#current_move_mode = MoveStates.GROUND
+				#velocity.y = 0
+				#if spring_joints[1] != null:
+					#spring_joints[1].queue_free()
+					#rope2.disable()
+				#if spring_joints[0] != null:
+					#spring_joints[0].queue_free()
+					#rope1.disable()
+			
 			global_position = player_physics_follow.global_position
 	
 func _physics_process(_delta: float) -> void:
@@ -125,9 +140,10 @@ func _physics_process(_delta: float) -> void:
 			player_physics_follow.set_pos(global_position)
 			player_physics_follow.set_vel(velocity)
 		MoveStates.AIR:
-			if not Input.is_action_pressed("grapple_left") and not Input.is_action_pressed("grapple_right"):
-				current_move_mode = MoveStates.GROUND
-				velocity = player_physics_follow.linear_velocity
+			pass
+			#if not Input.is_action_pressed("grapple_left") and not Input.is_action_pressed("grapple_right"):
+				#current_move_mode = MoveStates.GROUND
+				#velocity = player_physics_follow.linear_velocity
 			#if spring_joint != null and spring_joint.length >= 30:
 				#print(spring_joint.length)
 				#spring_joint.length -= 5
@@ -184,7 +200,7 @@ func grapple(side: int) -> void:
 			current_move_mode = MoveStates.AIR
 
 func create_spring_joint(point_a: Vector2, point_b: Vector2, body_a: PhysicsBody2D, body_b: PhysicsBody2D, length: float, rest_length: float) -> DampedSpringJoint2D:
-	print("Making spring joint")
+	
 	var spring = DampedSpringJoint2D.new()
 	
 	spring.length = length

@@ -37,7 +37,8 @@ func _ready() -> void:
 	shield_regen_timer.autostart = true
 	self.add_child(shield_regen_timer)
 
-func damage(damage: float, damage_type: DamageType):
+func damage(damage: float, damage_type: DamageType = DamageType.World):
+	print(shield, " : ", health)
 	match damage_type:
 		DamageType.World:
 			shield = shield - damage if shield > 0 else 0
@@ -63,6 +64,8 @@ func damage(damage: float, damage_type: DamageType):
 				health -= damage
 				if health < 0:
 					creature_died.emit()
+					get_parent().modulate = Color(1.0, 0.0, 0.0)
+			
 
 func _on_health_regen_timer_timeout():
 	if health < max_health:

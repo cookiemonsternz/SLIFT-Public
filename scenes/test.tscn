@@ -1,9 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://br85yumpnqgit"]
+[gd_scene load_steps=14 format=3 uid="uid://br85yumpnqgit"]
 
-[ext_resource type="PackedScene" uid="uid://bjk2n8cwtbfil" path="res://scenes/player.tscn" id="1_ul5aj"]
+[ext_resource type="PackedScene" uid="uid://bjk2n8cwtbfil" path="res://scenes/characters/player.tscn" id="1_ul5aj"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/shape_texture_2d.gd" id="2_pirk4"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/drawable_rectangle.gd" id="3_v07sq"]
-[ext_resource type="PackedScene" uid="uid://kg0j10dirld4" path="res://scenes/light.tscn" id="4_637dr"]
+[ext_resource type="PackedScene" uid="uid://dbe5l6x8cnnnw" path="res://scenes/environment/lights/light_object.tscn" id="5_cts50"]
+[ext_resource type="PackedScene" uid="uid://brv1ny6q731fn" path="res://scenes/environment/lights/lamp_beam.tscn" id="5_fo8p6"]
+[ext_resource type="Texture2D" uid="uid://i11y7rov2xna" path="res://assets/Images/lamp.png" id="6_rq28d"]
+[ext_resource type="Texture2D" uid="uid://dwaqh3pcncfoj" path="res://assets/Images/lamp_light_beam.png" id="7_ydqmj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3i5c"]
 size = Vector2(438, 72)
@@ -34,7 +37,23 @@ offset = Vector2(0, 0)
 rotation = 0.0
 scale = Vector2(1, 1)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3gcgt"]
+polygon = PackedVector2Array(-219, -10, 218, -10, 219, 63, -219, 62)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h3ya6"]
+radius = 29.0
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1t4l6"]
+polygon = PackedVector2Array(-20, -46, -10, -51, 5, -51, 30, -41, 35, -35, 35, -21, 10, 4, -10, 4, -35, -21, -35, -36)
+
 [node name="SceneRoot" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -1585.0
+offset_top = -719.0
+offset_right = 3415.0
+offset_bottom = 4281.0
+color = Color(0.0470588, 0.0470588, 0.0470588, 0.870588)
 
 [node name="Floor" type="StaticBody2D" parent="."]
 collision_mask = 5
@@ -47,6 +66,9 @@ shape = SubResource("RectangleShape2D_n3i5c")
 position = Vector2(-0.500008, 25.5)
 scale = Vector2(3.41406, 0.554688)
 texture = SubResource("Texture2D_g27ne")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Floor"]
+occluder = SubResource("OccluderPolygon2D_3gcgt")
 
 [node name="Floor2" type="StaticBody2D" parent="."]
 position = Vector2(-541, -363)
@@ -61,6 +83,10 @@ position = Vector2(-0.500008, 25.5)
 scale = Vector2(3.41406, 0.554688)
 texture = SubResource("Texture2D_g27ne")
 
+[node name="LightOccluder2D2" type="LightOccluder2D" parent="Floor2"]
+position = Vector2(2, -1)
+occluder = SubResource("OccluderPolygon2D_3gcgt")
+
 [node name="Floor3" type="StaticBody2D" parent="."]
 position = Vector2(502, -363)
 collision_mask = 5
@@ -73,6 +99,10 @@ shape = SubResource("RectangleShape2D_n3i5c")
 position = Vector2(-0.500008, 25.5)
 scale = Vector2(3.41406, 0.554688)
 texture = SubResource("Texture2D_g27ne")
+
+[node name="LightOccluder2D3" type="LightOccluder2D" parent="Floor3"]
+position = Vector2(0, 2)
+occluder = SubResource("OccluderPolygon2D_3gcgt")
 
 [node name="Floor4" type="StaticBody2D" parent="."]
 position = Vector2(886, -7)
@@ -87,6 +117,10 @@ position = Vector2(-0.500008, 25.5)
 scale = Vector2(3.41406, 0.554688)
 texture = SubResource("Texture2D_g27ne")
 
+[node name="LightOccluder2D4" type="LightOccluder2D" parent="Floor4"]
+position = Vector2(2, 0)
+occluder = SubResource("OccluderPolygon2D_3gcgt")
+
 [node name="Floor5" type="StaticBody2D" parent="."]
 position = Vector2(-880, 22)
 collision_mask = 5
@@ -100,8 +134,69 @@ position = Vector2(-0.500008, 25.5)
 scale = Vector2(3.41406, 0.554688)
 texture = SubResource("Texture2D_g27ne")
 
+[node name="LightOccluder2D5" type="LightOccluder2D" parent="Floor5"]
+occluder = SubResource("OccluderPolygon2D_3gcgt")
+
 [node name="Player" parent="." instance=ExtResource("1_ul5aj")]
 position = Vector2(1, -174)
 
-[node name="Node2D" parent="." instance=ExtResource("4_637dr")]
-position = Vector2(174, -103)
+[node name="LightObject" parent="." instance=ExtResource("5_fo8p6")]
+position = Vector2(-739, -413)
+rotation = 0.484516
+
+[node name="LightObject2" parent="." instance=ExtResource("5_fo8p6")]
+position = Vector2(-386, -289)
+
+[node name="LightObject3" parent="." instance=ExtResource("5_fo8p6")]
+position = Vector2(254, -236)
+rotation = 0.480705
+
+[node name="LightObject4" parent="." node_paths=PackedStringArray("physics_body", "sprite", "light_occluder", "light", "light_collider", "light_origin") instance=ExtResource("5_cts50")]
+position = Vector2(-749, -101)
+physics_body = NodePath("RigidBody2D")
+sprite = NodePath("RigidBody2D/Sprite2D")
+light_occluder = NodePath("RigidBody2D/LightOccluder2D")
+light = NodePath("RigidBody2D/PointLight2D")
+light_collider = NodePath("RigidBody2D/Area2D")
+light_origin = NodePath("RigidBody2D/Marker2D")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="LightObject4"]
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LightObject4/RigidBody2D"]
+position = Vector2(0, -23)
+scale = Vector2(0.6, 0.6)
+shape = SubResource("CircleShape2D_h3ya6")
+
+[node name="Sprite2D" type="Sprite2D" parent="LightObject4/RigidBody2D"]
+texture_filter = 1
+position = Vector2(0, -21)
+scale = Vector2(3, 3)
+texture = ExtResource("6_rq28d")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="LightObject4/RigidBody2D"]
+position = Vector2(0, -8)
+scale = Vector2(0.6, 0.6)
+occluder = SubResource("OccluderPolygon2D_1t4l6")
+
+[node name="PointLight2D" type="PointLight2D" parent="LightObject4/RigidBody2D"]
+position = Vector2(0, -5)
+scale = Vector2(0.25, 0.259)
+energy = 5.0
+shadow_enabled = true
+shadow_color = Color(0, 0, 0, 1)
+texture = ExtResource("7_ydqmj")
+offset = Vector2(0, 509.653)
+
+[node name="Area2D" type="Area2D" parent="LightObject4/RigidBody2D"]
+position = Vector2(0, -10)
+collision_layer = 4
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="LightObject4/RigidBody2D/Area2D"]
+polygon = PackedVector2Array(-6, 4, 5, 4, 61, 260, -61, 259)
+
+[node name="Marker2D" type="Marker2D" parent="LightObject4/RigidBody2D"]
+position = Vector2(0, -5)
+
+[editable path="LightObject4"]

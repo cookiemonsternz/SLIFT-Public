@@ -81,6 +81,7 @@ func _ready() -> void:
 	jump_buffer_timer.wait_time = jump_buffer_time
 
 func _process(delta: float) -> void:
+	#print(current_move_mode)
 	match current_move_mode:
 		MoveStates.GROUND:
 			var input_chosen = Input.get_axis("move_left", "move_right")
@@ -125,6 +126,7 @@ func _process(delta: float) -> void:
 		MoveStates.AIR:
 			if ground_cast.is_colliding() and do_delete_timer.is_stopped():
 				current_move_mode = MoveStates.GROUND
+				velocity = Vector2.ZERO
 				if spring_joints[1] != null:
 					spring_joints[1].queue_free()
 					rope2.disable()

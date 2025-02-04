@@ -67,10 +67,8 @@ damping = 0.9
 jump_buffer_timer = NodePath("JumpBufferTimer")
 coyote_time_timer = NodePath("CoyoteTimeTimer")
 ground_cast = NodePath("GroundCast")
-player = NodePath(".")
 gravity_strength = 700.0
 coyote_time_time = 0.25
-velocity_timer = NodePath("VelocityTimer")
 health_component = NodePath("Health Component")
 do_delete_timer = NodePath("Timer")
 
@@ -148,6 +146,7 @@ shape = SubResource("RectangleShape2D_17qc7")
 wait_time = 0.1
 one_shot = true
 
-[connection signal="timeout" from="VelocityTimer" to="." method="_on_velocity_timer_timeout"]
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_l5py8")
+
+[connection signal="timeout" from="VelocityTimer" to="." method="_on_velocity_timer_timeout"]

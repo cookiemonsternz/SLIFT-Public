@@ -204,7 +204,7 @@ func _process(delta: float) -> void:
 					spring_joints[0].queue_free()
 					rope1.disable()
 			
-			global_position = player_physics_follow.global_position
+			global_position = global_position.move_toward(player_physics_follow.global_position, delta * 2000)
 	
 func _physics_process(_delta: float) -> void:
 	handle_grapple_input()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://br85yumpnqgit"]
+[gd_scene load_steps=10 format=3 uid="uid://br85yumpnqgit"]
 
 [ext_resource type="PackedScene" uid="uid://bjk2n8cwtbfil" path="res://scenes/player.tscn" id="1_ul5aj"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/shape_texture_2d.gd" id="2_pirk4"]
@@ -33,6 +33,12 @@ stroke_joint = "round"
 offset = Vector2(0, 0)
 rotation = 0.0
 scale = Vector2(1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wefn5"]
+size = Vector2(1123, 72)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jv1uc"]
+size = Vector2(1069, 74)
 
 [node name="SceneRoot" type="Node2D"]
 
@@ -79,12 +85,12 @@ position = Vector2(886, -7)
 collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor4"]
-position = Vector2(0, 26)
-shape = SubResource("RectangleShape2D_n3i5c")
+position = Vector2(342.5, 26)
+shape = SubResource("RectangleShape2D_wefn5")
 
 [node name="Sprite2D" type="Sprite2D" parent="Floor4"]
-position = Vector2(-0.500008, 25.5)
-scale = Vector2(3.41406, 0.554688)
+position = Vector2(341, 25.5)
+scale = Vector2(8.75, 0.554688)
 texture = SubResource("Texture2D_g27ne")
 
 [node name="Floor5" type="StaticBody2D" parent="."]
@@ -92,12 +98,12 @@ position = Vector2(-880, 22)
 collision_mask = 5
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Floor5"]
-position = Vector2(0, 26)
-shape = SubResource("RectangleShape2D_n3i5c")
+position = Vector2(-319.5, 25)
+shape = SubResource("RectangleShape2D_jv1uc")
 
 [node name="Sprite2D" type="Sprite2D" parent="Floor5"]
-position = Vector2(-0.500008, 25.5)
-scale = Vector2(3.41406, 0.554688)
+position = Vector2(-317.5, 25.5)
+scale = Vector2(8.36719, 0.554688)
 texture = SubResource("Texture2D_g27ne")
 
 [node name="Player" parent="." instance=ExtResource("1_ul5aj")]

@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://addons/shape_texture_2d/drawable_capsule.gd" id="2_61cpy"]
 [ext_resource type="PackedScene" uid="uid://cbfarsdxo3xll" path="res://scenes/rope.tscn" id="4_yprrp"]
 [ext_resource type="Script" path="res://scripts/player_physics_follow.gd" id="5_74d1f"]
-[ext_resource type="PackedScene" path="res://scenes/health_component.tscn" id="6_xgtbg"]
+[ext_resource type="PackedScene" uid="uid://2yvmq877upop" path="res://scenes/health_component.tscn" id="6_xgtbg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rh5mj"]
 radius = 31.0
@@ -49,7 +49,7 @@ point_count = 2
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_17qc7"]
 size = Vector2(46, 108)
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("grapple_origin", "rope1", "rope2", "raycast", "player_physics_follow", "jump_buffer_timer", "coyote_time_timer", "ground_cast", "health_component", "do_delete_timer") groups=["Player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("grapple_origin", "rope1", "rope2", "raycast", "player_physics_follow", "jump_buffer_timer", "coyote_time_timer", "ground_cast", "player", "velocity_timer", "health_component", "do_delete_timer") groups=["Player"]]
 collision_layer = 8
 collision_mask = 13
 script = ExtResource("1_l73r6")
@@ -64,8 +64,10 @@ damping = 0.9
 jump_buffer_timer = NodePath("JumpBufferTimer")
 coyote_time_timer = NodePath("CoyoteTimeTimer")
 ground_cast = NodePath("GroundCast")
+player = NodePath(".")
 gravity_strength = 700.0
 coyote_time_time = 0.25
+velocity_timer = NodePath("VelocityTimer")
 health_component = NodePath("Health Component")
 do_delete_timer = NodePath("Timer")
 
@@ -73,7 +75,7 @@ do_delete_timer = NodePath("Timer")
 shape = SubResource("CapsuleShape2D_rh5mj")
 
 [node name="GroundCast" type="RayCast2D" parent="."]
-target_position = Vector2(0, 68)
+target_position = Vector2(0, 65)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("Texture2D_7im1b")
@@ -84,6 +86,10 @@ texture = SubResource("Texture2D_7im1b")
 one_shot = true
 
 [node name="CoyoteTimeTimer" type="Timer" parent="."]
+one_shot = true
+
+[node name="VelocityTimer" type="Timer" parent="."]
+wait_time = 0.327
 one_shot = true
 
 [node name="Grapple Components" type="Node2D" parent="."]
@@ -138,3 +144,5 @@ shape = SubResource("RectangleShape2D_17qc7")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
+
+[connection signal="timeout" from="VelocityTimer" to="." method="_on_velocity_timer_timeout"]

@@ -8,7 +8,7 @@ extends CharacterBody2D
 @export var rope1: Line2D
 @export var rope2: Line2D
 @export var raycast: RayCast2D
-@export var player_physics_follow: RigidBody2D
+@export var player_physics_follow: RigidBody2D 
 
 
 @export_subgroup("Distance")
@@ -48,6 +48,7 @@ var spring_joints: Array[DampedSpringJoint2D] = [null, null]
 @export var jump_buffer_timer: Timer
 @export var coyote_time_timer: Timer
 @export var ground_cast: RayCast2D
+@export var player: CharacterBody2D
 
 @export_subgroup("Jumping")
 @export var jump_velocity = -700.0 # Maximum jump strength
@@ -57,23 +58,43 @@ var spring_joints: Array[DampedSpringJoint2D] = [null, null]
 @export_subgroup("Movement")
 @export var move_speed = 500.0 # Movement speed
 @export var coyote_time_time = 0.1 # Time in seconds to allow a coyote jump
+@export var velocity_timer: Timer 
+@export var slow_speed = 800
+@export var mantain_speed = 0
+@export var stop_speed = 1600
 
 @export_group("")
 @export var health_component: Node
 @export var do_delete_timer: Timer
 
+
 var can_coyote: bool = false
 var coyote_jump_available := true
 var coyote_timer_reset := true
-
+var velocity_track = true
+var velocity_apply = false
+var velocity_slide_change = true
+var velocity_add = 0
+var move_mode_two = false
+var velocity_can_change = true
+var velocity_new = null
 var light_exposure = 0
-
+var barrier = false
 var current_move_mode = MoveStates.GROUND
-
+var craig = true
+var ruckus = 0
+var slow_down = false
 enum MoveStates {
 	GROUND, 
 	AIR
 }
+
+
+
+
+
+
+
 
 # Set the timer duration based on the export vars
 func _ready() -> void:
@@ -81,18 +102,60 @@ func _ready() -> void:
 	jump_buffer_timer.wait_time = jump_buffer_time
 
 func _process(delta: float) -> void:
+	print(move_mode_two)
+	print(ruckus)
+	var velocity_add = player_physics_follow.linear_velocity.x
 	match current_move_mode:
 		MoveStates.GROUND:
 			var input_chosen = Input.get_axis("move_left", "move_right")
 			var hit_jump = Input.is_action_just_pressed("player_jump")
 			var is_on_floor = is_on_floor()
-			
-			
+			#
+			#if is_on_floor and velocity_track == false:
+				##print(velocity.x)
+				#if input_chosen == -1:
+					#velocity.x = $".".velocity.x * input_chosen * -1
+				#if input_chosen == 1:
+					#velocity.x = $".".velocity.x * input_chosen 
+				#move_and_slide()
 			
 			if light_exposure >= 20:
 				modulate = Color(1.0, 0.0, 0.0)
 			
+			if is_on_floor() and barrier == true and move_mode_two == true:
+				player.velocity.x = ruckus
+				slow_down = true
+				
+			if is_on_floor and slow_down == true and move_mode_two == true:
+				if ruckus > -25 and ruckus < 25:
+					craig = false
+					barrier = false
+					ruckus = 0
+					move_mode_two = false
+				if ruckus > 0 and craig == true and input_chosen < 0:
+					ruckus -= stop_speed * delta
+					slow_down = false
+				if ruckus > 0 and craig == true and input_chosen == 0:
+					ruckus -= slow_speed * delta
+					slow_down = false
+				if ruckus > 0 and craig == true and input_chosen > 0:
+					ruckus -= mantain_speed * delta
+					slow_down = false
+				
+				if ruckus < 0 and craig == true and input_chosen > 0:
+					ruckus += stop_speed * delta
+					slow_down = false
+				if ruckus < 0 and craig == true and input_chosen < 0:
+					ruckus += mantain_speed * delta
+					slow_down = false
+				if ruckus < 0 and craig == true and input_chosen == 0:
+					ruckus += slow_speed * delta
+					slow_down = false
+				
+			
+			
 			if is_on_floor:
+				
 				can_coyote = true
 				coyote_timer_reset = true
 			
@@ -114,17 +177,33 @@ func _process(delta: float) -> void:
 				jump_buffer_timer.stop()
 			
 			if hit_jump and is_on_floor:
+				craig = false
+				barrier = false
+				ruckus = 0
+				move_mode_two = false
 				can_coyote = false
 				velocity.y = jump_velocity
 			
-			velocity.x = move_speed * input_chosen
+			if is_on_floor() and velocity_apply == true:
+				move_mode_two = true
+				
+			if not barrier:
+				velocity.x = move_speed * input_chosen 
 			
 			velocity *= 0.99
 			
 			move_and_slide()
 		MoveStates.AIR:
+			if not ground_cast.is_colliding():
+				barrier = false
+			velocity_add = player_physics_follow.linear_velocity.x
 			if ground_cast.is_colliding() and do_delete_timer.is_stopped():
+				if barrier == false:
+					ruckus = velocity_add
+					barrier = true
 				current_move_mode = MoveStates.GROUND
+				velocity_timer.start()
+				velocity_can_change = false
 				if spring_joints[1] != null:
 					spring_joints[1].queue_free()
 					rope2.disable()
@@ -140,8 +219,11 @@ func _physics_process(_delta: float) -> void:
 		MoveStates.GROUND:
 			player_physics_follow.set_pos(global_position)
 			player_physics_follow.set_vel(velocity)
+			#print(velocity.x)
 		MoveStates.AIR:
-			pass
+			velocity_apply = false
+			craig = true
+			move_mode_two = true
 			#if not Input.is_action_pressed("grapple_left") and not Input.is_action_pressed("grapple_right"):
 				#current_move_mode = MoveStates.GROUND
 				#velocity = player_physics_follow.linear_velocity
@@ -228,3 +310,8 @@ func create_spring_joint(point_a: Vector2, point_b: Vector2, body_a: PhysicsBody
 	get_tree().root.add_child(spring)
 	
 	return spring
+
+
+func _on_velocity_timer_timeout() -> void:
+	var velocity_new = velocity_add
+	print("Test")

@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://br85yumpnqgit"]
+[gd_scene load_steps=12 format=3 uid="uid://br85yumpnqgit"]
 
 [ext_resource type="PackedScene" path="res://scenes/player.tscn" id="1_ul5aj"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/shape_texture_2d.gd" id="2_pirk4"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/drawable_rectangle.gd" id="3_v07sq"]
+[ext_resource type="PackedScene" uid="uid://brv1ny6q731fn" path="res://scenes/environment/lights/lamp_beam.tscn" id="5_fo8p6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3i5c"]
 size = Vector2(438, 72)
@@ -33,13 +34,26 @@ offset = Vector2(0, 0)
 rotation = 0.0
 scale = Vector2(1, 1)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_5lgru"]
+polygon = PackedVector2Array(-220, -11, 220, -11, 221, 64, -219, 61)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wefn5"]
 size = Vector2(1123, 72)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_cgchh"]
+polygon = PackedVector2Array(-220, -11, 860, -16, 860, 65, -219, 61)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jv1uc"]
 size = Vector2(1069, 74)
 
 [node name="SceneRoot" type="Node2D"]
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -2067.0
+offset_top = -805.0
+offset_right = 7933.0
+offset_bottom = 9195.0
+color = Color(0.0588235, 0.0588235, 0.0588235, 0.560784)
 
 [node name="Floor" type="StaticBody2D" parent="."]
 collision_mask = 5
@@ -52,6 +66,9 @@ shape = SubResource("RectangleShape2D_n3i5c")
 position = Vector2(-0.500008, 25.5)
 scale = Vector2(3.41406, 0.554688)
 texture = SubResource("Texture2D_g27ne")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Floor"]
+occluder = SubResource("OccluderPolygon2D_5lgru")
 
 [node name="Floor2" type="StaticBody2D" parent="."]
 position = Vector2(-541, -363)
@@ -66,6 +83,9 @@ position = Vector2(-0.500008, 25.5)
 scale = Vector2(3.41406, 0.554688)
 texture = SubResource("Texture2D_g27ne")
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Floor2"]
+occluder = SubResource("OccluderPolygon2D_5lgru")
+
 [node name="Floor3" type="StaticBody2D" parent="."]
 position = Vector2(502, -363)
 collision_mask = 5
@@ -78,6 +98,9 @@ shape = SubResource("RectangleShape2D_n3i5c")
 position = Vector2(-0.500008, 25.5)
 scale = Vector2(3.41406, 0.554688)
 texture = SubResource("Texture2D_g27ne")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Floor3"]
+occluder = SubResource("OccluderPolygon2D_5lgru")
 
 [node name="Floor4" type="StaticBody2D" parent="."]
 position = Vector2(886, -7)
@@ -92,6 +115,9 @@ position = Vector2(341, 25.5)
 scale = Vector2(8.75, 0.554688)
 texture = SubResource("Texture2D_g27ne")
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Floor4"]
+occluder = SubResource("OccluderPolygon2D_cgchh")
+
 [node name="Floor5" type="StaticBody2D" parent="."]
 position = Vector2(-880, 22)
 collision_mask = 5
@@ -105,5 +131,20 @@ position = Vector2(-317.5, 25.5)
 scale = Vector2(8.36719, 0.554688)
 texture = SubResource("Texture2D_g27ne")
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Floor5"]
+position = Vector2(-636, 3)
+occluder = SubResource("OccluderPolygon2D_cgchh")
+
 [node name="Player" parent="." instance=ExtResource("1_ul5aj")]
 position = Vector2(1, -174)
+
+[node name="LampBeam" parent="." instance=ExtResource("5_fo8p6")]
+position = Vector2(203, -279)
+
+[node name="LampBeam2" parent="." instance=ExtResource("5_fo8p6")]
+position = Vector2(-325, -512)
+rotation = -0.154388
+
+[node name="LampBeam3" parent="." instance=ExtResource("5_fo8p6")]
+position = Vector2(830, -230)
+rotation = 0.635214

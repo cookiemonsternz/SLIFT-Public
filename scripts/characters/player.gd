@@ -102,23 +102,13 @@ func _ready() -> void:
 	jump_buffer_timer.wait_time = jump_buffer_time
 
 func _process(delta: float) -> void:
-	print(move_mode_two)
-	print(ruckus)
 	var velocity_add = player_physics_follow.linear_velocity.x
-	#print(current_move_mode)
 	match current_move_mode:
 		MoveStates.GROUND:
 			var input_chosen = Input.get_axis("move_left", "move_right")
 			var hit_jump = Input.is_action_just_pressed("player_jump")
 			var is_on_floor = is_on_floor()
-			#
-			#if is_on_floor and velocity_track == false:
-				##print(velocity.x)
-				#if input_chosen == -1:
-					#velocity.x = $".".velocity.x * input_chosen * -1
-				#if input_chosen == 1:
-					#velocity.x = $".".velocity.x * input_chosen 
-				#move_and_slide()
+		
 			
 			if light_exposure >= 20:
 				modulate = Color(1.0, 0.0, 0.0)
@@ -315,4 +305,3 @@ func create_spring_joint(point_a: Vector2, point_b: Vector2, body_a: PhysicsBody
 
 func _on_velocity_timer_timeout() -> void:
 	var velocity_new = velocity_add
-	print("Test")

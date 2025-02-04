@@ -9,6 +9,7 @@ extends CharacterBody2D
 @export var rope2: Line2D
 @export var raycast: RayCast2D
 @export var player_physics_follow: RigidBody2D 
+@export var ceiling_cast: RayCast2D
 
 
 @export_subgroup("Distance")
@@ -143,7 +144,8 @@ func _process(delta: float) -> void:
 					ruckus += slow_speed * delta
 					slow_down = false
 				
-			
+			if is_on_ceiling():
+				print("ceiling")
 			
 			if is_on_floor:
 				
@@ -215,6 +217,8 @@ func _physics_process(_delta: float) -> void:
 			velocity_apply = false
 			craig = true
 			move_mode_two = true
+			if spring_joints[0] == null and spring_joints[1] == null and player_physics_follow.linear_velocity.x == 0 and player_physics_follow.linear_velocity.y == 0:
+				player_physics_follow.global_position.y -= 1
 			#if not Input.is_action_pressed("grapple_left") and not Input.is_action_pressed("grapple_right"):
 				#current_move_mode = MoveStates.GROUND
 				#velocity = player_physics_follow.linear_velocity

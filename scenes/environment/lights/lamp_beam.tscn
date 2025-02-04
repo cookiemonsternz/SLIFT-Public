@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://brv1ny6q731fn"]
 
 [ext_resource type="PackedScene" uid="uid://dbe5l6x8cnnnw" path="res://scenes/environment/lights/light_object.tscn" id="1_fepf7"]
-[ext_resource type="Texture2D" uid="uid://bxgw6hi4dfla7" path="res://assets/lamp.png" id="2_maphf"]
+[ext_resource type="Texture2D" uid="uid://i11y7rov2xna" path="res://assets/Images/lamp.png" id="2_maphf"]
 [ext_resource type="Texture2D" uid="uid://dwaqh3pcncfoj" path="res://assets/Images/lamp_light_beam.png" id="3_057ws"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_8f81w"]
@@ -24,6 +24,8 @@ scale = Vector2(3, 3)
 texture = ExtResource("2_maphf")
 
 [node name="LightStaticBody" type="StaticBody2D" parent="." index="2"]
+collision_layer = 0
+collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="LightStaticBody" index="0"]
 position = Vector2(0, -2)

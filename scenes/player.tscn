@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://brkdvlqw0t3sp"]
+[gd_scene load_steps=16 format=3 uid="uid://brkdvlqw0t3sp"]
 
 [ext_resource type="Script" path="res://addons/shape_texture_2d/shape_texture_2d.gd" id="1_42r4y"]
 [ext_resource type="Script" path="res://scripts/characters/player.gd" id="1_x5w3x"]
@@ -58,7 +58,10 @@ point_count = 2
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_17qc7"]
 size = Vector2(46, 108)
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("grapple_origin", "rope1", "rope2", "raycast", "player_physics_follow", "jump_buffer_timer", "coyote_time_timer", "ground_cast", "player", "velocity_timer", "health_component", "do_delete_timer") groups=["Player"]]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_buxd2"]
+polygon = PackedVector2Array(-4, -65, -23, -55, -29, -45, -33, -27, -32, 43, -24, 55, -8, 63, 7, 63, 24, 54, 32, 38, 33, -36, 23, -55, 11, -63)
+
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("grapple_origin", "rope1", "rope2", "raycast", "player_physics_follow", "ceiling_cast", "jump_buffer_timer", "coyote_time_timer", "ground_cast", "player", "velocity_timer", "health_component", "do_delete_timer") groups=["Player"]]
 collision_layer = 8
 collision_mask = 13
 script = ExtResource("1_x5w3x")
@@ -67,6 +70,7 @@ rope1 = NodePath("Grapple Components/Rope1")
 rope2 = NodePath("Grapple Components/Rope2")
 raycast = NodePath("Grapple Components/RayCast2D")
 player_physics_follow = NodePath("Grapple Components/PlayerPhysicsFollow")
+ceiling_cast = NodePath("CeilingCast")
 launch_type = 1
 launch_speed = 20.0
 damping = 0.9
@@ -84,6 +88,10 @@ shape = SubResource("CapsuleShape2D_rh5mj")
 
 [node name="GroundCast" type="RayCast2D" parent="."]
 target_position = Vector2(0, 65)
+
+[node name="CeilingCast" type="RayCast2D" parent="."]
+rotation = 3.14159
+target_position = Vector2(5.7699e-06, 66)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = SubResource("Texture2D_7im1b")
@@ -138,5 +146,8 @@ shape = SubResource("RectangleShape2D_17qc7")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_buxd2")
 
 [connection signal="timeout" from="VelocityTimer" to="." method="_on_velocity_timer_timeout"]

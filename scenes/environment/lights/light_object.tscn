@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dbe5l6x8cnnnw"]
+
+[ext_resource type="Script" path="res://scripts/environment/light_object.gd" id="1_jnubg"]
+
+[node name="LightObject" type="Node2D"]
+script = ExtResource("1_jnubg")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]

@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbfarsdxo3xll"]
+
+[ext_resource type="Script" path="res://scripts/characters/components/rope.gd" id="1_ecdeq"]
+
+[node name="Rope" type="Line2D"]
+script = ExtResource("1_ecdeq")
+precision = 100

@@ -105,6 +105,7 @@ func _process(delta: float) -> void:
 	print(move_mode_two)
 	print(ruckus)
 	var velocity_add = player_physics_follow.linear_velocity.x
+	#print(current_move_mode)
 	match current_move_mode:
 		MoveStates.GROUND:
 			var input_chosen = Input.get_axis("move_left", "move_right")

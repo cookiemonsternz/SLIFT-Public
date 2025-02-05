@@ -47,13 +47,13 @@ _data = [Vector2(0, 0), 0.0, 1.0, 0, 1, Vector2(1, 1), 1.0, 0.0, 1, 0]
 point_count = 2
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eru5a"]
-radius = 32.0
-height = 128.0
+radius = 30.0
+height = 122.0
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l5py8"]
 polygon = PackedVector2Array(-5, -64, 7, -65, 17, -61, 26, -53, 32, -40, 32, 17, 32, 43, 23, 56, 12, 64, -11, 64, -25, 55, -32, 40, -33, 18, -33, -38, -28, -50, -20, -58, -12, -63)
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("grapple_origin", "rope1", "rope2", "raycast", "player_physics_follow", "jump_buffer_timer", "coyote_time_timer", "ground_cast", "player", "velocity_timer", "health_component", "do_delete_timer") groups=["Player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("grapple_origin", "rope1", "rope2", "raycast", "player_physics_follow", "jump_buffer_timer", "coyote_time_timer", "ground_cast", "player", "health_component", "do_delete_timer") groups=["Player"]]
 collision_layer = 8
 collision_mask = 13
 script = ExtResource("1_x5w3x")
@@ -71,7 +71,6 @@ ground_cast = NodePath("GroundCast")
 player = NodePath(".")
 gravity_strength = 700.0
 coyote_time_time = 0.25
-velocity_timer = NodePath("VelocityTimer")
 health_component = NodePath("Health Component")
 do_delete_timer = NodePath("Timer")
 

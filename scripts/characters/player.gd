@@ -59,7 +59,6 @@ var spring_joints: Array[DampedSpringJoint2D] = [null, null]
 @export_subgroup("Movement")
 @export var move_speed = 500.0 # Movement speed
 @export var coyote_time_time = 0.1 # Time in seconds to allow a coyote jump
-@export var velocity_timer: Timer 
 @export var slow_speed = 800
 @export var mantain_speed = 0
 @export var stop_speed = 1600
@@ -72,20 +71,10 @@ var spring_joints: Array[DampedSpringJoint2D] = [null, null]
 var can_coyote: bool = false
 var coyote_jump_available := true
 var coyote_timer_reset := true
-var velocity_track = true
-var velocity_apply = false
-var velocity_slide_change = true
-var velocity_add = 0
-var move_mode_two = false
-var velocity_can_change = true
-var velocity_new = null
-var light_exposure = 0
-var barrier = false
-var current_move_mode = MoveStates.GROUND
-var craig = true
-var ruckus = 0
-var slow_down = false
-enum MoveStates {
+var current_move_mode := MoveModes.GROUND
+var is_sliding := false
+var vel_x: float = 0
+enum MoveModes {
 	GROUND, 
 	AIR
 }
@@ -103,118 +92,107 @@ func _ready() -> void:
 	jump_buffer_timer.wait_time = jump_buffer_time
 
 func _process(delta: float) -> void:
-	var velocity_add = player_physics_follow.linear_velocity.x
 	match current_move_mode:
-		MoveStates.GROUND:
-			var input_chosen = Input.get_axis("move_left", "move_right")
-			var hit_jump = Input.is_action_just_pressed("player_jump")
-			var is_on_floor = is_on_floor()
+		MoveModes.GROUND:
+			handle_ground_movement(delta)
+		MoveModes.AIR:
+			handle_air_movement()
+			
+
+func handle_ground_movement(delta: float):
+	var input_chosen = Input.get_axis("move_left", "move_right")
+	var hit_jump = Input.is_action_just_pressed("player_jump")
+	var on_floor = is_on_floor()
 		
-			
-			if light_exposure >= 20:
-				modulate = Color(1.0, 0.0, 0.0)
-			
-			if is_on_floor() and barrier == true and move_mode_two == true:
-				player.velocity.x = ruckus
-				slow_down = true
-				
-			if is_on_floor and slow_down == true and move_mode_two == true:
-				if ruckus > -25 and ruckus < 25:
-					craig = false
-					barrier = false
-					ruckus = 0
-					move_mode_two = false
-				if ruckus > 0 and craig == true and input_chosen < 0:
-					ruckus -= stop_speed * delta
-					slow_down = false
-				if ruckus > 0 and craig == true and input_chosen == 0:
-					ruckus -= slow_speed * delta
-					slow_down = false
-				if ruckus > 0 and craig == true and input_chosen > 0:
-					ruckus -= mantain_speed * delta
-					slow_down = false
-				
-				if ruckus < 0 and craig == true and input_chosen > 0:
-					ruckus += stop_speed * delta
-					slow_down = false
-				if ruckus < 0 and craig == true and input_chosen < 0:
-					ruckus += mantain_speed * delta
-					slow_down = false
-				if ruckus < 0 and craig == true and input_chosen == 0:
-					ruckus += slow_speed * delta
-					slow_down = false
-				
-			if is_on_ceiling():
-				print("ceiling")
-			
-			if is_on_floor:
-				
-				can_coyote = true
-				coyote_timer_reset = true
-			
-			if can_coyote and velocity.y > 0 and coyote_timer_reset:
-				coyote_time_timer.start()
-				coyote_timer_reset = false
-			
-			if not is_on_floor and can_coyote and hit_jump and coyote_time_timer.time_left > 0:
-				velocity.y = jump_velocity
-			
-			if not is_on_floor:
-				velocity.y += gravity_strength * delta
-			
-			if not is_on_floor and hit_jump:
-				jump_buffer_timer.start()
-			
-			if is_on_floor and jump_buffer_timer.time_left >  0:
-				velocity.y = jump_velocity
-				jump_buffer_timer.stop()
-			
-			if hit_jump and is_on_floor:
-				craig = false
-				barrier = false
-				ruckus = 0
-				move_mode_two = false
-				can_coyote = false
-				velocity.y = jump_velocity
-			
-			if is_on_floor() and velocity_apply == true:
-				move_mode_two = true
-				
-			if not barrier:
-				velocity.x = move_speed * input_chosen 
-			
-			velocity *= 0.99
-			
-			move_and_slide()
-		MoveStates.AIR:
-			global_position = global_position.move_toward(player_physics_follow.global_position, 800)
-			if not ground_cast.is_colliding():
-				barrier = false
-			velocity_add = player_physics_follow.linear_velocity.x
-			if ground_cast.is_colliding() and do_delete_timer.is_stopped():
-				if barrier == false:
-					ruckus = velocity_add
-					barrier = true
-				current_move_mode = MoveStates.GROUND
-				velocity_timer.start()
-				velocity_can_change = false
-				if spring_joints[1] != null:
-					spring_joints[1].queue_free()
-					rope2.disable()
-				if spring_joints[0] != null:
-					spring_joints[0].queue_free()
-					rope1.disable()
+	if can_coyote and velocity.y > 0 and coyote_timer_reset:
+		coyote_time_timer.start()
+		coyote_timer_reset = false
 	
+	if not on_floor and can_coyote and hit_jump and coyote_time_timer.time_left > 0:
+		velocity.y = jump_velocity
+	
+	if not on_floor and hit_jump:
+		jump_buffer_timer.start()
+	
+	if on_floor and jump_buffer_timer.time_left >  0:
+		velocity.y = jump_velocity
+		jump_buffer_timer.stop()
+	
+	if hit_jump and on_floor:
+		is_sliding = false
+		can_coyote = false
+		velocity.y = jump_velocity
+	
+	if on_floor:
+		can_coyote = true
+		coyote_timer_reset = true
+	else:
+		velocity.y += gravity_strength * delta
+
+	if is_sliding:
+		handle_sliding(input_chosen, delta)
+		player.velocity.x = vel_x
+	else:
+		velocity.x = move_speed * input_chosen 
+
+	move_and_slide()
+
+func handle_sliding(input_chosen: float, delta: float):
+	# If we have low velocity change back to regular move mode
+		if vel_x > -25 and vel_x < 25:
+			is_sliding = false
+			vel_x = 0
+		
+		# Case for sliding right when holding left
+		if vel_x > 0 and input_chosen < 0:
+			vel_x -= stop_speed * delta
+		# Case for sliding right when holding nothing
+		if vel_x > 0 and input_chosen == 0:
+			vel_x -= slow_speed * delta
+		# Case for sliding left when holding right
+		if vel_x > 0 and input_chosen > 0:
+			vel_x -= mantain_speed * delta
+		# Case for sliding left when holding right
+		if vel_x < 0 and input_chosen > 0:
+			vel_x += stop_speed * delta
+		# Case for sliding left when holding left
+		if vel_x < 0 and input_chosen < 0:
+			vel_x += mantain_speed * delta
+		# Case for sliding right when holding nothing
+		if vel_x < 0 and input_chosen == 0:
+			vel_x += slow_speed * delta
+
+func handle_air_movement():
+	# Set position to the rigidbody position
+	global_position = player_physics_follow.global_position
+
+	if not ground_cast.is_colliding():
+		is_sliding = false
+
+	# If the player is on the ground and the timer that starts when player leaves ground is stopped (eg the timer has runout)
+	# we delete the arms and set the player to the ground state
+	if ground_cast.is_colliding() and do_delete_timer.is_stopped():
+
+		if is_sliding == false:
+			vel_x = player_physics_follow.linear_velocity.x
+			is_sliding = true
+
+		if spring_joints[1] != null:
+			spring_joints[1].queue_free()
+			rope2.disable()
+		if spring_joints[0] != null:
+			spring_joints[0].queue_free()
+			rope1.disable()
+		
+		current_move_mode = MoveModes.GROUND
+
 func _physics_process(_delta: float) -> void:
 	handle_grapple_input()
 	match current_move_mode:
-		MoveStates.GROUND:
+		MoveModes.GROUND:
 			player_physics_follow.set_pos(global_position)
 			player_physics_follow.set_vel(velocity)
-		MoveStates.AIR:
-			velocity_apply = false
-			craig = true
-			move_mode_two = true
+		MoveModes.AIR:
 			if spring_joints[0] == null and spring_joints[1] == null and player_physics_follow.linear_velocity.x == 0 and player_physics_follow.linear_velocity.y == 0:
 				player_physics_follow.set_pos(Vector2(player_physics_follow.global_position.x, player_physics_follow.global_position.y - 1))
 
@@ -269,7 +247,7 @@ func grapple(side: int) -> void:
 					spring_joints[1] = create_spring_joint(global_position, grapple_target_positions[1], player_physics_follow, grapple_targets[1], grapple_distance_vectors[1].length(), grapple_distance_vectors[1].length() - rest_distance)
 					#if spring_joints[0] != null:
 						#spring_joints[0].rest_length = grapple_distance_vectors[1].length() - rest_distance
-			current_move_mode = MoveStates.AIR
+			current_move_mode = MoveModes.AIR
 
 func create_spring_joint(point_a: Vector2, point_b: Vector2, body_a: PhysicsBody2D, body_b: PhysicsBody2D, length: float, rest_length: float) -> DampedSpringJoint2D:
 	
@@ -296,7 +274,3 @@ func create_spring_joint(point_a: Vector2, point_b: Vector2, body_a: PhysicsBody
 	get_tree().root.add_child(spring)
 	
 	return spring
-
-
-func _on_velocity_timer_timeout() -> void:
-	var velocity_new = velocity_add

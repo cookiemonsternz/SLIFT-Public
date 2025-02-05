@@ -85,7 +85,7 @@ target_position = Vector2(0, 65)
 texture = SubResource("Texture2D_7im1b")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position_smoothing_speed = 1.0
+position_smoothing_speed = 10.0
 
 [node name="JumpBufferTimer" type="Timer" parent="."]
 one_shot = true

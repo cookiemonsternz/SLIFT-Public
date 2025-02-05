@@ -187,7 +187,7 @@ func _process(delta: float) -> void:
 			
 			move_and_slide()
 		MoveStates.AIR:
-			global_position = player_physics_follow.global_position
+			global_position = global_position.move_toward(player_physics_follow.global_position, 800)
 			if not ground_cast.is_colliding():
 				barrier = false
 			velocity_add = player_physics_follow.linear_velocity.x

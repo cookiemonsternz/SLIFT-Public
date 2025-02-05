@@ -58,3 +58,7 @@ grapple_right={
 2d_physics/layer_2="Rigidbodies"
 2d_physics/layer_3="Light"
 2d_physics/layer_4="Player"
+
+[physics]
+
+common/physics_jitter_fix=1.0

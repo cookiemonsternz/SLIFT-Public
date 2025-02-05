@@ -187,6 +187,7 @@ func _process(delta: float) -> void:
 			
 			move_and_slide()
 		MoveStates.AIR:
+			global_position = player_physics_follow.global_position
 			if not ground_cast.is_colliding():
 				barrier = false
 			velocity_add = player_physics_follow.linear_velocity.x
@@ -203,8 +204,6 @@ func _process(delta: float) -> void:
 				if spring_joints[0] != null:
 					spring_joints[0].queue_free()
 					rope1.disable()
-			
-			global_position = global_position.move_toward(player_physics_follow.global_position, delta * 2000)
 	
 func _physics_process(_delta: float) -> void:
 	handle_grapple_input()
@@ -212,20 +211,12 @@ func _physics_process(_delta: float) -> void:
 		MoveStates.GROUND:
 			player_physics_follow.set_pos(global_position)
 			player_physics_follow.set_vel(velocity)
-			#print(velocity.x)
 		MoveStates.AIR:
 			velocity_apply = false
 			craig = true
 			move_mode_two = true
 			if spring_joints[0] == null and spring_joints[1] == null and player_physics_follow.linear_velocity.x == 0 and player_physics_follow.linear_velocity.y == 0:
-				player_physics_follow.global_position.y -= 1
-			#if not Input.is_action_pressed("grapple_left") and not Input.is_action_pressed("grapple_right"):
-				#current_move_mode = MoveStates.GROUND
-				#velocity = player_physics_follow.linear_velocity
-			#if spring_joint != null and spring_joint.length >= 30:
-				#print(spring_joint.length)
-				#spring_joint.length -= 5
-				#spring_joint.rest_length -= 5
+				player_physics_follow.set_pos(Vector2(player_physics_follow.global_position.x, player_physics_follow.global_position.y - 1))
 
 func handle_grapple_input():
 	if Input.is_action_just_pressed("grapple_left"):

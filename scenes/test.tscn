@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=4 uid="uid://br85yumpnqgit"]
 
-[ext_resource type="PackedScene" uid="uid://brkdvlqw0t3sp" path="res://scenes/player.tscn" id="1_ul5aj"]
+[ext_resource type="PackedScene" uid="uid://bjk2n8cwtbfil" path="res://scenes/player.tscn" id="1_ul5aj"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/shape_texture_2d.gd" id="2_pirk4"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/drawable_rectangle.gd" id="3_v07sq"]
 [ext_resource type="TileSet" uid="uid://b30kfa4ed8aqy" path="res://assets/tileset.tres" id="5_0y1ac"]

@@ -1,8 +1,9 @@
-[gd_scene load_steps=12 format=3 uid="uid://br85yumpnqgit"]
+[gd_scene load_steps=13 format=4 uid="uid://br85yumpnqgit"]
 
 [ext_resource type="PackedScene" uid="uid://brkdvlqw0t3sp" path="res://scenes/player.tscn" id="1_ul5aj"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/shape_texture_2d.gd" id="2_pirk4"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/drawable_rectangle.gd" id="3_v07sq"]
+[ext_resource type="TileSet" uid="uid://b30kfa4ed8aqy" path="res://assets/tileset.tres" id="5_0y1ac"]
 [ext_resource type="PackedScene" uid="uid://brv1ny6q731fn" path="res://scenes/environment/lights/lamp_beam.tscn" id="5_fo8p6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3i5c"]
@@ -118,6 +119,42 @@ texture = SubResource("Texture2D_g27ne")
 [node name="LightOccluder2D" type="LightOccluder2D" parent="Floor4"]
 occluder = SubResource("OccluderPolygon2D_cgchh")
 
+[node name="Floor6" type="StaticBody2D" parent="."]
+position = Vector2(-1238, -613)
+rotation = -1.5708
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor6"]
+position = Vector2(342.5, 26)
+rotation = -3.14159
+shape = SubResource("RectangleShape2D_wefn5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor6"]
+position = Vector2(341, 25.5)
+scale = Vector2(8.75, 0.554688)
+texture = SubResource("Texture2D_g27ne")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Floor6"]
+occluder = SubResource("OccluderPolygon2D_cgchh")
+
+[node name="Floor7" type="StaticBody2D" parent="."]
+position = Vector2(-745, -613)
+rotation = -1.5708
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Floor7"]
+position = Vector2(342.5, 26)
+rotation = -3.14159
+shape = SubResource("RectangleShape2D_wefn5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Floor7"]
+position = Vector2(341, 25.5)
+scale = Vector2(8.75, 0.554688)
+texture = SubResource("Texture2D_g27ne")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Floor7"]
+occluder = SubResource("OccluderPolygon2D_cgchh")
+
 [node name="Floor5" type="StaticBody2D" parent="."]
 position = Vector2(-880, 22)
 collision_mask = 5
@@ -148,3 +185,9 @@ rotation = -0.154388
 [node name="LampBeam3" parent="." instance=ExtResource("5_fo8p6")]
 position = Vector2(830, -230)
 rotation = 0.635214
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+tile_map_data = PackedByteArray("AADg/wAAAAAAAAAAAADh/wAAAAABAAAAAADi/wAAAAABAAAAAADj/wAAAAABAAAAAADk/wAAAAACAAAAAADe////AAACAAAAAADd////AAABAAAAAADc////AAAAAAAAAADZ//7/AAACAAEAAADZ//3/AAACAAEAAADZ//z/AAACAAAAAADY//z/AAAAAAAAAADY////AAAAAAIAAADZ////AAACAAIAAADY//7/AAAAAAEAAADY//3/AAAAAAEAAADg/wEAAAAAAAIAAADh/wEAAAABAAIAAADi/wEAAAABAAIAAADj/wEAAAABAAIAAADk/wEAAAACAAIAAADc/wAAAAAAAAIAAADd/wAAAAABAAIAAADe/wAAAAACAAIAAADS/wIAAAAAAAAAAADT/wIAAAABAAAAAADU/wIAAAABAAAAAADV/wIAAAACAAAAAADS/wMAAAAAAAIAAADV/wMAAAACAAIAAADU/wMAAAABAAIAAADT/wMAAAABAAIAAAA=")
+tile_set = ExtResource("5_0y1ac")

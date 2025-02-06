@@ -219,6 +219,7 @@ func _physics_process(_delta: float) -> void:
 			move_mode_two = true
 			if spring_joints[0] == null and spring_joints[1] == null and player_physics_follow.linear_velocity.x == 0 and player_physics_follow.linear_velocity.y == 0:
 				player_physics_follow.global_position.y -= 1
+				print("bugg")
 			#if not Input.is_action_pressed("grapple_left") and not Input.is_action_pressed("grapple_right"):
 				#current_move_mode = MoveStates.GROUND
 				#velocity = player_physics_follow.linear_velocity

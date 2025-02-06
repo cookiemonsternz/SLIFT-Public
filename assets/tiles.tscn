@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://3pl8ollmqe07"]
+
+[ext_resource type="TileSet" uid="uid://b30kfa4ed8aqy" path="res://assets/tileset.tres" id="1_ppwwa"]
+
+[node name="Node2D" type="TileMapLayer"]
+texture_filter = 1
+tile_set = ExtResource("1_ppwwa")
+rendering_quadrant_size = 18

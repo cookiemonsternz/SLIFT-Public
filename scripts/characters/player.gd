@@ -1,4 +1,4 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 #### Grappling ####
 @export_group("Grappling")
@@ -65,6 +65,7 @@ var spring_joints: Array[DampedSpringJoint2D] = [null, null]
 
 @export_group("")
 @export var health_component: Node
+@export var arm_upgrade_component: ArmUpgradeComponent
 @export var do_delete_timer: Timer
 
 
@@ -79,19 +80,15 @@ enum MoveModes {
 	AIR
 }
 
-
-
-
-
-
-
-
 # Set the timer duration based on the export vars
 func _ready() -> void:
 	coyote_time_timer.wait_time = coyote_time_time
 	jump_buffer_timer.wait_time = jump_buffer_time
 
 func _process(delta: float) -> void:
+	if Input.is_action_just_pressed("test_input"):
+		var yank_upgrade = YankArmUpgrade.new()
+		arm_upgrade_component.add_upgrade(Grapples.Left, 0, yank_upgrade)
 	match current_move_mode:
 		MoveModes.GROUND:
 			handle_ground_movement(delta)
@@ -172,14 +169,17 @@ func handle_air_movement():
 	# If the player is on the ground and the timer that starts when player leaves ground is stopped (eg the timer has runout)
 	# we delete the arms and set the player to the ground state
 	if ground_cast.is_colliding() and do_delete_timer.is_stopped():
-
+		
+		arm_upgrade_component.player_landed()
+		
 		if is_sliding == false:
 			vel_x = player_physics_follow.linear_velocity.x
 			is_sliding = true
-
+		
 		if spring_joints[1] != null:
 			spring_joints[1].queue_free()
 			rope2.disable()
+		
 		if spring_joints[0] != null:
 			spring_joints[0].queue_free()
 			rope1.disable()
@@ -199,17 +199,21 @@ func _physics_process(_delta: float) -> void:
 func handle_grapple_input():
 	if Input.is_action_just_pressed("grapple_left"):
 		set_grapple_target(Grapples.Left)
+		arm_upgrade_component.arm_shot(Grapples.Left)
 	elif Input.is_action_just_released("grapple_left"):
 		rope1.disable()
 		if spring_joints[0] != null:
 			spring_joints[0].queue_free()
+		arm_upgrade_component.arm_released(Grapples.Left)
 	
 	if Input.is_action_just_pressed("grapple_right"):
 		set_grapple_target(Grapples.Right)
+		arm_upgrade_component.arm_shot(Grapples.Right)
 	elif Input.is_action_just_released("grapple_right"):
 		rope2.disable()
 		if spring_joints[1] != null:
 			spring_joints[1].queue_free()
+		arm_upgrade_component.arm_released(Grapples.Right)
 
 
 # Gets the body to connect to, and sets the grapple_target_position
@@ -238,16 +242,19 @@ func grapple(side: int) -> void:
 	match (launch_type):
 		LaunchType.Physics_Launch:
 			do_delete_timer.start()
+			current_move_mode = MoveModes.AIR
 			match side:
 				Grapples.Left:
 					spring_joints[0] = create_spring_joint(global_position, grapple_target_positions[0], player_physics_follow, grapple_targets[0], grapple_distance_vectors[0].length(), grapple_distance_vectors[0].length() - rest_distance)
+					arm_upgrade_component.arm_connected(Grapples.Left, grapple_target_positions[0])
 					#if spring_joints[1] != null:
 						#spring_joints[1].rest_length = grapple_distance_vectors[0].length() - rest_distance
 				Grapples.Right:
 					spring_joints[1] = create_spring_joint(global_position, grapple_target_positions[1], player_physics_follow, grapple_targets[1], grapple_distance_vectors[1].length(), grapple_distance_vectors[1].length() - rest_distance)
+					arm_upgrade_component.arm_connected(Grapples.Right, grapple_target_positions[1])
 					#if spring_joints[0] != null:
 						#spring_joints[0].rest_length = grapple_distance_vectors[1].length() - rest_distance
-			current_move_mode = MoveModes.AIR
+			
 
 func create_spring_joint(point_a: Vector2, point_b: Vector2, body_a: PhysicsBody2D, body_b: PhysicsBody2D, length: float, rest_length: float) -> DampedSpringJoint2D:
 	

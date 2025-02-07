@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://brkdvlqw0t3sp"]
+[gd_scene load_steps=15 format=3 uid="uid://bjk2n8cwtbfil"]
 
 [ext_resource type="Script" path="res://addons/shape_texture_2d/shape_texture_2d.gd" id="1_42r4y"]
 [ext_resource type="Script" path="res://scripts/characters/player.gd" id="1_x5w3x"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cbfarsdxo3xll" path="res://scenes/characters/components/rope.tscn" id="4_bcbn3"]
 [ext_resource type="Script" path="res://scripts/characters/components/player_physics_follow.gd" id="5_8xicw"]
 [ext_resource type="PackedScene" uid="uid://2yvmq877upop" path="res://scenes/characters/components/health_component.tscn" id="6_orm0g"]
+[ext_resource type="PackedScene" uid="uid://hjhxmdpa6ntd" path="res://scenes/characters/components/arm_upgrade_component.tscn" id="7_i54cr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rh5mj"]
 radius = 32.0
@@ -53,15 +54,15 @@ height = 122.0
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l5py8"]
 polygon = PackedVector2Array(-5, -64, 7, -65, 17, -61, 26, -53, 32, -40, 32, 17, 32, 43, 23, 56, 12, 64, -11, 64, -25, 55, -32, 40, -33, 18, -33, -38, -28, -50, -20, -58, -12, -63)
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("grapple_origin", "rope1", "rope2", "raycast", "player_physics_follow", "jump_buffer_timer", "coyote_time_timer", "ground_cast", "player", "health_component", "do_delete_timer") groups=["Player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("grapple_origin", "rope1", "rope2", "raycast", "player_physics_follow", "jump_buffer_timer", "coyote_time_timer", "ground_cast", "player", "health_component", "arm_upgrade_component", "do_delete_timer") groups=["Player"]]
 collision_layer = 8
 collision_mask = 13
 script = ExtResource("1_x5w3x")
-grapple_origin = NodePath("Grapple Components/GrappleOrigin")
-rope1 = NodePath("Grapple Components/Rope1")
-rope2 = NodePath("Grapple Components/Rope2")
-raycast = NodePath("Grapple Components/RayCast2D")
-player_physics_follow = NodePath("Grapple Components/PlayerPhysicsFollow")
+grapple_origin = NodePath("GrappleComponents/GrappleOrigin")
+rope1 = NodePath("GrappleComponents/Rope1")
+rope2 = NodePath("GrappleComponents/Rope2")
+raycast = NodePath("GrappleComponents/RayCast2D")
+player_physics_follow = NodePath("GrappleComponents/PlayerPhysicsFollow")
 launch_type = 1
 launch_speed = 20.0
 damping = 0.9
@@ -71,7 +72,8 @@ ground_cast = NodePath("GroundCast")
 player = NodePath(".")
 gravity_strength = 700.0
 coyote_time_time = 0.25
-health_component = NodePath("Health Component")
+health_component = NodePath("HealthComponent")
+arm_upgrade_component = NodePath("ArmUpgradeComponent")
 do_delete_timer = NodePath("Timer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -80,7 +82,7 @@ shape = SubResource("CapsuleShape2D_rh5mj")
 [node name="GroundCast" type="RayCast2D" parent="."]
 target_position = Vector2(0, 65)
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="PlayerSprite" type="Sprite2D" parent="."]
 texture = SubResource("Texture2D_7im1b")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -96,11 +98,11 @@ one_shot = true
 wait_time = 0.327
 one_shot = true
 
-[node name="Grapple Components" type="Node2D" parent="."]
+[node name="GrappleComponents" type="Node2D" parent="."]
 
-[node name="GrappleOrigin" type="Marker2D" parent="Grapple Components"]
+[node name="GrappleOrigin" type="Marker2D" parent="GrappleComponents"]
 
-[node name="Rope1" parent="Grapple Components" node_paths=PackedStringArray("grapple_origin", "player") instance=ExtResource("4_bcbn3")]
+[node name="Rope1" parent="GrappleComponents" node_paths=PackedStringArray("grapple_origin", "player") instance=ExtResource("4_bcbn3")]
 width = 4.0
 antialiased = true
 grapple_origin = NodePath("../GrappleOrigin")
@@ -110,7 +112,7 @@ animation_scale = 8.461
 rope_progression_curve = SubResource("Curve_gldd0")
 rope_progression_speed = 9.0
 
-[node name="Rope2" parent="Grapple Components" node_paths=PackedStringArray("grapple_origin", "player") instance=ExtResource("4_bcbn3")]
+[node name="Rope2" parent="GrappleComponents" node_paths=PackedStringArray("grapple_origin", "player") instance=ExtResource("4_bcbn3")]
 width = 4.0
 antialiased = true
 grapple_origin = NodePath("../GrappleOrigin")
@@ -121,19 +123,29 @@ animation_scale = 8.461
 rope_progression_curve = SubResource("Curve_gldd0")
 rope_progression_speed = 9.0
 
-[node name="RayCast2D" type="RayCast2D" parent="Grapple Components"]
+[node name="RayCast2D" type="RayCast2D" parent="GrappleComponents"]
 
-[node name="PlayerPhysicsFollow" type="RigidBody2D" parent="Grapple Components"]
+[node name="PlayerPhysicsFollow" type="RigidBody2D" parent="GrappleComponents"]
 top_level = true
 collision_layer = 2
 collision_mask = 5
 lock_rotation = true
 script = ExtResource("5_8xicw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Grapple Components/PlayerPhysicsFollow"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrappleComponents/PlayerPhysicsFollow"]
 shape = SubResource("CapsuleShape2D_eru5a")
 
-[node name="Health Component" parent="." instance=ExtResource("6_orm0g")]
+[node name="HealthComponent" parent="." instance=ExtResource("6_orm0g")]
+max_health = null
+health = null
+health_regen_rate = null
+health_regen_amount = null
+max_shield = null
+shield = null
+shield_regen_rate = null
+shield_regen_amount = null
+
+[node name="ArmUpgradeComponent" parent="." instance=ExtResource("7_i54cr")]
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1

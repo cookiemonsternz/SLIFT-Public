@@ -23,6 +23,7 @@ signal creature_died
 
 var health_regen_timer: Timer
 var shield_regen_timer: Timer
+var arm_upgrade_component: ArmUpgradeComponent
 
 func _ready() -> void:
 	health_regen_timer = Timer.new()
@@ -36,9 +37,12 @@ func _ready() -> void:
 	shield_regen_timer.timeout.connect(_on_shield_regen_timer_timeout)
 	shield_regen_timer.autostart = true
 	self.add_child(shield_regen_timer)
+	
+	arm_upgrade_component = get_tree().get_first_node_in_group("Player").arm_upgrade_component
 
 func damage(damage: float, damage_type: DamageType = DamageType.World):
 	print(shield, " : ", health)
+	arm_upgrade_component.player_damaged(damage, damage_type)
 	match damage_type:
 		DamageType.World:
 			shield = shield - damage if shield > 0 else 0

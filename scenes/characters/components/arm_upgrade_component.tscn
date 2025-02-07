@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://hjhxmdpa6ntd"]
+
+[ext_resource type="Script" path="res://scripts/characters/components/arm_upgrade_component.gd" id="1_jumjo"]
+
+[node name="ArmUpgradeComponent" type="Node"]
+script = ExtResource("1_jumjo")

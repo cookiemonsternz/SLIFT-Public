@@ -49,7 +49,6 @@ var spring_joints: Array[DampedSpringJoint2D] = [null, null]
 @export var jump_buffer_timer: Timer
 @export var coyote_time_timer: Timer
 @export var ground_cast: RayCast2D
-@export var player: CharacterBody2D
 
 @export_subgroup("Jumping")
 @export var jump_velocity = -700.0 # Maximum jump strength
@@ -86,6 +85,7 @@ func _ready() -> void:
 	jump_buffer_timer.wait_time = jump_buffer_time
 
 func _process(delta: float) -> void:
+	#print(position)
 	if Input.is_action_just_pressed("test_input"):
 		var yank_upgrade = YankArmUpgrade.new()
 		arm_upgrade_component.add_upgrade(Grapples.Left, 0, yank_upgrade)
@@ -125,10 +125,12 @@ func handle_ground_movement(delta: float):
 		coyote_timer_reset = true
 	else:
 		velocity.y += gravity_strength * delta
-
+	
+	#print(velocity)
+	
 	if is_sliding:
 		handle_sliding(input_chosen, delta)
-		player.velocity.x = vel_x
+		velocity.x = vel_x
 	else:
 		velocity.x = move_speed * input_chosen 
 
@@ -136,28 +138,28 @@ func handle_ground_movement(delta: float):
 
 func handle_sliding(input_chosen: float, delta: float):
 	# If we have low velocity change back to regular move mode
-		if vel_x > -25 and vel_x < 25:
-			is_sliding = false
-			vel_x = 0
-		
-		# Case for sliding right when holding left
-		if vel_x > 0 and input_chosen < 0:
-			vel_x -= stop_speed * delta
-		# Case for sliding right when holding nothing
-		if vel_x > 0 and input_chosen == 0:
-			vel_x -= slow_speed * delta
-		# Case for sliding left when holding right
-		if vel_x > 0 and input_chosen > 0:
-			vel_x -= mantain_speed * delta
-		# Case for sliding left when holding right
-		if vel_x < 0 and input_chosen > 0:
-			vel_x += stop_speed * delta
-		# Case for sliding left when holding left
-		if vel_x < 0 and input_chosen < 0:
-			vel_x += mantain_speed * delta
-		# Case for sliding right when holding nothing
-		if vel_x < 0 and input_chosen == 0:
-			vel_x += slow_speed * delta
+	if vel_x > -15 and vel_x < 15:
+		is_sliding = false
+		vel_x = 0
+	
+	# Case for sliding right when holding left
+	if vel_x > 0 and input_chosen < 0:
+		vel_x -= stop_speed * delta
+	# Case for sliding right when holding nothing
+	if vel_x > 0 and input_chosen == 0:
+		vel_x -= slow_speed * delta
+	# Case for sliding left when holding right
+	if vel_x > 0 and input_chosen > 0:
+		vel_x -= mantain_speed * delta
+	# Case for sliding left when holding right
+	if vel_x < 0 and input_chosen > 0:
+		vel_x += stop_speed * delta
+	# Case for sliding left when holding left
+	if vel_x < 0 and input_chosen < 0:
+		vel_x += mantain_speed * delta
+	# Case for sliding right when holding nothing
+	if vel_x < 0 and input_chosen == 0:
+		vel_x += slow_speed * delta
 
 func handle_air_movement():
 	# Set position to the rigidbody position
@@ -168,13 +170,12 @@ func handle_air_movement():
 
 	# If the player is on the ground and the timer that starts when player leaves ground is stopped (eg the timer has runout)
 	# we delete the arms and set the player to the ground state
-	if ground_cast.is_colliding() and do_delete_timer.is_stopped():
-		
+	if ground_cast.is_colliding() and do_delete_timer.is_stopped():	
 		arm_upgrade_component.player_landed()
-		
-		if is_sliding == false:
+		if not is_sliding:
 			vel_x = player_physics_follow.linear_velocity.x
 			is_sliding = true
+		
 		
 		if spring_joints[1] != null:
 			spring_joints[1].queue_free()

@@ -41,7 +41,7 @@ func _ready() -> void:
 	arm_upgrade_component = get_tree().get_first_node_in_group("Player").arm_upgrade_component
 
 func damage(damage: float, damage_type: DamageType = DamageType.World):
-	print(shield, " : ", health)
+	#print(shield, " : ", health)
 	arm_upgrade_component.player_damaged(damage, damage_type)
 	match damage_type:
 		DamageType.World:

@@ -26,9 +26,6 @@ func update_physics(player: Player, root: Node):
 func _on_arm_connected(side: int, target_position: Vector2, player: Player, root: Node):
 	queue_yank = true
 	queued_target_pos = target_position
-	#print("Targetposition : ", player.player_physics_follow.global_position.direction_to(target_position).normalized(), " Move mode:  ", player.current_move_mode)
-	#player.player_physics_follow.set_pos(Vector2(player.player_physics_follow.global_position.x, player.player_physics_follow.global_position.y - 100))
-	#player.player_physics_follow.apply_impulse(player.player_physics_follow.global_position.direction_to(target_position).normalized() * YANK_AMOUNT)
 
 # Called when an arm is released
 #func _on_arm_released(side: int, player: Player, root: Node):

@@ -62,10 +62,10 @@ func create_timer(on_finish: Callable):
 
 func _on_body_entered_light_collider(body: PhysicsBody2D) -> void:
 	if not Engine.is_editor_hint():
-		print("HI")
+		#print("HI")
 		if body.is_in_group("Player"):
 			bodies_in_light.append(body)
-			print(timers, " : ", bodies_in_light)
+			#print(timers, " : ", bodies_in_light)
 
 func _on_body_exited_light_collider(body: PhysicsBody2D) -> void:
 	if not Engine.is_editor_hint():

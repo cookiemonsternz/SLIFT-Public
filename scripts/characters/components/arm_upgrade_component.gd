@@ -16,7 +16,7 @@ enum DamageType {
 }
 
 func add_upgrade(side: int, index: int, upgrade: ArmUpgrade):
-	print(upgrade.upgrade_name)
+	#print(upgrade.upgrade_name)
 	if side == Grapples.Left:
 		installed_upgrades_left.insert(index, upgrade)
 	elif side == Grapples.Right:

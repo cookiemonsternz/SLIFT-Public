@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bjk2n8cwtbfil"]
+[gd_scene load_steps=14 format=3 uid="uid://brkdvlqw0t3sp"]
 
 [ext_resource type="Script" path="res://addons/shape_texture_2d/shape_texture_2d.gd" id="1_42r4y"]
 [ext_resource type="Script" path="res://scripts/characters/player.gd" id="1_x5w3x"]

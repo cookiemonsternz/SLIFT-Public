@@ -1,6 +1,6 @@
 [gd_scene load_steps=13 format=4 uid="uid://br85yumpnqgit"]
 
-[ext_resource type="PackedScene" uid="uid://bjk2n8cwtbfil" path="res://scenes/player.tscn" id="1_ul5aj"]
+[ext_resource type="PackedScene" uid="uid://brkdvlqw0t3sp" path="res://scenes/player.tscn" id="1_ul5aj"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/shape_texture_2d.gd" id="2_pirk4"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/drawable_rectangle.gd" id="3_v07sq"]
 [ext_resource type="TileSet" uid="uid://b30kfa4ed8aqy" path="res://assets/tileset.tres" id="5_0y1ac"]
@@ -172,9 +172,6 @@ texture = SubResource("Texture2D_g27ne")
 position = Vector2(-636, 3)
 occluder = SubResource("OccluderPolygon2D_cgchh")
 
-[node name="Player" parent="." instance=ExtResource("1_ul5aj")]
-position = Vector2(1, -174)
-
 [node name="LampBeam" parent="." instance=ExtResource("5_fo8p6")]
 position = Vector2(203, -279)
 
@@ -186,8 +183,11 @@ rotation = -0.154388
 position = Vector2(830, -230)
 rotation = 0.635214
 
+[node name="Player" parent="." instance=ExtResource("1_ul5aj")]
+position = Vector2(11, -73)
+
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 texture_filter = 1
-scale = Vector2(4, 4)
-tile_map_data = PackedByteArray("AADg/wAAAAAAAAAAAADh/wAAAAABAAAAAADi/wAAAAABAAAAAADj/wAAAAABAAAAAADk/wAAAAACAAAAAADe////AAACAAAAAADd////AAABAAAAAADc////AAAAAAAAAADZ//7/AAACAAEAAADZ//3/AAACAAEAAADZ//z/AAACAAAAAADY//z/AAAAAAAAAADY////AAAAAAIAAADZ////AAACAAIAAADY//7/AAAAAAEAAADY//3/AAAAAAEAAADg/wEAAAAAAAIAAADh/wEAAAABAAIAAADi/wEAAAABAAIAAADj/wEAAAABAAIAAADk/wEAAAACAAIAAADc/wAAAAAAAAIAAADd/wAAAAABAAIAAADe/wAAAAACAAIAAADS/wIAAAAAAAAAAADT/wIAAAABAAAAAADU/wIAAAABAAAAAADV/wIAAAACAAAAAADS/wMAAAAAAAIAAADV/wMAAAACAAIAAADU/wMAAAABAAIAAADT/wMAAAABAAIAAAA=")
+scale = Vector2(5, 5)
+tile_map_data = PackedByteArray("AADm/wEAAAABAAQAAADn/wEAAAACAAQAAADo/wEAAAACAAQAAADp/wEAAAADAAQAAADk////AAADAAQAAADj////AAACAAQAAADi////AAABAAQAAADg/wIAAAABAAQAAADh/wIAAAACAAQAAADi/wIAAAADAAQAAADm/wAAAAAIAAMAAADc//v/AAADAAAAAADd//v/AAAFAAAAAADc//z/AAADAAIAAADd//z/AAAFAAIAAADc//7/AAAHAAAAAADc////AAAHAAEAAADc/wAAAAAHAAEAAADc/wEAAAAHAAEAAADc/wIAAAAHAAIAAADZ/wQAAAADAAQAAADY/wQAAAACAAQAAADX/wQAAAABAAQAAADU//3/AAAHAAAAAADU//7/AAAHAAEAAADU/wAAAAAHAAEAAADU////AAAHAAEAAADU/wEAAAAHAAIAAADM//z/AAAHAAAAAADM//3/AAAHAAEAAADM//7/AAAHAAEAAADM////AAAHAAEAAADM/wAAAAAHAAIAAADP////AAADAAAAAADR////AAAFAAAAAADQ////AAAEAAAAAADP/wAAAAADAAIAAADR/wAAAAAFAAIAAADQ/wAAAAAEAAIAAADY////AAABAAIAAADe/wcAAAABAAIAAADc/wcAAAABAAIAAADl////AAAHAAMAAADg/wEAAAAIAAMAAADd/wIAAAAHAAQAAADe//v/AAAHAAQAAADZ////AAAHAAMAAADX/wMAAAAIAAMAAADQ//7/AAAIAAMAAADU//z/AAAIAAMAAADS/wAAAAAHAAQAAADV/wEAAAAHAAQAAADN/wAAAAAHAAQAAADf/wcAAAAHAAQAAAA=")
 tile_set = ExtResource("5_0y1ac")

@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=3 uid="uid://dklbki7gwpxyc"]
+
+[sub_resource type="GDScript" id="GDScript_igbef"]
+script/source = "extends Area2D
+
+@export var exposure_delay_timer: Timer
+
+func _on_body_entered(body: Node2D) -> void:
+	if body.is_in_group(\"Player\"):
+		exposure_delay_timer.start()
+
+func _on_body_exited(body: Node2D) -> void:
+	exposure_delay_timer.stop()
+
+func _on_exposure_timeout() -> void:
+	get_tree().get_first_node_in_group(\"Player\").light_exposure += 1
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f3dhg"]
+size = Vector2(61, 51)
+
+[node name="Light" type="Area2D" node_paths=PackedStringArray("exposure_delay_timer")]
+collision_layer = 4
+collision_mask = 12
+script = SubResource("GDScript_igbef")
+exposure_delay_timer = NodePath("ExposureDelay")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_f3dhg")
+
+[node name="ExposureDelay" type="Timer" parent="."]
+wait_time = 0.1
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_exited" from="." to="." method="_on_body_exited"]
+[connection signal="timeout" from="ExposureDelay" to="." method="_on_exposure_timeout"]

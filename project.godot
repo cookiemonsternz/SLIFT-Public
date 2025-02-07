@@ -13,7 +13,7 @@ config_version=5
 config/name="SLIFT"
 run/main_scene="res://scenes/test.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
-run/max_fps=144
+run/max_fps=60
 config/icon="res://assets/icon.svg"
 
 [editor_plugins]
@@ -67,3 +67,4 @@ grapple_right={
 [physics]
 
 common/physics_ticks_per_second=144
+common/max_fps=144

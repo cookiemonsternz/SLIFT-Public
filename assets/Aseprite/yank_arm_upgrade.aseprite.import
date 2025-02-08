@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cudlppm02pi6y"
+path="res://.godot/imported/yank_arm_upgrade.aseprite-9a06b9dd30ca95d4c229b80e745b43fa.res"
+
+[deps]
+
+source_file="res://assets/Aseprite/yank_arm_upgrade.aseprite"
+dest_files=["res://.godot/imported/yank_arm_upgrade.aseprite-9a06b9dd30ca95d4c229b80e745b43fa.res"]
+
+[params]
+

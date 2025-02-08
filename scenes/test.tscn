@@ -1,11 +1,10 @@
 [gd_scene load_steps=13 format=4 uid="uid://br85yumpnqgit"]
 
-[ext_resource type="PackedScene" path="res://scenes/player.tscn" id="1_ul5aj"]
+[ext_resource type="PackedScene" uid="uid://bjk2n8cwtbfil" path="res://scenes/player.tscn" id="1_ul5aj"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/shape_texture_2d.gd" id="2_pirk4"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/drawable_rectangle.gd" id="3_v07sq"]
 [ext_resource type="TileSet" uid="uid://b30kfa4ed8aqy" path="res://assets/tileset.tres" id="5_0y1ac"]
 [ext_resource type="PackedScene" uid="uid://brv1ny6q731fn" path="res://scenes/environment/lights/lamp_beam.tscn" id="5_fo8p6"]
-
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3i5c"]
 size = Vector2(438, 72)
@@ -55,6 +54,7 @@ offset_left = -2067.0
 offset_top = -805.0
 offset_right = 7933.0
 offset_bottom = 9195.0
+mouse_filter = 1
 color = Color(0.0588235, 0.0588235, 0.0588235, 0.560784)
 
 [node name="Floor" type="StaticBody2D" parent="."]

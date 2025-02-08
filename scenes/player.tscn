@@ -1,8 +1,9 @@
-[gd_scene load_steps=16 format=3 uid="uid://bjk2n8cwtbfil"]
+[gd_scene load_steps=17 format=3 uid="uid://bjk2n8cwtbfil"]
 
 [ext_resource type="Script" path="res://addons/shape_texture_2d/shape_texture_2d.gd" id="1_42r4y"]
 [ext_resource type="Script" path="res://scripts/characters/player.gd" id="1_x5w3x"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/drawable_capsule.gd" id="2_61cpy"]
+[ext_resource type="PackedScene" uid="uid://mnljijyrg1ql" path="res://scenes/characters/components/arm_upgrade_ui.tscn" id="2_fyt53"]
 [ext_resource type="PackedScene" uid="uid://cbfarsdxo3xll" path="res://scenes/characters/components/rope.tscn" id="4_bcbn3"]
 [ext_resource type="Script" path="res://scripts/characters/components/player_physics_follow.gd" id="5_8xicw"]
 [ext_resource type="PackedScene" uid="uid://2yvmq877upop" path="res://scenes/characters/components/health_component.tscn" id="6_orm0g"]
@@ -38,6 +39,9 @@ offset = Vector2(0, 0)
 rotation = 0.0
 scale = Vector2(1, 1)
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l5py8"]
+polygon = PackedVector2Array(-5, -64, 7, -65, 17, -61, 26, -53, 32, -40, 32, 17, 32, 43, 23, 56, 12, 64, -11, 64, -25, 55, -32, 40, -33, 18, -33, -38, -28, -50, -20, -58, -12, -63)
+
 [sub_resource type="Curve" id="Curve_5ylw7"]
 min_value = -1.0
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.320225, 0.648352), 0.0, 0.0, 0, 0, Vector2(0.724719, -0.560439), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -53,9 +57,6 @@ friction = 0.0
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eru5a"]
 radius = 30.0
 height = 122.0
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l5py8"]
-polygon = PackedVector2Array(-5, -64, 7, -65, 17, -61, 26, -53, 32, -40, 32, 17, 32, 43, 23, 56, 12, 64, -11, 64, -25, 55, -32, 40, -33, 18, -33, -38, -28, -50, -20, -58, -12, -63)
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("grapple_origin", "rope1", "rope2", "raycast", "player_physics_follow", "jump_buffer_timer", "coyote_time_timer", "ground_cast", "health_component", "arm_upgrade_component", "do_delete_timer") groups=["Player"]]
 collision_layer = 8
@@ -74,9 +75,9 @@ coyote_time_timer = NodePath("CoyoteTimeTimer")
 ground_cast = NodePath("GroundCast")
 gravity_strength = 700.0
 coyote_time_time = 0.25
-health_component = NodePath("HealthComponent")
-arm_upgrade_component = NodePath("ArmUpgradeComponent")
-do_delete_timer = NodePath("Timer")
+health_component = NodePath("Components/HealthComponent")
+arm_upgrade_component = NodePath("Components/ArmUpgradeComponent")
+do_delete_timer = NodePath("DoDeleteTimer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_rh5mj")
@@ -95,12 +96,34 @@ position_smoothing_speed = 15.0
 [node name="JumpBufferTimer" type="Timer" parent="."]
 one_shot = true
 
+[node name="DoDeleteTimer" type="Timer" parent="."]
+wait_time = 0.1
+one_shot = true
+
 [node name="CoyoteTimeTimer" type="Timer" parent="."]
 one_shot = true
 
 [node name="VelocityTimer" type="Timer" parent="."]
 wait_time = 0.327
 one_shot = true
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+occluder = SubResource("OccluderPolygon2D_l5py8")
+
+[node name="Components" type="Node" parent="."]
+
+[node name="HealthComponent" parent="Components" instance=ExtResource("6_orm0g")]
+
+[node name="ArmUpgradeComponent" parent="Components" node_paths=PackedStringArray("arm_upgrade_ui") instance=ExtResource("7_i54cr")]
+arm_upgrade_ui = NodePath("../../ArmUpgradeUI")
+
+[node name="ArmUpgradeUI" parent="." instance=ExtResource("2_fyt53")]
+z_index = 1
+offset_left = -278.0
+offset_top = -98.0
+offset_right = -56.0
+offset_bottom = -20.0
+scale = Vector2(2.5, 2.5)
 
 [node name="GrappleComponents" type="Node2D" parent="."]
 
@@ -140,16 +163,5 @@ script = ExtResource("5_8xicw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrappleComponents/PlayerPhysicsFollow"]
 shape = SubResource("CapsuleShape2D_eru5a")
-
-[node name="HealthComponent" parent="." instance=ExtResource("6_orm0g")]
-
-[node name="ArmUpgradeComponent" parent="." instance=ExtResource("7_i54cr")]
-
-[node name="Timer" type="Timer" parent="."]
-wait_time = 0.1
-one_shot = true
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-occluder = SubResource("OccluderPolygon2D_l5py8")
 
 [connection signal="timeout" from="VelocityTimer" to="." method="_on_velocity_timer_timeout"]

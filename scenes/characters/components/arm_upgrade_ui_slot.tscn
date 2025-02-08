@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://dhmg8tvkkyv10"]
+
+[ext_resource type="Script" path="res://scenes/characters/components/arm_upgrade_ui_slot.gd" id="1_dc2fh"]
+[ext_resource type="Texture2D" uid="uid://i6v2w3le3fif" path="res://assets/Images/arm_upgrade_ui_slot.png" id="1_nhkgj"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ws0vr"]
+size = Vector2(30, 30)
+
+[node name="ArmUpgradeUISlot" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+custom_minimum_size = Vector2(32, 32)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1120.0
+offset_bottom = -616.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_dc2fh")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_nhkgj")
+centered = false
+
+[node name="ItemDisplay" type="Sprite2D" parent="."]
+centered = false
+
+[node name="Area2D" type="Area2D" parent="."]
+z_index = 5
+z_as_relative = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+z_index = 3
+z_as_relative = false
+position = Vector2(16, 16)
+shape = SubResource("RectangleShape2D_ws0vr")
+
+[connection signal="input_event" from="Area2D" to="." method="_on_area_2d_input_event"]

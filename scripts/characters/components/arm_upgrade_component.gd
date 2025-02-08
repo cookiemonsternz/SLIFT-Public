@@ -1,5 +1,7 @@
 class_name ArmUpgradeComponent extends Node
 
+@export var arm_upgrade_ui: Control
+
 var installed_upgrades_left: Array[ArmUpgrade] = []
 var installed_upgrades_right: Array[ArmUpgrade] = []
 
@@ -16,17 +18,20 @@ enum DamageType {
 }
 
 func add_upgrade(side: int, index: int, upgrade: ArmUpgrade):
-	#print(upgrade.upgrade_name)
+	print(upgrade.upgrade_name)
 	if side == Grapples.Left:
 		installed_upgrades_left.insert(index, upgrade)
 	elif side == Grapples.Right:
 		installed_upgrades_right.insert(index, upgrade)
+	arm_upgrade_ui.update_slots([installed_upgrades_left, installed_upgrades_right])
+	
 
 func remove_upgrade(side: int, index: int):
 	if side == Grapples.Left:
 		installed_upgrades_left.remove_at(index)
 	elif side == Grapples.Right:
 		installed_upgrades_right.remove_at(index)
+	arm_upgrade_ui.update_slots([installed_upgrades_left, installed_upgrades_right])
 
 func _process(delta: float) -> void:
 	var player = get_tree().get_first_node_in_group("Player")

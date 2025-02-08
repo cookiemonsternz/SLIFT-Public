@@ -1,11 +1,12 @@
 class_name YankArmUpgrade extends ArmUpgrade
 
-const YANK_AMOUNT = 800
+@export var YANK_AMOUNT = 800
 
 var queue_yank: bool = false
 var queued_target_pos: Vector2 = Vector2.ZERO
 
-func _ready() -> void:
+func _init() -> void:
+	texture = load("res://assets/Images/yank_arm_upgrade.png")
 	upgrade_name = "YankArmUpgrade"
 
 # Called once every process frame

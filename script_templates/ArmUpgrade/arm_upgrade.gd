@@ -5,9 +5,6 @@
 
 class_name CHANGEME extends ArmUpgrade
 
-func _ready() -> void:
-	upgrade_name = "REPLACE_ME"
-
 # Called once every process frame
 # func update_process(player: Player, root: Node):
 # 	pass

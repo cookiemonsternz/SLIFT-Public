@@ -1,6 +1,7 @@
 class_name ArmUpgrade extends Node
 
-var upgrade_name = "REPLACE_ME"
+@export var upgrade_name: String = ""
+@export var texture: Texture2D
 
 enum Grapples {
 	Left,

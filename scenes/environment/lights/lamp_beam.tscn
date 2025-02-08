@@ -46,6 +46,7 @@ offset = Vector2(0, 512)
 
 [node name="LightCollider" type="Area2D" parent="." index="5"]
 collision_mask = 9
+input_pickable = false
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="LightCollider" index="0"]
 polygon = PackedVector2Array(-3, 15, 3, 15, 67, 282, -58, 282)

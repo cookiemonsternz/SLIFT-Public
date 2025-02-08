@@ -9,7 +9,6 @@ class_name Player extends CharacterBody2D
 @export var rope2: Line2D
 @export var raycast: RayCast2D
 @export var player_physics_follow: RigidBody2D 
-@export var ceiling_cast: RayCast2D
 
 
 @export_subgroup("Distance")

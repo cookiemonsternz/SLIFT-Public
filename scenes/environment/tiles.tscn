@@ -1,9 +1,9 @@
 [gd_scene load_steps=2 format=4 uid="uid://3pl8ollmqe07"]
 
-[ext_resource type="TileSet" uid="uid://b30kfa4ed8aqy" path="res://assets/tileset.tres" id="1_ppwwa"]
+[ext_resource type="TileSet" uid="uid://b30kfa4ed8aqy" path="res://assets/tileset.tres" id="1_yf8dx"]
 
 [node name="Node2D" type="TileMapLayer"]
 texture_filter = 1
 tile_map_data = PackedByteArray("AAD+/wAAAAAEAAEAAAD//wAAAAAFAAEAAAAAAAAAAAAGAAEAAAD+/wEAAAAEAAIAAAD//wEAAAAFAAIAAAAAAAEAAAAGAAIAAAD+/wIAAAAEAAMAAAD//wIAAAAFAAMAAAAAAAIAAAAGAAMAAAD8//7/AAAFAAIAAAD9//7/AAAFAAIAAAD9////AAAIAAMAAAD8////AAAIAAMAAAD8//3/AAAIAAEAAAD9//3/AAAIAAEAAAD+//7/AAAFAAIAAAD+////AAAIAAMAAAD+//3/AAAIAAEAAAD///7/AAAFAAIAAAD/////AAAIAAMAAAD///3/AAAIAAEAAAAAAP7/AAAFAAIAAAAAAP//AAAIAAMAAAAAAP3/AAAIAAEAAAD6//7/AAABAAIAAAD8//r/AAADAAAAAAD9//r/AAAEAAAAAAD+//r/AAAFAAAAAAD+//v/AAAFAAEAAAD9//v/AAAEAAEAAAD8//v/AAADAAEAAAD8//z/AAADAAIAAAD+//z/AAAFAAIAAAD9//z/AAAEAAIAAAA=")
-tile_set = ExtResource("1_ppwwa")
+tile_set = ExtResource("1_yf8dx")
 rendering_quadrant_size = 18

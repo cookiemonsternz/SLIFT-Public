@@ -1,13 +1,13 @@
 [gd_scene load_steps=18 format=4 uid="uid://br85yumpnqgit"]
 
-[ext_resource type="PackedScene" uid="uid://bjk2n8cwtbfil" path="res://scenes/player.tscn" id="1_ul5aj"]
+[ext_resource type="PackedScene" uid="uid://brkdvlqw0t3sp" path="res://scenes/player.tscn" id="1_ul5aj"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/shape_texture_2d.gd" id="2_pirk4"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/drawable_rectangle.gd" id="3_v07sq"]
 [ext_resource type="TileSet" uid="uid://b30kfa4ed8aqy" path="res://assets/tileset.tres" id="5_0y1ac"]
 [ext_resource type="PackedScene" uid="uid://brv1ny6q731fn" path="res://scenes/environment/lights/lamp_beam.tscn" id="5_fo8p6"]
 [ext_resource type="Texture2D" uid="uid://dde1a644jsvar" path="res://assets/Images/rock.png" id="7_d7ynk"]
-[ext_resource type="PackedScene" path="res://scenes/environment/button.tscn" id="7_qutpx"]
-[ext_resource type="PackedScene" path="res://scenes/environment/button_door.tscn" id="8_pm0k7"]
+[ext_resource type="PackedScene" uid="uid://kurhg78yrnou" path="res://scenes/environment/button.tscn" id="7_qutpx"]
+[ext_resource type="PackedScene" uid="uid://bou5fo34ufwqg" path="res://scenes/environment/button_door.tscn" id="8_pm0k7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3i5c"]
 size = Vector2(438, 72)
@@ -194,7 +194,6 @@ rotation = 0.635214
 
 [node name="Player" parent="." instance=ExtResource("1_ul5aj")]
 position = Vector2(11, -73)
-gravity_strength = 2000
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 texture_filter = 1

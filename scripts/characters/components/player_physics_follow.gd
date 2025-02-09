@@ -6,6 +6,9 @@ var set_vel_state = false
 var move_vector = Vector2.ZERO
 var vel_vector = Vector2.ZERO
 
+func _ready():
+	top_level = true
+
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:
 	if set_pos_state:
 		state.transform = Transform2D(0.0, move_vector)

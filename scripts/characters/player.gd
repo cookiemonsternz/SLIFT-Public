@@ -140,8 +140,10 @@ func handle_ground_movement(delta: float):
 	if is_sliding:
 		handle_sliding(input_chosen, delta)
 		velocity.x = vel_x
+	elif abs(velocity.x) <= move_speed:
+		velocity.x = move_speed * input_chosen
 	else:
-		velocity.x = move_speed * input_chosen 
+		velocity.x = abs(velocity.x) * input_chosen
 
 	move_and_slide()
 
@@ -234,8 +236,8 @@ func handle_grapple_input():
 
 # Gets the body to connect to, and sets the grapple_target_position
 func set_grapple_target(side: int) -> void:
-	var direction_vector = get_global_mouse_position() - global_position
-	raycast.target_position = to_local(direction_vector * 100)
+	var direction_vector = get_local_mouse_position()# - player_physics_follow.global_position
+	raycast.target_position = (direction_vector * 100)
 	
 	raycast.force_raycast_update()
 	

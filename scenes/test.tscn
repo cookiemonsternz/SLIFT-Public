@@ -1,13 +1,13 @@
 [gd_scene load_steps=18 format=4 uid="uid://br85yumpnqgit"]
 
-[ext_resource type="PackedScene" uid="uid://brkdvlqw0t3sp" path="res://scenes/player.tscn" id="1_ul5aj"]
+[ext_resource type="PackedScene" uid="uid://bjk2n8cwtbfil" path="res://scenes/player.tscn" id="1_ul5aj"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/shape_texture_2d.gd" id="2_pirk4"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/drawable_rectangle.gd" id="3_v07sq"]
 [ext_resource type="TileSet" uid="uid://b30kfa4ed8aqy" path="res://assets/tileset.tres" id="5_0y1ac"]
 [ext_resource type="PackedScene" uid="uid://brv1ny6q731fn" path="res://scenes/environment/lights/lamp_beam.tscn" id="5_fo8p6"]
 [ext_resource type="Texture2D" uid="uid://dde1a644jsvar" path="res://assets/Images/rock.png" id="7_d7ynk"]
-[ext_resource type="PackedScene" uid="uid://kurhg78yrnou" path="res://scenes/environment/button.tscn" id="7_qutpx"]
-[ext_resource type="PackedScene" uid="uid://bou5fo34ufwqg" path="res://scenes/environment/button_door.tscn" id="8_pm0k7"]
+[ext_resource type="PackedScene" path="res://scenes/environment/button.tscn" id="7_qutpx"]
+[ext_resource type="PackedScene" path="res://scenes/environment/button_door.tscn" id="8_pm0k7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3i5c"]
 size = Vector2(438, 72)
@@ -53,7 +53,7 @@ size = Vector2(1069, 74)
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_78qec"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_xonip"]
-size = Vector2(71, 65)
+size = Vector2(72, 68)
 
 [node name="SceneRoot" type="Node2D"]
 
@@ -206,12 +206,12 @@ position = Vector2(-760, -57)
 physics_material_override = SubResource("PhysicsMaterial_78qec")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" groups=["button_activate"]]
-position = Vector2(-29.5, 30.5)
+position = Vector2(-30, 32)
 shape = SubResource("RectangleShape2D_xonip")
 
-[node name="Rock" type="Sprite2D" parent="RigidBody2D/CollisionShape2D" groups=["button_activate"]]
+[node name="Rock" type="Sprite2D" parent="RigidBody2D" groups=["button_activate"]]
 texture_filter = 1
-position = Vector2(35.5, 35.5)
+position = Vector2(-30, 32)
 scale = Vector2(4.5, 4.3125)
 texture = ExtResource("7_d7ynk")
 

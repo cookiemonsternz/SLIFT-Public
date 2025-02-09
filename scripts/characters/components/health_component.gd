@@ -68,8 +68,7 @@ func damage(damage: float, damage_type: DamageType = DamageType.World):
 				health -= damage
 				if health < 0:
 					creature_died.emit()
-					get_parent().modulate = Color(1.0, 0.0, 0.0)
-			
+					get_parent().get_parent().modulate = Color(1.0, 0.0, 0.0)
 
 func _on_health_regen_timer_timeout():
 	if health < max_health:

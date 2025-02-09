@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://c38kt6sueanw0"]
+[gd_scene load_steps=3 format=3 uid="uid://dkupc0hcgqo8k"]
 
 [ext_resource type="PackedScene" uid="uid://dbe5l6x8cnnnw" path="res://scenes/environment/lights/light_object.tscn" id="1_ygli0"]
 [ext_resource type="Texture2D" uid="uid://dwaqh3pcncfoj" path="res://assets/Images/lamp_light_beam.png" id="2_trl6a"]

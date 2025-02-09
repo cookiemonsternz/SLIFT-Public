@@ -237,7 +237,7 @@ func handle_grapple_input():
 # Gets the body to connect to, and sets the grapple_target_position
 func set_grapple_target(side: int) -> void:
 	var direction_vector = get_local_mouse_position()# - player_physics_follow.global_position
-	raycast.target_position = (direction_vector * 100)
+	raycast.target_position = (direction_vector.normalized() * 5000)
 	
 	raycast.force_raycast_update()
 	

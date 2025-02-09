@@ -214,8 +214,9 @@ func handle_grapple_input():
 		rope1.disable()
 		if spring_joints[0] != null:
 			spring_joints[0].queue_free()
-		if grapple_targets[0].name == "DELETE_ME1":
-			grapple_targets[0].queue_free()
+		if grapple_targets[0] != null:
+			if grapple_targets[0].name == "DELETE_ME1":
+				grapple_targets[0].queue_free()
 		arm_upgrade_component.arm_released(Grapples.Left)
 	
 	if Input.is_action_just_pressed("grapple_right"):
@@ -225,8 +226,9 @@ func handle_grapple_input():
 		rope2.disable()
 		if spring_joints[1] != null:
 			spring_joints[1].queue_free()
-		if grapple_targets[1].name == "DELETE_ME2":
-			grapple_targets[1].queue_free()
+		if grapple_targets[1] != null:
+			if grapple_targets[1].name == "DELETE_ME2":
+				grapple_targets[1].queue_free()
 		arm_upgrade_component.arm_released(Grapples.Right)
 
 

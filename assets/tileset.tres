@@ -78,6 +78,8 @@ texture_region_size = Vector2i(18, 18)
 3:4/0 = 0
 3:4/0/occlusion_layer_0/polygon = SubResource("OccluderPolygon2D_siasj")
 3:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, -9, 9)
+1:6/0 = 0
+1:6/0/physics_layer_0/polygon_0/points = PackedVector2Array(-9, -9, 9, -9, 9, 9, 5.875, 9, 4, 4.25, 3, -0.5, -1.625, -0.875, -2.25, 2.875, -4.875, 9, -9, 9)
 
 [resource]
 tile_size = Vector2i(18, 18)

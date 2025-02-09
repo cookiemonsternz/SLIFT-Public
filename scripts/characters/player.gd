@@ -127,13 +127,13 @@ func handle_ground_movement(delta: float):
 		coyote_timer_reset = true
 	
 	else:
-		if holding_jump and can_var_jump:
-			velocity.y += gravity_strength * delta  * 0.75
-		else:
-			if Input.is_action_just_released("jump") and can_var_jump:
-				velocity.y = 0
-				can_var_jump = false
-			velocity.y += gravity_strength * delta
+		#if holding_jump and can_var_jump and not is_sliding:
+			#velocity.y += gravity_strength * delta  * 0.75
+		#else:
+			#if Input.is_action_just_released("jump") and can_var_jump and not is_sliding:
+			#	velocity.y = 0
+			#	can_var_jump = false
+		velocity.y += gravity_strength * delta
 	
 	#print(velocity)
 	

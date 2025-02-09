@@ -219,6 +219,7 @@ func handle_grapple_input():
 		if grapple_targets[0] != null:
 			if grapple_targets[0].name == "DELETE_ME1":
 				grapple_targets[0].queue_free()
+			grapple_targets[0] = null
 		arm_upgrade_component.arm_released(Grapples.Left)
 	
 	if Input.is_action_just_pressed("grapple_right"):
@@ -231,6 +232,7 @@ func handle_grapple_input():
 		if grapple_targets[1] != null:
 			if grapple_targets[1].name == "DELETE_ME2":
 				grapple_targets[1].queue_free()
+			grapple_targets[1] = null
 		arm_upgrade_component.arm_released(Grapples.Right)
 
 
@@ -241,33 +243,34 @@ func set_grapple_target(side: int) -> void:
 	
 	raycast.force_raycast_update()
 	
-	if raycast.is_colliding() and raycast.get_collision_point().distance_to(global_position) <= max_distance or not has_max_distance:
-		#print(raycast.get_collider())
-		match side:
-			Grapples.Left:
-				grapple_target_positions[0] = raycast.get_collision_point()
-				grapple_distance_vectors[0] = grapple_target_positions[0] - global_position
-				if raycast.get_collider() is TileMapLayer:
-					var temp_static_body = StaticBody2D.new()
-					temp_static_body.global_position = grapple_target_positions[0]
-					temp_static_body.name = "DELETE_ME1"
-					get_tree().root.add_child(temp_static_body)
-					grapple_targets[0] = temp_static_body
-				else:
-					grapple_targets[0] = raycast.get_collider()
-				rope1.enable()
-			Grapples.Right:
-				grapple_target_positions[1] = raycast.get_collision_point()
-				grapple_distance_vectors[1] = grapple_target_positions[1] - global_position
-				if raycast.get_collider() is TileMapLayer:
-					var temp_static_body = StaticBody2D.new()
-					temp_static_body.global_position = grapple_target_positions[1]
-					temp_static_body.name = "DELETE_ME2"
-					get_tree().root.add_child(temp_static_body)
-					grapple_targets[1] = temp_static_body
-				else:
-					grapple_targets[1] = raycast.get_collider()
-				rope2.enable()
+	if raycast.is_colliding():
+		if raycast.get_collision_point().distance_to(global_position) <= max_distance or not has_max_distance:
+			#print(grapple_targets)
+			match side:
+				Grapples.Left:
+					grapple_target_positions[0] = raycast.get_collision_point()
+					grapple_distance_vectors[0] = grapple_target_positions[0] - global_position
+					if raycast.get_collider() is TileMapLayer:
+						var temp_static_body = StaticBody2D.new()
+						temp_static_body.global_position = grapple_target_positions[0]
+						temp_static_body.name = "DELETE_ME1"
+						get_tree().root.add_child(temp_static_body)
+						grapple_targets[0] = temp_static_body
+					else:
+						grapple_targets[0] = raycast.get_collider()
+					rope1.enable()
+				Grapples.Right:
+					grapple_target_positions[1] = raycast.get_collision_point()
+					grapple_distance_vectors[1] = grapple_target_positions[1] - global_position
+					if raycast.get_collider() is TileMapLayer:
+						var temp_static_body = StaticBody2D.new()
+						temp_static_body.global_position = grapple_target_positions[1]
+						temp_static_body.name = "DELETE_ME2"
+						get_tree().root.add_child(temp_static_body)
+						grapple_targets[1] = temp_static_body
+					else:
+						grapple_targets[1] = raycast.get_collider()
+					rope2.enable()
 
 # Creates a spring joint between the player and the grapple target
 func grapple(side: int) -> void:

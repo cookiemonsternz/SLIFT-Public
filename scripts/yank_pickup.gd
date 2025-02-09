@@ -4,7 +4,11 @@ var can_get: bool = false
 
 func _process(delta: float) -> void:
 	if can_get:
-		queue_free()
+		$Sprite2D.visible = false
+		$Sprite2D2.visible = false
+		$Sprite2D3.visible = false
+		$Sprite2D4.visible = true
+		#queue_free()
 	if (Input.is_action_just_pressed("grapple_left")):
 		for i: PhysicsBody2D in $CanPickupArea.get_overlapping_bodies():
 			if i.is_in_group("Player"):

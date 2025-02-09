@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cwvhio0pg786r"]
+[gd_scene load_steps=8 format=3 uid="uid://cwvhio0pg786r"]
 
 [ext_resource type="Script" path="res://scripts/yank_pickup.gd" id="1_flye7"]
 [ext_resource type="Texture2D" uid="uid://dupdy3jxbqytp" path="res://addons/kenney_input_prompts/Keyboard & Mouse/Default/mouse_left_outline.png" id="2_xvelx"]
 [ext_resource type="Texture2D" uid="uid://bpoonwqdqvo0n" path="res://addons/kenney_input_prompts/Keyboard & Mouse/Vector/mouse_right_outline.svg" id="3_2opu8"]
 [ext_resource type="Texture2D" uid="uid://uo52gqa7301o" path="res://assets/Images/yank_arm_upgrade.png" id="4_utcwx"]
+[ext_resource type="Texture2D" uid="uid://cqepjc72u11av" path="res://addons/kenney_input_prompts/Keyboard & Mouse/Default/keyboard_i.png" id="5_bdj8m"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_341aw"]
 radius = 211.116
@@ -42,6 +43,11 @@ texture = ExtResource("3_2opu8")
 texture_filter = 1
 scale = Vector2(2, 2)
 texture = ExtResource("4_utcwx")
+
+[node name="Sprite2D4" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.462745)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_bdj8m")
 
 [connection signal="body_entered" from="DisplayInputArea" to="." method="_on_display_input_area_body_entered"]
 [connection signal="body_exited" from="DisplayInputArea" to="." method="_on_display_input_area_body_exited"]

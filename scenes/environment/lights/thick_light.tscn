@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://dkupc0hcgqo8k"]
+[gd_scene load_steps=3 format=3 uid="uid://c38kt6sueanw0"]
 
 [ext_resource type="PackedScene" uid="uid://dbe5l6x8cnnnw" path="res://scenes/environment/lights/light_object.tscn" id="1_ygli0"]
 [ext_resource type="Texture2D" uid="uid://dwaqh3pcncfoj" path="res://assets/Images/lamp_light_beam.png" id="2_trl6a"]
@@ -20,7 +20,7 @@ texture = ExtResource("2_trl6a")
 offset = Vector2(-3.49319, 524)
 
 [node name="Area2D" type="Area2D" parent="." index="2"]
-collision_mask = 5
+collision_mask = 9
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="Area2D" index="0"]
 polygon = PackedVector2Array(54, -523, -70, -523, -783, 500, 738, 496)

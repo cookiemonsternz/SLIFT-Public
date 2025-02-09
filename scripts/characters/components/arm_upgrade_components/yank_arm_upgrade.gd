@@ -19,7 +19,9 @@ func update_physics(player: Player, root: Node):
 	if queue_yank:
 		player.player_physics_follow.apply_impulse(player.player_physics_follow.global_position.direction_to(queued_target_pos).normalized() * YANK_AMOUNT)
 		if player.grapple_targets[queued_side] is RigidBody2D:
-			player.grapple_targets[queued_side].apply_impulse(queued_target_pos.direction_to(player.player_physics_follow.global_position).normalized() * YANK_AMOUNT_OBJECT)
+			#player.grapple_targets[queued_side].apply_impulse(queued_target_pos.direction_to(player.player_physics_follow.global_position).normalized() * YANK_AMOUNT_OBJECT)
+			var target_body: RigidBody2D = player.grapple_targets[queued_side]
+			target_body.apply_central_impulse(player.player_physics_follow.global_position.direction_to(target_body.global_position).normalized() * YANK_AMOUNT_OBJECT)
 		queue_yank = false
 
 # Called when an arm is shot (not when it connects)

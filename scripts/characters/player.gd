@@ -72,6 +72,7 @@ var coyote_jump_available := true
 var coyote_timer_reset := true
 var current_move_mode := MoveModes.GROUND
 var is_sliding := false
+var can_var_jump := true
 var vel_x: float = 0
 enum MoveModes {
 	GROUND, 
@@ -82,6 +83,7 @@ enum MoveModes {
 func _ready() -> void:
 	coyote_time_timer.wait_time = coyote_time_time
 	jump_buffer_timer.wait_time = jump_buffer_time
+
 func _process(delta: float) -> void:
 	#print(position)
 	if Input.is_action_just_pressed("test_input"):
@@ -97,6 +99,7 @@ func _process(delta: float) -> void:
 func handle_ground_movement(delta: float):
 	var input_chosen = Input.get_axis("move_left", "move_right")
 	var hit_jump = Input.is_action_just_pressed("player_jump")
+	var holding_jump = Input.is_action_pressed("player_jump")
 	var on_floor = is_on_floor()
 		
 	if can_coyote and velocity.y > 0 and coyote_timer_reset:
@@ -119,10 +122,18 @@ func handle_ground_movement(delta: float):
 		velocity.y = jump_velocity
 	
 	if on_floor:
+		can_var_jump = true
 		can_coyote = true
 		coyote_timer_reset = true
+	
 	else:
-		velocity.y += gravity_strength * delta
+		if holding_jump and can_var_jump:
+			velocity.y += gravity_strength * delta  * 0.75
+		else:
+			if Input.is_action_just_released("jump") and can_var_jump:
+				velocity.y = 0
+				can_var_jump = false
+			velocity.y += gravity_strength * delta
 	
 	#print(velocity)
 	

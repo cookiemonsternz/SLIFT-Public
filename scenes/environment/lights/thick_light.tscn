@@ -1,0 +1,29 @@
+[gd_scene load_steps=3 format=3 uid="uid://dkupc0hcgqo8k"]
+
+[ext_resource type="PackedScene" uid="uid://dbe5l6x8cnnnw" path="res://scenes/environment/lights/light_object.tscn" id="1_ygli0"]
+[ext_resource type="Texture2D" uid="uid://dwaqh3pcncfoj" path="res://assets/Images/lamp_light_beam.png" id="2_trl6a"]
+
+[node name="LightObject" node_paths=PackedStringArray("light", "light_collider", "light_origin") instance=ExtResource("1_ygli0")]
+light = NodePath("PointLight2D")
+light_collider = NodePath("Area2D")
+light_origin = NodePath("Marker2D")
+
+[node name="RayCast2D" parent="." index="0"]
+collision_mask = 5
+
+[node name="PointLight2D" type="PointLight2D" parent="." index="1"]
+position = Vector2(0, -524)
+scale = Vector2(3.00586, 1)
+color = Color(0.915403, 0.169096, 0, 1)
+shadow_enabled = true
+texture = ExtResource("2_trl6a")
+offset = Vector2(-3.49319, 524)
+
+[node name="Area2D" type="Area2D" parent="." index="2"]
+collision_mask = 5
+
+[node name="CollisionShape2D" type="CollisionPolygon2D" parent="Area2D" index="0"]
+polygon = PackedVector2Array(54, -523, -70, -523, -783, 500, 738, 496)
+
+[node name="Marker2D" type="Marker2D" parent="." index="3"]
+position = Vector2(0, -524)

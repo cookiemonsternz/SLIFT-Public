@@ -44,7 +44,7 @@ func _process(delta: float) -> void:
 			if not timers.has(body):
 				timers[body] = create_timer(damage_body.bind(body))
 
-func damage_body(body: PhysicsBody2D):
+func damage_body(body):
 	raycast.global_position = light_origin.global_position
 	raycast.target_position = to_local(body.global_position)
 	if not raycast.is_colliding():
@@ -60,14 +60,14 @@ func create_timer(on_finish: Callable):
 	timer.start()
 	return timer
 
-func _on_body_entered_light_collider(body: PhysicsBody2D) -> void:
+func _on_body_entered_light_collider(body) -> void:
 	if not Engine.is_editor_hint():
 		#print("HI")
 		if body.is_in_group("Player"):
 			bodies_in_light.append(body)
 			#print(timers, " : ", bodies_in_light)
 
-func _on_body_exited_light_collider(body: PhysicsBody2D) -> void:
+func _on_body_exited_light_collider(body) -> void:
 	if not Engine.is_editor_hint():
 		if bodies_in_light.find(body) != -1:
 			bodies_in_light.pop_at(bodies_in_light.find(body))

@@ -1,10 +1,13 @@
-[gd_scene load_steps=13 format=4 uid="uid://br85yumpnqgit"]
+[gd_scene load_steps=18 format=4 uid="uid://br85yumpnqgit"]
 
-[ext_resource type="PackedScene" uid="uid://bjk2n8cwtbfil" path="res://scenes/player.tscn" id="1_ul5aj"]
+[ext_resource type="PackedScene" uid="uid://brkdvlqw0t3sp" path="res://scenes/player.tscn" id="1_ul5aj"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/shape_texture_2d.gd" id="2_pirk4"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/drawable_rectangle.gd" id="3_v07sq"]
 [ext_resource type="TileSet" uid="uid://b30kfa4ed8aqy" path="res://assets/tileset.tres" id="5_0y1ac"]
 [ext_resource type="PackedScene" uid="uid://brv1ny6q731fn" path="res://scenes/environment/lights/lamp_beam.tscn" id="5_fo8p6"]
+[ext_resource type="Texture2D" uid="uid://dde1a644jsvar" path="res://assets/Images/rock.png" id="7_d7ynk"]
+[ext_resource type="PackedScene" uid="uid://kurhg78yrnou" path="res://scenes/environment/button.tscn" id="7_qutpx"]
+[ext_resource type="PackedScene" uid="uid://bou5fo34ufwqg" path="res://scenes/environment/button_door.tscn" id="8_pm0k7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3i5c"]
 size = Vector2(438, 72)
@@ -46,6 +49,11 @@ polygon = PackedVector2Array(-220, -11, 860, -16, 860, 65, -219, 61)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jv1uc"]
 size = Vector2(1069, 74)
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_78qec"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xonip"]
+size = Vector2(71, 65)
 
 [node name="SceneRoot" type="Node2D"]
 
@@ -192,3 +200,23 @@ texture_filter = 1
 scale = Vector2(5, 5)
 tile_map_data = PackedByteArray("AADm/wEAAAABAAQAAADn/wEAAAACAAQAAADo/wEAAAACAAQAAADp/wEAAAADAAQAAADk////AAADAAQAAADj////AAACAAQAAADi////AAABAAQAAADg/wIAAAABAAQAAADh/wIAAAACAAQAAADi/wIAAAADAAQAAADm/wAAAAAIAAMAAADc//v/AAADAAAAAADd//v/AAAFAAAAAADc//z/AAADAAIAAADd//z/AAAFAAIAAADc//7/AAAHAAAAAADc////AAAHAAEAAADc/wAAAAAHAAEAAADc/wEAAAAHAAEAAADc/wIAAAAHAAIAAADZ/wQAAAADAAQAAADY/wQAAAACAAQAAADX/wQAAAABAAQAAADU//3/AAAHAAAAAADU//7/AAAHAAEAAADU/wAAAAAHAAEAAADU////AAAHAAEAAADU/wEAAAAHAAIAAADM//z/AAAHAAAAAADM//3/AAAHAAEAAADM//7/AAAHAAEAAADM////AAAHAAEAAADM/wAAAAAHAAIAAADP////AAADAAAAAADR////AAAFAAAAAADQ////AAAEAAAAAADP/wAAAAADAAIAAADR/wAAAAAFAAIAAADQ/wAAAAAEAAIAAADY////AAABAAIAAADe/wcAAAABAAIAAADc/wcAAAABAAIAAADl////AAAHAAMAAADg/wEAAAAIAAMAAADd/wIAAAAHAAQAAADe//v/AAAHAAQAAADZ////AAAHAAMAAADX/wMAAAAIAAMAAADQ//7/AAAIAAMAAADU//z/AAAIAAMAAADS/wAAAAAHAAQAAADV/wEAAAAHAAQAAADN/wAAAAAHAAQAAADf/wcAAAAHAAQAAAA=")
 tile_set = ExtResource("5_0y1ac")
+
+[node name="RigidBody2D" type="RigidBody2D" parent="." groups=["button_activate"]]
+position = Vector2(-760, -57)
+physics_material_override = SubResource("PhysicsMaterial_78qec")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" groups=["button_activate"]]
+position = Vector2(-29.5, 30.5)
+shape = SubResource("RectangleShape2D_xonip")
+
+[node name="Rock" type="Sprite2D" parent="RigidBody2D/CollisionShape2D" groups=["button_activate"]]
+texture_filter = 1
+position = Vector2(35.5, 35.5)
+scale = Vector2(4.5, 4.3125)
+texture = ExtResource("7_d7ynk")
+
+[node name="Node2D" parent="." instance=ExtResource("7_qutpx")]
+position = Vector2(-990, -6)
+
+[node name="Node2D2" parent="." instance=ExtResource("8_pm0k7")]
+position = Vector2(-1314, -75)

@@ -51,7 +51,7 @@ var spring_joints: Array[DampedSpringJoint2D] = [null, null]
 
 @export_subgroup("Jumping")
 @export var jump_velocity = -700.0 # Maximum jump strength
-@export var gravity_strength = 3000.0 # Gravity strength
+@export var gravity_strength = 2000 # Gravity strength
 @export var jump_buffer_time = 0.1 # Time in seconds to buffer a jump
 
 @export_subgroup("Movement")
@@ -82,7 +82,6 @@ enum MoveModes {
 func _ready() -> void:
 	coyote_time_timer.wait_time = coyote_time_time
 	jump_buffer_timer.wait_time = jump_buffer_time
-
 func _process(delta: float) -> void:
 	#print(position)
 	if Input.is_action_just_pressed("test_input"):

@@ -1,6 +1,6 @@
 class_name YankArmUpgrade extends ArmUpgrade
 
-@export var YANK_AMOUNT = 800
+const YANK_AMOUNT = 400
 
 var queue_yank: bool = false
 var queued_target_pos: Vector2 = Vector2.ZERO

@@ -18,6 +18,9 @@ config/icon="res://assets/icon.svg"
 [display]
 
 window/vsync/vsync_mode=0
+[autoload]
+
+GlobalButton="*res://button.gd"
 
 [editor_plugins]
 
@@ -26,6 +29,7 @@ enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg")
 [global_group]
 
 Player="Player Character"
+button_activate=""
 
 [input]
 

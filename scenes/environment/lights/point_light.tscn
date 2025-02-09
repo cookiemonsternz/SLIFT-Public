@@ -10,14 +10,14 @@ light = NodePath("PointLight2D")
 light_collider = NodePath("Area2D")
 light_origin = NodePath("Marker2D")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="." index="13"]
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="1"]
 
-[node name="Sprite2D" type="Sprite2D" parent="." index="14"]
+[node name="Sprite2D" type="Sprite2D" parent="." index="2"]
 
-[node name="LightOccluder2D" type="LightOccluder2D" parent="." index="15"]
+[node name="LightOccluder2D" type="LightOccluder2D" parent="." index="3"]
 
-[node name="PointLight2D" type="PointLight2D" parent="." index="16"]
+[node name="PointLight2D" type="PointLight2D" parent="." index="4"]
 
-[node name="Area2D" type="Area2D" parent="." index="17"]
+[node name="Area2D" type="Area2D" parent="." index="5"]
 
-[node name="Marker2D" type="Marker2D" parent="." index="18"]
+[node name="Marker2D" type="Marker2D" parent="." index="6"]

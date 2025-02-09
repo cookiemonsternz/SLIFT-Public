@@ -1,11 +1,8 @@
-[gd_scene load_steps=14 format=3 uid="uid://nhcmdw3iikcp"]
+[gd_scene load_steps=8 format=3 uid="uid://dc3jn6j5a45c4"]
 
 [ext_resource type="Script" path="res://addons/shape_texture_2d/shape_texture_2d.gd" id="1_5niqp"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/drawable_rectangle.gd" id="2_ge45s"]
-[ext_resource type="PackedScene" uid="uid://brkdvlqw0t3sp" path="res://scenes/player.tscn" id="3_1460d"]
-[ext_resource type="PackedScene" uid="uid://kurhg78yrnou" path="res://scenes/environment/button.tscn" id="4_v77ct"]
-[ext_resource type="PackedScene" uid="uid://bou5fo34ufwqg" path="res://scenes/environment/button_door.tscn" id="5_j3yuc"]
-[ext_resource type="Texture2D" uid="uid://dde1a644jsvar" path="res://assets/Images/rock.png" id="6_0cwna"]
+[ext_resource type="PackedScene" uid="uid://brkdvlqw0t3sp" path="res://scenes/characters/player.tscn" id="3_1460d"]
 [ext_resource type="PackedScene" uid="uid://brv1ny6q731fn" path="res://scenes/environment/lights/lamp_beam.tscn" id="7_cdqu3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ybhxw"]
@@ -36,13 +33,6 @@ stroke_joint = "round"
 offset = Vector2(0, 0)
 rotation = 0.0
 scale = Vector2(1, 1)
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_8vbr1"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ogxet"]
-size = Vector2(71, 65)
-
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_sjatt"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -488,30 +478,5 @@ health_component = NodePath("HealthComponent")
 arm_upgrade_component = NodePath("ArmUpgradeComponent")
 do_delete_timer = NodePath("Timer")
 
-[node name="Node2D" parent="." instance=ExtResource("4_v77ct")]
-position = Vector2(3792, -141)
-
-[node name="Node2D2" parent="." instance=ExtResource("5_j3yuc")]
-position = Vector2(5206, -713)
-scale = Vector2(1, 2.48)
-
-[node name="RigidBody2D" type="RigidBody2D" parent="Node2D2" groups=["button_activate"]]
-position = Vector2(-1190, 0.80645)
-physics_material_override = SubResource("PhysicsMaterial_8vbr1")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D2/RigidBody2D" groups=["button_activate"]]
-position = Vector2(-29.5, 30.5)
-shape = SubResource("RectangleShape2D_ogxet")
-
-[node name="Rock" type="Sprite2D" parent="Node2D2/RigidBody2D/CollisionShape2D" groups=["button_activate"]]
-texture_filter = 1
-position = Vector2(35.5, 35.5)
-scale = Vector2(4.5, 4.3125)
-texture = ExtResource("6_0cwna")
-
 [node name="LampBeam" parent="." instance=ExtResource("7_cdqu3")]
 position = Vector2(3366, -1084)
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-scale = Vector2(135.512, 24.4644)
-occluder = SubResource("OccluderPolygon2D_sjatt")

@@ -130,7 +130,6 @@ scale = Vector2(2.5, 2.5)
 
 [node name="Rope1" parent="GrappleComponents" node_paths=PackedStringArray("grapple_origin", "player") instance=ExtResource("4_bcbn3")]
 width = 4.0
-antialiased = true
 grapple_origin = NodePath("../GrappleOrigin")
 player = NodePath("../..")
 animation_curve = SubResource("Curve_5ylw7")
@@ -140,7 +139,6 @@ rope_progression_speed = 9.0
 
 [node name="Rope2" parent="GrappleComponents" node_paths=PackedStringArray("grapple_origin", "player") instance=ExtResource("4_bcbn3")]
 width = 4.0
-antialiased = true
 grapple_origin = NodePath("../GrappleOrigin")
 player = NodePath("../..")
 side = 1

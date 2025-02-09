@@ -73,7 +73,6 @@ damping = 0.9
 jump_buffer_timer = NodePath("JumpBufferTimer")
 coyote_time_timer = NodePath("CoyoteTimeTimer")
 ground_cast = NodePath("GroundCast")
-gravity_strength = 700.0
 coyote_time_time = 0.25
 health_component = NodePath("Components/HealthComponent")
 arm_upgrade_component = NodePath("Components/ArmUpgradeComponent")

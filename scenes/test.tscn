@@ -194,6 +194,7 @@ rotation = 0.635214
 
 [node name="Player" parent="." instance=ExtResource("1_ul5aj")]
 position = Vector2(11, -73)
+gravity_strength = 2000
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 texture_filter = 1

@@ -285,7 +285,8 @@ func grapple(side: int) -> void:
 			
 
 func create_spring_joint(point_a: Vector2, point_b: Vector2, body_a: PhysicsBody2D, body_b: PhysicsBody2D, length: float, rest_length: float) -> DampedSpringJoint2D:
-	
+	if body_a == null or body_b == null:
+		return DampedSpringJoint2D.new()
 	var spring = DampedSpringJoint2D.new()
 	
 	spring.length = length

@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://cq1dq0pgfte7e"]
+
+[ext_resource type="Script" path="res://scripts/environment/components/button_component.gd" id="1_i8tne"]
+[ext_resource type="Script" path="res://addons/shape_texture_2d/shape_texture_2d.gd" id="2_cjjbg"]
+[ext_resource type="Script" path="res://addons/shape_texture_2d/drawable_rectangle.gd" id="3_vtx2h"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_d5xp0"]
+size = Vector2(128, 16)
+
+[sub_resource type="Resource" id="Resource_nluwj"]
+script = ExtResource("3_vtx2h")
+corner_rounding = 0.0
+
+[sub_resource type="Texture2D" id="Texture2D_ofwtt"]
+resource_local_to_scene = false
+resource_name = ""
+script = ExtResource("2_cjjbg")
+size = Vector2i(128, 16)
+shape = SubResource("Resource_nluwj")
+fill_type = 0
+fill_color = Color(1, 0.486436, 0.41582, 1)
+fill_from = Vector2(0, 0)
+fill_to = Vector2(1, 0)
+fill_repeat = "pad"
+stroke_type = 0
+stroke_width = 0.0
+stroke_color = Color(0, 0, 0, 1)
+stroke_from = Vector2(0, 0)
+stroke_to = Vector2(1, 0)
+stroke_repeat = "pad"
+stroke_joint = "round"
+offset = Vector2(0, 0)
+rotation = 0.0
+scale = Vector2(1, 1)
+
+[node name="Button" type="Node2D"]
+script = ExtResource("1_i8tne")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 16
+collision_mask = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_d5xp0")
+
+[node name="Sprite2D" type="Sprite2D" parent="Area2D"]
+texture = SubResource("Texture2D_ofwtt")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_button_pressed"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_button_released"]

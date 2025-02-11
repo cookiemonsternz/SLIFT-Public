@@ -5,31 +5,20 @@ class_name ArmUpgradeComponent extends Node
 var installed_upgrades_left: Array[ArmUpgrade] = []
 var installed_upgrades_right: Array[ArmUpgrade] = []
 
-enum Grapples {
-	Left,
-	Right
-}
-
-enum DamageType {
-	World,
-	Enemy,
-	Obstacle,
-	Light
-}
 
 func add_upgrade(side: int, index: int, upgrade: ArmUpgrade):
 	print(upgrade.upgrade_name)
-	if side == Grapples.Left:
+	if side == Enums.Grapples.Left:
 		installed_upgrades_left.insert(index, upgrade)
-	elif side == Grapples.Right:
+	elif side == Enums.Grapples.Right:
 		installed_upgrades_right.insert(index, upgrade)
 	arm_upgrade_ui.update_slots([installed_upgrades_left, installed_upgrades_right])
 	
 
 func remove_upgrade(side: int, index: int):
-	if side == Grapples.Left:
+	if side == Enums.Grapples.Left:
 		installed_upgrades_left.remove_at(index)
-	elif side == Grapples.Right:
+	elif side == Enums.Grapples.Right:
 		installed_upgrades_right.remove_at(index)
 	arm_upgrade_ui.update_slots([installed_upgrades_left, installed_upgrades_right])
 
@@ -61,11 +50,11 @@ func _physics_process(delta: float) -> void:
 func arm_shot(side: int):
 	var player = get_tree().get_first_node_in_group("Player")
 	var root = get_tree().root
-	if side == Grapples.Left:
+	if side == Enums.Grapples.Left:
 		for upgrade in installed_upgrades_left:
 			if upgrade.has_method("_on_arm_shot"):
 				upgrade._on_arm_shot(side, player, root)
-	elif side == Grapples.Right:
+	elif side == Enums.Grapples.Right:
 		for upgrade in installed_upgrades_right:
 			if upgrade.has_method("_on_arm_shot"):
 				upgrade._on_arm_shot(side, player, root)
@@ -73,11 +62,11 @@ func arm_shot(side: int):
 func arm_connected(side: int, target_position: Vector2):
 	var player = get_tree().get_first_node_in_group("Player")
 	var root = get_tree().root
-	if side == Grapples.Left:
+	if side == Enums.Grapples.Left:
 		for upgrade in installed_upgrades_left:
 			if upgrade.has_method("_on_arm_connected"):
 				upgrade._on_arm_connected(side, target_position, player, root)
-	elif side == Grapples.Right:
+	elif side == Enums.Grapples.Right:
 		for upgrade in installed_upgrades_right:
 			if upgrade.has_method("_on_arm_connected"):
 				upgrade._on_arm_connected(side, target_position, player, root)
@@ -85,11 +74,11 @@ func arm_connected(side: int, target_position: Vector2):
 func arm_released(side: int):
 	var player = get_tree().get_first_node_in_group("Player")
 	var root = get_tree().root
-	if side == Grapples.Left:
+	if side == Enums.Grapples.Left:
 		for upgrade in installed_upgrades_left:
 			if upgrade.has_method("_on_arm_released"):
 				upgrade._on_arm_released(side, player, root)
-	elif side == Grapples.Right:
+	elif side == Enums.Grapples.Right:
 		for upgrade in installed_upgrades_right:
 			if upgrade.has_method("_on_arm_released"):
 				upgrade._on_arm_released(side, player, root)

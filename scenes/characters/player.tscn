@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://brkdvlqw0t3sp"]
+[gd_scene load_steps=17 format=3 uid="uid://brkdvlqw0t3sp"]
 
 [ext_resource type="Script" path="res://addons/shape_texture_2d/shape_texture_2d.gd" id="1_42r4y"]
 [ext_resource type="Script" path="res://scripts/characters/player.gd" id="1_x5w3x"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://cbfarsdxo3xll" path="res://scenes/characters/components/rope.tscn" id="4_bcbn3"]
 [ext_resource type="Script" path="res://scripts/characters/player_physics_follow.gd" id="5_8xicw"]
 [ext_resource type="PackedScene" uid="uid://2yvmq877upop" path="res://scenes/characters/components/health_component.tscn" id="6_orm0g"]
-[ext_resource type="Script" path="res://scripts/characters/components/grapple_component.gd" id="7_abgwv"]
 [ext_resource type="PackedScene" uid="uid://hjhxmdpa6ntd" path="res://scenes/characters/components/arm_upgrade_component.tscn" id="7_i54cr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rh5mj"]
@@ -59,15 +58,16 @@ friction = 0.0
 radius = 30.0
 height = 122.0
 
-[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("grapple_origin", "rope1", "rope2", "raycast", "player_physics_follow", "jump_buffer_timer", "coyote_time_timer", "ground_cast", "health_component", "arm_upgrade_component", "do_delete_timer") groups=["Player"]]
+[node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("grapple_origin", "rope1", "rope2", "raycast", "player_physics_follow", "do_delete_timer", "jump_buffer_timer", "coyote_time_timer", "ground_cast", "health_component", "arm_upgrade_component") groups=["Player"]]
 collision_layer = 8
-collision_mask = 13
+collision_mask = 47
 script = ExtResource("1_x5w3x")
-grapple_origin = NodePath("GrappleComponent/GrappleOrigin")
-rope1 = NodePath("GrappleComponent/Rope1")
-rope2 = NodePath("GrappleComponent/Rope2")
-raycast = NodePath("GrappleComponent/RayCast2D")
-player_physics_follow = NodePath("GrappleComponent/PlayerPhysicsFollow")
+grapple_origin = NodePath("GrappleComponentS/GrappleOrigin")
+rope1 = NodePath("GrappleComponentS/Rope1")
+rope2 = NodePath("GrappleComponentS/Rope2")
+raycast = NodePath("GrappleComponentS/RayCast2D")
+player_physics_follow = NodePath("GrappleComponentS/PlayerPhysicsFollow")
+do_delete_timer = NodePath("DoDeleteTimer")
 launch_type = 1
 launch_speed = 20.0
 damping = 0.9
@@ -77,7 +77,6 @@ ground_cast = NodePath("GroundCast")
 coyote_time_time = 0.25
 health_component = NodePath("Components/HealthComponent")
 arm_upgrade_component = NodePath("Components/ArmUpgradeComponent")
-do_delete_timer = NodePath("DoDeleteTimer")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_rh5mj")
@@ -113,27 +112,17 @@ occluder = SubResource("OccluderPolygon2D_l5py8")
 
 [node name="Components" type="Node" parent="."]
 
-[node name="HealthComponent" parent="Components" instance=ExtResource("6_orm0g")]
+[node name="HealthComponent" parent="Components" node_paths=PackedStringArray("owning_entity") instance=ExtResource("6_orm0g")]
+owning_entity = NodePath("../..")
 
 [node name="ArmUpgradeComponent" parent="Components" node_paths=PackedStringArray("arm_upgrade_ui") instance=ExtResource("7_i54cr")]
 arm_upgrade_ui = NodePath("../../ArmUpgradeUI")
 
-[node name="ArmUpgradeUI" parent="." instance=ExtResource("2_fyt53")]
-visible = false
-z_index = 1
-offset_left = -278.0
-offset_top = -98.0
-offset_right = -56.0
-offset_bottom = -20.0
-scale = Vector2(2.5, 2.5)
-script = null
+[node name="GrappleComponentS" type="Node2D" parent="."]
 
-[node name="GrappleComponent" type="Node2D" parent="."]
-script = ExtResource("7_abgwv")
+[node name="GrappleOrigin" type="Marker2D" parent="GrappleComponentS"]
 
-[node name="GrappleOrigin" type="Marker2D" parent="GrappleComponent"]
-
-[node name="Rope1" parent="GrappleComponent" node_paths=PackedStringArray("grapple_origin", "player") instance=ExtResource("4_bcbn3")]
+[node name="Rope1" parent="GrappleComponentS" node_paths=PackedStringArray("grapple_origin", "player") instance=ExtResource("4_bcbn3")]
 width = 4.0
 grapple_origin = NodePath("../GrappleOrigin")
 player = NodePath("../..")
@@ -142,7 +131,7 @@ animation_scale = 8.461
 rope_progression_curve = SubResource("Curve_gldd0")
 rope_progression_speed = 9.0
 
-[node name="Rope2" parent="GrappleComponent" node_paths=PackedStringArray("grapple_origin", "player") instance=ExtResource("4_bcbn3")]
+[node name="Rope2" parent="GrappleComponentS" node_paths=PackedStringArray("grapple_origin", "player") instance=ExtResource("4_bcbn3")]
 width = 4.0
 grapple_origin = NodePath("../GrappleOrigin")
 player = NodePath("../..")
@@ -152,23 +141,20 @@ animation_scale = 8.461
 rope_progression_curve = SubResource("Curve_gldd0")
 rope_progression_speed = 9.0
 
-[node name="RayCast2D" type="RayCast2D" parent="GrappleComponent"]
+[node name="RayCast2D" type="RayCast2D" parent="GrappleComponentS"]
+collision_mask = 35
 
-[node name="PlayerPhysicsFollow" type="RigidBody2D" parent="GrappleComponent"]
+[node name="PlayerPhysicsFollow" type="RigidBody2D" parent="GrappleComponentS"]
 physics_interpolation_mode = 1
 top_level = true
-collision_layer = 2
-collision_mask = 5
+collision_layer = 64
+collision_mask = 37
 physics_material_override = SubResource("PhysicsMaterial_djybv")
 lock_rotation = true
 script = ExtResource("5_8xicw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GrappleComponent/PlayerPhysicsFollow"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrappleComponentS/PlayerPhysicsFollow"]
 shape = SubResource("CapsuleShape2D_eru5a")
-
-[node name="HealthComponent" parent="." instance=ExtResource("6_orm0g")]
-
-[node name="ArmUpgradeComponent" parent="." instance=ExtResource("7_i54cr")]
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
@@ -176,5 +162,12 @@ one_shot = true
 
 [node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_l5py8")
+
+[node name="ArmUpgradeUI" parent="." instance=ExtResource("2_fyt53")]
+offset_left = -333.0
+offset_top = -120.0
+offset_right = -111.0
+offset_bottom = -42.0
+scale = Vector2(3, 3)
 
 [connection signal="timeout" from="VelocityTimer" to="." method="_on_velocity_timer_timeout"]

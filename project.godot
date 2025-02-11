@@ -81,6 +81,9 @@ arm_upgrade_ui={
 2d_physics/layer_2="Rigidbodies"
 2d_physics/layer_3="Light"
 2d_physics/layer_4="Player"
+2d_physics/layer_5="Buttons"
+2d_physics/layer_6="Doors"
+2d_physics/layer_7="PlayerPhysicsFollow"
 
 [physics]
 

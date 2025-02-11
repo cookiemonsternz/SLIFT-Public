@@ -1,3 +1,5 @@
+extends Node
+
 enum LaunchType {
 	Transform_Launch,
 	Physics_Launch
@@ -11,4 +13,11 @@ enum Grapples {
 enum MoveModes {
 	GROUND, 
 	AIR
+}
+
+enum DamageType {
+	World,
+	Enemy,
+	Obstacle,
+	Light
 }

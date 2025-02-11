@@ -53,7 +53,7 @@ var spring_joints: Array[DampedSpringJoint2D] = [null, null]
 @export var stop_speed = 1600
 
 @export_group("Components")
-@export var health_component: Node
+@export var health_component: HealthComponent
 @export var arm_upgrade_component: ArmUpgradeComponent
 
 
@@ -70,6 +70,10 @@ var vel_x: float = 0
 func _ready() -> void:
 	coyote_time_timer.wait_time = coyote_time_time
 	jump_buffer_timer.wait_time = jump_buffer_time
+	var callable = func(damage: float, damage_type: Enums.DamageType, damage_source: Node):
+		printerr("Player died, last damage : ", damage, ", damage type : ", damage_type, ", damage source : ", damage_source)
+		modulate = Color(1.0, 0.0, 0.0)
+	health_component.creature_died.connect(callable)
 
 func _process(delta: float) -> void:
 	#print(position)

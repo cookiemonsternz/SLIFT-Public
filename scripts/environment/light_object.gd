@@ -26,13 +26,6 @@ extends Node2D
 var bodies_in_light = []
 var timers = {}
 
-enum DamageType {
-	World,
-	Enemy,
-	Obstacle,
-	Light
-}
-
 func _ready() -> void:
 	if not Engine.is_editor_hint():
 		light_collider.body_entered.connect(_on_body_entered_light_collider)
@@ -49,7 +42,7 @@ func damage_body(body):
 	raycast.target_position = to_local(body.global_position)
 	if not raycast.is_colliding():
 		#print("damaging")
-		body.health_component.damage(light_damage, DamageType.Light)
+		body.health_component.damage(light_damage, Enums.DamageType.Light, self)
 
 func create_timer(on_finish: Callable):
 	var timer = Timer.new()

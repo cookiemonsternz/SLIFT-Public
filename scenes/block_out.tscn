@@ -472,11 +472,11 @@ position = Vector2(1.99999, -1.90735e-06)
 scale = Vector2(2.01562, 0.15625)
 texture = SubResource("Texture2D_nmpl5")
 
-[node name="Player" parent="." node_paths=PackedStringArray("health_component", "arm_upgrade_component", "do_delete_timer") instance=ExtResource("3_1460d")]
+[node name="Player" parent="." node_paths=PackedStringArray("do_delete_timer", "health_component", "arm_upgrade_component") instance=ExtResource("3_1460d")]
 position = Vector2(-114, -191)
+do_delete_timer = NodePath("Timer")
 health_component = NodePath("HealthComponent")
 arm_upgrade_component = NodePath("ArmUpgradeComponent")
-do_delete_timer = NodePath("Timer")
 
 [node name="LampBeam" parent="." instance=ExtResource("7_cdqu3")]
 position = Vector2(3366, -1084)

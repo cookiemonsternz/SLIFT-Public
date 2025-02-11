@@ -10,7 +10,7 @@ extends Line2D
 @export var player: CharacterBody2D
 
 @export_group("General Settings")
-@export var side: Grapples
+@export var side: Enums.Grapples
 @export var precision: int = 40
 @export_range(0, 20) var straighten_line_speed: float = 5
 
@@ -23,11 +23,6 @@ var wave_size: float = 0
 @export_group("Rope Progression")
 @export var rope_progression_curve: Curve
 @export_range(1, 50) var rope_progression_speed: float = 1
-
-enum Grapples {
-	Left,
-	Right
-}
 
 var move_time: float = 0
 

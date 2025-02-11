@@ -1,4 +1,4 @@
-extends Node
+class_name HealthComponent extends Node
 
 @export var owning_entity: Node
 
@@ -13,13 +13,6 @@ extends Node
 @export var shield: float = 10
 @export var shield_regen_rate: float = 0.1
 @export var shield_regen_amount: float = 0.1
-
-enum DamageType {
-	World,
-	Enemy,
-	Obstacle,
-	Light
-}
 
 signal creature_died(damage, damage_type, damage_source)
 signal entity_damaged(damage, damage_type, damage_source)
@@ -42,37 +35,37 @@ func _ready() -> void:
 	shield_regen_timer.autostart = true
 	self.add_child(shield_regen_timer)
 
-func damage(damage: float, damage_type: DamageType = DamageType.World, damage_source: Node = null):
+func damage(damage_amount: float, damage_type: Enums.DamageType = Enums.DamageType.World, damage_source: Node = null):
 	if owning_entity is Player:
-		owning_entity.arm_upgrade_component.player_damaged(damage, damage_type)
+		owning_entity.arm_upgrade_component.player_damaged(damage_amount, damage_type)
 	
-	entity_damaged.emit(damage, damage_type, damage_source)
+	entity_damaged.emit(damage_amount, damage_type, damage_source)
 	
 	match damage_type:
-		DamageType.World:
-			shield = shield - damage if shield > 0 else 0
+		Enums.DamageType.World:
+			shield = shield - damage_amount if shield > 0 else 0
 			if shield == 0:
-				health -= damage
+				health -= damage_amount
 				if health < 0:
-					creature_died.emit(damage, damage_type, damage_source)
-		DamageType.Enemy:
-			shield = shield - damage if shield > 0 else 0
+					creature_died.emit(damage_amount, damage_type, damage_source)
+		Enums.DamageType.Enemy:
+			shield = shield - damage_amount if shield > 0 else 0
 			if shield == 0:
-				health -= damage
+				health -= damage_amount
 				if health < 0:
-					creature_died.emit(damage, damage_type, damage_source)
-		DamageType.Obstacle:
-			shield = shield - damage if shield > 0 else 0
+					creature_died.emit(damage_amount, damage_type, damage_source)
+		Enums.DamageType.Obstacle:
+			shield = shield - damage_amount if shield > 0 else 0
 			if shield == 0:
-				health -= damage
+				health -= damage_amount
 				if health < 0:
-					creature_died.emit(damage, damage_type, damage_source)
-		DamageType.Light:
-			shield = shield - damage if shield > 0 else 0
+					creature_died.emit(damage_amount, damage_type, damage_source)
+		Enums.DamageType.Light:
+			shield = shield - damage_amount if shield > 0 else 0
 			if shield == 0:
-				health -= damage
+				health -= damage_amount
 				if health < 0:
-					creature_died.emit(damage, damage_type, damage_source)
+					creature_died.emit(damage_amount, damage_type, damage_source)
 
 func _on_health_regen_timer_timeout():
 	if health < max_health:

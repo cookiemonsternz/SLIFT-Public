@@ -1,0 +1,114 @@
+[gd_scene load_steps=11 format=3 uid="uid://cm5ngvdr2ih4g"]
+
+[ext_resource type="Script" path="res://scripts/environment/components/door_component.gd" id="1_0abhs"]
+[ext_resource type="Script" path="res://addons/shape_texture_2d/shape_texture_2d.gd" id="2_ks66i"]
+[ext_resource type="Script" path="res://addons/shape_texture_2d/drawable_rectangle.gd" id="3_k2111"]
+
+[sub_resource type="Animation" id="Animation_rhij0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatableBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, -64)]
+}
+
+[sub_resource type="Animation" id="Animation_0i1iv"]
+resource_name = "door_close"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatableBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(0.3, 1),
+"update": 0,
+"values": [Vector2(0, -256), Vector2(0, -64)]
+}
+
+[sub_resource type="Animation" id="Animation_t020d"]
+resource_name = "door_open"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatableBody2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(0.3, 1),
+"update": 0,
+"values": [Vector2(0, -64), Vector2(0, -256)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hjdl5"]
+_data = {
+"RESET": SubResource("Animation_rhij0"),
+"door_close": SubResource("Animation_0i1iv"),
+"door_open": SubResource("Animation_t020d")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_632pq"]
+size = Vector2(64, 128)
+
+[sub_resource type="Resource" id="Resource_4h7hq"]
+script = ExtResource("3_k2111")
+corner_rounding = 0.0
+
+[sub_resource type="Texture2D" id="Texture2D_bhwww"]
+resource_local_to_scene = false
+resource_name = ""
+script = ExtResource("2_ks66i")
+size = Vector2i(64, 128)
+shape = SubResource("Resource_4h7hq")
+fill_type = 0
+fill_color = Color(1, 1, 1, 1)
+fill_from = Vector2(0, 0)
+fill_to = Vector2(1, 0)
+fill_repeat = "pad"
+stroke_type = 0
+stroke_width = 0.0
+stroke_color = Color(0, 0, 0, 1)
+stroke_from = Vector2(0, 0)
+stroke_to = Vector2(1, 0)
+stroke_repeat = "pad"
+stroke_joint = "round"
+offset = Vector2(0, 0)
+rotation = 0.0
+scale = Vector2(1, 1)
+
+[node name="Door" type="Node2D" node_paths=PackedStringArray("owning_entity", "door_animatable_body")]
+script = ExtResource("1_0abhs")
+owning_entity = NodePath(".")
+door_animatable_body = NodePath("AnimatableBody2D")
+use_tween = true
+open_position = Vector2(0, -256)
+closed_position = Vector2(0, -64)
+tween_easing_mode = 1
+tween_transition_type = 2
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_hjdl5")
+}
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
+position = Vector2(0, -64)
+collision_layer = 32
+collision_mask = 10
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatableBody2D"]
+shape = SubResource("RectangleShape2D_632pq")
+
+[node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]
+texture = SubResource("Texture2D_bhwww")

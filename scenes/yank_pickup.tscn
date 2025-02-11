@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://cwvhio0pg786r"]
 
-[ext_resource type="Script" path="res://scripts/yank_pickup.gd" id="1_flye7"]
+[ext_resource type="Script" path="res://scripts/environment/yank_pickup.gd" id="1_flye7"]
 [ext_resource type="Texture2D" uid="uid://dupdy3jxbqytp" path="res://addons/kenney_input_prompts/Keyboard & Mouse/Default/mouse_left_outline.png" id="2_xvelx"]
 [ext_resource type="Texture2D" uid="uid://bpoonwqdqvo0n" path="res://addons/kenney_input_prompts/Keyboard & Mouse/Vector/mouse_right_outline.svg" id="3_2opu8"]
 [ext_resource type="Texture2D" uid="uid://uo52gqa7301o" path="res://assets/Images/yank_arm_upgrade.png" id="4_utcwx"]
@@ -45,6 +45,7 @@ scale = Vector2(2, 2)
 texture = ExtResource("4_utcwx")
 
 [node name="Sprite2D4" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(1, 1, 1, 0.462745)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("5_bdj8m")

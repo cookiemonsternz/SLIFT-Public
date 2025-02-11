@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://br85yumpnqgit"]
+[gd_scene load_steps=17 format=4 uid="uid://br85yumpnqgit"]
 
 [ext_resource type="PackedScene" uid="uid://brkdvlqw0t3sp" path="res://scenes/characters/player.tscn" id="1_ul5aj"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/shape_texture_2d.gd" id="2_pirk4"]
@@ -6,6 +6,8 @@
 [ext_resource type="TileSet" uid="uid://b30kfa4ed8aqy" path="res://assets/tileset.tres" id="5_0y1ac"]
 [ext_resource type="PackedScene" uid="uid://brv1ny6q731fn" path="res://scenes/environment/lights/lamp_beam.tscn" id="5_fo8p6"]
 [ext_resource type="Texture2D" uid="uid://dde1a644jsvar" path="res://assets/Images/rock.png" id="6_o1id5"]
+[ext_resource type="PackedScene" uid="uid://cq1dq0pgfte7e" path="res://scenes/environment/button.tscn" id="7_cxxk3"]
+[ext_resource type="PackedScene" uid="uid://cm5ngvdr2ih4g" path="res://scenes/environment/door.tscn" id="8_aaxen"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n3i5c"]
 size = Vector2(438, 72)
@@ -199,6 +201,8 @@ tile_set = ExtResource("5_0y1ac")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 position = Vector2(-802, -32)
+collision_layer = 2
+collision_mask = 121
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("RectangleShape2D_gmc7f")
@@ -207,3 +211,10 @@ shape = SubResource("RectangleShape2D_gmc7f")
 texture_filter = 1
 scale = Vector2(5, 5)
 texture = ExtResource("6_o1id5")
+
+[node name="Button" parent="." node_paths=PackedStringArray("linked_door") instance=ExtResource("7_cxxk3")]
+position = Vector2(-1661, 2)
+linked_door = NodePath("../Door")
+
+[node name="Door" parent="." instance=ExtResource("8_aaxen")]
+position = Vector2(-1297, 11)

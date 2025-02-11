@@ -1,12 +1,12 @@
 extends RigidBody2D
 
-
 var set_pos_state = false
 var set_vel_state = false
 var move_vector = Vector2.ZERO
 var vel_vector = Vector2.ZERO
 
 func _ready():
+	# potentially unnecessary, can't test rn
 	top_level = true
 
 func _integrate_forces(state: PhysicsDirectBodyState2D) -> void:

@@ -13,12 +13,9 @@ func update(item: ArmUpgrade):
 
 
 func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
-	#print("HI")
 	if event is InputEventMouseButton \
-	#and event.button_index == MOUSE_BUTTON_LEFT \
 	and event.is_pressed():
 		on_click()
 
 func on_click():
 	get_tree().get_first_node_in_group("Player").arm_upgrade_component.remove_upgrade(side, index)
-	#print("CLICKED")

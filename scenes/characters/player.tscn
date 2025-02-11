@@ -1,12 +1,13 @@
-[gd_scene load_steps=17 format=3 uid="uid://brkdvlqw0t3sp"]
+[gd_scene load_steps=18 format=3 uid="uid://brkdvlqw0t3sp"]
 
 [ext_resource type="Script" path="res://addons/shape_texture_2d/shape_texture_2d.gd" id="1_42r4y"]
 [ext_resource type="Script" path="res://scripts/characters/player.gd" id="1_x5w3x"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/drawable_capsule.gd" id="2_61cpy"]
 [ext_resource type="PackedScene" uid="uid://mnljijyrg1ql" path="res://scenes/characters/components/arm_upgrade_ui.tscn" id="2_fyt53"]
 [ext_resource type="PackedScene" uid="uid://cbfarsdxo3xll" path="res://scenes/characters/components/rope.tscn" id="4_bcbn3"]
-[ext_resource type="Script" path="res://scripts/characters/components/player_physics_follow.gd" id="5_8xicw"]
+[ext_resource type="Script" path="res://scripts/characters/player_physics_follow.gd" id="5_8xicw"]
 [ext_resource type="PackedScene" uid="uid://2yvmq877upop" path="res://scenes/characters/components/health_component.tscn" id="6_orm0g"]
+[ext_resource type="Script" path="res://scripts/characters/components/grapple_component.gd" id="7_abgwv"]
 [ext_resource type="PackedScene" uid="uid://hjhxmdpa6ntd" path="res://scenes/characters/components/arm_upgrade_component.tscn" id="7_i54cr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rh5mj"]
@@ -62,11 +63,11 @@ height = 122.0
 collision_layer = 8
 collision_mask = 13
 script = ExtResource("1_x5w3x")
-grapple_origin = NodePath("GrappleComponents/GrappleOrigin")
-rope1 = NodePath("GrappleComponents/Rope1")
-rope2 = NodePath("GrappleComponents/Rope2")
-raycast = NodePath("GrappleComponents/RayCast2D")
-player_physics_follow = NodePath("GrappleComponents/PlayerPhysicsFollow")
+grapple_origin = NodePath("GrappleComponent/GrappleOrigin")
+rope1 = NodePath("GrappleComponent/Rope1")
+rope2 = NodePath("GrappleComponent/Rope2")
+raycast = NodePath("GrappleComponent/RayCast2D")
+player_physics_follow = NodePath("GrappleComponent/PlayerPhysicsFollow")
 launch_type = 1
 launch_speed = 20.0
 damping = 0.9
@@ -118,18 +119,21 @@ occluder = SubResource("OccluderPolygon2D_l5py8")
 arm_upgrade_ui = NodePath("../../ArmUpgradeUI")
 
 [node name="ArmUpgradeUI" parent="." instance=ExtResource("2_fyt53")]
+visible = false
 z_index = 1
 offset_left = -278.0
 offset_top = -98.0
 offset_right = -56.0
 offset_bottom = -20.0
 scale = Vector2(2.5, 2.5)
+script = null
 
-[node name="GrappleComponents" type="Node2D" parent="."]
+[node name="GrappleComponent" type="Node2D" parent="."]
+script = ExtResource("7_abgwv")
 
-[node name="GrappleOrigin" type="Marker2D" parent="GrappleComponents"]
+[node name="GrappleOrigin" type="Marker2D" parent="GrappleComponent"]
 
-[node name="Rope1" parent="GrappleComponents" node_paths=PackedStringArray("grapple_origin", "player") instance=ExtResource("4_bcbn3")]
+[node name="Rope1" parent="GrappleComponent" node_paths=PackedStringArray("grapple_origin", "player") instance=ExtResource("4_bcbn3")]
 width = 4.0
 grapple_origin = NodePath("../GrappleOrigin")
 player = NodePath("../..")
@@ -138,7 +142,7 @@ animation_scale = 8.461
 rope_progression_curve = SubResource("Curve_gldd0")
 rope_progression_speed = 9.0
 
-[node name="Rope2" parent="GrappleComponents" node_paths=PackedStringArray("grapple_origin", "player") instance=ExtResource("4_bcbn3")]
+[node name="Rope2" parent="GrappleComponent" node_paths=PackedStringArray("grapple_origin", "player") instance=ExtResource("4_bcbn3")]
 width = 4.0
 grapple_origin = NodePath("../GrappleOrigin")
 player = NodePath("../..")
@@ -148,9 +152,9 @@ animation_scale = 8.461
 rope_progression_curve = SubResource("Curve_gldd0")
 rope_progression_speed = 9.0
 
-[node name="RayCast2D" type="RayCast2D" parent="GrappleComponents"]
+[node name="RayCast2D" type="RayCast2D" parent="GrappleComponent"]
 
-[node name="PlayerPhysicsFollow" type="RigidBody2D" parent="GrappleComponents"]
+[node name="PlayerPhysicsFollow" type="RigidBody2D" parent="GrappleComponent"]
 physics_interpolation_mode = 1
 top_level = true
 collision_layer = 2
@@ -159,7 +163,7 @@ physics_material_override = SubResource("PhysicsMaterial_djybv")
 lock_rotation = true
 script = ExtResource("5_8xicw")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GrappleComponents/PlayerPhysicsFollow"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GrappleComponent/PlayerPhysicsFollow"]
 shape = SubResource("CapsuleShape2D_eru5a")
 
 [node name="HealthComponent" parent="." instance=ExtResource("6_orm0g")]

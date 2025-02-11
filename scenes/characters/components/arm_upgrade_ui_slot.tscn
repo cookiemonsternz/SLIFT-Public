@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://dhmg8tvkkyv10"]
 
-[ext_resource type="Script" path="res://scripts/characters/components/arm_upgrade_ui_slot.gd" id="1_dc2fh"]
+[ext_resource type="Script" path="res://scripts/characters/components/arm_upgrade_system/arm_upgrade_ui_slot.gd" id="1_dc2fh"]
 [ext_resource type="Texture2D" uid="uid://i6v2w3le3fif" path="res://assets/Images/arm_upgrade_ui_slot.png" id="1_nhkgj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ws0vr"]

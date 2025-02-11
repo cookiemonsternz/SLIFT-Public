@@ -1,5 +1,7 @@
 extends Node
 
+@export var owning_entity: Node
+
 @export_group("Health")
 @export var max_health: float = 10
 @export var health: float = 10
@@ -19,11 +21,13 @@ enum DamageType {
 	Light
 }
 
-signal creature_died
+signal creature_died(damage, damage_type, damage_source)
+signal entity_damaged(damage, damage_type, damage_source)
 
 var health_regen_timer: Timer
 var shield_regen_timer: Timer
-var arm_upgrade_component: ArmUpgradeComponent
+
+# Should be able to be used on player, enemy, and breakable objects
 
 func _ready() -> void:
 	health_regen_timer = Timer.new()
@@ -37,38 +41,38 @@ func _ready() -> void:
 	shield_regen_timer.timeout.connect(_on_shield_regen_timer_timeout)
 	shield_regen_timer.autostart = true
 	self.add_child(shield_regen_timer)
-	
-	arm_upgrade_component = get_tree().get_first_node_in_group("Player").arm_upgrade_component
 
-func damage(damage: float, damage_type: DamageType = DamageType.World):
-	#print(shield, " : ", health)
-	arm_upgrade_component.player_damaged(damage, damage_type)
+func damage(damage: float, damage_type: DamageType = DamageType.World, damage_source: Node = null):
+	if owning_entity is Player:
+		owning_entity.arm_upgrade_component.player_damaged(damage, damage_type)
+	
+	entity_damaged.emit(damage, damage_type, damage_source)
+	
 	match damage_type:
 		DamageType.World:
 			shield = shield - damage if shield > 0 else 0
 			if shield == 0:
 				health -= damage
 				if health < 0:
-					creature_died.emit()
+					creature_died.emit(damage, damage_type, damage_source)
 		DamageType.Enemy:
 			shield = shield - damage if shield > 0 else 0
 			if shield == 0:
 				health -= damage
 				if health < 0:
-					creature_died.emit()
+					creature_died.emit(damage, damage_type, damage_source)
 		DamageType.Obstacle:
 			shield = shield - damage if shield > 0 else 0
 			if shield == 0:
 				health -= damage
 				if health < 0:
-					creature_died.emit()
+					creature_died.emit(damage, damage_type, damage_source)
 		DamageType.Light:
 			shield = shield - damage if shield > 0 else 0
 			if shield == 0:
 				health -= damage
 				if health < 0:
-					creature_died.emit()
-					get_parent().get_parent().modulate = Color(1.0, 0.0, 0.0)
+					creature_died.emit(damage, damage_type, damage_source)
 
 func _on_health_regen_timer_timeout():
 	if health < max_health:

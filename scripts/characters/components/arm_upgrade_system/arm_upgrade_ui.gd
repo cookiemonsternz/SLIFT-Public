@@ -8,7 +8,6 @@ func _ready() -> void:
 	close()
 
 func update_slots(installed_upgrades):
-	#print(installed_upgrades[0][0].name)
 	for i in range(6):
 		if len(installed_upgrades[0]) > 6:
 			printerr("Too many upgrades, need a better cap system but for now just have an error")

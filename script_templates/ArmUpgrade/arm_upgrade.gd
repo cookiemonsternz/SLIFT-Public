@@ -5,6 +5,12 @@
 
 class_name CHANGEME extends ArmUpgrade
 
+var loaded_texture: Texture = preload("res://path/to/texture.png")
+
+func _ready():
+    texture = loaded_texture
+    upgrade_name = "CHANGEME"
+
 # Called once every process frame
 # func update_process(player: Player, root: Node):
 # 	pass

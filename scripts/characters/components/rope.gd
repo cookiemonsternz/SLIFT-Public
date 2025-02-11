@@ -1,5 +1,10 @@
 extends Line2D
 
+### TODO ###
+# Refactor to not have as many semi-redundant variables
+# Think a lot could be local vars
+# Also create a global enums lol
+
 @export_group("References")
 @export var grapple_origin: Node2D
 @export var player: CharacterBody2D

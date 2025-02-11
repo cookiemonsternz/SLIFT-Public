@@ -33,6 +33,11 @@ func remove_upgrade(side: int, index: int):
 		installed_upgrades_right.remove_at(index)
 	arm_upgrade_ui.update_slots([installed_upgrades_left, installed_upgrades_right])
 
+
+###--- ARM UPGRADE CALLABLES ---###
+# These functions are triggered by player events and are called on all installed upgrades
+
+
 func _process(delta: float) -> void:
 	var player = get_tree().get_first_node_in_group("Player")
 	var root = get_tree().root

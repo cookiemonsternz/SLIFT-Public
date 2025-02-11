@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://brkdvlqw0t3sp" path="res://scenes/characters/player.tscn" id="2_207vh"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/shape_texture_2d.gd" id="3_88gsh"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/drawable_ellipse.gd" id="4_gepve"]
-[ext_resource type="PackedScene" uid="uid://c38kt6sueanw0" path="res://scenes/environment/lights/thick_light.tscn" id="5_lv3ih"]
+[ext_resource type="PackedScene" uid="uid://dkupc0hcgqo8k" path="res://scenes/environment/lights/thick_light.tscn" id="5_lv3ih"]
 [ext_resource type="PackedScene" uid="uid://cwvhio0pg786r" path="res://scenes/yank_pickup.tscn" id="6_cbg1n"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ekj6v"]

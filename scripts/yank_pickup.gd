@@ -1,5 +1,8 @@
 extends Node2D
 
+### TODO ###
+# Delete this
+
 var can_get: bool = false
 
 func _process(delta: float) -> void:

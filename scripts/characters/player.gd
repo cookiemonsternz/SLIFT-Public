@@ -73,13 +73,15 @@ func _ready() -> void:
 	var callable = func(damage: float, damage_type: Enums.DamageType, damage_source: Node):
 		printerr("Player died, last damage : ", damage, ", damage type : ", damage_type, ", damage source : ", damage_source)
 		modulate = Color(1.0, 0.0, 0.0)
-	health_component.creature_died.connect(callable)
+	health_component.entity_died.connect(callable)
 
 func _process(delta: float) -> void:
 	#print(position)
 	if Input.is_action_just_pressed("test_input"):
 		var yank_upgrade = YankArmUpgrade.new()
 		arm_upgrade_component.add_upgrade(Enums.Grapples.Left, 0, yank_upgrade)
+		var damage_upgrade = DamageArmUpgrade.new()
+		arm_upgrade_component.add_upgrade(Enums.Grapples.Right, 0, damage_upgrade)
 	match current_move_mode:
 		Enums.MoveModes.GROUND:
 			handle_ground_movement(delta)

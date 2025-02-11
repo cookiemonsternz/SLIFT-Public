@@ -1,11 +1,13 @@
-[gd_scene load_steps=17 format=4 uid="uid://br85yumpnqgit"]
+[gd_scene load_steps=19 format=4 uid="uid://br85yumpnqgit"]
 
 [ext_resource type="PackedScene" uid="uid://brkdvlqw0t3sp" path="res://scenes/characters/player.tscn" id="1_ul5aj"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/shape_texture_2d.gd" id="2_pirk4"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/drawable_rectangle.gd" id="3_v07sq"]
 [ext_resource type="TileSet" uid="uid://b30kfa4ed8aqy" path="res://assets/tileset.tres" id="5_0y1ac"]
 [ext_resource type="PackedScene" uid="uid://brv1ny6q731fn" path="res://scenes/environment/lights/lamp_beam.tscn" id="5_fo8p6"]
+[ext_resource type="Script" path="res://scripts/temp/box_health_interface thingy.gd" id="6_17cax"]
 [ext_resource type="Texture2D" uid="uid://dde1a644jsvar" path="res://assets/Images/rock.png" id="6_o1id5"]
+[ext_resource type="PackedScene" uid="uid://cy1yu1wo4m8n" path="res://scenes/health_component.tscn" id="7_0ce4d"]
 [ext_resource type="PackedScene" uid="uid://cq1dq0pgfte7e" path="res://scenes/environment/button.tscn" id="7_cxxk3"]
 [ext_resource type="PackedScene" uid="uid://cm5ngvdr2ih4g" path="res://scenes/environment/door.tscn" id="8_aaxen"]
 
@@ -203,6 +205,20 @@ tile_set = ExtResource("5_0y1ac")
 position = Vector2(-802, -32)
 collision_layer = 2
 collision_mask = 121
+script = ExtResource("6_17cax")
+
+[node name="Health Component" parent="RigidBody2D" node_paths=PackedStringArray("owning_entity") instance=ExtResource("7_0ce4d")]
+owning_entity = NodePath("..")
+max_health = 3.0
+health = 3.0
+health_regen = false
+health_regen_rate = 0.0
+health_regen_amount = 0.0
+max_shield = 0.0
+shield = 0.0
+shield_regen = false
+shield_regen_rate = 0.0
+shield_regen_amount = 0.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
 shape = SubResource("RectangleShape2D_gmc7f")

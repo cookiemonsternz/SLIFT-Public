@@ -1,0 +1,48 @@
+[gd_scene load_steps=7 format=3 uid="uid://ciq52b3cuisor"]
+
+[ext_resource type="Script" path="res://win_area.gd" id="1_dh7f3"]
+[ext_resource type="Script" path="res://addons/shape_texture_2d/shape_texture_2d.gd" id="2_ud2mv"]
+[ext_resource type="Script" path="res://addons/shape_texture_2d/drawable_rectangle.gd" id="3_fpveq"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lwdwi"]
+size = Vector2(128, 128)
+
+[sub_resource type="Resource" id="Resource_ddck6"]
+script = ExtResource("3_fpveq")
+corner_rounding = 0.0
+
+[sub_resource type="Texture2D" id="Texture2D_70vqa"]
+resource_local_to_scene = false
+resource_name = ""
+script = ExtResource("2_ud2mv")
+size = Vector2i(128, 128)
+shape = SubResource("Resource_ddck6")
+fill_type = 0
+fill_color = Color(1, 1, 1, 1)
+fill_from = Vector2(0, 0)
+fill_to = Vector2(1, 0)
+fill_repeat = "pad"
+stroke_type = 0
+stroke_width = 0.0
+stroke_color = Color(0, 0, 0, 1)
+stroke_from = Vector2(0, 0)
+stroke_to = Vector2(1, 0)
+stroke_repeat = "pad"
+stroke_joint = "round"
+offset = Vector2(0, 0)
+rotation = 0.0
+scale = Vector2(1, 1)
+
+[node name="WinArea" type="Area2D"]
+collision_layer = 11
+collision_mask = 11
+script = ExtResource("1_dh7f3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_lwdwi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(0.926564, 0.690294, 7.70092e-07, 1)
+texture = SubResource("Texture2D_70vqa")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

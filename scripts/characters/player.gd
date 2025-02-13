@@ -39,6 +39,9 @@ var spring_joints: Array[DampedSpringJoint2D] = [null, null]
 @export var jump_buffer_timer: Timer
 @export var coyote_time_timer: Timer
 @export var ground_cast: RayCast2D
+@export var death_screen: Control
+@export var win_screen: Control
+@export var win_button: Button
 
 @export_subgroup("Jumping")
 @export var jump_velocity = -700.0 # Maximum jump strength
@@ -56,7 +59,7 @@ var spring_joints: Array[DampedSpringJoint2D] = [null, null]
 @export var health_component: HealthComponent
 @export var arm_upgrade_component: ArmUpgradeComponent
 
-
+var is_dead = false
 var can_coyote: bool = false
 var coyote_jump_available := true
 var coyote_timer_reset := true
@@ -76,6 +79,11 @@ func _ready() -> void:
 	health_component.entity_died.connect(callable)
 
 func _process(delta: float) -> void:
+	if death_screen.visible == true:
+		move_speed = 0
+		jump_velocity = 0
+		is_dead = true
+	
 	#print(position)
 	if Input.is_action_just_pressed("test_input"):
 		var yank_upgrade = YankArmUpgrade.new()
@@ -348,3 +356,7 @@ func create_spring_joint(point_a: Vector2, point_b: Vector2, body_a: PhysicsBody
 	get_tree().root.add_child(spring)
 	
 	return spring
+
+
+func _on_button_pressed() -> void:
+	get_tree().reload_current_scene()

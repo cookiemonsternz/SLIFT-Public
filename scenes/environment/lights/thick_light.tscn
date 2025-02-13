@@ -21,9 +21,12 @@ texture = ExtResource("2_trl6a")
 offset = Vector2(0, 511)
 
 [node name="Area2D" type="Area2D" parent="." index="2"]
-collision_mask = 9
+collision_layer = 73
+collision_mask = 73
 
 [node name="CollisionShape2D" type="CollisionPolygon2D" parent="Area2D" index="0"]
+light_mask = 73
+visibility_layer = 73
 polygon = PackedVector2Array(66, -1023, -66, -1023, -766, 0, 766, 0)
 
 [node name="Marker2D" type="Marker2D" parent="." index="3"]

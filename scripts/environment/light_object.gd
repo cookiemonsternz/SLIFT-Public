@@ -39,7 +39,7 @@ func _process(delta: float) -> void:
 
 func damage_body(body):
 	raycast.global_position = light_origin.global_position
-	raycast.target_position = to_local(body.global_position)
+	raycast.target_position = raycast.to_local(body.global_position)
 	if not raycast.is_colliding():
 		#print("damaging")
 		body.health_component.damage(light_damage, Enums.DamageType.Light, self)

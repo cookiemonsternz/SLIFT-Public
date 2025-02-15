@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://c7yqtwlty8ego"]
+[gd_scene load_steps=121 format=3 uid="uid://c7yqtwlty8ego"]
 
 [ext_resource type="PackedScene" uid="uid://c3wxkq4jmthgk" path="res://scenes/block.tscn" id="1_08how"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/shape_texture_2d.gd" id="2_ds7ry"]
@@ -165,6 +165,168 @@ polygon = PackedVector2Array(-347, 181.389, -287, 85.7119, -231, 19.9336, -115, 
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_lfgsn"]
 polygon = PackedVector2Array(458, -54.8149, 45, -48.8354, -495, -60.7949, -854, -12.9561, -1064, 76.7417, -1136, 405.633, -1150, 695.656, -1265, 1574.69, -1370, 2238.46, -1555, 3185.27, -1955, 3203.21, -3583, 3132.44, -5185, 3589.9, -1717, 4406.15, -371, 4526.74, 1432, 4472.93, 2643, 4526.74, 3907, 4244.7, 3921, 3454.36, 3463, 2702.89, 2239, 1979.33, 1432, 1214.91, 1176, 222.251, 988, -85.7109)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qb8np"]
+polygon = PackedVector2Array(-18, 100.661, 84, 94.6807, 203, 103.65, 288, 165.442, 291, 219.261, 248, 272.083, 144, 264.11, -108, 241.187, -196, 247.167)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_g76fn"]
+polygon = PackedVector2Array(14, -246.17, 115, -242.184, 259, -215.274, 344, -178.398, 492, -161.456, 603, -192.352, 629, -266.103, 576, -396.663, 518, -497.324, 508, -620.907, 485, -919.9, 478, -999.631, -53, -372.744)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_83o3d"]
+polygon = PackedVector2Array(-30, -292.016, -196, 23.9194, -247, 340.852, -292, 592.005, -257, 737.515, -257, 848.142, -282, 983.685, -196, 1094.31, -60, 1109.26, 136, 1139.16, 348, 1099.3, 736, 1129.19, 1018, 767.414, 1018, 109.63, 832, -336.865, 559, -407.626, 267, -402.643)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_fy2mb"]
+polygon = PackedVector2Array(-1659, -642.833, -1645, -1175.04, -1324, -1438.15, -761, -1572.7, -355, -1530.84, -155, -1388.32, 16, -1040.49, 165, -806.283, 364, -512.273, 596, -381.713, 808, -472.408, 818, -884.021, 767, -1486.99, -49, -2069.03, -1249, -2179.65, -1944, -1667.38, -1984, -803.293)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_5mpqd"]
+polygon = PackedVector2Array(-1659, -642.833, -1645, -1175.04, -1324, -1438.15, -761, -1572.7, -355, -1530.84, -155, -1388.32, 16, -1040.49, 165, -806.283, 364, -512.273, 596, -381.713, 808, -472.408, 818, -884.021, 767, -1486.99, -49, -2069.03, -1249, -2179.65, -1944, -1667.38, -1984, -803.293)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qggkf"]
+polygon = PackedVector2Array(172, -277.066, -106, -135.543, -537, -106.641, -840, -35.8789, -908, 66.7749, -832, 320.918, -804, 242.184, -713, 129.563, -436, 135.543, -125, 112.621, 175, 16.9429, 475, -101.657, 639, -332.878, 616, -536.193, 481, -592.005, 215, -389.687)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2p1qc"]
+polygon = PackedVector2Array(172, -277.066, -106, -135.543, -537, -106.641, -840, -35.8789, -908, 66.7749, -832, 320.918, -804, 242.184, -713, 129.563, -436, 135.543, -125, 112.621, 175, 16.9429, 475, -101.657, 639, -332.878, 616, -536.193, 481, -592.005, 215, -389.687)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_kc1vg"]
+polygon = PackedVector2Array(176, 241.187, 72, 227.234, -62, 221.254, -104, 287.033, -90, 370.75, -56, 414.603, 4, 450.482, 102, 474.401, 170, 458.455, 230, 414.603, 244, 320.918, 264, 245.174)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_uaixg"]
+polygon = PackedVector2Array(176, 241.187, 72, 227.234, -62, 221.254, -104, 287.033, -90, 370.75, -56, 414.603, 4, 450.482, 102, 474.401, 170, 458.455, 230, 414.603, 244, 320.918, 264, 245.174)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_sphcp"]
+polygon = PackedVector2Array(176, 241.187, 72, 227.234, -62, 221.254, -104, 287.033, -90, 370.75, -56, 414.603, 4, 450.482, 102, 474.401, 170, 458.455, 230, 414.603, 244, 320.918, 264, 245.174)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_gep2n"]
+polygon = PackedVector2Array(176, 241.187, 72, 227.234, -62, 221.254, -104, 287.033, -90, 370.75, -56, 414.603, 4, 450.482, 102, 474.401, 170, 458.455, 230, 414.603, 244, 320.918, 264, 245.174)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_j051s"]
+polygon = PackedVector2Array(176, 241.187, 72, 227.234, -62, 221.254, -104, 287.033, -90, 370.75, -56, 414.603, 4, 450.482, 102, 474.401, 170, 458.455, 230, 414.603, 244, 320.918, 264, 245.174)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_7b61l"]
+polygon = PackedVector2Array(-540, -1535.82, -1106, -1526.85, -1708, -1464.07, -1950, -1733.16, -2210, -2081.98, -2363, -2664.02, -2139, -3057.7, -1330, -3183.27, -756, -2744.75, -522, -2243.44)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_mxfqx"]
+polygon = PackedVector2Array(-540, -1535.82, -1106, -1526.85, -1708, -1464.07, -1950, -1733.16, -2210, -2081.98, -2363, -2664.02, -2139, -3057.7, -1330, -3183.27, -756, -2744.75, -522, -2243.44)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ay76d"]
+polygon = PackedVector2Array(-540, -1535.82, -1106, -1526.85, -1708, -1464.07, -1950, -1733.16, -2210, -2081.98, -2363, -2664.02, -2139, -3057.7, -1330, -3183.27, -756, -2744.75, -522, -2243.44)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1ysx6"]
+polygon = PackedVector2Array(-540, -1535.82, -1106, -1526.85, -1708, -1464.07, -1950, -1733.16, -2210, -2081.98, -2363, -2664.02, -2139, -3057.7, -1330, -3183.27, -756, -2744.75, -522, -2243.44)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_o3nrj"]
+polygon = PackedVector2Array(-540, -1535.82, -1106, -1526.85, -1708, -1464.07, -1950, -1733.16, -2210, -2081.98, -2363, -2664.02, -2139, -3057.7, -1330, -3183.27, -756, -2744.75, -522, -2243.44)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_h1lp6"]
+polygon = PackedVector2Array(-73, -50.8286, 562, 74.748, 760, 116.607, 886, 188.365, 1156, 343.841, 1614, 561.109, 1842, 711.602, 2105, 855.119, 2518, 1035.51, 3077, 1364.4, 3370, 1445.13, 3944, 1655.42, 4216, 1685.32, 4670, 1795.95, 5023, 1805.91, 5587, 1756.08, 5930, 1736.15, 6273, 1936.47, 6555, 2338.12, 6757, 3704.52, 6474, 4127.09, 5628, 4689.2, 3894, 4588.54, 1112, 4467.94, -843, 2479.64, -682, 711.602)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_fip8e"]
+polygon = PackedVector2Array(-73, -50.8286, 562, 74.748, 760, 116.607, 886, 188.365, 1156, 343.841, 1614, 561.109, 1842, 711.602, 2105, 855.119, 2518, 1035.51, 3077, 1364.4, 3370, 1445.13, 3944, 1655.42, 4216, 1685.32, 4670, 1795.95, 5023, 1805.91, 5587, 1756.08, 5930, 1736.15, 6273, 1936.47, 6555, 2338.12, 6757, 3704.52, 6474, 4127.09, 5628, 4689.2, 3894, 4588.54, 1112, 4467.94, -843, 2479.64, -682, 711.602)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_pijbs"]
+polygon = PackedVector2Array(-73, -50.8286, 562, 74.748, 760, 116.607, 886, 188.365, 1156, 343.841, 1614, 561.109, 1842, 711.602, 2105, 855.119, 2518, 1035.51, 3077, 1364.4, 3370, 1445.13, 3944, 1655.42, 4216, 1685.32, 4670, 1795.95, 5023, 1805.91, 5587, 1756.08, 5930, 1736.15, 6273, 1936.47, 6555, 2338.12, 6757, 3704.52, 6474, 4127.09, 5628, 4689.2, 3894, 4588.54, 1112, 4467.94, -843, 2479.64, -682, 711.602)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_eydb4"]
+polygon = PackedVector2Array(-73, -50.8286, 562, 74.748, 760, 116.607, 886, 188.365, 1156, 343.841, 1614, 561.109, 1842, 711.602, 2105, 855.119, 2518, 1035.51, 3077, 1364.4, 3370, 1445.13, 3944, 1655.42, 4216, 1685.32, 4670, 1795.95, 5023, 1805.91, 5587, 1756.08, 5930, 1736.15, 6273, 1936.47, 6555, 2338.12, 6757, 3704.52, 6474, 4127.09, 5628, 4689.2, 3894, 4588.54, 1112, 4467.94, -843, 2479.64, -682, 711.602)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_e0t51"]
+polygon = PackedVector2Array(-73, -50.8286, 562, 74.748, 760, 116.607, 886, 188.365, 1156, 343.841, 1614, 561.109, 1842, 711.602, 2105, 855.119, 2518, 1035.51, 3077, 1364.4, 3370, 1445.13, 3944, 1655.42, 4216, 1685.32, 4670, 1795.95, 5023, 1805.91, 5587, 1756.08, 5930, 1736.15, 6273, 1936.47, 6555, 2338.12, 6757, 3704.52, 6474, 4127.09, 5628, 4689.2, 3894, 4588.54, 1112, 4467.94, -843, 2479.64, -682, 711.602)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_aq1dm"]
+polygon = PackedVector2Array(-9, 55.812, 194, 335.868, 548, 670.74, 1201, 808.276, 1925, 1074.38, 2627, 1490.98, 3097, 1567.72, 3770, 1972.35, 4087, 2061.05, 4836, 2276.33, 5294, 2035.14, 5598, 1681.33, 5675, 1099.3, 5370, 251.154, 5243, -343.841, 5214, -723.562, 5250, -1738.14, 5106, -2776.64, 4352, -3313.83, 3292, -3528.11, 2412, -3617.81, 1353, -3492.23, 545, -2758.7, 150, -1756.08, 24, -861.098, -210, -235.207)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_k5b7q"]
+polygon = PackedVector2Array(3371, -724.559, 2631, -295.006, 2618, 295.006, 2658, 871.064, 2820, 2038.13, 3257, 2289.29, 4026, 2401.91, 4592, 2199.59, 4728, 1478.02, 4954, 733.527, 4714, -51.8252, 4259, -458.455)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3qjwq"]
+polygon = PackedVector2Array(-468, 526.227, -145, -177.402, 187, -508.287, 790, -620.908, 1462, -620.908, 2134, -301.982, 2614, 495.331, 2982, 654.793, 3334, 638.847, 3782, 351.814, 3862, -174.412, 4102, -1226.87, 4566, -2072.02, 4317, -3495.22, 3563, -4273.6, 2001, -4166.96, -478, -3861.99, -927, -3808.17, -1017, -819.239)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3h1no"]
+polygon = PackedVector2Array(812, -229.228, 227, -345.834, -368, -296.002, -539, -10.9629, -548, 415.6, -510, 1003.62, -489, 1502.94, -157, 1674.36, 176, 1744.12, 478, 1714.22, 801, 980.695, 982, 237.201)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_sfhln"]
+polygon = PackedVector2Array(1392, -805.286, 1295, -495.331, 1029, -258.13, 487, -106.641, -198, -1.99316, -484, 73.752, -626, 235.207, -664, 594.995, -702, 1126.21, -874, 1780, -1425, 1941.46, -2537, 1715.22, -2577, 2368.02, -512, 2424.83, 230, 2311.21, 668, 2083.98, 1295, 1912.55, 1486, 936.843, 1600, 357.794, 2228, -590.012, 2180, -829.205, 2096, -940.829, 1876, -956.775, 1624, -924.883)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_v7yon"]
+polygon = PackedVector2Array(299, 17.9395, 240, -51.8252, 149, -56.8086, -32, -62.7881, -155, -19.9326, -262, 49.832, -395, 166.439, 283, 107.638)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_im5cn"]
+polygon = PackedVector2Array(120, -274.076, -3, -206.305, -64, -153.482, -324, -47.8389, -450, -22.9229, -481, 117.604, -477, 202.318, -194, 223.248, 125, -72.7549)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_8y3d1"]
+polygon = PackedVector2Array(-1273, -929.867, -1164, -888.008, -940, -778.377, -741, -764.424, -731, -754.458, -679, -537.19, -617, -384.704, -569, -286.036, -363, -88.7012, -234, -60.7959, -184, -46.8428, -6, -195.342, 29, -422.576, -20, -905.947, 300, -1098.3, 450, -1637.48, 258, -2141.78, -802, -2990.92, -2658, -3469.31, -3858, -3612.83, -4690, -3118.49, -3842, -1810.9, -2258, -2257.39, -1682, -2113.88)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rhee5"]
+polygon = PackedVector2Array(460, -261.12, -262, -114.614, -757, -128.566, -985, -85.7109, -1047, 65.7783, -995, 203.314, -838, 297.995, -828, 444.502, -851, 1024.55, -891, 1398.29, -1323, 1516.89, -2493, 1490.98, -2849, 1583.66, -3012, 2095.94, -2095, 2256.4, -895, 2175.67, 284, 1583.66, 485, 478.388)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_s37dv"]
+polygon = PackedVector2Array(-374, 12.957, -60, 108.634, 463, 203.315, 1034, 212.285, 1224, -5.97949, 1281, -290.022, 1348, -470.414, 1395, -546.159, 1700, -555.129, 1919, -413.605, 2061, -299.989, 2252, -100.66, 2613, 3.98633, 3032, -252.15, 3508, -62.7881, 4135, 50.8291, 4716, 411.613, 5011, 582.039, 5696, 525.23, 6771, 865.085, 7156, 748.478, 7925, 1003.62, 8736, 1142.15, 9427, 1368.39, 9910, 1730.17, 11102, 2059.06, 11587, 1429.18, 12312, 1293.64, 12901, 1429.18, 13414, 1715.22, 13505, 2272.34, 13860, 4754.98, 12800, 5721.72, 8855, 5749.62, 5548, 4102.18, 2697, 4329.41, -324, 3448.38, -610, 1743.13, -561, 766.417)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_v2il2"]
+polygon = PackedVector2Array(707, -242.184, 88, -144.513, -275, 8.96973, -679, 267.1, 303, 612.935, 811, -118.601)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_n6h3i"]
+polygon = PackedVector2Array(-714, -274.076, -600, -206.305, -412, -134.547, -103, -2.99023, 107, 8.96973, 346, -26.9092, 703, -113.617, 964, -134.547, 1087, -101.658, 1132, 35.8789, 1048, 82.7207, 865, 85.7109, 598, 79.7314, 195, 247.167, -27, 229.228, -335, 96.6738, -636, -98.668, -792, -233.215)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ytcnc"]
+polygon = PackedVector2Array(-348, 61.791, -268, -35.8799, -242, -154.479, -200, -238.197, -132, -276.07, -5, -297.996, 97, -289.026, 160, -264.11, 228, -141.523, 279, 35.8789, 283, 251.153, 283, 403.64)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_px5qy"]
+polygon = PackedVector2Array(128, -28.9023, -104, 28.9033, -228, 22.9229, -426, 34.8828, -460, 70.7617, -184, 148.5, 88, 178.399, 184, 82.7217)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_5hwgm"]
+polygon = PackedVector2Array(-318, 167.436, -283, -44.8486, -293, -288.029, -350, -452.476, -340, -538.187, -232, -560.112, -134, -560.112, -58, -551.143, 31, -513.271, 63, -411.613, 66, -247.167, 60, -50.8291, 129, 145.51, -10, 243.181)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rswai"]
+polygon = PackedVector2Array(-490, -751.468, -573, -645.823, -573, -454.469, -543, -254.144, -358, -107.637, -79, -9.9668, 231, -5.97949, 408, -62.7881, 533, -285.039, 514, -582.038, 389, -822.229, -30, -920.896, -302, -860.102)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_k7qcw"]
+polygon = PackedVector2Array(-230, 108.634, -260, -69.7656, -368, -169.43, -435, -257.134, -378, -337.861, -297, -353.808, -105, -357.795, 201, -330.885, 440, -287.033, 601, -129.563, 786, 44.8486, 921, 246.17, 951, 399.653, 430, 396.663, 9, 266.103)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qeju7"]
+polygon = PackedVector2Array(-223, -97.6709, -59, -71.7578, 21, -33.8857, 91, -29.8994, 60, 83.7178, -17, 115.61, -139, 103.65, -199, 63.7852, -291, -63.7852)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2jykr"]
+polygon = PackedVector2Array(293, -180.393, 83, 63.7852, 161, 476.395, 616, 780.37, 1042, 834.188, 1240, 846.148, 1312, 774.391, 1300, 590.012, 1270, 362.777, 1090, 99.6641, 982, -91.6914, 844, -204.312, 443, -210.291)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_vs0pn"]
+polygon = PackedVector2Array(-452, -597.984, -402, -241.188, -341, 0, -200, 130.56, -14, 165.442, 233, 211.288, 390, 211.288, 508, 173.416, 572, -28.9023, 578, -655.79, 459, -1033.52, -84, -1177.03, -440, -1219.89, -601, -1016.57)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_s5vot"]
+polygon = PackedVector2Array(-29, -536.192, -249, -572.072, -384, -563.102, -537, -558.119, -270, 882.028, 40, 799.307, 248, 772.397, 216, 155.477, 29, -547.155)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_fadej"]
+polygon = PackedVector2Array(442, -1186, -158, -1148.13, 54, -61.792, 655, -79.7314, 723, -76.7422, 685, -30.8965, 587, -0.99707, 413, 13.9531, 288, 9.96582, 92, -4.9834, -2, 5.97949, -89, 5.97949, -127, -42.8555, -134, -151.49, -206, -377.728, -233, -685.689, -236, -889.004, -251, -1092.32, -323, -1212.91, -270, -1280.68, -14, -1299.62, 232, -1295.63, 383, -1272.71)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_3y5fj"]
+polygon = PackedVector2Array(-200, 24.916, -87, -9.9668, 24, -15.9463, 109, 30.8955, 160, 145.51, 124, 321.915, 34, 299.989, -231, 247.167, -548, 142.52, -546, 4.9834)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_4sghc"]
+polygon = PackedVector2Array(287, -99.6641, 162, -98.667, -6, -49.832, -117, 42.8555, -132, 136.54, -128, 280.057, 43, 341.849, 221, 206.305, 244, 116.607, 285, -64.7813)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_83qfr"]
+polygon = PackedVector2Array(-280, 379.72, -536, 316.932, -801, 330.885, -1021, 429.552, -1102, 523.236, -1133, 666.753, -1075, 805.286, -949, 872.061, -747, 934.85, -549, 979.698, -258, 1001.62, -56, 974.715, 66, 881.03, 111, 706.618, 57, 491.344, -78, 429.552)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_sc15l"]
+polygon = PackedVector2Array(141, -121.59, -138, -144.513, -255, -118.6, -403, -84.7139, -213, 2568.34, 59, 3122.48, 696, 3789.23, 1057.28, 3701.8, 1672, 3553.03, 1875, 2958.03, 1748, 2122.85, 1431, 1565.72, 758, 743.495, 644, 224.245, 453, -87.7041)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6ablk"]
+polygon = PackedVector2Array(299, 147.503, -105, -737.515, -426, -1175.04, -986, -1631.5, -2172, -1512.9, -2037, -736.518, -1033, 80.7275, -1020, 577.055, -872, 952.789, -495, 1381.34, -334, 1730.17, -186, 1931.49, 110, 3111.51, 245, 3633.75, 420, 3861.98, 904, 3888.89, 1294, 3835.08, 1657, 3540.07, 1590, 2964.01, 1536, 2199.59, 1213, 1327.53, 621, 429.552)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_opieu"]
+polygon = PackedVector2Array(-1028, -544.166, -1095, -383.707, -960, 29.8994, -324, 359.788, 515, 426.563, 1041, 266.104, 1541, 88.7012, 1829, 71.7588, 2058, 224.244, 2176, 654.794, 1871, 1094.31, 905, 1170.06, -248, 1271.71, -1112, 1262.74, -2079, 941.826, -2231, 452.476, -2180, -383.707, -1595, -687.683, -1155, -721.568)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_n6jsj"]
+polygon = PackedVector2Array(373, -156.473, 103, -192.352, -72, -120.593, -220, -26.9092, -287, 142.521, -233, 286.036, 5, 353.809, 292, 366.765, 508, 344.838, 728, 295.006, 813, 183.383, 750, 0, 543, -143.516)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_mopxt"]
+polygon = PackedVector2Array(-1231, -598.981, -1036, -623.897, -798, -573.068, -536, -404.637, -197, -235.207, -52, -32.8887, -19, 187.368, 75, 491.344, 75, 727.548, 66, 1191.98, 227, 1512.9, 654, 1780, 807, 2046.11, 854, 2359.05, 1235, 2596.25, 1577, 2586.29, 1758, 2349.08, 1796, 1789.97, 1587, 1031.52, 1197, 197.335, 521, -428.556, 26, -969.731, -573, -1121.22, -1096, -1045.48)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_1cspo"]
+polygon = PackedVector2Array(275, -984.682, 468, -489.352, 644, -90.6953, 1226, 4.98242, 1560, 324.904, 1676, 511.277, 1514, 962.756, 350, 787.346, -124, 1103.28, -774, 571.076, -653, -263.113, -194, -694.658, -420, -1085.34)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_npsha"]
+polygon = PackedVector2Array(-955, -541.176, -1428, -82.7207, -1197, 533.203, -542, 1166.07, 406, 1286.66, 1081, 1296.63, 1928, 1195.97, 2180, 904.949, 2744, 693.662, 3591, 633.863, 4276, 1215.9, 3601, 2180.65, 2482, 2362.04, -1287, 2251.41, -2951, 1527.85, -3525, -109.631, -2991, -782.363, -2416, -993.652, -1882, -963.752)
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5po7v"]
 radius = 89.0898
@@ -1078,6 +1240,816 @@ occluder = SubResource("OccluderPolygon2D_lfgsn")
 [node name="Block53Polygon2D" type="Polygon2D" parent="Blocks/Block53"]
 polygon = PackedVector2Array(458, -54.8149, 45, -48.8354, -495, -60.7949, -854, -12.9561, -1064, 76.7417, -1136, 405.633, -1150, 695.656, -1265, 1574.69, -1370, 2238.46, -1555, 3185.27, -1955, 3203.21, -3583, 3132.44, -5185, 3589.9, -1717, 4406.15, -371, 4526.74, 1432, 4472.93, 2643, 4526.74, 3907, 4244.7, 3921, 3454.36, 3463, 2702.89, 2239, 1979.33, 1432, 1214.91, 1176, 222.251, 988, -85.7109)
 
+[node name="Block54" parent="Blocks" instance=ExtResource("1_08how")]
+position = Vector2(44755, 7390)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-18, 100.661, 84, 94.6807, 203, 103.65, 288, 165.442, 291, 219.261, 248, 272.083, 144, 264.11, -108, 241.187, -196, 247.167)
+
+[node name="Block54StaticBody2D" type="StaticBody2D" parent="Blocks/Block54"]
+
+[node name="Block54CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/Block54/Block54StaticBody2D"]
+polygon = PackedVector2Array(-18, 100.661, 84, 94.6807, 203, 103.65, 288, 165.442, 291, 219.261, 248, 272.083, 144, 264.11, -108, 241.187, -196, 247.167)
+
+[node name="Block54LightOccluder2D" type="LightOccluder2D" parent="Blocks/Block54"]
+occluder = SubResource("OccluderPolygon2D_qb8np")
+
+[node name="Block54Polygon2D" type="Polygon2D" parent="Blocks/Block54"]
+polygon = PackedVector2Array(-18, 100.661, 84, 94.6807, 203, 103.65, 288, 165.442, 291, 219.261, 248, 272.083, 144, 264.11, -108, 241.187, -196, 247.167)
+
+[node name="Block55" parent="Blocks" instance=ExtResource("1_08how")]
+position = Vector2(44988, 6753)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(14, -246.17, 115, -242.184, 259, -215.274, 344, -178.398, 492, -161.456, 603, -192.352, 629, -266.103, 576, -396.663, 518, -497.324, 508, -620.907, 485, -919.9, 478, -999.631, -53, -372.744)
+
+[node name="Block55StaticBody2D" type="StaticBody2D" parent="Blocks/Block55"]
+
+[node name="Block55CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/Block55/Block55StaticBody2D"]
+polygon = PackedVector2Array(14, -246.17, 115, -242.184, 259, -215.274, 344, -178.398, 492, -161.456, 603, -192.352, 629, -266.103, 576, -396.663, 518, -497.324, 508, -620.907, 485, -919.9, 478, -999.631, -53, -372.744)
+
+[node name="Block55LightOccluder2D" type="LightOccluder2D" parent="Blocks/Block55"]
+occluder = SubResource("OccluderPolygon2D_g76fn")
+
+[node name="Block55Polygon2D" type="Polygon2D" parent="Blocks/Block55"]
+polygon = PackedVector2Array(14, -246.17, 115, -242.184, 259, -215.274, 344, -178.398, 492, -161.456, 603, -192.352, 629, -266.103, 576, -396.663, 518, -497.324, 508, -620.907, 485, -919.9, 478, -999.631, -53, -372.744)
+
+[node name="Block56" parent="Blocks" instance=ExtResource("1_08how")]
+position = Vector2(46238, 5762)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-30, -292.016, -196, 23.9194, -247, 340.852, -292, 592.005, -257, 737.515, -257, 848.142, -282, 983.685, -196, 1094.31, -60, 1109.26, 136, 1139.16, 348, 1099.3, 736, 1129.19, 1018, 767.414, 1018, 109.63, 832, -336.865, 559, -407.626, 267, -402.643)
+
+[node name="Block56StaticBody2D" type="StaticBody2D" parent="Blocks/Block56"]
+
+[node name="Block56CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/Block56/Block56StaticBody2D"]
+polygon = PackedVector2Array(-30, -292.016, -196, 23.9194, -247, 340.852, -292, 592.005, -257, 737.515, -257, 848.142, -282, 983.685, -196, 1094.31, -60, 1109.26, 136, 1139.16, 348, 1099.3, 736, 1129.19, 1018, 767.414, 1018, 109.63, 832, -336.865, 559, -407.626, 267, -402.643)
+
+[node name="Block56LightOccluder2D" type="LightOccluder2D" parent="Blocks/Block56"]
+occluder = SubResource("OccluderPolygon2D_83o3d")
+
+[node name="Block56Polygon2D" type="Polygon2D" parent="Blocks/Block56"]
+polygon = PackedVector2Array(-30, -292.016, -196, 23.9194, -247, 340.852, -292, 592.005, -257, 737.515, -257, 848.142, -282, 983.685, -196, 1094.31, -60, 1109.26, 136, 1139.16, 348, 1099.3, 736, 1129.19, 1018, 767.414, 1018, 109.63, 832, -336.865, 559, -407.626, 267, -402.643)
+
+[node name="Block57" parent="Blocks" instance=ExtResource("1_08how")]
+position = Vector2(47221, 5432)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-1659, -642.833, -1645, -1175.04, -1324, -1438.15, -761, -1572.7, -355, -1530.84, -155, -1388.32, 16, -1040.49, 165, -806.283, 364, -512.273, 596, -381.713, 808, -472.408, 818, -884.021, 767, -1486.99, -49, -2069.03, -1249, -2179.65, -1944, -1667.38, -1984, -803.293)
+
+[node name="Block57StaticBody2D" type="StaticBody2D" parent="Blocks/Block57"]
+
+[node name="Block57CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/Block57/Block57StaticBody2D"]
+polygon = PackedVector2Array(-1659, -642.833, -1645, -1175.04, -1324, -1438.15, -761, -1572.7, -355, -1530.84, -155, -1388.32, 16, -1040.49, 165, -806.283, 364, -512.273, 596, -381.713, 808, -472.408, 818, -884.021, 767, -1486.99, -49, -2069.03, -1249, -2179.65, -1944, -1667.38, -1984, -803.293)
+
+[node name="Block57CollisionPolygon2D2" type="CollisionPolygon2D" parent="Blocks/Block57/Block57StaticBody2D"]
+polygon = PackedVector2Array(-1659, -642.833, -1645, -1175.04, -1324, -1438.15, -761, -1572.7, -355, -1530.84, -155, -1388.32, 16, -1040.49, 165, -806.283, 364, -512.273, 596, -381.713, 808, -472.408, 818, -884.021, 767, -1486.99, -49, -2069.03, -1249, -2179.65, -1944, -1667.38, -1984, -803.293)
+
+[node name="Block57LightOccluder2D" type="LightOccluder2D" parent="Blocks/Block57"]
+occluder = SubResource("OccluderPolygon2D_fy2mb")
+
+[node name="Block57Polygon2D" type="Polygon2D" parent="Blocks/Block57"]
+polygon = PackedVector2Array(-1659, -642.833, -1645, -1175.04, -1324, -1438.15, -761, -1572.7, -355, -1530.84, -155, -1388.32, 16, -1040.49, 165, -806.283, 364, -512.273, 596, -381.713, 808, -472.408, 818, -884.021, 767, -1486.99, -49, -2069.03, -1249, -2179.65, -1944, -1667.38, -1984, -803.293)
+
+[node name="Block57StaticBody2D2" type="StaticBody2D" parent="Blocks/Block57"]
+
+[node name="Block57LightOccluder2D2" type="LightOccluder2D" parent="Blocks/Block57"]
+occluder = SubResource("OccluderPolygon2D_5mpqd")
+
+[node name="Block57Polygon2D2" type="Polygon2D" parent="Blocks/Block57"]
+polygon = PackedVector2Array(-1659, -642.833, -1645, -1175.04, -1324, -1438.15, -761, -1572.7, -355, -1530.84, -155, -1388.32, 16, -1040.49, 165, -806.283, 364, -512.273, 596, -381.713, 808, -472.408, 818, -884.021, 767, -1486.99, 70, -2039.13, -1249, -2179.65, -1944, -1667.38, -1984, -803.293)
+
+[node name="Block58" parent="Blocks" instance=ExtResource("1_08how")]
+position = Vector2(47982, 5631)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(172, -277.066, -106, -135.543, -537, -106.641, -840, -35.8789, -908, 66.7749, -832, 320.918, -804, 242.184, -713, 129.563, -436, 135.543, -125, 112.621, 175, 16.9429, 475, -101.657, 639, -332.878, 616, -536.193, 481, -592.005, 215, -389.687)
+
+[node name="Block58StaticBody2D" type="StaticBody2D" parent="Blocks/Block58"]
+
+[node name="Block58CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/Block58/Block58StaticBody2D"]
+polygon = PackedVector2Array(172, -277.066, -106, -135.543, -537, -106.641, -840, -35.8789, -908, 66.7749, -832, 320.918, -804, 242.184, -713, 129.563, -436, 135.543, -125, 112.621, 175, 16.9429, 475, -101.657, 639, -332.878, 616, -536.193, 481, -592.005, 215, -389.687)
+
+[node name="Block58CollisionPolygon2D2" type="CollisionPolygon2D" parent="Blocks/Block58/Block58StaticBody2D"]
+polygon = PackedVector2Array(172, -277.066, -106, -135.543, -537, -106.641, -840, -35.8789, -908, 66.7749, -832, 320.918, -804, 242.184, -713, 129.563, -436, 135.543, -125, 112.621, 175, 16.9429, 475, -101.657, 639, -332.878, 616, -536.193, 481, -592.005, 215, -389.687)
+
+[node name="Block58LightOccluder2D" type="LightOccluder2D" parent="Blocks/Block58"]
+occluder = SubResource("OccluderPolygon2D_qggkf")
+
+[node name="Block58Polygon2D" type="Polygon2D" parent="Blocks/Block58"]
+polygon = PackedVector2Array(172, -277.066, -106, -135.543, -537, -106.641, -840, -35.8789, -908, 66.7749, -832, 320.918, -804, 242.184, -713, 129.563, -436, 135.543, -125, 112.621, 175, 16.9429, 475, -101.657, 639, -332.878, 616, -536.193, 481, -592.005, 215, -389.687)
+
+[node name="Block58StaticBody2D2" type="StaticBody2D" parent="Blocks/Block58"]
+
+[node name="Block58LightOccluder2D2" type="LightOccluder2D" parent="Blocks/Block58"]
+occluder = SubResource("OccluderPolygon2D_2p1qc")
+
+[node name="Block58Polygon2D2" type="Polygon2D" parent="Blocks/Block58"]
+polygon = PackedVector2Array(172, -277.066, -106, -135.543, -537, -106.641, -840, -35.8789, -908, 66.7749, -832, 320.918, -804, 242.184, -713, 129.563, -436, 135.543, -125, 112.621, 175, 16.9429, 475, -101.657, 639, -332.878, 616, -536.193, 481, -592.005, 215, -389.687)
+
+[node name="Block59" parent="Blocks" instance=ExtResource("1_08how")]
+position = Vector2(48606, 4746)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-139, -807.28, -83, -436.529, -107, 89.6978, -131, 352.811, 49, 428.556, 273, 141.523, 313, -444.502, 180, -878.041, 123, -1043.48, -10, -1110.26, -100, -1096.31)
+
+[node name="Block59StaticBody2D" type="StaticBody2D" parent="Blocks/Block59"]
+
+[node name="Block59CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/Block59/Block59StaticBody2D"]
+polygon = PackedVector2Array(-139, -807.28, -83, -436.529, -107, 89.6978, -131, 352.811, 49, 428.556, 273, 141.523, 313, -444.502, 180, -878.041, 123, -1043.48, -10, -1110.26, -100, -1096.31)
+
+[node name="Block59CollisionPolygon2D2" type="CollisionPolygon2D" parent="Blocks/Block59/Block59StaticBody2D"]
+polygon = PackedVector2Array(-139, -807.28, -83, -436.529, -107, 89.6978, -131, 352.811, 49, 428.556, 273, 141.523, 313, -444.502, 180, -878.041, 123, -1043.48, -10, -1110.26, -100, -1096.31)
+
+[node name="Block59Polygon2D2" type="Polygon2D" parent="Blocks/Block59"]
+polygon = PackedVector2Array(-139, -807.28, -83, -436.529, -107, 89.6978, -131, 352.811, 49, 428.556, 273, 141.523, 313, -444.502, 180, -878.041, 123, -1043.48, -10, -1110.26, -100, -1096.31)
+
+[node name="Block60" parent="Blocks" instance=ExtResource("1_08how")]
+position = Vector2(48144, 3357)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(176, 241.187, 72, 227.234, -62, 221.254, -104, 287.033, -90, 370.75, -56, 414.603, 4, 450.482, 102, 474.401, 170, 458.455, 230, 414.603, 244, 320.918, 264, 245.174)
+
+[node name="Block60StaticBody2D" type="StaticBody2D" parent="Blocks/Block60"]
+
+[node name="Block60CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/Block60/Block60StaticBody2D"]
+polygon = PackedVector2Array(176, 241.187, 72, 227.234, -62, 221.254, -104, 287.033, -90, 370.75, -56, 414.603, 4, 450.482, 102, 474.401, 170, 458.455, 230, 414.603, 244, 320.918, 264, 245.174)
+
+[node name="Block60CollisionPolygon2D2" type="CollisionPolygon2D" parent="Blocks/Block60/Block60StaticBody2D"]
+polygon = PackedVector2Array(176, 241.187, 72, 227.234, -62, 221.254, -104, 287.033, -90, 370.75, -56, 414.603, 4, 450.482, 102, 474.401, 170, 458.455, 230, 414.603, 244, 320.918, 264, 245.174)
+
+[node name="Block60CollisionPolygon2D3" type="CollisionPolygon2D" parent="Blocks/Block60/Block60StaticBody2D"]
+polygon = PackedVector2Array(176, 241.187, 72, 227.234, -62, 221.254, -104, 287.033, -90, 370.75, -56, 414.603, 4, 450.482, 102, 474.401, 170, 458.455, 230, 414.603, 244, 320.918, 264, 245.174)
+
+[node name="Block60CollisionPolygon2D4" type="CollisionPolygon2D" parent="Blocks/Block60/Block60StaticBody2D"]
+polygon = PackedVector2Array(176, 241.187, 72, 227.234, -62, 221.254, -104, 287.033, -90, 370.75, -56, 414.603, 4, 450.482, 102, 474.401, 170, 458.455, 230, 414.603, 244, 320.918, 264, 245.174)
+
+[node name="Block60CollisionPolygon2D5" type="CollisionPolygon2D" parent="Blocks/Block60/Block60StaticBody2D"]
+polygon = PackedVector2Array(176, 241.187, 72, 227.234, -62, 221.254, -104, 287.033, -90, 370.75, -56, 414.603, 4, 450.482, 102, 474.401, 170, 458.455, 230, 414.603, 244, 320.918, 264, 245.174)
+
+[node name="Block60LightOccluder2D" type="LightOccluder2D" parent="Blocks/Block60"]
+occluder = SubResource("OccluderPolygon2D_kc1vg")
+
+[node name="Block60Polygon2D" type="Polygon2D" parent="Blocks/Block60"]
+polygon = PackedVector2Array(176, 241.187, 72, 227.234, -62, 221.254, -104, 287.033, -90, 370.75, -56, 414.603, 4, 450.482, 102, 474.401, 170, 458.455, 230, 414.603, 244, 320.918, 264, 245.174)
+
+[node name="Block60StaticBody2D2" type="StaticBody2D" parent="Blocks/Block60"]
+
+[node name="Block60LightOccluder2D2" type="LightOccluder2D" parent="Blocks/Block60"]
+occluder = SubResource("OccluderPolygon2D_uaixg")
+
+[node name="Block60Polygon2D2" type="Polygon2D" parent="Blocks/Block60"]
+polygon = PackedVector2Array(176, 241.187, 72, 227.234, -62, 221.254, -104, 287.033, -90, 370.75, -56, 414.603, 4, 450.482, 102, 474.401, 170, 458.455, 230, 414.603, 244, 320.918, 264, 245.174)
+
+[node name="Block60StaticBody2D3" type="StaticBody2D" parent="Blocks/Block60"]
+
+[node name="Block60LightOccluder2D3" type="LightOccluder2D" parent="Blocks/Block60"]
+occluder = SubResource("OccluderPolygon2D_sphcp")
+
+[node name="Block60Polygon2D3" type="Polygon2D" parent="Blocks/Block60"]
+polygon = PackedVector2Array(176, 241.187, 72, 227.234, -62, 221.254, -104, 287.033, -90, 370.75, -56, 414.603, 4, 450.482, 102, 474.401, 170, 458.455, 230, 414.603, 244, 320.918, 264, 245.174)
+
+[node name="Block60StaticBody2D4" type="StaticBody2D" parent="Blocks/Block60"]
+
+[node name="Block60LightOccluder2D4" type="LightOccluder2D" parent="Blocks/Block60"]
+occluder = SubResource("OccluderPolygon2D_gep2n")
+
+[node name="Block60Polygon2D4" type="Polygon2D" parent="Blocks/Block60"]
+polygon = PackedVector2Array(176, 241.187, 72, 227.234, -62, 221.254, -104, 287.033, -90, 370.75, -56, 414.603, 4, 450.482, 102, 474.401, 170, 458.455, 230, 414.603, 244, 320.918, 264, 245.174)
+
+[node name="Block60StaticBody2D5" type="StaticBody2D" parent="Blocks/Block60"]
+
+[node name="Block60LightOccluder2D5" type="LightOccluder2D" parent="Blocks/Block60"]
+occluder = SubResource("OccluderPolygon2D_j051s")
+
+[node name="Block60Polygon2D5" type="Polygon2D" parent="Blocks/Block60"]
+polygon = PackedVector2Array(176, 241.187, 72, 227.234, -62, 221.254, -104, 287.033, -90, 370.75, -56, 414.603, 4, 450.482, 102, 474.401, 170, 458.455, 230, 414.603, 244, 320.918, 264, 245.174)
+
+[node name="Block61" parent="Blocks" instance=ExtResource("1_08how")]
+position = Vector2(50869, 8016)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-540, -1535.82, -1106, -1526.85, -1708, -1464.07, -1950, -1733.16, -2210, -2081.98, -2363, -2664.02, -2139, -3057.7, -1330, -3183.27, -756, -2744.75, -522, -2243.44)
+
+[node name="Block61StaticBody2D" type="StaticBody2D" parent="Blocks/Block61"]
+
+[node name="Block61CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/Block61/Block61StaticBody2D"]
+polygon = PackedVector2Array(-540, -1535.82, -1106, -1526.85, -1708, -1464.07, -1950, -1733.16, -2210, -2081.98, -2363, -2664.02, -2139, -3057.7, -1330, -3183.27, -756, -2744.75, -522, -2243.44)
+
+[node name="Block61CollisionPolygon2D2" type="CollisionPolygon2D" parent="Blocks/Block61/Block61StaticBody2D"]
+polygon = PackedVector2Array(-540, -1535.82, -1106, -1526.85, -1708, -1464.07, -1950, -1733.16, -2210, -2081.98, -2363, -2664.02, -2139, -3057.7, -1330, -3183.27, -756, -2744.75, -522, -2243.44)
+
+[node name="Block61CollisionPolygon2D3" type="CollisionPolygon2D" parent="Blocks/Block61/Block61StaticBody2D"]
+polygon = PackedVector2Array(-540, -1535.82, -1106, -1526.85, -1708, -1464.07, -1950, -1733.16, -2210, -2081.98, -2363, -2664.02, -2139, -3057.7, -1330, -3183.27, -756, -2744.75, -522, -2243.44)
+
+[node name="Block61CollisionPolygon2D4" type="CollisionPolygon2D" parent="Blocks/Block61/Block61StaticBody2D"]
+polygon = PackedVector2Array(-540, -1535.82, -1106, -1526.85, -1708, -1464.07, -1950, -1733.16, -2210, -2081.98, -2363, -2664.02, -2139, -3057.7, -1330, -3183.27, -756, -2744.75, -522, -2243.44)
+
+[node name="Block61CollisionPolygon2D5" type="CollisionPolygon2D" parent="Blocks/Block61/Block61StaticBody2D"]
+polygon = PackedVector2Array(-540, -1535.82, -1106, -1526.85, -1708, -1464.07, -1950, -1733.16, -2210, -2081.98, -2363, -2664.02, -2139, -3057.7, -1330, -3183.27, -756, -2744.75, -522, -2243.44)
+
+[node name="Block61LightOccluder2D" type="LightOccluder2D" parent="Blocks/Block61"]
+occluder = SubResource("OccluderPolygon2D_7b61l")
+
+[node name="Block61Polygon2D" type="Polygon2D" parent="Blocks/Block61"]
+polygon = PackedVector2Array(-540, -1535.82, -1106, -1526.85, -1708, -1464.07, -1950, -1733.16, -2210, -2081.98, -2363, -2664.02, -2139, -3057.7, -1330, -3183.27, -756, -2744.75, -522, -2243.44)
+
+[node name="Block61StaticBody2D2" type="StaticBody2D" parent="Blocks/Block61"]
+
+[node name="Block61LightOccluder2D2" type="LightOccluder2D" parent="Blocks/Block61"]
+occluder = SubResource("OccluderPolygon2D_mxfqx")
+
+[node name="Block61Polygon2D2" type="Polygon2D" parent="Blocks/Block61"]
+polygon = PackedVector2Array(-540, -1535.82, -1106, -1526.85, -1708, -1464.07, -1950, -1733.16, -2210, -2081.98, -2363, -2664.02, -2139, -3057.7, -1330, -3183.27, -756, -2744.75, -522, -2243.44)
+
+[node name="Block61StaticBody2D3" type="StaticBody2D" parent="Blocks/Block61"]
+
+[node name="Block61LightOccluder2D3" type="LightOccluder2D" parent="Blocks/Block61"]
+occluder = SubResource("OccluderPolygon2D_ay76d")
+
+[node name="Block61Polygon2D3" type="Polygon2D" parent="Blocks/Block61"]
+polygon = PackedVector2Array(-540, -1535.82, -1106, -1526.85, -1708, -1464.07, -1950, -1733.16, -2210, -2081.98, -2363, -2664.02, -2139, -3057.7, -1330, -3183.27, -756, -2744.75, -522, -2243.44)
+
+[node name="Block61StaticBody2D4" type="StaticBody2D" parent="Blocks/Block61"]
+
+[node name="Block61LightOccluder2D4" type="LightOccluder2D" parent="Blocks/Block61"]
+occluder = SubResource("OccluderPolygon2D_1ysx6")
+
+[node name="Block61Polygon2D4" type="Polygon2D" parent="Blocks/Block61"]
+polygon = PackedVector2Array(-540, -1535.82, -1106, -1526.85, -1708, -1464.07, -1950, -1733.16, -2210, -2081.98, -2363, -2664.02, -2139, -3057.7, -1330, -3183.27, -756, -2744.75, -522, -2243.44)
+
+[node name="Block61StaticBody2D5" type="StaticBody2D" parent="Blocks/Block61"]
+
+[node name="Block61LightOccluder2D5" type="LightOccluder2D" parent="Blocks/Block61"]
+occluder = SubResource("OccluderPolygon2D_o3nrj")
+
+[node name="Block61Polygon2D5" type="Polygon2D" parent="Blocks/Block61"]
+polygon = PackedVector2Array(-540, -1535.82, -1106, -1526.85, -1708, -1464.07, -1950, -1733.16, -2210, -2081.98, -2363, -2664.02, -2139, -3057.7, -1330, -3183.27, -756, -2744.75, -522, -2243.44)
+
+[node name="Block62" parent="Blocks" instance=ExtResource("1_08how")]
+position = Vector2(49464, 7419)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-73, -50.8286, 562, 74.748, 760, 116.607, 886, 188.365, 1156, 343.841, 1614, 561.109, 1842, 711.602, 2105, 855.119, 2518, 1035.51, 3077, 1364.4, 3370, 1445.13, 3944, 1655.42, 4216, 1685.32, 4670, 1795.95, 5023, 1805.91, 5587, 1756.08, 5930, 1736.15, 6273, 1936.47, 6555, 2338.12, 6757, 3704.52, 6474, 4127.09, 5628, 4689.2, 3894, 4588.54, 1112, 4467.94, -843, 2479.64, -682, 711.602)
+
+[node name="Block62StaticBody2D" type="StaticBody2D" parent="Blocks/Block62"]
+
+[node name="Block62CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/Block62/Block62StaticBody2D"]
+polygon = PackedVector2Array(-73, -50.8286, 562, 74.748, 760, 116.607, 886, 188.365, 1156, 343.841, 1614, 561.109, 1842, 711.602, 2105, 855.119, 2518, 1035.51, 3077, 1364.4, 3370, 1445.13, 3944, 1655.42, 4216, 1685.32, 4670, 1795.95, 5023, 1805.91, 5587, 1756.08, 5930, 1736.15, 6273, 1936.47, 6555, 2338.12, 6757, 3704.52, 6474, 4127.09, 5628, 4689.2, 3894, 4588.54, 1112, 4467.94, -843, 2479.64, -682, 711.602)
+
+[node name="Block62CollisionPolygon2D2" type="CollisionPolygon2D" parent="Blocks/Block62/Block62StaticBody2D"]
+polygon = PackedVector2Array(-73, -50.8286, 562, 74.748, 760, 116.607, 886, 188.365, 1156, 343.841, 1614, 561.109, 1842, 711.602, 2105, 855.119, 2518, 1035.51, 3077, 1364.4, 3370, 1445.13, 3944, 1655.42, 4216, 1685.32, 4670, 1795.95, 5023, 1805.91, 5587, 1756.08, 5930, 1736.15, 6273, 1936.47, 6555, 2338.12, 6757, 3704.52, 6474, 4127.09, 5628, 4689.2, 3894, 4588.54, 1112, 4467.94, -843, 2479.64, -682, 711.602)
+
+[node name="Block62CollisionPolygon2D3" type="CollisionPolygon2D" parent="Blocks/Block62/Block62StaticBody2D"]
+polygon = PackedVector2Array(-73, -50.8286, 562, 74.748, 760, 116.607, 886, 188.365, 1156, 343.841, 1614, 561.109, 1842, 711.602, 2105, 855.119, 2518, 1035.51, 3077, 1364.4, 3370, 1445.13, 3944, 1655.42, 4216, 1685.32, 4670, 1795.95, 5023, 1805.91, 5587, 1756.08, 5930, 1736.15, 6273, 1936.47, 6555, 2338.12, 6757, 3704.52, 6474, 4127.09, 5628, 4689.2, 3894, 4588.54, 1112, 4467.94, -843, 2479.64, -682, 711.602)
+
+[node name="Block62CollisionPolygon2D4" type="CollisionPolygon2D" parent="Blocks/Block62/Block62StaticBody2D"]
+polygon = PackedVector2Array(-73, -50.8286, 562, 74.748, 760, 116.607, 886, 188.365, 1156, 343.841, 1614, 561.109, 1842, 711.602, 2105, 855.119, 2518, 1035.51, 3077, 1364.4, 3370, 1445.13, 3944, 1655.42, 4216, 1685.32, 4670, 1795.95, 5023, 1805.91, 5587, 1756.08, 5930, 1736.15, 6273, 1936.47, 6555, 2338.12, 6757, 3704.52, 6474, 4127.09, 5628, 4689.2, 3894, 4588.54, 1112, 4467.94, -843, 2479.64, -682, 711.602)
+
+[node name="Block62CollisionPolygon2D5" type="CollisionPolygon2D" parent="Blocks/Block62/Block62StaticBody2D"]
+polygon = PackedVector2Array(-73, -50.8286, 562, 74.748, 760, 116.607, 886, 188.365, 1156, 343.841, 1614, 561.109, 1842, 711.602, 2105, 855.119, 2518, 1035.51, 3077, 1364.4, 3370, 1445.13, 3944, 1655.42, 4216, 1685.32, 4670, 1795.95, 5023, 1805.91, 5587, 1756.08, 5930, 1736.15, 6273, 1936.47, 6555, 2338.12, 6757, 3704.52, 6474, 4127.09, 5628, 4689.2, 3894, 4588.54, 1112, 4467.94, -843, 2479.64, -682, 711.602)
+
+[node name="Block62LightOccluder2D" type="LightOccluder2D" parent="Blocks/Block62"]
+occluder = SubResource("OccluderPolygon2D_h1lp6")
+
+[node name="Block62Polygon2D" type="Polygon2D" parent="Blocks/Block62"]
+polygon = PackedVector2Array(-73, -50.8286, 562, 74.748, 760, 116.607, 886, 188.365, 1156, 343.841, 1614, 561.109, 1842, 711.602, 2105, 855.119, 2518, 1035.51, 3077, 1364.4, 3370, 1445.13, 3944, 1655.42, 4216, 1685.32, 4670, 1795.95, 5023, 1805.91, 5587, 1756.08, 5930, 1736.15, 6273, 1936.47, 6555, 2338.12, 6757, 3704.52, 6474, 4127.09, 5628, 4689.2, 3894, 4588.54, 1112, 4467.94, -843, 2479.64, -682, 711.602)
+
+[node name="Block62StaticBody2D2" type="StaticBody2D" parent="Blocks/Block62"]
+
+[node name="Block62LightOccluder2D2" type="LightOccluder2D" parent="Blocks/Block62"]
+occluder = SubResource("OccluderPolygon2D_fip8e")
+
+[node name="Block62Polygon2D2" type="Polygon2D" parent="Blocks/Block62"]
+polygon = PackedVector2Array(-73, -50.8286, 562, 74.748, 760, 116.607, 886, 188.365, 1156, 343.841, 1614, 561.109, 1842, 711.602, 2105, 855.119, 2518, 1035.51, 3077, 1364.4, 3370, 1445.13, 3944, 1655.42, 4216, 1685.32, 4670, 1795.95, 5023, 1805.91, 5587, 1756.08, 5930, 1736.15, 6273, 1936.47, 6555, 2338.12, 6757, 3704.52, 6474, 4127.09, 5628, 4689.2, 3894, 4588.54, 1112, 4467.94, -843, 2479.64, -682, 711.602)
+
+[node name="Block62StaticBody2D3" type="StaticBody2D" parent="Blocks/Block62"]
+
+[node name="Block62LightOccluder2D3" type="LightOccluder2D" parent="Blocks/Block62"]
+occluder = SubResource("OccluderPolygon2D_pijbs")
+
+[node name="Block62Polygon2D3" type="Polygon2D" parent="Blocks/Block62"]
+polygon = PackedVector2Array(-73, -50.8286, 562, 74.748, 760, 116.607, 886, 188.365, 1156, 343.841, 1614, 561.109, 1842, 711.602, 2105, 855.119, 2518, 1035.51, 3077, 1364.4, 3370, 1445.13, 3944, 1655.42, 4216, 1685.32, 4670, 1795.95, 5023, 1805.91, 5587, 1756.08, 5930, 1736.15, 6273, 1936.47, 6555, 2338.12, 6757, 3704.52, 6474, 4127.09, 5628, 4689.2, 3894, 4588.54, 1112, 4467.94, -843, 2479.64, -682, 711.602)
+
+[node name="Block62StaticBody2D4" type="StaticBody2D" parent="Blocks/Block62"]
+
+[node name="Block62LightOccluder2D4" type="LightOccluder2D" parent="Blocks/Block62"]
+occluder = SubResource("OccluderPolygon2D_eydb4")
+
+[node name="Block62Polygon2D4" type="Polygon2D" parent="Blocks/Block62"]
+polygon = PackedVector2Array(-73, -50.8286, 562, 74.748, 760, 116.607, 886, 188.365, 1156, 343.841, 1614, 561.109, 1842, 711.602, 2105, 855.119, 2518, 1035.51, 3077, 1364.4, 3370, 1445.13, 3944, 1655.42, 4216, 1685.32, 4670, 1795.95, 5023, 1805.91, 5587, 1756.08, 5930, 1736.15, 6273, 1936.47, 6555, 2338.12, 6757, 3704.52, 6474, 4127.09, 5628, 4689.2, 3894, 4588.54, 1112, 4467.94, -843, 2479.64, -682, 711.602)
+
+[node name="Block62StaticBody2D5" type="StaticBody2D" parent="Blocks/Block62"]
+
+[node name="Block62LightOccluder2D5" type="LightOccluder2D" parent="Blocks/Block62"]
+occluder = SubResource("OccluderPolygon2D_e0t51")
+
+[node name="Block62Polygon2D5" type="Polygon2D" parent="Blocks/Block62"]
+polygon = PackedVector2Array(-73, -50.8286, 562, 74.748, 760, 116.607, 886, 188.365, 1156, 343.841, 1614, 561.109, 1842, 711.602, 2105, 855.119, 2518, 1035.51, 3077, 1364.4, 3370, 1445.13, 3944, 1655.42, 4216, 1685.32, 4670, 1795.95, 5023, 1805.91, 5587, 1756.08, 5930, 1736.15, 6273, 1936.47, 6555, 2338.12, 6757, 3704.52, 6474, 4127.09, 5628, 4689.2, 3894, 4588.54, 1112, 4467.94, -843, 2479.64, -682, 711.602)
+
+[node name="Block63" parent="Blocks" instance=ExtResource("1_08how")]
+position = Vector2(50244, 6656)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-9, 55.812, 194, 335.868, 548, 670.74, 1201, 808.276, 1925, 1074.38, 2627, 1490.98, 3097, 1567.72, 3770, 1972.35, 4087, 2061.05, 4836, 2276.33, 5294, 2035.14, 5598, 1681.33, 5675, 1099.3, 5370, 251.154, 5243, -343.841, 5214, -723.562, 5250, -1738.14, 5106, -2776.64, 4352, -3313.83, 3292, -3528.11, 2412, -3617.81, 1353, -3492.23, 545, -2758.7, 150, -1756.08, 24, -861.098, -210, -235.207)
+
+[node name="Block63StaticBody2D" type="StaticBody2D" parent="Blocks/Block63"]
+
+[node name="Block63CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/Block63/Block63StaticBody2D"]
+polygon = PackedVector2Array(-9, 55.812, 194, 335.868, 548, 670.74, 1201, 808.276, 1925, 1074.38, 2627, 1490.98, 3097, 1567.72, 3770, 1972.35, 4087, 2061.05, 4836, 2276.33, 5294, 2035.14, 5598, 1681.33, 5675, 1099.3, 5370, 251.154, 5243, -343.841, 5214, -723.562, 5250, -1738.14, 5106, -2776.64, 4352, -3313.83, 3292, -3528.11, 2412, -3617.81, 1353, -3492.23, 545, -2758.7, 150, -1756.08, 24, -861.098, -210, -235.207)
+
+[node name="Block63LightOccluder2D" type="LightOccluder2D" parent="Blocks/Block63"]
+occluder = SubResource("OccluderPolygon2D_aq1dm")
+
+[node name="Block63Polygon2D" type="Polygon2D" parent="Blocks/Block63"]
+polygon = PackedVector2Array(-9, 55.812, 194, 335.868, 548, 670.74, 1201, 808.276, 1925, 1074.38, 2627, 1490.98, 3097, 1567.72, 3770, 1972.35, 4087, 2061.05, 4836, 2276.33, 5294, 2035.14, 5598, 1681.33, 5675, 1099.3, 5370, 251.154, 5243, -343.841, 5214, -723.562, 5250, -1738.14, 5106, -2776.64, 4352, -3313.83, 3292, -3528.11, 2412, -3617.81, 1353, -3492.23, 545, -2758.7, 150, -1756.08, 24, -861.098, -210, -235.207)
+
+[node name="Block64" parent="Blocks" instance=ExtResource("1_08how")]
+position = Vector2(54465, 9871)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(3371, -724.559, 2631, -295.006, 2618, 295.006, 2658, 871.064, 2820, 2038.13, 3257, 2289.29, 4026, 2401.91, 4592, 2199.59, 4728, 1478.02, 4954, 733.527, 4714, -51.8252, 4259, -458.455)
+
+[node name="Block64StaticBody2D" type="StaticBody2D" parent="Blocks/Block64"]
+
+[node name="Block64CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/Block64/Block64StaticBody2D"]
+polygon = PackedVector2Array(3371, -724.559, 2631, -295.006, 2618, 295.006, 2658, 871.064, 2820, 2038.13, 3257, 2289.29, 4026, 2401.91, 4592, 2199.59, 4728, 1478.02, 4954, 733.527, 4714, -51.8252, 4259, -458.455)
+
+[node name="Block64LightOccluder2D" type="LightOccluder2D" parent="Blocks/Block64"]
+occluder = SubResource("OccluderPolygon2D_k5b7q")
+
+[node name="Block64Polygon2D" type="Polygon2D" parent="Blocks/Block64"]
+polygon = PackedVector2Array(3371, -724.559, 2631, -295.006, 2618, 295.006, 2658, 871.064, 2820, 2038.13, 3257, 2289.29, 4026, 2401.91, 4592, 2199.59, 4728, 1478.02, 4954, 733.527, 4714, -51.8252, 4259, -458.455)
+
+[node name="Block65" parent="Blocks" instance=ExtResource("1_08how")]
+position = Vector2(56174, 7991)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-468, 526.227, -145, -177.402, 187, -508.287, 790, -620.908, 1462, -620.908, 2134, -301.982, 2614, 495.331, 2982, 654.793, 3334, 638.847, 3782, 351.814, 3862, -174.412, 4102, -1226.87, 4566, -2072.02, 4317, -3495.22, 3563, -4273.6, 2001, -4166.96, -478, -3861.99, -927, -3808.17, -1017, -819.239)
+
+[node name="Block65StaticBody2D" type="StaticBody2D" parent="Blocks/Block65"]
+
+[node name="Block65CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/Block65/Block65StaticBody2D"]
+polygon = PackedVector2Array(-468, 526.227, -145, -177.402, 187, -508.287, 790, -620.908, 1462, -620.908, 2134, -301.982, 2614, 495.331, 2982, 654.793, 3334, 638.847, 3782, 351.814, 3862, -174.412, 4102, -1226.87, 4566, -2072.02, 4317, -3495.22, 3563, -4273.6, 2001, -4166.96, -478, -3861.99, -927, -3808.17, -1017, -819.239)
+
+[node name="Block65LightOccluder2D" type="LightOccluder2D" parent="Blocks/Block65"]
+occluder = SubResource("OccluderPolygon2D_3qjwq")
+
+[node name="Block65Polygon2D" type="Polygon2D" parent="Blocks/Block65"]
+polygon = PackedVector2Array(-468, 526.227, -145, -177.402, 187, -508.287, 790, -620.908, 1462, -620.908, 2134, -301.982, 2614, 495.331, 2982, 654.793, 3334, 638.847, 3782, 351.814, 3862, -174.412, 4102, -1226.87, 4566, -2072.02, 4317, -3495.22, 3563, -4273.6, 2001, -4166.96, -478, -3861.99, -927, -3808.17, -1017, -819.239)
+
+[node name="Block66" parent="Blocks" instance=ExtResource("1_08how")]
+position = Vector2(59518, 10103)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(812, -229.228, 227, -345.834, -368, -296.002, -539, -10.9629, -548, 415.6, -510, 1003.62, -489, 1502.94, -157, 1674.36, 176, 1744.12, 478, 1714.22, 801, 980.695, 982, 237.201)
+
+[node name="Block66StaticBody2D" type="StaticBody2D" parent="Blocks/Block66"]
+
+[node name="Block66CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/Block66/Block66StaticBody2D"]
+polygon = PackedVector2Array(812, -229.228, 227, -345.834, -368, -296.002, -539, -10.9629, -548, 415.6, -510, 1003.62, -489, 1502.94, -157, 1674.36, 176, 1744.12, 478, 1714.22, 801, 980.695, 982, 237.201)
+
+[node name="Block66LightOccluder2D" type="LightOccluder2D" parent="Blocks/Block66"]
+occluder = SubResource("OccluderPolygon2D_3h1no")
+
+[node name="Block66Polygon2D" type="Polygon2D" parent="Blocks/Block66"]
+polygon = PackedVector2Array(812, -229.228, 227, -345.834, -368, -296.002, -539, -10.9629, -548, 415.6, -510, 1003.62, -489, 1502.94, -157, 1674.36, 176, 1744.12, 478, 1714.22, 801, 980.695, 982, 237.201)
+
+[node name="Block67" parent="Blocks" instance=ExtResource("1_08how")]
+position = Vector2(61421, 9842)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(1392, -805.286, 1295, -495.331, 1029, -258.13, 487, -106.641, -198, -1.99316, -484, 73.752, -626, 235.207, -664, 594.995, -702, 1126.21, -874, 1780, -1425, 1941.46, -2537, 1715.22, -2577, 2368.02, -512, 2424.83, 230, 2311.21, 668, 2083.98, 1295, 1912.55, 1486, 936.843, 1600, 357.794, 2228, -590.012, 2180, -829.205, 2096, -940.829, 1876, -956.775, 1624, -924.883)
+
+[node name="Block67StaticBody2D" type="StaticBody2D" parent="Blocks/Block67"]
+
+[node name="Block67CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/Block67/Block67StaticBody2D"]
+polygon = PackedVector2Array(1392, -805.286, 1295, -495.331, 1029, -258.13, 487, -106.641, -198, -1.99316, -484, 73.752, -626, 235.207, -664, 594.995, -702, 1126.21, -874, 1780, -1425, 1941.46, -2537, 1715.22, -2577, 2368.02, -512, 2424.83, 230, 2311.21, 668, 2083.98, 1295, 1912.55, 1486, 936.843, 1600, 357.794, 2228, -590.012, 2180, -829.205, 2096, -940.829, 1876, -956.775, 1624, -924.883)
+
+[node name="Block67LightOccluder2D" type="LightOccluder2D" parent="Blocks/Block67"]
+occluder = SubResource("OccluderPolygon2D_sfhln")
+
+[node name="Block67Polygon2D" type="Polygon2D" parent="Blocks/Block67"]
+polygon = PackedVector2Array(1392, -805.286, 1295, -495.331, 1029, -258.13, 487, -106.641, -198, -1.99316, -484, 73.752, -626, 235.207, -664, 594.995, -702, 1126.21, -874, 1780, -1425, 1941.46, -2537, 1715.22, -2577, 2368.02, -512, 2424.83, 230, 2311.21, 668, 2083.98, 1295, 1912.55, 1486, 936.843, 1600, 357.794, 2228, -590.012, 2180, -829.205, 2096, -940.829, 1876, -956.775, 1624, -924.883)
+
+[node name="Block68" parent="Blocks" instance=ExtResource("1_08how")]
+position = Vector2(61728, 9671)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(299, 17.9395, 240, -51.8252, 149, -56.8086, -32, -62.7881, -155, -19.9326, -262, 49.832, -395, 166.439, 283, 107.638)
+
+[node name="Block68StaticBody2D" type="StaticBody2D" parent="Blocks/Block68"]
+
+[node name="Block68CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/Block68/Block68StaticBody2D"]
+polygon = PackedVector2Array(299, 17.9395, 240, -51.8252, 149, -56.8086, -32, -62.7881, -155, -19.9326, -262, 49.832, -395, 166.439, 283, 107.638)
+
+[node name="Block68LightOccluder2D" type="LightOccluder2D" parent="Blocks/Block68"]
+occluder = SubResource("OccluderPolygon2D_v7yon")
+
+[node name="Block68Polygon2D" type="Polygon2D" parent="Blocks/Block68"]
+polygon = PackedVector2Array(299, 17.9395, 240, -51.8252, 149, -56.8086, -32, -62.7881, -155, -19.9326, -262, 49.832, -395, 166.439, 283, 107.638)
+
+[node name="Block69" parent="Blocks" instance=ExtResource("1_08how")]
+position = Vector2(62657, 9455)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(120, -274.076, -3, -206.305, -64, -153.482, -324, -47.8389, -450, -22.9229, -481, 117.604, -477, 202.318, -194, 223.248, 125, -72.7549)
+
+[node name="Block69StaticBody2D" type="StaticBody2D" parent="Blocks/Block69"]
+
+[node name="Block69CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/Block69/Block69StaticBody2D"]
+polygon = PackedVector2Array(120, -274.076, -3, -206.305, -64, -153.482, -324, -47.8389, -450, -22.9229, -481, 117.604, -477, 202.318, -194, 223.248, 125, -72.7549)
+
+[node name="Block69LightOccluder2D" type="LightOccluder2D" parent="Blocks/Block69"]
+occluder = SubResource("OccluderPolygon2D_im5cn")
+
+[node name="Block69Polygon2D" type="Polygon2D" parent="Blocks/Block69"]
+polygon = PackedVector2Array(120, -274.076, -3, -206.305, -64, -153.482, -324, -47.8389, -450, -22.9229, -481, 117.604, -477, 202.318, -194, 223.248, 125, -72.7549)
+
+[node name="Block70" parent="Blocks" instance=ExtResource("1_08how")]
+position = Vector2(64754, 9297)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-1273, -929.867, -1164, -888.008, -940, -778.377, -741, -764.424, -731, -754.458, -679, -537.19, -617, -384.704, -569, -286.036, -363, -88.7012, -234, -60.7959, -184, -46.8428, -6, -195.342, 29, -422.576, -20, -905.947, 300, -1098.3, 450, -1637.48, 258, -2141.78, -802, -2990.92, -2658, -3469.31, -3858, -3612.83, -4690, -3118.49, -3842, -1810.9, -2258, -2257.39, -1682, -2113.88)
+
+[node name="Block70StaticBody2D" type="StaticBody2D" parent="Blocks/Block70"]
+
+[node name="Block70CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/Block70/Block70StaticBody2D"]
+polygon = PackedVector2Array(-1273, -929.867, -1164, -888.008, -940, -778.377, -741, -764.424, -731, -754.458, -679, -537.19, -617, -384.704, -569, -286.036, -363, -88.7012, -234, -60.7959, -184, -46.8428, -6, -195.342, 29, -422.576, -20, -905.947, 300, -1098.3, 450, -1637.48, 258, -2141.78, -802, -2990.92, -2658, -3469.31, -3858, -3612.83, -4690, -3118.49, -3842, -1810.9, -2258, -2257.39, -1682, -2113.88)
+
+[node name="Block70LightOccluder2D" type="LightOccluder2D" parent="Blocks/Block70"]
+occluder = SubResource("OccluderPolygon2D_8y3d1")
+
+[node name="Block70Polygon2D" type="Polygon2D" parent="Blocks/Block70"]
+polygon = PackedVector2Array(-1273, -929.867, -1164, -888.008, -940, -778.377, -741, -764.424, -731, -754.458, -679, -537.19, -617, -384.704, -569, -286.036, -363, -88.7012, -234, -60.7959, -184, -46.8428, -6, -195.342, 29, -422.576, -20, -905.947, 300, -1098.3, 450, -1637.48, 258, -2141.78, -802, -2990.92, -2658, -3469.31, -3858, -3612.83, -4690, -3118.49, -3842, -1810.9, -2258, -2257.39, -1682, -2113.88)
+
+[node name="Block71" parent="Blocks" instance=ExtResource("1_08how")]
+position = Vector2(65517, 9772)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(460, -261.12, -262, -114.614, -757, -128.566, -985, -85.7109, -1047, 65.7783, -995, 203.314, -838, 297.995, -828, 444.502, -851, 1024.55, -891, 1398.29, -1323, 1516.89, -2493, 1490.98, -2849, 1583.66, -3012, 2095.94, -2095, 2256.4, -895, 2175.67, 284, 1583.66, 485, 478.388)
+
+[node name="Block71StaticBody2D" type="StaticBody2D" parent="Blocks/Block71"]
+
+[node name="Block71CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/Block71/Block71StaticBody2D"]
+polygon = PackedVector2Array(460, -261.12, -262, -114.614, -757, -128.566, -985, -85.7109, -1047, 65.7783, -995, 203.314, -838, 297.995, -828, 444.502, -851, 1024.55, -891, 1398.29, -1323, 1516.89, -2493, 1490.98, -2849, 1583.66, -3012, 2095.94, -2095, 2256.4, -895, 2175.67, 284, 1583.66, 485, 478.388)
+
+[node name="Block71LightOccluder2D" type="LightOccluder2D" parent="Blocks/Block71"]
+occluder = SubResource("OccluderPolygon2D_rhee5")
+
+[node name="Block71Polygon2D" type="Polygon2D" parent="Blocks/Block71"]
+polygon = PackedVector2Array(460, -261.12, -262, -114.614, -757, -128.566, -985, -85.7109, -1047, 65.7783, -995, 203.314, -838, 297.995, -828, 444.502, -851, 1024.55, -891, 1398.29, -1323, 1516.89, -2493, 1490.98, -2849, 1583.66, -3012, 2095.94, -2095, 2256.4, -895, 2175.67, 284, 1583.66, 485, 478.388)
+
+[node name="Block72" parent="Blocks" instance=ExtResource("1_08how")]
+position = Vector2(66343, 9498)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-374, 12.957, -60, 108.634, 463, 203.315, 1034, 212.285, 1224, -5.97949, 1281, -290.022, 1348, -470.414, 1395, -546.159, 1700, -555.129, 1919, -413.605, 2061, -299.989, 2252, -100.66, 2613, 3.98633, 3032, -252.15, 3508, -62.7881, 4135, 50.8291, 4716, 411.613, 5011, 582.039, 5696, 525.23, 6771, 865.085, 7156, 748.478, 7925, 1003.62, 8736, 1142.15, 9427, 1368.39, 9910, 1730.17, 11093, 2055.07, 11587, 1429.18, 12312, 1293.64, 12901, 1429.18, 13414, 1715.22, 13505, 2272.34, 13860, 4754.98, 12800, 5721.72, 8855, 5749.62, 5548, 4102.18, 2697, 4329.41, -324, 3448.38, -610, 1743.13, -561, 766.417)
+
+[node name="Block72StaticBody2D" type="StaticBody2D" parent="Blocks/Block72"]
+
+[node name="Block72CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/Block72/Block72StaticBody2D"]
+polygon = PackedVector2Array(-374, 12.957, -60, 108.634, 463, 203.315, 1034, 212.285, 1224, -5.97949, 1281, -290.022, 1348, -470.414, 1395, -546.159, 1700, -555.129, 1919, -413.605, 2061, -299.989, 2252, -100.66, 2613, 3.98633, 3032, -252.15, 3508, -62.7881, 4135, 50.8291, 4716, 411.613, 5011, 582.039, 5696, 525.23, 6771, 865.085, 7156, 748.478, 7925, 1003.62, 8736, 1142.15, 9427, 1368.39, 9910, 1730.17, 11096, 2054.08, 11587, 1429.18, 12312, 1293.64, 12901, 1429.18, 13414, 1715.22, 13505, 2272.34, 13860, 4754.98, 12800, 5721.72, 8855, 5749.62, 5548, 4102.18, 2697, 4329.41, -324, 3448.38, -610, 1743.13, -561, 766.417)
+
+[node name="Block72LightOccluder2D" type="LightOccluder2D" parent="Blocks/Block72"]
+occluder = SubResource("OccluderPolygon2D_s37dv")
+
+[node name="Block72Polygon2D" type="Polygon2D" parent="Blocks/Block72"]
+polygon = PackedVector2Array(-374, 12.957, -60, 108.634, 463, 203.315, 1034, 212.285, 1224, -5.97949, 1281, -290.022, 1348, -470.414, 1395, -546.159, 1700, -555.129, 1919, -413.605, 2061, -299.989, 2252, -100.66, 2613, 3.98633, 3032, -252.15, 3508, -62.7881, 4135, 50.8291, 4716, 411.613, 5011, 582.039, 5696, 525.23, 6771, 865.085, 7156, 748.478, 7925, 1003.62, 8736, 1142.15, 9427, 1368.39, 9910, 1730.17, 11096, 2054.08, 11587, 1429.18, 12312, 1293.64, 12901, 1429.18, 13414, 1715.22, 13505, 2272.34, 13860, 4754.98, 12800, 5721.72, 8855, 5749.62, 5548, 4102.18, 2697, 4329.41, -324, 3448.38, -610, 1743.13, -561, 766.417)
+
+[node name="Block73" parent="Blocks" instance=ExtResource("1_08how")]
+position = Vector2(66986, 9346)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(707, -242.184, 88, -144.513, -275, 8.96973, -679, 267.1, 303, 612.935, 811, -118.601)
+
+[node name="Block73StaticBody2D" type="StaticBody2D" parent="Blocks/Block73"]
+
+[node name="Block73CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/Block73/Block73StaticBody2D"]
+polygon = PackedVector2Array(707, -242.184, 88, -144.513, -275, 8.96973, -679, 267.1, 303, 612.935, 811, -118.601)
+
+[node name="Block73LightOccluder2D" type="LightOccluder2D" parent="Blocks/Block73"]
+occluder = SubResource("OccluderPolygon2D_v2il2")
+
+[node name="Block73Polygon2D" type="Polygon2D" parent="Blocks/Block73"]
+polygon = PackedVector2Array(707, -242.184, 88, -144.513, -275, 8.96973, -679, 267.1, 303, 612.935, 811, -118.601)
+
+[node name="Block74" parent="Blocks" instance=ExtResource("1_08how")]
+position = Vector2(68786, 8934)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-714, -274.076, -600, -206.305, -412, -134.547, -103, -2.99023, 107, 8.96973, 346, -26.9092, 703, -113.617, 964, -134.547, 1087, -101.658, 1132, 35.8789, 1048, 82.7207, 865, 85.7109, 598, 79.7314, 195, 247.167, -27, 229.228, -335, 96.6738, -636, -98.668, -792, -233.215)
+
+[node name="Block74StaticBody2D" type="StaticBody2D" parent="Blocks/Block74"]
+
+[node name="Block74CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/Block74/Block74StaticBody2D"]
+polygon = PackedVector2Array(-714, -274.076, -600, -206.305, -412, -134.547, -103, -2.99023, 107, 8.96973, 346, -26.9092, 703, -113.617, 964, -134.547, 1087, -101.658, 1132, 35.8789, 1048, 82.7207, 865, 85.7109, 598, 79.7314, 195, 247.167, -27, 229.228, -335, 96.6738, -636, -98.668, -792, -233.215)
+
+[node name="Block74LightOccluder2D" type="LightOccluder2D" parent="Blocks/Block74"]
+occluder = SubResource("OccluderPolygon2D_n6h3i")
+
+[node name="Block74Polygon2D" type="Polygon2D" parent="Blocks/Block74"]
+polygon = PackedVector2Array(-714, -274.076, -600, -206.305, -412, -134.547, -103, -2.99023, 107, 8.96973, 346, -26.9092, 703, -113.617, 964, -134.547, 1087, -101.658, 1132, 35.8789, 1048, 82.7207, 865, 85.7109, 598, 79.7314, 195, 247.167, -27, 229.228, -335, 96.6738, -636, -98.668, -792, -233.215)
+
+[node name="Block75" parent="Blocks" instance=ExtResource("1_08how")]
+position = Vector2(70774, 9552)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-348, 61.791, -268, -35.8799, -242, -154.479, -200, -238.197, -132, -276.07, -5, -297.996, 97, -289.026, 160, -264.11, 228, -141.523, 279, 35.8789, 283, 251.153, 283, 403.64)
+
+[node name="Block75StaticBody2D" type="StaticBody2D" parent="Blocks/Block75"]
+
+[node name="Block75CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/Block75/Block75StaticBody2D"]
+polygon = PackedVector2Array(-348, 61.791, -268, -35.8799, -242, -154.479, -200, -238.197, -132, -276.07, -5, -297.996, 97, -289.026, 160, -264.11, 228, -141.523, 279, 35.8789, 283, 251.153, 283, 403.64)
+
+[node name="Block75LightOccluder2D" type="LightOccluder2D" parent="Blocks/Block75"]
+occluder = SubResource("OccluderPolygon2D_ytcnc")
+
+[node name="Block75Polygon2D" type="Polygon2D" parent="Blocks/Block75"]
+polygon = PackedVector2Array(-348, 61.791, -268, -35.8799, -242, -154.479, -200, -238.197, -132, -276.07, -5, -297.996, 97, -289.026, 160, -264.11, 228, -141.523, 279, 35.8789, 283, 251.153, 283, 403.64)
+
+[node name="Block76" parent="Blocks" instance=ExtResource("1_08how")]
+position = Vector2(70418, 9418)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(128, -28.9023, -104, 28.9033, -228, 22.9229, -426, 34.8828, -460, 70.7617, -184, 148.5, 88, 178.399, 184, 82.7217)
+
+[node name="Block76StaticBody2D" type="StaticBody2D" parent="Blocks/Block76"]
+
+[node name="Block76CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/Block76/Block76StaticBody2D"]
+polygon = PackedVector2Array(128, -28.9023, -104, 28.9033, -228, 22.9229, -426, 34.8828, -460, 70.7617, -184, 148.5, 88, 178.399, 184, 82.7217)
+
+[node name="Block76LightOccluder2D" type="LightOccluder2D" parent="Blocks/Block76"]
+occluder = SubResource("OccluderPolygon2D_px5qy")
+
+[node name="Block76Polygon2D" type="Polygon2D" parent="Blocks/Block76"]
+polygon = PackedVector2Array(128, -28.9023, -104, 28.9033, -228, 22.9229, -426, 34.8828, -460, 70.7617, -184, 148.5, 88, 178.399, 184, 82.7217)
+
+[node name="Block77" parent="Blocks" instance=ExtResource("1_08how")]
+position = Vector2(71631, 9931)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-318, 167.436, -283, -44.8486, -293, -288.029, -350, -452.476, -340, -538.187, -232, -560.112, -134, -560.112, -58, -551.143, 31, -513.271, 63, -411.613, 66, -247.167, 60, -50.8291, 129, 145.51, -10, 243.181)
+
+[node name="Block77StaticBody2D" type="StaticBody2D" parent="Blocks/Block77"]
+
+[node name="Block77CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/Block77/Block77StaticBody2D"]
+polygon = PackedVector2Array(-318, 167.436, -283, -44.8486, -293, -288.029, -350, -452.476, -340, -538.187, -232, -560.112, -134, -560.112, -58, -551.143, 31, -513.271, 63, -411.613, 66, -247.167, 60, -50.8291, 129, 145.51, -10, 243.181)
+
+[node name="Block77LightOccluder2D" type="LightOccluder2D" parent="Blocks/Block77"]
+occluder = SubResource("OccluderPolygon2D_5hwgm")
+
+[node name="Block77Polygon2D" type="Polygon2D" parent="Blocks/Block77"]
+polygon = PackedVector2Array(-318, 167.436, -283, -44.8486, -293, -288.029, -350, -452.476, -340, -538.187, -232, -560.112, -134, -560.112, -58, -551.143, 31, -513.271, 63, -411.613, 66, -247.167, 60, -50.8291, 129, 145.51, -10, 243.181)
+
+[node name="Block78" parent="Blocks" instance=ExtResource("1_08how")]
+position = Vector2(72753, 9603)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-490, -751.468, -573, -645.823, -573, -454.469, -543, -254.144, -358, -107.637, -79, -9.9668, 231, -5.97949, 408, -62.7881, 533, -285.039, 514, -582.038, 389, -822.229, -30, -920.896, -302, -860.102)
+
+[node name="Block78StaticBody2D" type="StaticBody2D" parent="Blocks/Block78"]
+
+[node name="Block78CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/Block78/Block78StaticBody2D"]
+polygon = PackedVector2Array(-490, -751.468, -573, -645.823, -573, -454.469, -543, -254.144, -358, -107.637, -79, -9.9668, 231, -5.97949, 408, -62.7881, 533, -285.039, 514, -582.038, 389, -822.229, -30, -920.896, -302, -860.102)
+
+[node name="Block78LightOccluder2D" type="LightOccluder2D" parent="Blocks/Block78"]
+occluder = SubResource("OccluderPolygon2D_rswai")
+
+[node name="Block78Polygon2D" type="Polygon2D" parent="Blocks/Block78"]
+polygon = PackedVector2Array(-490, -751.468, -573, -645.823, -573, -454.469, -543, -254.144, -358, -107.637, -79, -9.9668, 231, -5.97949, 408, -62.7881, 533, -285.039, 514, -582.038, 389, -822.229, -30, -920.896, -302, -860.102)
+
+[node name="Block79" parent="Blocks" instance=ExtResource("1_08how")]
+position = Vector2(73875, 10214)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-230, 108.634, -260, -69.7656, -368, -169.43, -435, -257.134, -378, -337.861, -297, -353.808, -105, -357.795, 201, -330.885, 440, -287.033, 601, -129.563, 786, 44.8486, 921, 246.17, 951, 399.653, 430, 396.663, 9, 266.103)
+
+[node name="Block79StaticBody2D" type="StaticBody2D" parent="Blocks/Block79"]
+
+[node name="Block79CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/Block79/Block79StaticBody2D"]
+polygon = PackedVector2Array(-230, 108.634, -260, -69.7656, -368, -169.43, -435, -257.134, -378, -337.861, -297, -353.808, -105, -357.795, 201, -330.885, 440, -287.033, 601, -129.563, 786, 44.8486, 921, 246.17, 951, 399.653, 430, 396.663, 9, 266.103)
+
+[node name="Block79LightOccluder2D" type="LightOccluder2D" parent="Blocks/Block79"]
+occluder = SubResource("OccluderPolygon2D_k7qcw")
+
+[node name="Block79Polygon2D" type="Polygon2D" parent="Blocks/Block79"]
+polygon = PackedVector2Array(-230, 108.634, -260, -69.7656, -368, -169.43, -435, -257.134, -378, -337.861, -297, -353.808, -105, -357.795, 201, -330.885, 440, -287.033, 601, -129.563, 786, 44.8486, 921, 246.17, 951, 399.653, 430, 396.663, 9, 266.103)
+
+[node name="Block80" parent="Blocks" instance=ExtResource("1_08how")]
+position = Vector2(71858, 9494)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-223, -97.6709, -59, -71.7578, 21, -33.8857, 91, -29.8994, 60, 83.7178, -17, 115.61, -139, 103.65, -199, 63.7852, -291, -63.7852)
+
+[node name="Block80StaticBody2D" type="StaticBody2D" parent="Blocks/Block80"]
+
+[node name="Block80CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/Block80/Block80StaticBody2D"]
+polygon = PackedVector2Array(-223, -97.6709, -59, -71.7578, 21, -33.8857, 91, -29.8994, 60, 83.7178, -17, 115.61, -139, 103.65, -199, 63.7852, -291, -63.7852)
+
+[node name="Block80LightOccluder2D" type="LightOccluder2D" parent="Blocks/Block80"]
+occluder = SubResource("OccluderPolygon2D_qeju7")
+
+[node name="Block80Polygon2D" type="Polygon2D" parent="Blocks/Block80"]
+polygon = PackedVector2Array(-223, -97.6709, -59, -71.7578, 21, -33.8857, 91, -29.8994, 60, 83.7178, -17, 115.61, -139, 103.65, -199, 63.7852, -291, -63.7852)
+
+[node name="Block81" parent="Blocks" instance=ExtResource("1_08how")]
+position = Vector2(74273, 9988)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(293, -180.393, 83, 63.7852, 161, 476.395, 616, 780.37, 1042, 834.188, 1240, 846.148, 1312, 774.391, 1300, 590.012, 1270, 362.777, 1090, 99.6641, 982, -91.6914, 844, -204.312, 443, -210.291)
+
+[node name="Block81StaticBody2D" type="StaticBody2D" parent="Blocks/Block81"]
+
+[node name="Block81CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/Block81/Block81StaticBody2D"]
+polygon = PackedVector2Array(293, -180.393, 83, 63.7852, 161, 476.395, 616, 780.37, 1042, 834.188, 1240, 846.148, 1312, 774.391, 1300, 590.012, 1270, 362.777, 1090, 99.6641, 982, -91.6914, 844, -204.312, 443, -210.291)
+
+[node name="Block81LightOccluder2D" type="LightOccluder2D" parent="Blocks/Block81"]
+occluder = SubResource("OccluderPolygon2D_2jykr")
+
+[node name="Block81Polygon2D" type="Polygon2D" parent="Blocks/Block81"]
+polygon = PackedVector2Array(293, -180.393, 83, 63.7852, 161, 476.395, 616, 780.37, 1042, 834.188, 1240, 846.148, 1312, 774.391, 1300, 590.012, 1270, 362.777, 1090, 99.6641, 982, -91.6914, 844, -204.312, 443, -210.291)
+
+[node name="Block82" parent="Blocks" instance=ExtResource("1_08how")]
+position = Vector2(75508, 9362)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-452, -597.984, -402, -241.188, -341, 0, -200, 130.56, -14, 165.442, 233, 211.288, 390, 211.288, 508, 173.416, 572, -28.9023, 578, -655.79, 459, -1033.52, -84, -1177.03, -440, -1219.89, -601, -1016.57)
+
+[node name="Block82StaticBody2D" type="StaticBody2D" parent="Blocks/Block82"]
+
+[node name="Block82CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/Block82/Block82StaticBody2D"]
+polygon = PackedVector2Array(-452, -597.984, -402, -241.188, -341, 0, -200, 130.56, -14, 165.442, 233, 211.288, 390, 211.288, 508, 173.416, 572, -28.9023, 578, -655.79, 459, -1033.52, -84, -1177.03, -440, -1219.89, -601, -1016.57)
+
+[node name="Block82LightOccluder2D" type="LightOccluder2D" parent="Blocks/Block82"]
+occluder = SubResource("OccluderPolygon2D_vs0pn")
+
+[node name="Block82Polygon2D" type="Polygon2D" parent="Blocks/Block82"]
+polygon = PackedVector2Array(-452, -597.984, -402, -241.188, -341, 0, -200, 130.56, -14, 165.442, 233, 211.288, 390, 211.288, 508, 173.416, 572, -28.9023, 578, -655.79, 459, -1033.52, -84, -1177.03, -440, -1219.89, -601, -1016.57)
+
+[node name="Block83" parent="Blocks" instance=ExtResource("1_08how")]
+position = Vector2(76487, 10447)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-29, -536.192, -249, -572.072, -384, -563.102, -537, -558.119, -270, 882.028, 40, 799.307, 248, 772.397, 216, 155.477, 29, -547.155)
+
+[node name="Block83StaticBody2D" type="StaticBody2D" parent="Blocks/Block83"]
+
+[node name="Block83CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/Block83/Block83StaticBody2D"]
+polygon = PackedVector2Array(-29, -536.192, -249, -572.072, -384, -563.102, -537, -558.119, -270, 882.028, 40, 799.307, 248, 772.397, 216, 155.477, 29, -547.155)
+
+[node name="Block83LightOccluder2D" type="LightOccluder2D" parent="Blocks/Block83"]
+occluder = SubResource("OccluderPolygon2D_s5vot")
+
+[node name="Block83Polygon2D" type="Polygon2D" parent="Blocks/Block83"]
+polygon = PackedVector2Array(-29, -536.192, -249, -572.072, -384, -563.102, -537, -558.119, -270, 882.028, 40, 799.307, 248, 772.397, 216, 155.477, 29, -547.155)
+
+[node name="Block84" parent="Blocks" instance=ExtResource("1_08how")]
+position = Vector2(77063, 10840)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(442, -1186, -158, -1148.13, 54, -61.792, 655, -79.7314, 723, -76.7422, 685, -30.8965, 587, -0.99707, 413, 13.9531, 288, 9.96582, 92, -4.9834, -2, 5.97949, -89, 5.97949, -127, -42.8555, -134, -151.49, -206, -377.728, -233, -685.689, -236, -889.004, -251, -1092.32, -323, -1212.91, -270, -1280.68, -14, -1299.62, 232, -1295.63, 383, -1272.71)
+
+[node name="Block84StaticBody2D" type="StaticBody2D" parent="Blocks/Block84"]
+
+[node name="Block84CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/Block84/Block84StaticBody2D"]
+polygon = PackedVector2Array(442, -1186, -158, -1148.13, 54, -61.792, 655, -79.7314, 723, -76.7422, 685, -30.8965, 587, -0.99707, 413, 13.9531, 288, 9.96582, 92, -4.9834, -2, 5.97949, -89, 5.97949, -127, -42.8555, -134, -151.49, -206, -377.728, -233, -685.689, -236, -889.004, -251, -1092.32, -323, -1212.91, -270, -1280.68, -14, -1299.62, 232, -1295.63, 383, -1272.71)
+
+[node name="Block84LightOccluder2D" type="LightOccluder2D" parent="Blocks/Block84"]
+occluder = SubResource("OccluderPolygon2D_fadej")
+
+[node name="Block84Polygon2D" type="Polygon2D" parent="Blocks/Block84"]
+polygon = PackedVector2Array(442, -1186, -158, -1148.13, 54, -61.792, 655, -79.7314, 723, -76.7422, 685, -30.8965, 587, -0.99707, 413, 13.9531, 288, 9.96582, 92, -4.9834, -2, 5.97949, -89, 5.97949, -127, -42.8555, -134, -151.49, -206, -377.728, -233, -685.689, -236, -889.004, -251, -1092.32, -323, -1212.91, -270, -1280.68, -14, -1299.62, 232, -1295.63, 383, -1272.71)
+
+[node name="Block85" parent="Blocks" instance=ExtResource("1_08how")]
+position = Vector2(76931, 11167)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-200, 24.916, -87, -9.9668, 24, -15.9463, 109, 30.8955, 160, 145.51, 124, 321.915, 34, 299.989, -231, 247.167, -548, 142.52, -546, 4.9834)
+
+[node name="Block85StaticBody2D" type="StaticBody2D" parent="Blocks/Block85"]
+
+[node name="Block85CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/Block85/Block85StaticBody2D"]
+polygon = PackedVector2Array(-200, 24.916, -87, -9.9668, 24, -15.9463, 109, 30.8955, 160, 145.51, 124, 321.915, 34, 299.989, -231, 247.167, -548, 142.52, -546, 4.9834)
+
+[node name="Block85LightOccluder2D" type="LightOccluder2D" parent="Blocks/Block85"]
+occluder = SubResource("OccluderPolygon2D_3y5fj")
+
+[node name="Block85Polygon2D" type="Polygon2D" parent="Blocks/Block85"]
+polygon = PackedVector2Array(-200, 24.916, -87, -9.9668, 24, -15.9463, 109, 30.8955, 160, 145.51, 124, 321.915, 34, 299.989, -231, 247.167, -548, 142.52, -546, 4.9834)
+
+[node name="Block86" parent="Blocks" instance=ExtResource("1_08how")]
+position = Vector2(77491, 11271)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(287, -99.6641, 162, -98.667, -6, -49.832, -117, 42.8555, -132, 136.54, -128, 280.057, 43, 341.849, 221, 206.305, 244, 116.607, 285, -64.7813)
+
+[node name="Block86StaticBody2D" type="StaticBody2D" parent="Blocks/Block86"]
+
+[node name="Block86CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/Block86/Block86StaticBody2D"]
+polygon = PackedVector2Array(287, -99.6641, 162, -98.667, -6, -49.832, -117, 42.8555, -132, 136.54, -128, 280.057, 43, 341.849, 221, 206.305, 244, 116.607, 285, -64.7813)
+
+[node name="Block86LightOccluder2D" type="LightOccluder2D" parent="Blocks/Block86"]
+occluder = SubResource("OccluderPolygon2D_4sghc")
+
+[node name="Block86Polygon2D" type="Polygon2D" parent="Blocks/Block86"]
+polygon = PackedVector2Array(287, -99.6641, 162, -98.667, -6, -49.832, -117, 42.8555, -132, 136.54, -128, 280.057, 43, 341.849, 221, 206.305, 244, 116.607, 285, -64.7813)
+
+[node name="Block87" parent="Blocks" instance=ExtResource("1_08how")]
+position = Vector2(80777, 10073)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-280, 379.72, -536, 316.932, -801, 330.885, -1021, 429.552, -1102, 523.236, -1133, 666.753, -1075, 805.286, -949, 872.061, -747, 934.85, -549, 979.698, -258, 1001.62, -56, 974.715, 66, 881.03, 111, 706.618, 57, 491.344, -78, 429.552)
+
+[node name="Block87StaticBody2D" type="StaticBody2D" parent="Blocks/Block87"]
+
+[node name="Block87CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/Block87/Block87StaticBody2D"]
+polygon = PackedVector2Array(-280, 379.72, -536, 316.932, -801, 330.885, -1021, 429.552, -1102, 523.236, -1133, 666.753, -1075, 805.286, -949, 872.061, -747, 934.85, -549, 979.698, -258, 1001.62, -56, 974.715, 66, 881.03, 111, 706.618, 57, 491.344, -78, 429.552)
+
+[node name="Block87LightOccluder2D" type="LightOccluder2D" parent="Blocks/Block87"]
+occluder = SubResource("OccluderPolygon2D_83qfr")
+
+[node name="Block87Polygon2D" type="Polygon2D" parent="Blocks/Block87"]
+polygon = PackedVector2Array(-280, 379.72, -536, 316.932, -801, 330.885, -1021, 429.552, -1102, 523.236, -1133, 666.753, -1075, 805.286, -949, 872.061, -747, 934.85, -549, 979.698, -258, 1001.62, -56, 974.715, 66, 881.03, 111, 706.618, 57, 491.344, -78, 429.552)
+
+[node name="Block88" parent="Blocks" instance=ExtResource("1_08how")]
+position = Vector2(82572, 11462)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(141, -121.59, -138, -144.513, -255, -118.6, -403, -84.7139, -213, 2568.34, 59, 3122.48, 696, 3789.23, 1057.28, 3701.8, 1672, 3553.03, 1875, 2958.03, 1748, 2122.85, 1431, 1565.72, 758, 743.495, 644, 224.245, 453, -87.7041)
+
+[node name="Block88StaticBody2D" type="StaticBody2D" parent="Blocks/Block88"]
+
+[node name="Block88CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/Block88/Block88StaticBody2D"]
+polygon = PackedVector2Array(141, -121.59, -138, -144.513, -255, -118.6, -403, -84.7139, -213, 2568.34, 59, 3122.48, 696, 3789.23, 1057.28, 3701.8, 1672, 3553.03, 1875, 2958.03, 1748, 2122.85, 1431, 1565.72, 758, 743.495, 644, 224.245, 453, -87.7041)
+
+[node name="Block88LightOccluder2D" type="LightOccluder2D" parent="Blocks/Block88"]
+occluder = SubResource("OccluderPolygon2D_sc15l")
+
+[node name="Block88Polygon2D" type="Polygon2D" parent="Blocks/Block88"]
+polygon = PackedVector2Array(141, -121.59, -138, -144.513, -255, -118.6, -403, -84.7139, -213, 2568.34, 59, 3122.48, 696, 3789.23, 1057.28, 3701.8, 1672, 3553.03, 1875, 2958.03, 1748, 2122.85, 1431, 1565.72, 758, 743.495, 644, 224.245, 453, -87.7041)
+
+[node name="Block89" parent="Blocks" instance=ExtResource("1_08how")]
+position = Vector2(84620, 11115)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(299, 147.503, -105, -737.515, -426, -1175.04, -986, -1631.5, -2172, -1512.9, -2037, -736.518, -1033, 80.7275, -1020, 577.055, -872, 952.789, -495, 1381.34, -334, 1730.17, -186, 1931.49, 110, 3111.51, 245, 3633.75, 420, 3861.98, 904, 3888.89, 1294, 3835.08, 1657, 3540.07, 1590, 2964.01, 1536, 2199.59, 1213, 1327.53, 621, 429.552)
+
+[node name="Block89StaticBody2D" type="StaticBody2D" parent="Blocks/Block89"]
+
+[node name="Block89CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/Block89/Block89StaticBody2D"]
+polygon = PackedVector2Array(299, 147.503, -105, -737.515, -426, -1175.04, -986, -1631.5, -2172, -1512.9, -2037, -736.518, -1033, 80.7275, -1020, 577.055, -872, 952.789, -495, 1381.34, -334, 1730.17, -186, 1931.49, 110, 3111.51, 245, 3633.75, 420, 3861.98, 904, 3888.89, 1294, 3835.08, 1657, 3540.07, 1590, 2964.01, 1536, 2199.59, 1213, 1327.53, 621, 429.552)
+
+[node name="Block89LightOccluder2D" type="LightOccluder2D" parent="Blocks/Block89"]
+occluder = SubResource("OccluderPolygon2D_6ablk")
+
+[node name="Block89Polygon2D" type="Polygon2D" parent="Blocks/Block89"]
+polygon = PackedVector2Array(299, 147.503, -105, -737.515, -426, -1175.04, -986, -1631.5, -2172, -1512.9, -2037, -736.518, -1033, 80.7275, -1020, 577.055, -872, 952.789, -495, 1381.34, -334, 1730.17, -186, 1931.49, 110, 3111.51, 245, 3633.75, 420, 3861.98, 904, 3888.89, 1294, 3835.08, 1657, 3540.07, 1590, 2964.01, 1536, 2199.59, 1213, 1327.53, 621, 429.552)
+
+[node name="Block90" parent="Blocks" instance=ExtResource("1_08how")]
+position = Vector2(84394, 15507)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-1028, -544.166, -1095, -383.707, -960, 29.8994, -324, 359.788, 515, 426.563, 1041, 266.104, 1541, 88.7012, 1829, 71.7588, 2058, 224.244, 2176, 654.794, 1871, 1094.31, 905, 1170.06, -248, 1271.71, -1112, 1262.74, -2079, 941.826, -2231, 452.476, -2180, -383.707, -1595, -687.683, -1155, -721.568)
+
+[node name="Block90StaticBody2D" type="StaticBody2D" parent="Blocks/Block90"]
+
+[node name="Block90CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/Block90/Block90StaticBody2D"]
+polygon = PackedVector2Array(-1028, -544.166, -1095, -383.707, -960, 29.8994, -324, 359.788, 515, 426.563, 1041, 266.104, 1541, 88.7012, 1829, 71.7588, 2058, 224.244, 2176, 654.794, 1871, 1094.31, 905, 1170.06, -248, 1271.71, -1112, 1262.74, -2079, 941.826, -2231, 452.476, -2180, -383.707, -1595, -687.683, -1155, -721.568)
+
+[node name="Block90LightOccluder2D" type="LightOccluder2D" parent="Blocks/Block90"]
+occluder = SubResource("OccluderPolygon2D_opieu")
+
+[node name="Block90Polygon2D" type="Polygon2D" parent="Blocks/Block90"]
+polygon = PackedVector2Array(-1028, -544.166, -1095, -383.707, -960, 29.8994, -324, 359.788, 515, 426.563, 1041, 266.104, 1541, 88.7012, 1829, 71.7588, 2058, 224.244, 2176, 654.794, 1871, 1094.31, 905, 1170.06, -248, 1271.71, -1112, 1262.74, -2079, 941.826, -2231, 452.476, -2180, -383.707, -1595, -687.683, -1155, -721.568)
+
+[node name="Block92" parent="Blocks" instance=ExtResource("1_08how")]
+position = Vector2(81435, 10722)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(373, -156.473, 103, -192.352, -72, -120.593, -220, -26.9092, -287, 142.521, -233, 286.036, 5, 353.809, 292, 366.765, 508, 344.838, 728, 295.006, 813, 183.383, 750, 0, 543, -143.516)
+
+[node name="Block92StaticBody2D" type="StaticBody2D" parent="Blocks/Block92"]
+
+[node name="Block92CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/Block92/Block92StaticBody2D"]
+polygon = PackedVector2Array(373, -156.473, 103, -192.352, -72, -120.593, -220, -26.9092, -287, 142.521, -233, 286.036, 5, 353.809, 292, 366.765, 508, 344.838, 728, 295.006, 813, 183.383, 750, 0, 543, -143.516)
+
+[node name="Block92LightOccluder2D" type="LightOccluder2D" parent="Blocks/Block92"]
+occluder = SubResource("OccluderPolygon2D_n6jsj")
+
+[node name="Block92Polygon2D" type="Polygon2D" parent="Blocks/Block92"]
+polygon = PackedVector2Array(373, -156.473, 103, -192.352, -72, -120.593, -220, -26.9092, -287, 142.521, -233, 286.036, 5, 353.809, 292, 366.765, 508, 344.838, 728, 295.006, 813, 183.383, 750, 0, 543, -143.516)
+
+[node name="Block91" parent="Blocks" instance=ExtResource("1_08how")]
+position = Vector2(87144, 15528)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-1231, -598.981, -1036, -623.897, -798, -573.068, -536, -404.637, -197, -235.207, -52, -32.8887, -19, 187.368, 75, 491.344, 75, 727.548, 66, 1191.98, 227, 1512.9, 654, 1780, 807, 2046.11, 854, 2359.05, 1235, 2596.25, 1577, 2586.29, 1758, 2349.08, 1796, 1789.97, 1587, 1031.52, 1197, 197.335, 521, -428.556, 26, -969.731, -573, -1121.22, -1096, -1045.48)
+
+[node name="Block91StaticBody2D" type="StaticBody2D" parent="Blocks/Block91"]
+
+[node name="Block91CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/Block91/Block91StaticBody2D"]
+polygon = PackedVector2Array(-1231, -598.981, -1036, -623.897, -798, -573.068, -536, -404.637, -197, -235.207, -52, -32.8887, -19, 187.368, 75, 491.344, 75, 727.548, 66, 1191.98, 227, 1512.9, 654, 1780, 807, 2046.11, 854, 2359.05, 1235, 2596.25, 1577, 2586.29, 1758, 2349.08, 1796, 1789.97, 1587, 1031.52, 1197, 197.335, 521, -428.556, 26, -969.731, -573, -1121.22, -1096, -1045.48)
+
+[node name="Block91LightOccluder2D" type="LightOccluder2D" parent="Blocks/Block91"]
+occluder = SubResource("OccluderPolygon2D_mopxt")
+
+[node name="Block91Polygon2D" type="Polygon2D" parent="Blocks/Block91"]
+polygon = PackedVector2Array(-1231, -598.981, -1036, -623.897, -798, -573.068, -536, -404.637, -197, -235.207, -52, -32.8887, -19, 187.368, 75, 491.344, 75, 727.548, 66, 1191.98, 227, 1512.9, 654, 1780, 807, 2046.11, 854, 2359.05, 1235, 2596.25, 1577, 2586.29, 1758, 2349.08, 1796, 1789.97, 1587, 1031.52, 1197, 197.335, 521, -428.556, 26, -969.731, -573, -1121.22, -1096, -1045.48)
+
+[node name="Block93" parent="Blocks" instance=ExtResource("1_08how")]
+position = Vector2(85959, 17586)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(275, -984.682, 468, -489.352, 644, -90.6953, 1226, 4.98242, 1560, 324.904, 1676, 511.277, 1514, 962.756, 350, 787.346, -124, 1103.28, -774, 571.076, -653, -263.113, -194, -694.658, -420, -1085.34)
+
+[node name="Block93StaticBody2D" type="StaticBody2D" parent="Blocks/Block93"]
+
+[node name="Block93CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/Block93/Block93StaticBody2D"]
+polygon = PackedVector2Array(275, -984.682, 468, -489.352, 644, -90.6953, 1226, 4.98242, 1560, 324.904, 1676, 511.277, 1514, 962.756, 350, 787.346, -124, 1103.28, -774, 571.076, -653, -263.113, -194, -694.658, -420, -1085.34)
+
+[node name="Block93LightOccluder2D" type="LightOccluder2D" parent="Blocks/Block93"]
+occluder = SubResource("OccluderPolygon2D_1cspo")
+
+[node name="Block93Polygon2D" type="Polygon2D" parent="Blocks/Block93"]
+polygon = PackedVector2Array(275, -984.682, 468, -489.352, 644, -90.6953, 1226, 4.98242, 1560, 324.904, 1676, 511.277, 1514, 962.756, 350, 787.346, -124, 1103.28, -774, 571.076, -653, -263.113, -194, -694.658, -420, -1085.34)
+
+[node name="Block94" parent="Blocks" instance=ExtResource("1_08how")]
+position = Vector2(87533, 18920)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-955, -541.176, -1428, -82.7207, -1197, 533.203, -542, 1166.07, 406, 1286.66, 1081, 1296.63, 1928, 1195.97, 2180, 904.949, 2744, 693.662, 3591, 633.863, 4276, 1215.9, 3601, 2180.65, 2482, 2362.04, -1287, 2251.41, -2951, 1527.85, -3525, -109.631, -2991, -782.363, -2416, -993.652, -1882, -963.752)
+
+[node name="Block94StaticBody2D" type="StaticBody2D" parent="Blocks/Block94"]
+
+[node name="Block94CollisionPolygon2D" type="CollisionPolygon2D" parent="Blocks/Block94/Block94StaticBody2D"]
+polygon = PackedVector2Array(-955, -541.176, -1428, -82.7207, -1197, 533.203, -542, 1166.07, 406, 1286.66, 1081, 1296.63, 1928, 1195.97, 2180, 904.949, 2744, 693.662, 3591, 633.863, 4276, 1215.9, 3601, 2180.65, 2482, 2362.04, -1287, 2251.41, -2951, 1527.85, -3525, -109.631, -2991, -782.363, -2416, -993.652, -1882, -963.752)
+
+[node name="Block94LightOccluder2D" type="LightOccluder2D" parent="Blocks/Block94"]
+occluder = SubResource("OccluderPolygon2D_npsha")
+
+[node name="Block94Polygon2D" type="Polygon2D" parent="Blocks/Block94"]
+polygon = PackedVector2Array(-955, -541.176, -1428, -82.7207, -1197, 533.203, -542, 1166.07, 406, 1286.66, 1081, 1296.63, 1928, 1195.97, 2180, 904.949, 2744, 693.662, 3591, 633.863, 4276, 1215.9, 3601, 2180.65, 2482, 2362.04, -1287, 2251.41, -2951, 1527.85, -3525, -109.631, -2991, -782.363, -2416, -993.652, -1882, -963.752)
+
 [node name="Balls" type="Node2D" parent="."]
 
 [node name="RigidBody2D" type="RigidBody2D" parent="Balls"]
@@ -1094,7 +2066,7 @@ scale = Vector2(1.39757, 1.4)
 texture = SubResource("Texture2D_vfkun")
 
 [node name="Player" parent="." instance=ExtResource("2_uo0tt")]
-position = Vector2(25660, 7460)
+position = Vector2(41722, 7700)
 
 [node name="Door" type="Node2D" parent="." node_paths=PackedStringArray("owning_entity", "door_animatable_body")]
 position = Vector2(27058, 7500)
@@ -1132,6 +2104,96 @@ polygon = PackedVector2Array(29256, 6816, 28393, 7643, 30497, 7572, 29933, 6888)
 position = Vector2(6731, 1741)
 color = Color(1, 0.394217, 0.37802, 1)
 polygon = PackedVector2Array(28382, 6855, 28612, 7608, 30497, 7572, 30390, 6892)
+
+[node name="Light7" type="Polygon2D" parent="."]
+position = Vector2(17154, -2487)
+color = Color(1, 0.394217, 0.37802, 1)
+polygon = PackedVector2Array(28859, 7186, 28986, 8076, 29910, 8008, 29741, 7220, 29588, 6762, 29063, 6856)
+
+[node name="Light8" type="Polygon2D" parent="."]
+position = Vector2(19193, -3029)
+color = Color(1, 0.394217, 0.37802, 1)
+polygon = PackedVector2Array(29159, 7341, 29095, 7762, 29331, 7912, 29623, 7819, 29402, 7220, 29388, 6928, 29159, 7021)
+
+[node name="Light9" type="Polygon2D" parent="."]
+position = Vector2(27016, 3549)
+color = Color(1, 0.394217, 0.37802, 1)
+polygon = PackedVector2Array(29159, 7341, 29095, 7762, 29331, 7912, 30499, 7918, 30364, 7286, 30378, 6950, 29017, 6992)
+
+[node name="Light10" type="Polygon2D" parent="."]
+position = Vector2(30635, 4044)
+color = Color(1, 0.394217, 0.37802, 1)
+polygon = PackedVector2Array(29159, 7341, 29095, 7762, 29331, 7912, 30499, 7918, 30364, 7286, 30378, 6950, 29017, 6992)
+
+[node name="Light11" type="Polygon2D" parent="."]
+position = Vector2(34165, 4273)
+rotation = -0.038247
+color = Color(1, 0.394217, 0.37802, 1)
+polygon = PackedVector2Array(28471.4, 7229.97, 28283.5, 8163.47, 29575.2, 8275.94, 30307.9, 8062.8, 30364, 7286, 30378, 6950, 28629.2, 6765.66)
+
+[node name="Light12" type="Polygon2D" parent="."]
+position = Vector2(38766, 3977)
+rotation = -0.102868
+color = Color(1, 0.394217, 0.37802, 1)
+polygon = PackedVector2Array(28471.4, 7229.97, 28693.6, 7694.11, 29386.3, 8073.25, 30355.1, 7998.34, 30364, 7286, 30378, 6950, 28629.2, 6765.66)
+
+[node name="Light13" type="Polygon2D" parent="."]
+position = Vector2(41074, 5728)
+rotation = -0.102868
+color = Color(1, 0.394217, 0.37802, 1)
+polygon = PackedVector2Array(29389.5, 7156.73, 29380, 7306.55, 29661.1, 7437.1, 29713.2, 7244.43, 29715.8, 6956.18, 29681.4, 6821.94, 29386.4, 6777.41)
+
+[node name="Light14" type="Polygon2D" parent="."]
+position = Vector2(42529, 6015)
+rotation = -0.102868
+color = Color(1, 0.394217, 0.37802, 1)
+polygon = PackedVector2Array(29325.4, 7222.49, 30037, 7593.53, 30322, 7501.31, 30506.9, 7453.04, 29715.8, 6956.18, 28613, 6692.54, 28608.1, 7012.73)
+
+[node name="Light15" type="Polygon2D" parent="."]
+position = Vector2(45795, 6106)
+rotation = -0.102868
+color = Color(1, 0.394217, 0.37802, 1)
+polygon = PackedVector2Array(29061.4, 7802.46, 29496.9, 7995.2, 29741.2, 8219.46, 29622.9, 6853.09, 29328.9, 6827.77, 28844.9, 6725.53, 29056, 7163.52)
+
+[node name="Light16" type="Polygon2D" parent="."]
+position = Vector2(47337, 5873)
+rotation = -0.102868
+color = Color(1, 0.394217, 0.37802, 1)
+polygon = PackedVector2Array(29120.1, 7945.23, 29724, 7977.41, 29719.2, 7468.24, 29622.9, 6853.09, 29328.9, 6827.77, 29019.4, 6826.98, 29056, 7163.52)
+
+[node name="Light18" type="Polygon2D" parent="."]
+position = Vector2(56532.4, 6492.49)
+rotation = -0.102868
+scale = Vector2(0.78721, 1.03726)
+color = Color(1, 0.394217, 0.37802, 1)
+polygon = PackedVector2Array(28809.3, 7975.48, 28826.9, 9827.5, 31677.8, 9786.27, 31780.9, 7216.26, 29785, 7224.65, 28737.1, 6967.13, 28760.2, 7116.26)
+
+[node name="Light19" type="Polygon2D" parent="."]
+position = Vector2(58949, 9694)
+rotation = -0.102868
+scale = Vector2(0.78721, 1.03726)
+color = Color(1, 0.394217, 0.37802, 1)
+polygon = PackedVector2Array(30834.3, 8377.34, 31206.6, 8447.21, 31308.3, 8450.34, 31241.6, 7617.41, 30249, 7694.72, 30109.4, 7725.46, 30142.4, 8027.53)
+
+[node name="Light20" type="Polygon2D" parent="."]
+position = Vector2(62588, 10479)
+rotation = -0.102868
+scale = Vector2(0.78721, 1.03726)
+color = Color(1, 0.394217, 0.37802, 1)
+polygon = PackedVector2Array(30378.8, 8589.77, 30466.5, 8442.54, 30540.5, 8217.67, 30482.9, 7449.41, 30332, 7271.86, 30109.4, 7725.46, 30097.6, 8047.28)
+
+[node name="Light21" type="Polygon2D" parent="."]
+position = Vector2(61818, 11327)
+rotation = -0.102868
+scale = Vector2(0.78721, 1.03726)
+color = Color(1, 0.394217, 0.37802, 1)
+polygon = PackedVector2Array(30334.8, 8303.31, 30461.6, 8356.86, 30637.5, 8415.23, 30961.6, 8473.58, 30753, 8336.08, 30177, 7482.63, 30142.4, 8027.53)
+
+[node name="Light17" type="Polygon2D" parent="."]
+position = Vector2(47243, 6970)
+rotation = -0.102868
+color = Color(1, 0.394217, 0.37802, 1)
+polygon = PackedVector2Array(29227.2, 7531.04, 29494.5, 7639.06, 29519.3, 7447.6, 29552.7, 7396.76, 29444.2, 7405.66, 29246.2, 7385.23, 29195.9, 7521.79)
 
 [node name="Light5" type="Polygon2D" parent="."]
 position = Vector2(8900, 1741)

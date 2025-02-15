@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c3wxkq4jmthgk"]
+
+[ext_resource type="Script" path="res://scripts/block.gd" id="1_yfjt6"]
+
+[node name="Block" type="Polygon2D"]
+scale = Vector2(1, 1.00337)
+script = ExtResource("1_yfjt6")
+update_colliders = null

@@ -38,7 +38,7 @@ var spring_joints: Array[DampedSpringJoint2D] = [null, null]
 @export_subgroup("References")
 @export var jump_buffer_timer: Timer
 @export var coyote_time_timer: Timer
-@export var ground_cast: RayCast2D
+@export var ground_casts: Node2D
 @export var death_screen: Control
 @export var win_screen: Control
 @export var win_button: Button
@@ -178,12 +178,12 @@ func handle_air_movement():
 	# Set position to the rigidbody position
 	global_position = player_physics_follow.global_position
 
-	if not ground_cast.is_colliding():
+	if not ground_is_colliding():
 		is_sliding = false
 
 	# If the player is on the ground and the timer that starts when player leaves ground is stopped (eg the timer has runout)
 	# we delete the arms and set the player to the ground state
-	if ground_cast.is_colliding() and do_delete_timer.is_stopped():	
+	if ground_is_colliding() and do_delete_timer.is_stopped():	
 		arm_upgrade_component.player_landed()
 		if not is_sliding:
 			vel_x = player_physics_follow.linear_velocity.x
@@ -361,3 +361,13 @@ func create_spring_joint(point_a: Vector2, point_b: Vector2, body_a: PhysicsBody
 
 func _on_button_pressed() -> void:
 	get_tree().reload_current_scene()
+
+
+func ground_is_colliding() -> bool:
+	var n_colliding = 0
+	for i: RayCast2D in ground_casts.get_children():
+		if i.is_colliding():
+			n_colliding += 1;
+			if n_colliding > 1:
+				return true
+	return false

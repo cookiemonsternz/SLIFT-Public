@@ -154,7 +154,7 @@ vertical_alignment = 1
 shape = SubResource("CapsuleShape2D_rh5mj")
 
 [node name="GroundCast" type="RayCast2D" parent="."]
-target_position = Vector2(0, 65)
+target_position = Vector2(0, 67)
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
 physics_interpolation_mode = 1

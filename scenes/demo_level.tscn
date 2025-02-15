@@ -12,7 +12,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_ekj6v"]
 radius = 89.0898
 
-[sub_resource type="Resource" id="Resource_svikn"]
+[sub_resource type="Resource" id="Resource_exjcg"]
 script = ExtResource("4_rcsnt")
 
 [sub_resource type="Texture2D" id="Texture2D_40s4x"]
@@ -20,7 +20,7 @@ resource_local_to_scene = false
 resource_name = ""
 script = ExtResource("3_kvnmx")
 size = Vector2i(128, 128)
-shape = SubResource("Resource_svikn")
+shape = SubResource("Resource_exjcg")
 fill_type = 0
 fill_color = Color(1, 1, 1, 1)
 fill_from = Vector2(0, 0)
@@ -122,4 +122,4 @@ curve = SubResource("Curve2D_ph0sy")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2(1201, -141)
-rotation = -0.0873682
+rotation = -0.0873685

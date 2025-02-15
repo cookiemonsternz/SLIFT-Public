@@ -43,7 +43,7 @@ func damage(damage_amount: float, damage_type: Enums.DamageType = Enums.DamageTy
 		owning_entity.arm_upgrade_component.player_damaged(damage_amount, damage_type)
 	
 	entity_damaged.emit(damage_amount, damage_type, damage_source)
-	
+	#print("DAMAGED")
 	match damage_type:
 		Enums.DamageType.World:
 			shield = shield - damage_amount if shield > 0 else 0

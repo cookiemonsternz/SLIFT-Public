@@ -1,0 +1,81 @@
+[gd_scene load_steps=11 format=3 uid="uid://cunvwyyo5nyju"]
+
+[ext_resource type="Script" path="res://scripts/characters/enemies/enemy_basic.gd" id="1_1ekva"]
+[ext_resource type="PackedScene" uid="uid://bl4uuboi1j8w1" path="res://scenes/characters/components/enemy_damage_component.tscn" id="2_qisby"]
+[ext_resource type="PackedScene" uid="uid://cln5aujysamf1" path="res://scenes/characters/components/enemy_knockback_component.tscn" id="3_yrsui"]
+[ext_resource type="PackedScene" uid="uid://lnbyo5qn1pea" path="res://scenes/characters/components/enemy_path_movement_component.tscn" id="4_ihatr"]
+[ext_resource type="PackedScene" uid="uid://2yvmq877upop" path="res://scenes/characters/components/health_component.tscn" id="5_e3q1f"]
+[ext_resource type="Script" path="res://addons/shape_texture_2d/shape_texture_2d.gd" id="6_amh5n"]
+[ext_resource type="Script" path="res://addons/shape_texture_2d/drawable_polygon.gd" id="7_hs5kh"]
+
+[sub_resource type="Resource" id="Resource_n14rs"]
+script = ExtResource("7_hs5kh")
+points = 3
+is_star = false
+star_inset = -0.717
+
+[sub_resource type="Texture2D" id="Texture2D_8myuw"]
+resource_local_to_scene = false
+resource_name = ""
+script = ExtResource("6_amh5n")
+size = Vector2i(128, 128)
+shape = SubResource("Resource_n14rs")
+fill_type = 0
+fill_color = Color(1, 1, 1, 1)
+fill_from = Vector2(0, 0)
+fill_to = Vector2(1, 0)
+fill_repeat = "pad"
+stroke_type = 0
+stroke_width = 0.0
+stroke_color = Color(0, 0, 0, 1)
+stroke_from = Vector2(0, 0)
+stroke_to = Vector2(1, 0)
+stroke_repeat = "pad"
+stroke_joint = "round"
+offset = Vector2(0, 0)
+rotation = 0.0
+scale = Vector2(1, 1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_55qbj"]
+size = Vector2(112, 96)
+
+[node name="EnemyBasic" type="Node2D"]
+script = ExtResource("1_1ekva")
+
+[node name="EnemyDamageComponent" parent="." node_paths=PackedStringArray("damage_collider", "owning_entity") instance=ExtResource("2_qisby")]
+damage_collider = NodePath("../DamageArea2D")
+owning_entity = NodePath("..")
+damage = 15.0
+
+[node name="EnemyKnockbackComponent" parent="." node_paths=PackedStringArray("damage_collider", "knockback_origin") instance=ExtResource("3_yrsui")]
+damage_collider = NodePath("../DamageArea2D")
+knockback_amount = 1000.0
+knockback_origin = NodePath("../Marker2D")
+
+[node name="EnemyPathMovementComponent" parent="." node_paths=PackedStringArray("owning_entity") instance=ExtResource("4_ihatr")]
+owning_entity = NodePath("..")
+speed = 250.0
+
+[node name="HealthComponent" parent="." node_paths=PackedStringArray("owning_entity") instance=ExtResource("5_e3q1f")]
+owning_entity = NodePath("..")
+max_health = 3.0
+health = 3.0
+health_regen = false
+max_shield = 0.0
+shield = 0.0
+shield_regen = false
+shield_regen_rate = 0.0
+shield_regen_amount = 0.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("Texture2D_8myuw")
+
+[node name="DamageArea2D" type="Area2D" parent="."]
+collision_layer = 128
+collision_mask = 72
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea2D"]
+position = Vector2(0, -16)
+shape = SubResource("RectangleShape2D_55qbj")
+
+[node name="Marker2D" type="Marker2D" parent="."]

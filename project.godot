@@ -96,6 +96,7 @@ quit={
 2d_physics/layer_5="Buttons"
 2d_physics/layer_6="Doors"
 2d_physics/layer_7="PlayerPhysicsFollow"
+2d_physics/layer_8="Enemies"
 
 [physics]
 

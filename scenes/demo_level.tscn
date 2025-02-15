@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://nsfenexf57o1"]
+[gd_scene load_steps=14 format=4 uid="uid://nsfenexf57o1"]
 
 [ext_resource type="TileSet" uid="uid://b30kfa4ed8aqy" path="res://assets/tileset.tres" id="1_6f6xr"]
 [ext_resource type="PackedScene" uid="uid://brkdvlqw0t3sp" path="res://scenes/characters/player.tscn" id="2_x1y1f"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dkupc0hcgqo8k" path="res://scenes/environment/lights/thick_light.tscn" id="5_j48hb"]
 [ext_resource type="PackedScene" uid="uid://cwvhio0pg786r" path="res://scenes/yank_pickup.tscn" id="6_eg85y"]
 [ext_resource type="PackedScene" uid="uid://ciq52b3cuisor" path="res://scenes/environment/win_area.tscn" id="7_2yaey"]
+[ext_resource type="PackedScene" uid="uid://cunvwyyo5nyju" path="res://scenes/characters/enemies/enemy_basic.tscn" id="8_ywse6"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ekj6v"]
 radius = 89.0898
@@ -38,6 +39,12 @@ scale = Vector2(1, 1)
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_5cupf"]
 friction = 0.3
+
+[sub_resource type="Curve2D" id="Curve2D_ph0sy"]
+_data = {
+"points": PackedVector2Array(-122.053, 10.6908, 122.053, -10.6908, 1201, -141, -48.1085, 20.4907, 48.1085, -20.4907, 1411, -143, 40.9813, 65.9265, -40.9813, -65.9265, 1487, -257, 38.3086, 32.0724, -38.3086, -32.0724, 1392, -335, 93.5444, 2.6727, -93.5444, -2.6727, 1119, -388, 17.818, -50.7812, -17.818, 50.7812, 942, -291, -34.745, -34.745, 34.745, 34.745, 994, -204, -102.453, 12.4726, 102.453, -12.4726, 1201, -141)
+}
+point_count = 8
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(0, 43)
@@ -104,3 +111,15 @@ position = Vector2(61320, -4469)
 
 [node name="Player" parent="." instance=ExtResource("2_x1y1f")]
 position = Vector2(274, -168)
+
+[node name="EnemyBasic" parent="." node_paths=PackedStringArray("path_follow_2d") instance=ExtResource("8_ywse6")]
+position = Vector2(1205, -142)
+path_follow_2d = NodePath("../Path2D/PathFollow2D")
+
+[node name="Path2D" type="Path2D" parent="."]
+position = Vector2(3, -7)
+curve = SubResource("Curve2D_ph0sy")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
+position = Vector2(1201, -141)
+rotation = -0.0873682

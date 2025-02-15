@@ -83,7 +83,8 @@ func _process(delta: float) -> void:
 		move_speed = 0
 		jump_velocity = 0
 		is_dead = true
-	
+	if Input.is_action_just_pressed("quit"):
+		get_tree().quit()
 	#print(position)
 	if Input.is_action_just_pressed("test_input"):
 		var yank_upgrade = YankArmUpgrade.new()

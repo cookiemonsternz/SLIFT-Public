@@ -32,18 +32,18 @@ func _on_create_colliders():
 	light_occluder.occluder = occluder_polygon
 
 	
-	add_child(static_body)
-	add_child(light_occluder)
-	add_child(sprite)
-	static_body.owner = self
-	light_occluder.owner = self
-	sprite.owner = self
+	self.add_child(static_body)
+	self.add_child(light_occluder)
+	self.add_child(sprite)
+	static_body.owner = get_tree().edited_scene_root
+	light_occluder.owner = get_tree().edited_scene_root
+	sprite.owner = get_tree().edited_scene_root
 	
 	static_body.name = name + "StaticBody2D"
 	light_occluder.name = name + "LightOccluder2D"
 	sprite.name = name + "Polygon2D"
 	do_add = true
-	#self.print_tree_pretty()
+	
 	
 
 func _on_delete_colliders():
@@ -62,6 +62,7 @@ func _process(delta: float) -> void:
 			get_child(0).add_child(collision_shape)
 			collision_shape.set_owner(get_tree().edited_scene_root)
 			collision_shape.name = name + "CollisionPolygon2D"
+			self.print_tree_pretty()
 		if do_update:
 			_on_update_colliders()
 			do_update = false

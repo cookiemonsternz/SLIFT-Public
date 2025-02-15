@@ -5,4 +5,3 @@
 [node name="Block" type="Polygon2D"]
 scale = Vector2(1, 1.00337)
 script = ExtResource("1_yfjt6")
-update_colliders = null

@@ -1,130 +1,102 @@
-[gd_scene load_steps=2 format=3 uid="uid://oe525ghnvnev"]
+[gd_scene load_steps=33 format=3 uid="uid://oe525ghnvnev"]
 
+[ext_resource type="PackedScene" uid="uid://c3wxkq4jmthgk" path="res://scenes/block.tscn" id="1_1upqg"]
 [ext_resource type="PackedScene" uid="uid://brkdvlqw0t3sp" path="res://scenes/characters/player.tscn" id="1_u4u4q"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_el2mh"]
+polygon = PackedVector2Array(135, -297.996, 633, 545.163, 880, 1032.52, 891, 1187, -242, 1131.19, -902, 515.264, -1144, -322.912, 11, -611.938)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6dr35"]
+polygon = PackedVector2Array(-349, -1056.44, 711, 580.045, 818, 771.4, 850, 963.752, 909, 1088.33, 1408, 1477.02, 1819, 1561.74, 2256, 1565.72, 2739, 1637.48, 3116, 1718.21, 3968, 1739.14, 4146, 1573.7, 3947, 1401.28, 3705, 1265.73, 3337, 1040.49, 3195, 992.655, 2972, 899.967, 2700, 761.434, 2454, 505.297, 2318, 178.399, 1934, -680.706, 1827, -1550.77, 1635, -2578.31, 1509, -3690.56)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_62pl2"]
+polygon = PackedVector2Array(696, -407.626, 673, -308.959, 511, -189.362, 288, -121.59, 43, -26.9093, -70, 111.624, -112, 274.076, -134, 397.66, -112, 514.267, -116, 600.975, -85, 710.605, -55, 785.353, 1, 872.061, 58, 943.819, 402, 931.86, 881, 965.745, 1145, 1003.62, 1700, 1007.6, 2080, 992.655, 2648, 1018.57, 3003, 977.705, 3803, 890.997, 4030, 797.313, 4279, 819.239, 4283, 1436.16, -1203, 1436.16, -1101, -1062.42)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_foyjl"]
+polygon = PackedVector2Array(-323, 143.516, 283, 530.213, 485, 601.971, 688, 601.971, 747, 534.2, 468, 371.747, 281, 262.117, 309, 209.295, 271, 185.375, 254, 245.174, 131, 170.426, 33, 60.795, -126, 3.98657, -278, -33.8859, -344, 77.7379, -473, 92.6876, -439, 162.452)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xgecv"]
+polygon = PackedVector2Array(-486, 450.482, -386, 445.499, -358, 410.616, -331, 372.744, -322, 319.922, -248, 315.935, -127, 319.922, -105, 369.754, -84, 417.593, 4, 462.442, 78, 514.267)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_ph13j"]
+polygon = PackedVector2Array(-262, 45.8455, 219, 75.7449, 173, 36.8757, 142, 23.9194, 116, -29.8992, 86, -102.654, 37, -204.312, 24, -270.09, -130, -283.046, -358, -288.029, -493, -266.103, -538, -127.57, -595, -42.8555, -678, 1.99341, -849, 59.7986, -270, 34.8826)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_5rbe6"]
+polygon = PackedVector2Array(-831, -245.174, -483, -275.073, -305, -283.046, -72, -304.972, 254, -304.972, 568, -304.972, 788, -271.086, 1241, -245.174, 1547, -220.258, 1814, -245.174, 2174, -258.13, 3218, -207.301, 3720, -207.301, 3938, -121.59, 4350, -143.516, 4595, -207.301, 4985, -223.248, 5252, -169.429, 5663, -180.392, 5903, -217.268, 6352, -212.284, 6373, 367.761, -808, 362.778)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_elteb"]
+polygon = PackedVector2Array(8, -2.98975, 680, -6.97632, 926, -52.822, 1092, -59.7983, 1277, -55.8118, 1488, -108.634, 1670, -142.52, 1855, -135.543, 2153, -70.7615, 2432, -18.936, 2655, -14.9495, 2757, -14.9495, 2882, 26.9094, 3138, 7.97314, 3410, -18.936, 3474, 90.6943, 3478, 147.503, 3335, 165.443, 3346, 493.337, 2595, 504.301, 2232, 519.25, 20, 576.059)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qsuo2"]
+polygon = PackedVector2Array(-249, -108.634, -358, -70.7615, -347, -13.9529, -356, 50.8286, -278, 59.7983, -211, 57.8052, -99, 107.637, -109, 363.774, 3342, 427.559, 3284, -79.7314, 3138, -54.8152, 2858, -44.8489, 2669, -79.7314, 2303, -26.9094, 1729, -29.8992, 1099, 27.906, 774, 27.906, 313, -66.7749, -90, -102.654)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_w3l1d"]
+polygon = PackedVector2Array(-1859, -270.09, -1510, -168.432, -1014, -149.496, -252, -124.58, 586, -162.453, 1729, -92.6876, 2573, -105.644, 3551, -225.241, 4573, 7.97314, 5748, -194.345, 5926, -364.771, 5945, -643.83, 5786, -801.3, 5627, -991.658, 5227, -1250.78, 4504, -1466.06, 3551, -1592.63, 2446, -1738.14, 2148, -1953.42, 1926, -2535.46, 1653, -3598.87, 1583, -4630.4, -94, -4762.95, -202, -4022.44, -379, -3130.45, -779, -2250.42, -1421, -1548.78, -2011, -1111.26, -2545, -865.085, -2659, -598.981, -2602, -440.516, -2272, -320.919)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_45w65"]
+polygon = PackedVector2Array(34, 82.7212, 128, 43.8523, 214, 15.9463, 326, -60.7952, 486, -74.748, 630, -56.8086, 791, 4.98315, 876, 49.832, 955, 109.631, 903, 184.379, 855, 131.557, 743, 70.7615, 648, 34.8823, 563, 20.9294, 388, 65.7783, 251, 79.7312, 139, 122.587, 26, 95.6775)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_blijf"]
+polygon = PackedVector2Array(-521, -182.385, 1097, -117.604, 1759, -128.567, 2570, -37.8723, 3099, 14.9497, 3841, -21.926, 4343, -48.8352, 5155, -27.9058, 5484, -42.8555, 5691, 87.7046, 5686, 203.315, 5696, 705.622, 747, 444.502, -513, 318.925)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_kpucq"]
+polygon = PackedVector2Array(-57, -56.8086, -150, 6.97656, -157, 609.945, 6828, 816.249, 7726, 809.273, 7726, 532.207, 7718, 198.332, 6949, 291.019, 6143, 177.402, 5260, 248.164, 4247, 304.972, 3300, 63.7852, 2067, -14.9497, 541, -78.7346)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_dkn2h"]
+polygon = PackedVector2Array(-57, -240.19, 826, -309.955, 2489, -272.083, 4261, -5.97974, 5766, 0, 8598, -44.8486, 10376, 278.063, 10357, 765.421, -50, 385.7)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_mxbro"]
+polygon = PackedVector2Array(-91, 318.925, 293, 187.368, 431, 25.9126, 449, -392.677, 437, -606.955, 419, -947.806, 1078, -959.766, 1168, -732.531, 1180, -494.334, 1210, -201.322, 1210, 121.59, 1497, 259.127, 1839, 277.066, 27, 336.865)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_euc8j"]
+polygon = PackedVector2Array(-193, -1807.91, -95, -1610.57, -41, -1335.5, -4, -1064.41, 497, -1101.29, 742, -1117.23, 719, -1728.18, 937, -1848.77)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_sovtd"]
+polygon = PackedVector2Array(-26, 591.008, 661, 396.663, 1339, 303.976, 1898, 151.49, 2432, 134.547, 2847, -67.7717, 3229, -143.516, 3314, 185.375, 2559, 354.804, 2296, 506.294, 1568, 566.092, 983, 624.894, 330, 853.125, 50, 887.011)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_fak6h"]
+polygon = PackedVector2Array(-5708, -1479.02, -5194, -1269.72, -4795, -1460.08, -4433, -1479.02, -3254, -1630.51, -2131, -1819.87, -932, -1725.19, 171, -1497.95, 2550, -1630.51, 4586, -1933.48, 6755, -1895.61, 8315, -1819.87, 8372, -2825.48, -5765, -2654.06, -5632, -1630.51)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_oyc24"]
+polygon = PackedVector2Array(-6369, 592.005, -6149, 558.119, -6098, 479.384, -6030, 372.744, -5889, 372.744, -5776, 389.687, -5696, 473.405, -5645, 558.119, -5538, 648.814, -5429, 669.743)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_vckxr"]
+polygon = PackedVector2Array(156, 26.9092, 349, -174.412, 717, -372.744, 897, -600.975, 1082, -644.827, 1228, -897.974, 1554, -1048.47, 1963, -1335.5, 2175, -1263.74, 2237, -1173.05, 2109, -1092.32, 2035, -978.702, 1777, -826.216, 1533, -588.018, 1393, -518.253, 1393, -410.616, 1313, -359.788, 1213, -325.902, 1130, -300.986, 1014, -258.13, 999, -172.419, 914, -87.7046, 823, -34.8826, 781, 19.9329, 736, 66.7749, 289, 51.8252)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_sopi4"]
+polygon = PackedVector2Array(-233, -177.402, -160, -186.372, -119, -243.18, -90, -306.966, 21, -296.999, 107, -296.999, 151, -234.211, 224, -177.402, 300, -151.49)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_bby1y"]
+polygon = PackedVector2Array(844, -603.965, 557, -630.874, 220, -617.918, 126, -528.22, 283, -434.536, 328, -339.855, 485, -291.019, 633, -303.976, 700, -255.14, 893, -255.14, 1104, -282.05, 1315, -407.626, 1239, -532.206, 1342, -621.904)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_37s26"]
+polygon = PackedVector2Array(-436, -846.148, 121, -921.893, 633, -882.028, 669, -783.36, 602, -689.676, 458, -569.082, 220, -639.844, -81, -720.572, -189, -506.294, -409, -662.766, -462, -779.374)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rlfwp"]
+polygon = PackedVector2Array(893, -603.965, 1288, -603.965, 1728, -568.086, 1930, -425.566, 1688, -303.976, 1549, -170.426, 1405, -22.9227, 1257, 53.8186, 983, -179.395, 988, -443.505)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xyy3r"]
+polygon = PackedVector2Array(719, -452.475, 979, -474.401, 1285, -416.596, 1338, -255.14, 1150, -152.486, 1047, -4.98315, 898, -120.594, 813, -215.274, 634, -237.201, 625, -429.552)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_6243p"]
+polygon = PackedVector2Array(-802, -3884.91, 10627, -3739.4, 11746, -3401.54, 10220, -2827.47, 9483, -2759.7, 9033, -2759.7, 5211, -2886.27, 3117, -2894.25, 1346, -2954.04, -112, -3122.48, -875, -2911.19)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_52a6p"]
+polygon = PackedVector2Array(788, -3158.36, 1181, -2886.27, 1365, -2518.51, 1454, -2119.86, 1524, -1575.69, 1467, -1031.52, 1912, -785.354, 2426, -613.931, 2953, -759.441, 2877, -1297.63, 2997, -1709.24, 2947, -2682.96, 3061, -3037.76, 3435, -3196.23)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_my5gf"]
+polygon = PackedVector2Array(442, -218.264, 599, -199.328, 742, -222.251, 813, -246.17, 999, -350.818, 1008, -450.482, 1232, -426.563, 1355, -369.754, 1574, -355.801, 1574, -289.026, 1565, -151.49, 1617, -108.634, 1836, -42.8555, 1056, -46.842)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_is33e"]
+polygon = PackedVector2Array(-500, -1033.52, -300, -1052.45, -114, -1052.45, 33, -1071.39, 276, -1067.4, 595, -1033.52, 590, -905.947, 466, -854.122, 328, -835.185, 100, -621.904, -19, -545.163, -271, -625.891, -381, -797.313, -428, -972.722)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_647v3"]
+polygon = PackedVector2Array(-291, -318.925, 170, -336.865, 488, -360.784, 728, -324.905, 997, -217.268, 847, -61.7917, 722, -7.97314, 590, -1.99329, 320, 56.8086, 266, 146.506, 170, 182.385, -40, 134.547, -159, 20.9294, -255, -103.651, -345, -175.409)
 
 [node name="Jungle Level" type="Node2D"]
 
 [node name="RoomLevelBlockout" type="Node2D" parent="."]
-
-[node name="Ruins Sub Area" type="Node2D" parent="RoomLevelBlockout"]
-
-[node name="Grand Chamber" type="Polygon2D" parent="RoomLevelBlockout/Ruins Sub Area"]
-position = Vector2(-30824, 1281)
-color = Color(0.654847, 0.430938, 0.453808, 1)
-polygon = PackedVector2Array(61060, 11932, 62619, 12034, 62789, 9559, 74146, 10169, 73739, 18645, 61195, 17662)
-
-[node name="Vertical Shaft" type="Polygon2D" parent="RoomLevelBlockout/Ruins Sub Area"]
-position = Vector2(-30824, 1281)
-color = Color(0.66212, 0.430984, 0.421107, 1)
-polygon = PackedVector2Array(74556, 6825, 75598, 6825, 75920, 23952, 74055, 24037, 74384, 10704)
-
-[node name="Parkour Room" type="Polygon2D" parent="RoomLevelBlockout/Ruins Sub Area"]
-position = Vector2(-30824, 1281)
-color = Color(0.505882, 0.47451, 0.643137, 1)
-polygon = PackedVector2Array(74108, 21118, 73318, 21096, 73125, 20349, 64604, 20178, 64753, 23510, 73360, 23552, 73318, 22591, 74108, 22549)
-
-[node name="Upgrade Room" type="Polygon2D" parent="RoomLevelBlockout/Ruins Sub Area"]
-position = Vector2(-30824, 1281)
-color = Color(0.6, 0.486275, 0.203922, 1)
-polygon = PackedVector2Array(65324, 23487, 66380, 23551, 66476, 24383, 69308, 24399, 69356, 26479, 64524, 26271, 64380, 24431, 65660, 24447, 65420, 23583)
-
-[node name="Reg Gameplay 4" type="Polygon2D" parent="RoomLevelBlockout/Ruins Sub Area"]
-position = Vector2(-30251, -1520)
-color = Color(0.393996, 0.521354, 0.601673, 1)
-polygon = PackedVector2Array(75235, 20102, 80163, 20230, 82243, 21094, 83043, 22630, 79683, 23142, 77315, 22534, 75427, 22054)
-
-[node name="Challenge Room2" type="Polygon2D" parent="RoomLevelBlockout/Ruins Sub Area"]
-position = Vector2(-30824, 1281)
-color = Color(0.505882, 0.47451, 0.643137, 1)
-polygon = PackedVector2Array(75640, 10558, 84107, 10596, 84412, 11928, 75811, 11757)
-
-[node name="Vertical Shaft2" type="Polygon2D" parent="RoomLevelBlockout/Ruins Sub Area"]
-position = Vector2(-30824, 1281)
-color = Color(0.66212, 0.430984, 0.421107, 1)
-polygon = PackedVector2Array(84088, 8446, 83898, 23135, 85668, 23268, 85611, 8503)
-
-[node name="Passage Room" type="Polygon2D" parent="RoomLevelBlockout/Ruins Sub Area"]
-position = Vector2(-30824, 1281)
-color = Color(0.654847, 0.430938, 0.453808, 1)
-polygon = PackedVector2Array(82313, 22934, 88144, 23443, 88246, 27969, 82550, 27731, 82252, 23308)
-
-[node name="To Mines" type="Polygon2D" parent="RoomLevelBlockout/Ruins Sub Area"]
-position = Vector2(-30824, 1281)
-color = Color(0, 0.491357, 0.946228, 1)
-polygon = PackedVector2Array(84734, 27768, 85546, 27821, 85782, 33127, 84272, 33096)
-
-[node name="From Mines" type="Polygon2D" parent="RoomLevelBlockout/Ruins Sub Area"]
-position = Vector2(-30824, 1281)
-color = Color(0, 0.491357, 0.946228, 1)
-polygon = PackedVector2Array(88237, 26508, 90874, 26572, 90938, 31281, 89646, 31238, 89646, 27298, 88237, 27319)
-
-[node name="Big Door" type="Polygon2D" parent="RoomLevelBlockout/Ruins Sub Area"]
-position = Vector2(-30668, -972)
-color = Color(0.530101, 0.506636, 0.352617, 1)
-polygon = PackedVector2Array(54933, 12111, 59790, 12232, 60826, 12542, 60987, 19901, 60220, 19928, 58471, 19834, 55740, 19444, 54193, 19565)
-
-[node name="Secret Reward Room" type="Polygon2D" parent="RoomLevelBlockout/Ruins Sub Area"]
-position = Vector2(-30824, 1281)
-color = Color(0.6, 0.486275, 0.203922, 1)
-polygon = PackedVector2Array(54883, 12753, 54465, 12674, 53922, 12289, 53164, 12414, 52360, 12696, 53243, 12855, 53809, 13183, 54612, 13104, 54872, 13160)
-
-[node name="Lush Caves Sub Area" type="Node2D" parent="RoomLevelBlockout"]
-
-[node name="Reg Gameplay 1" type="Polygon2D" parent="RoomLevelBlockout/Lush Caves Sub Area"]
-position = Vector2(-30251, -1520)
-color = Color(0.393996, 0.521354, 0.601673, 1)
-polygon = PackedVector2Array(49403, 5020, 49079, 9206, 41326, 9796, 41221, 5011)
-
-[node name="Reg Gameplay 4" type="Polygon2D" parent="RoomLevelBlockout/Lush Caves Sub Area"]
-position = Vector2(-26382, 3730)
-color = Color(0.393996, 0.521354, 0.601673, 1)
-polygon = PackedVector2Array(49403, 5020, 49926, 9166, 45494, 10004, 42180, 10309, 40593, 9725, 40199, 7210, 41221, 5011, 42893, 4981, 42773, 4165, 43452, 4105, 43588, 5041, 45977, 4671, 48239, 4905, 48360, 4075, 49085, 4090, 49009.6, 4981.13)
-
-[node name="Challenge Room" type="Polygon2D" parent="RoomLevelBlockout/Lush Caves Sub Area"]
-position = Vector2(-28647, -793)
-color = Color(0.507461, 0.473755, 0.644052, 1)
-polygon = PackedVector2Array(39728, 7941, 39200, 7546, 39055, 5824, 34372, 5815, 34358, 8146, 39126, 8378, 39172, 7655, 39714, 8031)
-
-[node name="Reward Room" type="Polygon2D" parent="RoomLevelBlockout/Lush Caves Sub Area"]
-position = Vector2(-30399, -541)
-color = Color(0.598421, 0.486665, 0.205045, 1)
-polygon = PackedVector2Array(36179, 6077, 33795, 6016, 33358, 5653, 31723, 5667, 31192, 6548, 31884, 7086, 33728, 7167, 33943, 6622, 36179, 6699)
-
-[node name="UNCONFIRMED Room" type="Polygon2D" parent="RoomLevelBlockout/Lush Caves Sub Area"]
-position = Vector2(-30399, -541)
-color = Color(0.696711, 0.11869, 1, 1)
-polygon = PackedVector2Array(82458, 4607, 83622, 6383, 83817, 6437, 83985, 7513, 83588, 8778, 77154, 8670, 76348, 8136, 76288, 7057, 76509, 6322, 77548, 5908, 83182, 6291, 82285, 4596)
-
-[node name="Reg Gameplay 2" type="Polygon2D" parent="RoomLevelBlockout/Lush Caves Sub Area"]
-position = Vector2(-30399, -541)
-color = Color(0.392157, 0.521569, 0.6, 1)
-polygon = PackedVector2Array(50902, 3924, 55317, 4247, 55317, 3098, 56345, 3198, 56506, 4428, 60820, 4529, 62896, 5759, 63279, 6625, 63924, 8359, 63622, 9165, 61384, 9125, 57857, 8762, 57736, 10274, 56244, 10173, 56264, 11766, 55438, 11685, 55397, 10113, 55317, 8440, 51063, 8198, 50257, 7210, 50217, 5275)
-
-[node name="Reg Gameplay 3" type="Polygon2D" parent="RoomLevelBlockout/Lush Caves Sub Area"]
-position = Vector2(-30399, -541)
-color = Color(0.392157, 0.521569, 0.6, 1)
-polygon = PackedVector2Array(63800, 6969, 64646, 6908, 65370, 6047, 68648, 5549, 73661, 5911, 75866, 6440, 75625, 7074, 76214, 7044, 76350, 8071, 75745, 8131, 75836, 8660, 72317, 8736, 72393, 7240, 70037, 7165, 68693, 8449, 65552, 8298, 64887, 8464, 64797, 8011, 64117, 8162)
-
-[node name="Upgrade Puzzle" type="Polygon2D" parent="RoomLevelBlockout/Lush Caves Sub Area"]
-color = Color(0.384714, 0.625409, 0.50872, 1)
-polygon = PackedVector2Array(2841, 6623, 2871, 7816, 10921, 8465, 10815, 11788, 2705, 11350, 2192, 6517)
-
-[node name="Upgrade Room" type="Polygon2D" parent="RoomLevelBlockout/Lush Caves Sub Area"]
-color = Color(0.6, 0.486275, 0.203922, 1)
-polygon = PackedVector2Array(10899, 8853, 11953, 8815, 11876, 8384, 13527, 8384, 13565, 9247, 12016, 9222, 10873, 9234)
-
-[node name="Generic Gameplay" type="Polygon2D" parent="RoomLevelBlockout/Lush Caves Sub Area"]
-color = Color(0.390293, 0.523463, 0.597179, 1)
-polygon = PackedVector2Array(9057, 11711, 10060, 11787, 10010, 12536, 10797, 12676, 10810, 14022, 6263, 13857, 6289, 12587, 9146, 12625)
-
-[node name="Generic Gameplay2" type="Polygon2D" parent="RoomLevelBlockout/Lush Caves Sub Area"]
-color = Color(0.390293, 0.523463, 0.597179, 1)
-polygon = PackedVector2Array(6251, 12968, 5336, 12917, 5273, 12714, 2911, 12650, 2873, 15432, 7584, 15521, 7584, 14479, 5451, 14454, 5324, 13679, 6263, 13666)
-
-[node name="To Mines2" type="Polygon2D" parent="RoomLevelBlockout/Lush Caves Sub Area"]
-position = Vector2(-78329, -12386)
-color = Color(0, 0.491357, 0.946228, 1)
-polygon = PackedVector2Array(84734, 27768, 85546, 27821, 85782, 33127, 84272, 33096)
+modulate = Color(1, 1, 1, 0.101961)
 
 [node name="Jungle Sub Area" type="Node2D" parent="RoomLevelBlockout"]
 
@@ -152,16 +124,682 @@ color = Color(0.501407, 0.501406, 0.501406, 1)
 polygon = PackedVector2Array(19016, 2718, 19172, 2955, 20553, 3061, 22247, 2950, 22589, 3036, 22272, 2784, 21017, 2864, 20165, 2920)
 
 [node name="Upper Jungle (shifting light field trhings)" type="Polygon2D" parent="RoomLevelBlockout/Jungle Sub Area"]
-position = Vector2(9535, 1307)
-scale = Vector2(0.415, 0.415)
+position = Vector2(6827, 908)
+scale = Vector2(0.55, 0.55)
 color = Color(0.427469, 0.540556, 0.380019, 1)
 polygon = PackedVector2Array(22266, 2808, 24138, 2878, 25862, 2842, 28609, 3130, 33554, 3164, 35963, 3037, 39588, 3319, 44127, 3808, 48271, 3727, 50392, 3648, 51731, 3639, 53629, 3521, 55570, 3928, 57555, 4104, 60461, 4184, 67887, 4642, 67834, 5018, 22439, 3081, 22267, 2905)
 
 [node name="Lore Cave" type="Polygon2D" parent="RoomLevelBlockout/Jungle Sub Area"]
-position = Vector2(10549, 1381)
-scale = Vector2(0.4, 0.4)
+position = Vector2(14968, 1552)
+scale = Vector2(0.43, 0.43)
 color = Color(0.603952, 0.473972, 0.341625, 1)
 polygon = PackedVector2Array(67702, 4981, 75013, 5676, 79424, 5808, 87096, 6240, 92046, 6132, 96649, 6935, 105363, 7259, 107433, 7221, 107623, 5946, 106900, 3149, 105701, -371, 103704, -3573, 102232, -5013, 99672, -6581, 97624, -7061, 95096, -6965, 92088, -5813, 90328, -4405, 88536, -3413, 86264, -3733, 84344, -4469, 82360, -5173, 80248, -5493, 77624, -4981, 75160, -4245, 73016, -3637, 71736, -3381, 69976, -2581, 68056, -1749, 66552, -469, 66493, 323, 66866, 1092, 67224, 1643, 68024, 3051, 70104, 3275, 71864, 3051, 73880, 3403, 75960, 3435, 78264, 3179, 79864, 3211, 81592, 3723, 83672, 3979, 85400, 3627, 86488, 3019, 87640, 2731, 89112, 2475, 90040, 1451, 90968, 107, 91832, -309, 92824, -661, 93144, -1397, 94040, -2325, 94968, -2677, 95992, -2901, 97272, -2965, 98296, -2805, 99992, -2133, 101048, -1621, 103800, 683, 103896, 1067, 104472, 2603, 104920, 3659, 105144, 4715, 105048, 5547, 104760, 6187, 104088, 6731, 102168, 6763, 90520, 5739, 67800, 4651)
 
+[node name="Lush Caves Sub Area" type="Node2D" parent="RoomLevelBlockout"]
+
+[node name="Reg Gameplay 1" type="Polygon2D" parent="RoomLevelBlockout/Lush Caves Sub Area"]
+position = Vector2(-30251, -1520)
+color = Color(0.393996, 0.521354, 0.601673, 1)
+polygon = PackedVector2Array(49403, 5020, 49079, 9206, 41326, 9796, 41221, 5011, 44506, 4999, 44612, 4147, 46013, 4127, 46013, 4969)
+
+[node name="Reg Gameplay 5" type="Polygon2D" parent="RoomLevelBlockout/Lush Caves Sub Area"]
+position = Vector2(4159, -636)
+color = Color(0.393996, 0.521354, 0.601673, 1)
+polygon = PackedVector2Array(48624, 6922, 48886, 8615, 41105, 8676, 41024, 6478)
+
+[node name="Reg Gameplay 4" type="Polygon2D" parent="RoomLevelBlockout/Lush Caves Sub Area"]
+position = Vector2(-26382, 3730)
+color = Color(0.393996, 0.521354, 0.601673, 1)
+polygon = PackedVector2Array(49403, 5020, 49926, 9166, 45494, 10004, 42180, 10309, 40593, 9725, 40199, 7210, 41221, 5011, 42893, 4981, 42773, 4165, 43452, 4105, 43588, 5041, 45977, 4671, 48239, 4905, 48360, 4075, 49085, 4090, 49009.6, 4981.13)
+
+[node name="Reg Gameplay 6" type="Polygon2D" parent="RoomLevelBlockout/Lush Caves Sub Area"]
+position = Vector2(-20883, 9039)
+color = Color(0.393996, 0.521354, 0.601673, 1)
+polygon = PackedVector2Array(49403, 5020, 49926, 9166, 45494, 10004, 42180, 10309, 40593, 9725, 40199, 7210, 41221, 5011, 42893, 4981, 42773, 4165, 43452, 4105, 43588, 5041, 45977, 4671, 48239, 4905, 48360, 4075, 49085, 4090, 49009.6, 4981.13)
+
+[node name="Reg Gameplay 7" type="Polygon2D" parent="RoomLevelBlockout/Lush Caves Sub Area"]
+position = Vector2(-16488, 3559)
+color = Color(0.393996, 0.521354, 0.601673, 1)
+polygon = PackedVector2Array(39573, 6581, 41039, 6334, 40962, 5154, 47241, 5782, 47451, 9682, 43170, 9587, 41419, 9302, 41362, 7837, 39726, 7551)
+
+[node name="Challenge Room" type="Polygon2D" parent="RoomLevelBlockout/Lush Caves Sub Area"]
+position = Vector2(-28647, -793)
+color = Color(0.507461, 0.473755, 0.644052, 1)
+polygon = PackedVector2Array(39728, 7941, 39200, 7546, 39055, 5824, 34372, 5815, 34358, 8146, 39126, 8378, 39172, 7655, 39714, 8031)
+
+[node name="Reward Room" type="Polygon2D" parent="RoomLevelBlockout/Lush Caves Sub Area"]
+position = Vector2(-30399, -541)
+color = Color(0.598421, 0.486665, 0.205045, 1)
+polygon = PackedVector2Array(36179, 6077, 33795, 6016, 33358, 5653, 31723, 5667, 31192, 6548, 31884, 7086, 33728, 7167, 33943, 6622, 36179, 6699)
+
+[node name="Reward Room2" type="Polygon2D" parent="RoomLevelBlockout/Lush Caves Sub Area"]
+position = Vector2(-16543, 10531)
+color = Color(0.598421, 0.486665, 0.205045, 1)
+polygon = PackedVector2Array(36179, 6077, 33795, 6016, 33358, 5653, 31723, 5667, 31192, 6548, 31884, 7086, 33728, 7167, 33943, 6622, 36179, 6699)
+
+[node name="UNCONFIRMED Room" type="Polygon2D" parent="RoomLevelBlockout/Lush Caves Sub Area"]
+position = Vector2(-23471, -113)
+color = Color(0.696711, 0.11869, 1, 1)
+polygon = PackedVector2Array(82458, 4607, 83622, 6383, 83817, 6437, 83985, 7513, 83588, 8778, 77154, 8670, 76348, 8136, 76288, 7057, 76509, 6322, 77548, 5908, 83182, 6291, 82285, 4596)
+
+[node name="Reg Gameplay 2" type="Polygon2D" parent="RoomLevelBlockout/Lush Caves Sub Area"]
+position = Vector2(-30399, -541)
+color = Color(0.392157, 0.521569, 0.6, 1)
+polygon = PackedVector2Array(50902, 3924, 55317, 4247, 55317, 3098, 56345, 3198, 56506, 4428, 60820, 4529, 62896, 5759, 63279, 6625, 63924, 8359, 63622, 9165, 61384, 9125, 57857, 8762, 55317, 8440, 51063, 8198, 50257, 7210, 50217, 5275)
+
+[node name="Reg Gameplay 3" type="Polygon2D" parent="RoomLevelBlockout/Lush Caves Sub Area"]
+position = Vector2(-31077, -371)
+color = Color(0.392157, 0.521569, 0.6, 1)
+polygon = PackedVector2Array(63800, 6969, 64646, 6908, 65370, 6047, 68648, 5549, 73661, 5911, 75866, 6440, 75625, 7074, 76214, 7044, 76350, 8071, 75745, 8131, 75836, 8660, 72317, 8736, 72393, 7240, 70037, 7165, 68693, 8449, 65552, 8298, 64887, 8464, 64797, 8011, 64117, 8162)
+
+[node name="Upgrade Puzzle" type="Polygon2D" parent="RoomLevelBlockout/Lush Caves Sub Area"]
+color = Color(0.384714, 0.625409, 0.50872, 1)
+polygon = PackedVector2Array(2841, 6623, 2871, 7816, 10921, 8465, 10815, 11788, 2705, 11350, 2192, 6517)
+
+[node name="Upgrade Room" type="Polygon2D" parent="RoomLevelBlockout/Lush Caves Sub Area"]
+color = Color(0.6, 0.486275, 0.203922, 1)
+polygon = PackedVector2Array(10899, 8853, 11953, 8815, 11876, 8384, 13527, 8384, 13565, 9247, 12016, 9222, 10873, 9234)
+
+[node name="Generic Gameplay" type="Polygon2D" parent="RoomLevelBlockout/Lush Caves Sub Area"]
+color = Color(0.390293, 0.523463, 0.597179, 1)
+polygon = PackedVector2Array(9057, 11711, 10060, 11787, 10010, 12536, 10797, 12676, 10810, 14022, 6263, 13857, 6289, 12587, 9146, 12625)
+
+[node name="Generic Gameplay2" type="Polygon2D" parent="RoomLevelBlockout/Lush Caves Sub Area"]
+color = Color(0.390293, 0.523463, 0.597179, 1)
+polygon = PackedVector2Array(6251, 12968, 5336, 12917, 5273, 12714, 2911, 12650, 2873, 15432, 7584, 15521, 7584, 14479, 5451, 14454, 5324, 13679, 6263, 13666)
+
+[node name="To Mines2" type="Polygon2D" parent="RoomLevelBlockout/Lush Caves Sub Area"]
+position = Vector2(-78329, -12386)
+color = Color(0, 0.491357, 0.946228, 1)
+polygon = PackedVector2Array(84734, 27768, 85546, 27821, 85782, 33127, 84272, 33096)
+
+[node name="Ruins Sub Area" type="Node2D" parent="RoomLevelBlockout"]
+
+[node name="Grand Chamber" type="Polygon2D" parent="RoomLevelBlockout/Ruins Sub Area"]
+position = Vector2(-23306, 1230)
+color = Color(0.654847, 0.430938, 0.453808, 1)
+polygon = PackedVector2Array(61060, 11932, 62619, 12034, 62789, 9559, 74146, 10169, 73739, 18645, 61195, 17662)
+
+[node name="Vertical Shaft" type="Polygon2D" parent="RoomLevelBlockout/Ruins Sub Area"]
+position = Vector2(-23306, 1230)
+color = Color(0.66212, 0.430984, 0.421107, 1)
+polygon = PackedVector2Array(74556, 6825, 75598, 6825, 75920, 23952, 74055, 24037, 74384, 10704)
+
+[node name="Parkour Room" type="Polygon2D" parent="RoomLevelBlockout/Ruins Sub Area"]
+position = Vector2(-23306, 1230)
+color = Color(0.505882, 0.47451, 0.643137, 1)
+polygon = PackedVector2Array(74108, 21118, 73318, 21096, 73125, 20349, 64604, 20178, 64753, 23510, 73360, 23552, 73318, 22591, 74108, 22549)
+
+[node name="Upgrade Room" type="Polygon2D" parent="RoomLevelBlockout/Ruins Sub Area"]
+position = Vector2(-23306, 1230)
+color = Color(0.6, 0.486275, 0.203922, 1)
+polygon = PackedVector2Array(65324, 23487, 66380, 23551, 66476, 24383, 69308, 24399, 69356, 26479, 64524, 26271, 64380, 24431, 65660, 24447, 65420, 23583)
+
+[node name="Reg Gameplay 4" type="Polygon2D" parent="RoomLevelBlockout/Ruins Sub Area"]
+position = Vector2(-22733, -1571)
+color = Color(0.393996, 0.521354, 0.601673, 1)
+polygon = PackedVector2Array(75235, 20102, 80163, 20230, 82243, 21094, 83043, 22630, 79683, 23142, 77315, 22534, 75427, 22054)
+
+[node name="Challenge Room2" type="Polygon2D" parent="RoomLevelBlockout/Ruins Sub Area"]
+position = Vector2(-23306, 1230)
+color = Color(0.505882, 0.47451, 0.643137, 1)
+polygon = PackedVector2Array(75640, 10558, 84107, 10596, 84412, 11928, 75811, 11757)
+
+[node name="Vertical Shaft2" type="Polygon2D" parent="RoomLevelBlockout/Ruins Sub Area"]
+position = Vector2(-23306, 1230)
+color = Color(0.66212, 0.430984, 0.421107, 1)
+polygon = PackedVector2Array(84088, 8446, 83898, 23135, 85668, 23268, 85611, 8503)
+
+[node name="Passage Room" type="Polygon2D" parent="RoomLevelBlockout/Ruins Sub Area"]
+position = Vector2(-23306, 1230)
+color = Color(0.654847, 0.430938, 0.453808, 1)
+polygon = PackedVector2Array(82313, 22934, 88144, 23443, 88246, 27969, 82550, 27731, 82252, 23308)
+
+[node name="To Mines" type="Polygon2D" parent="RoomLevelBlockout/Ruins Sub Area"]
+position = Vector2(-23306, 1230)
+color = Color(0, 0.491357, 0.946228, 1)
+polygon = PackedVector2Array(84734, 27768, 85546, 27821, 85782, 33127, 84272, 33096)
+
+[node name="From Mines" type="Polygon2D" parent="RoomLevelBlockout/Ruins Sub Area"]
+position = Vector2(-23306, 1230)
+color = Color(0, 0.491357, 0.946228, 1)
+polygon = PackedVector2Array(88237, 26508, 90874, 26572, 90938, 31281, 89646, 31238, 89646, 27298, 88237, 27319)
+
+[node name="Big Door" type="Polygon2D" parent="RoomLevelBlockout/Ruins Sub Area"]
+position = Vector2(-23277, -599)
+color = Color(0.530101, 0.506636, 0.352617, 1)
+polygon = PackedVector2Array(54933, 12111, 59790, 12232, 60826, 12542, 60987, 19901, 60220, 19928, 58471, 19834, 55740, 19444, 54193, 19565)
+
+[node name="Secret Reward Room" type="Polygon2D" parent="RoomLevelBlockout/Ruins Sub Area"]
+position = Vector2(-23433, 1654)
+color = Color(0.6, 0.486275, 0.203922, 1)
+polygon = PackedVector2Array(54883, 12753, 54465, 12674, 53922, 12289, 53164, 12414, 52360, 12696, 53243, 12855, 53809, 13183, 54612, 13104, 54872, 13160)
+
+[node name="Blockout" type="Node2D" parent="."]
+
+[node name="Jungle Sub Area" type="Node2D" parent="Blockout"]
+
+[node name="EntranceDarkRoom" type="Node2D" parent="Blockout/Jungle Sub Area"]
+
+[node name="Block" parent="Blockout/Jungle Sub Area/EntranceDarkRoom" instance=ExtResource("1_1upqg")]
+position = Vector2(7, -3)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(135, -297.996, 633, 545.163, 880, 1032.52, 891, 1187, -242, 1131.19, -902, 515.264, -1144, -322.912, 11, -611.938)
+
+[node name="BlockStaticBody2D" type="StaticBody2D" parent="Blockout/Jungle Sub Area/EntranceDarkRoom/Block"]
+
+[node name="BlockCollisionPolygon2D" type="CollisionPolygon2D" parent="Blockout/Jungle Sub Area/EntranceDarkRoom/Block/BlockStaticBody2D"]
+polygon = PackedVector2Array(135, -297.996, 633, 545.163, 880, 1032.52, 891, 1187, -242, 1131.19, -902, 515.264, -1144, -322.912, 11, -611.938)
+
+[node name="BlockLightOccluder2D" type="LightOccluder2D" parent="Blockout/Jungle Sub Area/EntranceDarkRoom/Block"]
+occluder = SubResource("OccluderPolygon2D_el2mh")
+
+[node name="BlockPolygon2D" type="Polygon2D" parent="Blockout/Jungle Sub Area/EntranceDarkRoom/Block"]
+polygon = PackedVector2Array(135, -297.996, 633, 545.163, 880, 1032.52, 891, 1187, -242, 1131.19, -902, 515.264, -1144, -322.912, 11, -611.938)
+
+[node name="Block2" parent="Blockout/Jungle Sub Area/EntranceDarkRoom" instance=ExtResource("1_1upqg")]
+position = Vector2(830, 170)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-349, -1056.44, 711, 580.045, 818, 771.4, 850, 963.752, 909, 1088.33, 1408, 1477.02, 1819, 1561.74, 2256, 1565.72, 2739, 1637.48, 3116, 1718.21, 3968, 1739.14, 4146, 1573.7, 3947, 1401.28, 3705, 1265.73, 3337, 1040.49, 3195, 992.655, 2972, 899.967, 2700, 761.434, 2454, 505.297, 2318, 178.399, 1934, -680.706, 1827, -1550.77, 1635, -2578.31, 1509, -3690.56)
+
+[node name="Block2StaticBody2D" type="StaticBody2D" parent="Blockout/Jungle Sub Area/EntranceDarkRoom/Block2"]
+
+[node name="Block2CollisionPolygon2D" type="CollisionPolygon2D" parent="Blockout/Jungle Sub Area/EntranceDarkRoom/Block2/Block2StaticBody2D"]
+polygon = PackedVector2Array(-349, -1056.44, 711, 580.045, 818, 771.4, 850, 963.752, 909, 1088.33, 1408, 1477.02, 1819, 1561.74, 2256, 1565.72, 2739, 1637.48, 3116, 1718.21, 3968, 1739.14, 4146, 1573.7, 3947, 1401.28, 3705, 1265.73, 3337, 1040.49, 3195, 992.655, 2972, 899.967, 2700, 761.434, 2454, 505.297, 2318, 178.399, 1934, -680.706, 1827, -1550.77, 1635, -2578.31, 1509, -3690.56)
+
+[node name="Block2LightOccluder2D" type="LightOccluder2D" parent="Blockout/Jungle Sub Area/EntranceDarkRoom/Block2"]
+occluder = SubResource("OccluderPolygon2D_6dr35")
+
+[node name="Block2Polygon2D" type="Polygon2D" parent="Blockout/Jungle Sub Area/EntranceDarkRoom/Block2"]
+polygon = PackedVector2Array(-349, -1056.44, 711, 580.045, 818, 771.4, 850, 963.752, 909, 1088.33, 1408, 1477.02, 1819, 1561.74, 2256, 1565.72, 2739, 1637.48, 3116, 1718.21, 3968, 1739.14, 4146, 1573.7, 3947, 1401.28, 3705, 1265.73, 3337, 1040.49, 3195, 992.655, 2972, 899.967, 2700, 761.434, 2454, 505.297, 2318, 178.399, 1934, -680.706, 1827, -1550.77, 1635, -2578.31, 1509, -3690.56)
+
+[node name="Block3" parent="Blockout/Jungle Sub Area/EntranceDarkRoom" instance=ExtResource("1_1upqg")]
+position = Vector2(193, 1585)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(696, -407.626, 673, -308.959, 511, -189.362, 288, -121.59, 43, -26.9093, -70, 111.624, -112, 274.076, -134, 397.66, -112, 514.267, -116, 600.975, -85, 710.605, -55, 785.353, 1, 872.061, 58, 943.819, 402, 931.86, 881, 965.745, 1145, 1003.62, 1700, 1007.6, 2080, 992.655, 2648, 1018.57, 3003, 977.705, 3803, 890.997, 4030, 797.313, 4279, 819.239, 4283, 1436.16, -1203, 1436.16, -1101, -1062.42)
+
+[node name="Block3StaticBody2D" type="StaticBody2D" parent="Blockout/Jungle Sub Area/EntranceDarkRoom/Block3"]
+
+[node name="Block3CollisionPolygon2D" type="CollisionPolygon2D" parent="Blockout/Jungle Sub Area/EntranceDarkRoom/Block3/Block3StaticBody2D"]
+polygon = PackedVector2Array(696, -407.626, 673, -308.959, 511, -189.362, 288, -121.59, 43, -26.9093, -70, 111.624, -112, 274.076, -134, 397.66, -112, 514.267, -116, 600.975, -85, 710.605, -55, 785.353, 1, 872.061, 58, 943.819, 402, 931.86, 881, 965.745, 1145, 1003.62, 1700, 1007.6, 2080, 992.655, 2648, 1018.57, 3003, 977.705, 3803, 890.997, 4030, 797.313, 4279, 819.239, 4283, 1436.16, -1203, 1436.16, -1101, -1062.42)
+
+[node name="Block3LightOccluder2D" type="LightOccluder2D" parent="Blockout/Jungle Sub Area/EntranceDarkRoom/Block3"]
+occluder = SubResource("OccluderPolygon2D_62pl2")
+
+[node name="Block3Polygon2D" type="Polygon2D" parent="Blockout/Jungle Sub Area/EntranceDarkRoom/Block3"]
+polygon = PackedVector2Array(696, -407.626, 673, -308.959, 511, -189.362, 288, -121.59, 43, -26.9093, -70, 111.624, -112, 274.076, -134, 397.66, -112, 514.267, -116, 600.975, -85, 710.605, -55, 785.353, 1, 872.061, 58, 943.819, 402, 931.86, 881, 965.745, 1145, 1003.62, 1700, 1007.6, 2080, 992.655, 2648, 1018.57, 3003, 977.705, 3803, 890.997, 4030, 797.313, 4279, 819.239, 4283, 1436.16, -1203, 1436.16, -1101, -1062.42)
+
+[node name="JungleVibeArea" type="Node2D" parent="Blockout/Jungle Sub Area"]
+
+[node name="Log" parent="Blockout/Jungle Sub Area/JungleVibeArea" instance=ExtResource("1_1upqg")]
+position = Vector2(8741, 1936)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-323, 143.516, 283, 530.213, 485, 601.971, 688, 601.971, 747, 534.2, 468, 371.747, 281, 262.117, 309, 209.295, 271, 185.375, 254, 245.174, 131, 170.426, 33, 60.795, -126, 3.98657, -278, -33.8859, -344, 77.7379, -473, 92.6876, -439, 162.452)
+
+[node name="LogStaticBody2D" type="StaticBody2D" parent="Blockout/Jungle Sub Area/JungleVibeArea/Log"]
+
+[node name="LogCollisionPolygon2D" type="CollisionPolygon2D" parent="Blockout/Jungle Sub Area/JungleVibeArea/Log/LogStaticBody2D"]
+polygon = PackedVector2Array(-323, 143.516, 283, 530.213, 485, 601.971, 688, 601.971, 747, 534.2, 468, 371.747, 281, 262.117, 309, 209.295, 271, 185.375, 254, 245.174, 131, 170.426, 33, 60.795, -126, 3.98657, -278, -33.8859, -344, 77.7379, -473, 92.6876, -439, 162.452)
+
+[node name="LogLightOccluder2D" type="LightOccluder2D" parent="Blockout/Jungle Sub Area/JungleVibeArea/Log"]
+occluder = SubResource("OccluderPolygon2D_foyjl")
+
+[node name="LogPolygon2D" type="Polygon2D" parent="Blockout/Jungle Sub Area/JungleVibeArea/Log"]
+polygon = PackedVector2Array(-323, 143.516, 283, 530.213, 485, 601.971, 688, 601.971, 747, 534.2, 468, 371.747, 281, 262.117, 309, 209.295, 271, 185.375, 254, 245.174, 131, 170.426, 33, 60.795, -126, 3.98657, -278, -33.8859, -344, 77.7379, -473, 92.6876, -439, 162.452)
+
+[node name="Stump" parent="Blockout/Jungle Sub Area/JungleVibeArea" instance=ExtResource("1_1upqg")]
+position = Vector2(6327, 1905)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-486, 450.482, -386, 445.499, -358, 410.616, -331, 372.744, -322, 319.922, -248, 315.935, -127, 319.922, -105, 369.754, -84, 417.593, 4, 462.442, 78, 514.267)
+
+[node name="StumpStaticBody2D" type="StaticBody2D" parent="Blockout/Jungle Sub Area/JungleVibeArea/Stump"]
+
+[node name="StumpCollisionPolygon2D" type="CollisionPolygon2D" parent="Blockout/Jungle Sub Area/JungleVibeArea/Stump/StumpStaticBody2D"]
+polygon = PackedVector2Array(-486, 450.482, -386, 445.499, -358, 410.616, -331, 372.744, -322, 319.922, -248, 315.935, -127, 319.922, -105, 369.754, -84, 417.593, 4, 462.442, 78, 514.267)
+
+[node name="StumpLightOccluder2D" type="LightOccluder2D" parent="Blockout/Jungle Sub Area/JungleVibeArea/Stump"]
+occluder = SubResource("OccluderPolygon2D_xgecv")
+
+[node name="StumpPolygon2D" type="Polygon2D" parent="Blockout/Jungle Sub Area/JungleVibeArea/Stump"]
+polygon = PackedVector2Array(-486, 450.482, -386, 445.499, -358, 410.616, -331, 372.744, -322, 319.922, -248, 315.935, -127, 319.922, -105, 369.754, -84, 417.593, 4, 462.442, 78, 514.267)
+
+[node name="Stump2" parent="Blockout/Jungle Sub Area/JungleVibeArea" instance=ExtResource("1_1upqg")]
+position = Vector2(8484, 2431)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-262, 45.8455, 219, 75.7449, 173, 36.8757, 142, 23.9194, 116, -29.8992, 86, -102.654, 37, -204.312, 24, -270.09, -130, -283.046, -358, -288.029, -493, -266.103, -538, -127.57, -595, -42.8555, -678, 1.99341, -849, 59.7986, -270, 34.8826)
+
+[node name="Stump2StaticBody2D" type="StaticBody2D" parent="Blockout/Jungle Sub Area/JungleVibeArea/Stump2"]
+
+[node name="Stump2CollisionPolygon2D" type="CollisionPolygon2D" parent="Blockout/Jungle Sub Area/JungleVibeArea/Stump2/Stump2StaticBody2D"]
+polygon = PackedVector2Array(-262, 45.8455, 219, 75.7449, 173, 36.8757, 142, 23.9194, 116, -29.8992, 86, -102.654, 37, -204.312, 24, -270.09, -130, -283.046, -358, -288.029, -493, -266.103, -538, -127.57, -595, -42.8555, -678, 1.99341, -849, 59.7986, -270, 34.8826)
+
+[node name="Stump2LightOccluder2D" type="LightOccluder2D" parent="Blockout/Jungle Sub Area/JungleVibeArea/Stump2"]
+occluder = SubResource("OccluderPolygon2D_ph13j")
+
+[node name="Stump2Polygon2D" type="Polygon2D" parent="Blockout/Jungle Sub Area/JungleVibeArea/Stump2"]
+polygon = PackedVector2Array(-262, 45.8455, 219, 75.7449, 173, 36.8757, 142, 23.9194, 116, -29.8992, 86, -102.654, 37, -204.312, 24, -270.09, -130, -283.046, -358, -288.029, -493, -266.103, -538, -127.57, -595, -42.8555, -678, 1.99341, -849, 59.7986, -270, 34.8826)
+
+[node name="Stump3" parent="Blockout/Jungle Sub Area/JungleVibeArea" instance=ExtResource("1_1upqg")]
+position = Vector2(10450, 2415)
+polygon = PackedVector2Array(-44, 46.842, 101, 80.728, 289, 66.7749, 585, 70.7615, 710, 53.8186, 649, 0, 545, -49.832, 491, -197.335, 350, -214.278, 215, -201.322, 121, -197.335, 98, -117.604, 37, 9.96631)
+
+[node name="Block" parent="Blockout/Jungle Sub Area/JungleVibeArea" instance=ExtResource("1_1upqg")]
+position = Vector2(5284, 2659)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-831, -245.174, -483, -275.073, -305, -283.046, -72, -304.972, 254, -304.972, 568, -304.972, 788, -271.086, 1241, -245.174, 1547, -220.258, 1814, -245.174, 2174, -258.13, 3218, -207.301, 3720, -207.301, 3938, -121.59, 4350, -143.516, 4595, -207.301, 4985, -223.248, 5252, -169.429, 5663, -180.392, 5903, -217.268, 6352, -212.284, 6373, 367.761, -808, 362.778)
+
+[node name="BlockStaticBody2D" type="StaticBody2D" parent="Blockout/Jungle Sub Area/JungleVibeArea/Block"]
+
+[node name="BlockCollisionPolygon2D" type="CollisionPolygon2D" parent="Blockout/Jungle Sub Area/JungleVibeArea/Block/BlockStaticBody2D"]
+polygon = PackedVector2Array(-831, -245.174, -483, -275.073, -305, -283.046, -72, -304.972, 254, -304.972, 568, -304.972, 788, -271.086, 1241, -245.174, 1547, -220.258, 1814, -245.174, 2174, -258.13, 3218, -207.301, 3720, -207.301, 3938, -121.59, 4350, -143.516, 4595, -207.301, 4985, -223.248, 5252, -169.429, 5663, -180.392, 5903, -217.268, 6352, -212.284, 6373, 367.761, -808, 362.778)
+
+[node name="BlockLightOccluder2D" type="LightOccluder2D" parent="Blockout/Jungle Sub Area/JungleVibeArea/Block"]
+occluder = SubResource("OccluderPolygon2D_5rbe6")
+
+[node name="BlockPolygon2D" type="Polygon2D" parent="Blockout/Jungle Sub Area/JungleVibeArea/Block"]
+color = Color(0.512224, 0.363935, 0.177929, 1)
+polygon = PackedVector2Array(-831, -245.174, -483, -275.073, -305, -283.046, -72, -304.972, 254, -304.972, 568, -304.972, 788, -271.086, 1241, -245.174, 1547, -220.258, 1814, -245.174, 2174, -258.13, 3218, -207.301, 3720, -207.301, 3938, -121.59, 4350, -143.516, 4595, -207.301, 4985, -223.248, 5252, -169.429, 5663, -180.392, 5903, -217.268, 6352, -212.284, 6373, 367.761, -808, 362.778)
+
+[node name="SmallCrossroadCave" type="Node2D" parent="Blockout/Jungle Sub Area"]
+
+[node name="Block" parent="Blockout/Jungle Sub Area/SmallCrossroadCave" instance=ExtResource("1_1upqg")]
+position = Vector2(11618, 2449)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(8, -2.98975, 680, -6.97632, 926, -52.822, 1092, -59.7983, 1277, -55.8118, 1488, -108.634, 1670, -142.52, 1855, -135.543, 2153, -70.7615, 2432, -18.936, 2655, -14.9495, 2757, -14.9495, 2882, 26.9094, 3138, 7.97314, 3410, -18.936, 3474, 90.6943, 3478, 147.503, 3335, 165.443, 3346, 493.337, 2595, 504.301, 2232, 519.25, 20, 576.059)
+
+[node name="BlockStaticBody2D" type="StaticBody2D" parent="Blockout/Jungle Sub Area/SmallCrossroadCave/Block"]
+
+[node name="BlockCollisionPolygon2D" type="CollisionPolygon2D" parent="Blockout/Jungle Sub Area/SmallCrossroadCave/Block/BlockStaticBody2D"]
+polygon = PackedVector2Array(8, -2.98975, 680, -6.97632, 926, -52.822, 1092, -59.7983, 1277, -55.8118, 1488, -108.634, 1670, -142.52, 1855, -135.543, 2153, -70.7615, 2432, -18.936, 2655, -14.9495, 2757, -14.9495, 2882, 26.9094, 3138, 7.97314, 3410, -18.936, 3474, 90.6943, 3478, 147.503, 3335, 165.443, 3346, 493.337, 2595, 504.301, 2232, 519.25, 20, 576.059)
+
+[node name="BlockLightOccluder2D" type="LightOccluder2D" parent="Blockout/Jungle Sub Area/SmallCrossroadCave/Block"]
+occluder = SubResource("OccluderPolygon2D_elteb")
+
+[node name="BlockPolygon2D" type="Polygon2D" parent="Blockout/Jungle Sub Area/SmallCrossroadCave/Block"]
+color = Color(0.427493, 0.427493, 0.427493, 1)
+polygon = PackedVector2Array(8, -2.98975, 680, -6.97632, 926, -52.822, 1092, -59.7983, 1277, -55.8118, 1488, -108.634, 1670, -142.52, 1855, -135.543, 2153, -70.7615, 2432, -18.936, 2655, -14.9495, 2757, -14.9495, 2882, 26.9094, 3138, 7.97314, 3410, -18.936, 3474, 90.6943, 3478, 147.503, 3335, 165.443, 3346, 493.337, 2595, 504.301, 2232, 519.25, 20, 576.059)
+
+[node name="Block2" parent="Blockout/Jungle Sub Area/SmallCrossroadCave" instance=ExtResource("1_1upqg")]
+position = Vector2(15855, 2538)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-249, -108.634, -358, -70.7615, -347, -13.9529, -356, 50.8286, -278, 59.7983, -211, 57.8052, -99, 107.637, -109, 363.774, 3342, 427.559, 3284, -79.7314, 3138, -54.8152, 2858, -44.8489, 2669, -79.7314, 2303, -26.9094, 1729, -29.8992, 1099, 27.906, 774, 27.906, 313, -66.7749, -90, -102.654)
+
+[node name="Block2StaticBody2D" type="StaticBody2D" parent="Blockout/Jungle Sub Area/SmallCrossroadCave/Block2"]
+
+[node name="Block2CollisionPolygon2D" type="CollisionPolygon2D" parent="Blockout/Jungle Sub Area/SmallCrossroadCave/Block2/Block2StaticBody2D"]
+polygon = PackedVector2Array(-249, -108.634, -358, -70.7615, -347, -13.9529, -356, 50.8286, -278, 59.7983, -211, 57.8052, -99, 107.637, -109, 363.774, 3342, 427.559, 3284, -79.7314, 3138, -54.8152, 2858, -44.8489, 2669, -79.7314, 2303, -26.9094, 1729, -29.8992, 1099, 27.906, 774, 27.906, 313, -66.7749, -90, -102.654)
+
+[node name="Block2LightOccluder2D" type="LightOccluder2D" parent="Blockout/Jungle Sub Area/SmallCrossroadCave/Block2"]
+occluder = SubResource("OccluderPolygon2D_qsuo2")
+
+[node name="Block2Polygon2D" type="Polygon2D" parent="Blockout/Jungle Sub Area/SmallCrossroadCave/Block2"]
+color = Color(0.454524, 0.454524, 0.454524, 1)
+polygon = PackedVector2Array(-249, -108.634, -358, -70.7615, -347, -13.9529, -356, 50.8286, -278, 59.7983, -211, 57.8052, -99, 107.637, -109, 363.774, 3342, 427.559, 3284, -79.7314, 3138, -54.8152, 2858, -44.8489, 2669, -79.7314, 2303, -26.9094, 1729, -29.8992, 1099, 27.906, 774, 27.906, 313, -66.7749, -90, -102.654)
+
+[node name="Block3" parent="Blockout/Jungle Sub Area/SmallCrossroadCave" instance=ExtResource("1_1upqg")]
+position = Vector2(13362, 1796)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-1859, -270.09, -1510, -168.432, -1014, -149.496, -252, -124.58, 586, -162.453, 1729, -92.6876, 2573, -105.644, 3551, -225.241, 4573, 7.97314, 5748, -194.345, 5926, -364.771, 5945, -643.83, 5786, -801.3, 5627, -991.658, 5227, -1250.78, 4504, -1466.06, 3551, -1592.63, 2446, -1738.14, 2148, -1953.42, 1926, -2535.46, 1653, -3598.87, 1583, -4630.4, -94, -4762.95, -202, -4022.44, -379, -3130.45, -779, -2250.42, -1421, -1548.78, -2011, -1111.26, -2545, -865.085, -2659, -598.981, -2602, -440.516, -2272, -320.919)
+
+[node name="Block3StaticBody2D" type="StaticBody2D" parent="Blockout/Jungle Sub Area/SmallCrossroadCave/Block3"]
+
+[node name="Block3CollisionPolygon2D" type="CollisionPolygon2D" parent="Blockout/Jungle Sub Area/SmallCrossroadCave/Block3/Block3StaticBody2D"]
+polygon = PackedVector2Array(-1859, -270.09, -1510, -168.432, -1014, -149.496, -252, -124.58, 586, -162.453, 1729, -92.6876, 2573, -105.644, 3551, -225.241, 4573, 7.97314, 5748, -194.345, 5926, -364.771, 5945, -643.83, 5786, -801.3, 5627, -991.658, 5227, -1250.78, 4504, -1466.06, 3551, -1592.63, 2446, -1738.14, 2148, -1953.42, 1926, -2535.46, 1653, -3598.87, 1583, -4630.4, -94, -4762.95, -202, -4022.44, -379, -3130.45, -779, -2250.42, -1421, -1548.78, -2011, -1111.26, -2545, -865.085, -2659, -598.981, -2602, -440.516, -2272, -320.919)
+
+[node name="Block3LightOccluder2D" type="LightOccluder2D" parent="Blockout/Jungle Sub Area/SmallCrossroadCave/Block3"]
+occluder = SubResource("OccluderPolygon2D_w3l1d")
+
+[node name="Block3Polygon2D" type="Polygon2D" parent="Blockout/Jungle Sub Area/SmallCrossroadCave/Block3"]
+color = Color(0.419813, 0.419813, 0.419813, 1)
+polygon = PackedVector2Array(-1859, -270.09, -1510, -168.432, -1014, -149.496, -252, -124.58, 586, -162.453, 1729, -92.6876, 2573, -105.644, 3551, -225.241, 4573, 7.97314, 5748, -194.345, 5926, -364.771, 5945, -643.83, 5786, -801.3, 5627, -991.658, 5227, -1250.78, 4504, -1466.06, 3551, -1592.63, 2446, -1738.14, 2148, -1953.42, 1926, -2535.46, 1653, -3598.87, 1583, -4630.4, -94, -4762.95, -202, -4022.44, -379, -3130.45, -779, -2250.42, -1421, -1548.78, -2011, -1111.26, -2545, -865.085, -2659, -598.981, -2602, -440.516, -2272, -320.919)
+
+[node name="JungleRoom" type="Node2D" parent="Blockout/Jungle Sub Area"]
+
+[node name="BGTREE" type="Polygon2D" parent="Blockout/Jungle Sub Area/JungleRoom"]
+color = Color(0.262745, 0.129412, 0, 0.352941)
+polygon = PackedVector2Array(25730, 432, 25692, 962, 25590, 1319, 25614, 1870, 25593, 2335, 25509, 2599, 25359, 2703, 25089, 2970, 25137, 3186, 25347, 3111, 25500, 2970, 25539, 3060, 25715, 2994, 25802, 3069, 26108, 3069, 26462, 3045, 26728, 2970, 26504, 2841, 26429, 2760, 26342, 2652, 26258, 2464, 26198, 2098, 26138, 1511, 26141, 1163, 26135, 855, 26189, 348, 25835, 282)
+
+[node name="BGTREE2" type="Polygon2D" parent="Blockout/Jungle Sub Area/JungleRoom"]
+color = Color(0.262745, 0.129412, 0, 0.352941)
+polygon = PackedVector2Array(39399, 2214, 39227, 3070, 39207, 3258, 41131, 3318, 40859, 2434)
+
+[node name="Root" parent="Blockout/Jungle Sub Area/JungleRoom" instance=ExtResource("1_1upqg")]
+position = Vector2(22479, 2567)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(34, 82.7212, 128, 43.8523, 214, 15.9463, 326, -60.7952, 486, -74.748, 630, -56.8086, 791, 4.98315, 876, 49.832, 955, 109.631, 903, 184.379, 855, 131.557, 743, 70.7615, 648, 34.8823, 563, 20.9294, 388, 65.7783, 251, 79.7312, 139, 122.587, 26, 95.6775)
+
+[node name="RootStaticBody2D" type="StaticBody2D" parent="Blockout/Jungle Sub Area/JungleRoom/Root"]
+
+[node name="RootCollisionPolygon2D" type="CollisionPolygon2D" parent="Blockout/Jungle Sub Area/JungleRoom/Root/RootStaticBody2D"]
+polygon = PackedVector2Array(34, 82.7212, 128, 43.8523, 214, 15.9463, 326, -60.7952, 486, -74.748, 630, -56.8086, 791, 4.98315, 876, 49.832, 955, 109.631, 903, 184.379, 855, 131.557, 743, 70.7615, 648, 34.8823, 563, 20.9294, 388, 65.7783, 251, 79.7312, 139, 122.587, 26, 95.6775)
+
+[node name="RootLightOccluder2D" type="LightOccluder2D" parent="Blockout/Jungle Sub Area/JungleRoom/Root"]
+occluder = SubResource("OccluderPolygon2D_45w65")
+
+[node name="RootPolygon2D" type="Polygon2D" parent="Blockout/Jungle Sub Area/JungleRoom/Root"]
+color = Color(0.156368, 0.0398518, 0, 1)
+polygon = PackedVector2Array(34, 82.7212, 128, 43.8523, 214, 15.9463, 326, -60.7952, 486, -74.748, 630, -56.8086, 791, 4.98315, 876, 49.832, 955, 109.631, 903, 184.379, 855, 131.557, 743, 70.7615, 648, 34.8823, 563, 20.9294, 388, 65.7783, 251, 79.7312, 139, 122.587, 26, 95.6775)
+
+[node name="Ground" parent="Blockout/Jungle Sub Area/JungleRoom" instance=ExtResource("1_1upqg")]
+position = Vector2(19671, 2639)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-521, -182.385, 1097, -117.604, 1759, -128.567, 2570, -37.8723, 3099, 14.9497, 3841, -21.926, 4343, -48.8352, 5155, -27.9058, 5484, -42.8555, 5691, 87.7046, 5686, 203.315, 5696, 705.622, 747, 444.502, -513, 318.925)
+
+[node name="BlockStaticBody2D" type="StaticBody2D" parent="Blockout/Jungle Sub Area/JungleRoom/Ground"]
+
+[node name="BlockCollisionPolygon2D" type="CollisionPolygon2D" parent="Blockout/Jungle Sub Area/JungleRoom/Ground/BlockStaticBody2D"]
+polygon = PackedVector2Array(-521, -182.385, 1097, -117.604, 1759, -128.567, 2570, -37.8723, 3099, 14.9497, 3841, -21.926, 4343, -48.8352, 5155, -27.9058, 5484, -42.8555, 5691, 87.7046, 5686, 203.315, 5696, 705.622, 747, 444.502, -513, 318.925)
+
+[node name="BlockLightOccluder2D" type="LightOccluder2D" parent="Blockout/Jungle Sub Area/JungleRoom/Ground"]
+occluder = SubResource("OccluderPolygon2D_blijf")
+
+[node name="BlockPolygon2D" type="Polygon2D" parent="Blockout/Jungle Sub Area/JungleRoom/Ground"]
+color = Color(0.377107, 0.626081, 0.563352, 1)
+polygon = PackedVector2Array(-521, -182.385, 1097, -117.604, 1759, -128.567, 2570, -37.8723, 3099, 14.9497, 3841, -21.926, 4343, -48.8352, 5155, -27.9058, 5484, -42.8555, 5691, 87.7046, 5686, 203.315, 5696, 705.622, 747, 444.502, -513, 318.925)
+
+[node name="Ground2" parent="Blockout/Jungle Sub Area/JungleRoom" instance=ExtResource("1_1upqg")]
+position = Vector2(26020, 2724)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-57, -56.8086, -150, 6.97656, -157, 609.945, 6828, 816.249, 7726, 809.273, 7726, 532.207, 7718, 198.332, 6949, 291.019, 6143, 177.402, 5260, 248.164, 4247, 304.972, 3300, 63.7852, 2067, -14.9497, 541, -78.7346)
+
+[node name="Block2StaticBody2D" type="StaticBody2D" parent="Blockout/Jungle Sub Area/JungleRoom/Ground2"]
+
+[node name="Block2CollisionPolygon2D" type="CollisionPolygon2D" parent="Blockout/Jungle Sub Area/JungleRoom/Ground2/Block2StaticBody2D"]
+polygon = PackedVector2Array(-57, -56.8086, -150, 6.97656, -157, 609.945, 6828, 816.249, 7726, 809.273, 7726, 532.207, 7718, 198.332, 6949, 291.019, 6143, 177.402, 5260, 248.164, 4247, 304.972, 3300, 63.7852, 2067, -14.9497, 541, -78.7346)
+
+[node name="Block2LightOccluder2D" type="LightOccluder2D" parent="Blockout/Jungle Sub Area/JungleRoom/Ground2"]
+occluder = SubResource("OccluderPolygon2D_kpucq")
+
+[node name="Block2Polygon2D" type="Polygon2D" parent="Blockout/Jungle Sub Area/JungleRoom/Ground2"]
+color = Color(0.376471, 0.627451, 0.564706, 1)
+polygon = PackedVector2Array(-57, -56.8086, -150, 6.97656, -157, 609.945, 6828, 816.249, 7726, 809.273, 7726, 532.207, 7718, 198.332, 6949, 291.019, 6143, 177.402, 5260, 248.164, 4247, 304.972, 3300, 63.7852, 2067, -14.9497, 541, -78.7346)
+
+[node name="Ground3" parent="Blockout/Jungle Sub Area/JungleRoom" instance=ExtResource("1_1upqg")]
+position = Vector2(33795, 3146)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-57, -240.19, 826, -309.955, 2489, -272.083, 4261, -5.97974, 5766, 0, 8598, -44.8486, 10376, 278.063, 10357, 765.421, -50, 385.7)
+
+[node name="Block3StaticBody2D" type="StaticBody2D" parent="Blockout/Jungle Sub Area/JungleRoom/Ground3"]
+
+[node name="Block3CollisionPolygon2D" type="CollisionPolygon2D" parent="Blockout/Jungle Sub Area/JungleRoom/Ground3/Block3StaticBody2D"]
+polygon = PackedVector2Array(-57, -240.19, 826, -309.955, 2489, -272.083, 4261, -5.97974, 5766, 0, 8598, -44.8486, 10376, 278.063, 10357, 765.421, -50, 385.7)
+
+[node name="Block3LightOccluder2D" type="LightOccluder2D" parent="Blockout/Jungle Sub Area/JungleRoom/Ground3"]
+occluder = SubResource("OccluderPolygon2D_dkn2h")
+
+[node name="Block3Polygon2D" type="Polygon2D" parent="Blockout/Jungle Sub Area/JungleRoom/Ground3"]
+color = Color(0.376471, 0.627451, 0.564706, 1)
+polygon = PackedVector2Array(-57, -240.19, 826, -309.955, 2489, -272.083, 4261, -5.97974, 5766, 0, 8598, -44.8486, 10376, 278.063, 10357, 765.421, -50, 385.7)
+
+[node name="Tree" parent="Blockout/Jungle Sub Area/JungleRoom" instance=ExtResource("1_1upqg")]
+position = Vector2(34174, 2627)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-91, 318.925, 293, 187.368, 431, 25.9126, 449, -392.677, 437, -606.955, 419, -947.806, 1078, -959.766, 1168, -732.531, 1180, -494.334, 1210, -201.322, 1210, 121.59, 1497, 259.127, 1839, 277.066, 27, 336.865)
+
+[node name="Block4StaticBody2D" type="StaticBody2D" parent="Blockout/Jungle Sub Area/JungleRoom/Tree"]
+
+[node name="Block4CollisionPolygon2D" type="CollisionPolygon2D" parent="Blockout/Jungle Sub Area/JungleRoom/Tree/Block4StaticBody2D"]
+polygon = PackedVector2Array(-91, 318.925, 293, 187.368, 431, 25.9126, 449, -392.677, 437, -606.955, 419, -947.806, 1078, -959.766, 1168, -732.531, 1180, -494.334, 1210, -201.322, 1210, 121.59, 1497, 259.127, 1839, 277.066, 27, 336.865)
+
+[node name="Block4LightOccluder2D" type="LightOccluder2D" parent="Blockout/Jungle Sub Area/JungleRoom/Tree"]
+occluder = SubResource("OccluderPolygon2D_mxbro")
+
+[node name="Block4Polygon2D" type="Polygon2D" parent="Blockout/Jungle Sub Area/JungleRoom/Tree"]
+color = Color(0.206226, 0.118944, 9.62615e-08, 1)
+polygon = PackedVector2Array(-91, 318.925, 293, 187.368, 431, 25.9126, 449, -392.677, 437, -606.955, 419, -947.806, 1078, -959.766, 1168, -732.531, 1180, -494.334, 1210, -201.322, 1210, 121.59, 1497, 259.127, 1839, 277.066, 27, 336.865)
+
+[node name="TreePt2" parent="Blockout/Jungle Sub Area/JungleRoom" instance=ExtResource("1_1upqg")]
+position = Vector2(34591, 1849)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-193, -1807.91, -95, -1610.57, -41, -1335.5, -4, -1064.41, 497, -1101.29, 742, -1117.23, 719, -1728.18, 937, -1848.77)
+
+[node name="BlockStaticBody2D" type="StaticBody2D" parent="Blockout/Jungle Sub Area/JungleRoom/TreePt2"]
+
+[node name="BlockCollisionPolygon2D" type="CollisionPolygon2D" parent="Blockout/Jungle Sub Area/JungleRoom/TreePt2/BlockStaticBody2D"]
+polygon = PackedVector2Array(-193, -1807.91, -95, -1610.57, -41, -1335.5, -4, -1064.41, 497, -1101.29, 742, -1117.23, 719, -1728.18, 937, -1848.77)
+
+[node name="BlockLightOccluder2D" type="LightOccluder2D" parent="Blockout/Jungle Sub Area/JungleRoom/TreePt2"]
+occluder = SubResource("OccluderPolygon2D_euc8j")
+
+[node name="BlockPolygon2D" type="Polygon2D" parent="Blockout/Jungle Sub Area/JungleRoom/TreePt2"]
+color = Color(0.325082, 0.173085, 0.00161269, 1)
+polygon = PackedVector2Array(-193, -1807.91, -95, -1610.57, -41, -1335.5, -4, -1064.41, 497, -1101.29, 742, -1117.23, 719, -1728.18, 937, -1848.77)
+
+[node name="Log" parent="Blockout/Jungle Sub Area/JungleRoom" instance=ExtResource("1_1upqg")]
+position = Vector2(31344, 2295)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-26, 591.008, 661, 396.663, 1339, 303.976, 1898, 151.49, 2432, 134.547, 2847, -67.7717, 3229, -143.516, 3314, 185.375, 2559, 354.804, 2296, 506.294, 1568, 566.092, 983, 624.894, 330, 853.125, 50, 887.011)
+
+[node name="Block2StaticBody2D" type="StaticBody2D" parent="Blockout/Jungle Sub Area/JungleRoom/Log"]
+
+[node name="Block2CollisionPolygon2D" type="CollisionPolygon2D" parent="Blockout/Jungle Sub Area/JungleRoom/Log/Block2StaticBody2D"]
+polygon = PackedVector2Array(-26, 591.008, 661, 396.663, 1339, 303.976, 1898, 151.49, 2432, 134.547, 2847, -67.7717, 3229, -143.516, 3314, 185.375, 2559, 354.804, 2296, 506.294, 1568, 566.092, 983, 624.894, 330, 853.125, 50, 887.011)
+
+[node name="Block2LightOccluder2D" type="LightOccluder2D" parent="Blockout/Jungle Sub Area/JungleRoom/Log"]
+occluder = SubResource("OccluderPolygon2D_sovtd")
+
+[node name="Block2Polygon2D" type="Polygon2D" parent="Blockout/Jungle Sub Area/JungleRoom/Log"]
+color = Color(0.255525, 0.123058, 6.01634e-08, 1)
+polygon = PackedVector2Array(-26, 591.008, 661, 396.663, 1339, 303.976, 1898, 151.49, 2432, 134.547, 2847, -67.7717, 3229, -143.516, 3314, 185.375, 2559, 354.804, 2296, 506.294, 1568, 566.092, 983, 624.894, 330, 853.125, 50, 887.011)
+
+[node name="Canopy" parent="Blockout/Jungle Sub Area/JungleRoom" instance=ExtResource("1_1upqg")]
+position = Vector2(26223, 2063)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-5708, -1479.02, -5194, -1269.72, -4795, -1460.08, -4433, -1479.02, -3254, -1630.51, -2131, -1819.87, -932, -1725.19, 171, -1497.95, 2550, -1630.51, 4586, -1933.48, 6755, -1895.61, 8315, -1819.87, 8372, -2825.48, -5765, -2654.06, -5632, -1630.51)
+
+[node name="Block3StaticBody2D" type="StaticBody2D" parent="Blockout/Jungle Sub Area/JungleRoom/Canopy"]
+
+[node name="Block3CollisionPolygon2D" type="CollisionPolygon2D" parent="Blockout/Jungle Sub Area/JungleRoom/Canopy/Block3StaticBody2D"]
+polygon = PackedVector2Array(-5708, -1479.02, -5194, -1269.72, -4795, -1460.08, -4433, -1479.02, -3254, -1630.51, -2131, -1819.87, -932, -1725.19, 171, -1497.95, 2550, -1630.51, 4586, -1933.48, 6755, -1895.61, 8315, -1819.87, 8372, -2825.48, -5765, -2654.06, -5632, -1630.51)
+
+[node name="Block3LightOccluder2D" type="LightOccluder2D" parent="Blockout/Jungle Sub Area/JungleRoom/Canopy"]
+occluder = SubResource("OccluderPolygon2D_fak6h")
+
+[node name="Block3Polygon2D" type="Polygon2D" parent="Blockout/Jungle Sub Area/JungleRoom/Canopy"]
+color = Color(0, 0.682353, 0.454902, 0.745098)
+polygon = PackedVector2Array(-7572, -1332.51, -6822, -1045.48, -5194, -1269.72, -4795, -1460.08, -4433, -1479.02, -3254, -1630.51, -2131, -1819.87, -932, -1725.19, 171, -1497.95, 2550, -1630.51, 4586, -1933.48, 6755, -1895.61, 8315, -1819.87, 8372, -2825.48, -23609, -2535.46, -23524, -1790.96, -21132, -1620.54, -18740, -1897.61, -16689, -1386.33, -15087, -1174.04)
+
+[node name="Stump" parent="Blockout/Jungle Sub Area/JungleRoom" instance=ExtResource("1_1upqg")]
+position = Vector2(27872, 1972)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-6369, 592.005, -6149, 558.119, -6098, 479.384, -6030, 372.744, -5889, 372.744, -5776, 389.687, -5696, 473.405, -5645, 558.119, -5538, 648.814, -5429, 669.743)
+
+[node name="BlockStaticBody2D" type="StaticBody2D" parent="Blockout/Jungle Sub Area/JungleRoom/Stump"]
+
+[node name="BlockCollisionPolygon2D" type="CollisionPolygon2D" parent="Blockout/Jungle Sub Area/JungleRoom/Stump/BlockStaticBody2D"]
+polygon = PackedVector2Array(-6369, 592.005, -6149, 558.119, -6098, 479.384, -6030, 372.744, -5889, 372.744, -5776, 389.687, -5696, 473.405, -5645, 558.119, -5538, 648.814, -5429, 669.743)
+
+[node name="BlockLightOccluder2D" type="LightOccluder2D" parent="Blockout/Jungle Sub Area/JungleRoom/Stump"]
+occluder = SubResource("OccluderPolygon2D_oyc24")
+
+[node name="BlockPolygon2D" type="Polygon2D" parent="Blockout/Jungle Sub Area/JungleRoom/Stump"]
+color = Color(0.323992, 0.152553, 0, 1)
+polygon = PackedVector2Array(-6369, 592.005, -6149, 558.119, -6098, 479.384, -6030, 372.744, -5889, 372.744, -5776, 389.687, -5662, 409.62, -5645, 558.119, -5538, 648.814, -5429, 669.743)
+
+[node name="Log2" parent="Blockout/Jungle Sub Area/JungleRoom" instance=ExtResource("1_1upqg")]
+position = Vector2(23432, 2587)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(156, 26.9092, 349, -174.412, 717, -372.744, 897, -600.975, 1082, -644.827, 1228, -897.974, 1554, -1048.47, 1963, -1335.5, 2175, -1263.74, 2237, -1173.05, 2109, -1092.32, 2035, -978.702, 1777, -826.216, 1533, -588.018, 1393, -518.253, 1393, -410.616, 1313, -359.788, 1213, -325.902, 1130, -300.986, 1014, -258.13, 999, -172.419, 914, -87.7046, 823, -34.8826, 781, 19.9329, 736, 66.7749, 289, 51.8252)
+
+[node name="Log2StaticBody2D2" type="StaticBody2D" parent="Blockout/Jungle Sub Area/JungleRoom/Log2"]
+
+[node name="Log2CollisionPolygon2D" type="CollisionPolygon2D" parent="Blockout/Jungle Sub Area/JungleRoom/Log2/Log2StaticBody2D2"]
+polygon = PackedVector2Array(156, 26.9092, 349, -174.412, 717, -372.744, 897, -600.975, 1082, -644.827, 1228, -897.974, 1554, -1048.47, 1963, -1335.5, 2175, -1263.74, 2237, -1173.05, 2109, -1092.32, 2035, -978.702, 1777, -826.216, 1533, -588.018, 1393, -518.253, 1393, -410.616, 1313, -359.788, 1213, -325.902, 1130, -300.986, 1014, -258.13, 999, -172.419, 914, -87.7046, 823, -34.8826, 781, 19.9329, 736, 66.7749, 289, 51.8252)
+
+[node name="Log2LightOccluder2D2" type="LightOccluder2D" parent="Blockout/Jungle Sub Area/JungleRoom/Log2"]
+occluder = SubResource("OccluderPolygon2D_vckxr")
+
+[node name="Log2Polygon2D2" type="Polygon2D" parent="Blockout/Jungle Sub Area/JungleRoom/Log2"]
+color = Color(0.18438, 0.0722898, 0, 1)
+polygon = PackedVector2Array(156, 26.9092, 349, -174.412, 717, -372.744, 897, -600.975, 1082, -644.827, 1228, -897.974, 1554, -1048.47, 1963, -1335.5, 2175, -1263.74, 2237, -1173.05, 2109, -1092.32, 2035, -978.702, 1777, -826.216, 1533, -588.018, 1393, -518.253, 1393, -410.616, 1313, -359.788, 1213, -325.902, 1130, -300.986, 1014, -258.13, 999, -172.419, 914, -87.7046, 823, -34.8826, 781, 19.9329, 736, 66.7749, 289, 51.8252)
+
+[node name="Stump2" parent="Blockout/Jungle Sub Area/JungleRoom" instance=ExtResource("1_1upqg")]
+position = Vector2(27586, 2869)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-233, -177.402, -160, -186.372, -119, -243.18, -90, -306.966, 21, -296.999, 107, -296.999, 151, -234.211, 224, -177.402, 300, -151.49)
+
+[node name="BlockStaticBody2D" type="StaticBody2D" parent="Blockout/Jungle Sub Area/JungleRoom/Stump2"]
+
+[node name="BlockCollisionPolygon2D" type="CollisionPolygon2D" parent="Blockout/Jungle Sub Area/JungleRoom/Stump2/BlockStaticBody2D"]
+polygon = PackedVector2Array(-233, -177.402, -160, -186.372, -119, -243.18, -90, -306.966, 21, -296.999, 107, -296.999, 151, -234.211, 224, -177.402, 300, -151.49)
+
+[node name="BlockLightOccluder2D" type="LightOccluder2D" parent="Blockout/Jungle Sub Area/JungleRoom/Stump2"]
+occluder = SubResource("OccluderPolygon2D_sopi4")
+
+[node name="BlockPolygon2D" type="Polygon2D" parent="Blockout/Jungle Sub Area/JungleRoom/Stump2"]
+color = Color(0.210015, 0.0880948, 0, 1)
+polygon = PackedVector2Array(-233, -177.402, -160, -186.372, -119, -243.18, -90, -306.966, 21, -296.999, 107, -296.999, 151, -234.211, 224, -177.402, 300, -151.49)
+
+[node name="Platform" parent="Blockout/Jungle Sub Area/JungleRoom" instance=ExtResource("1_1upqg")]
+position = Vector2(21661, 1924)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(844, -603.965, 557, -630.874, 220, -617.918, 126, -528.22, 283, -434.536, 328, -339.855, 485, -291.019, 633, -303.976, 700, -255.14, 893, -255.14, 1104, -282.05, 1315, -407.626, 1239, -532.206, 1342, -621.904)
+
+[node name="BlockStaticBody2D" type="StaticBody2D" parent="Blockout/Jungle Sub Area/JungleRoom/Platform"]
+
+[node name="BlockCollisionPolygon2D" type="CollisionPolygon2D" parent="Blockout/Jungle Sub Area/JungleRoom/Platform/BlockStaticBody2D"]
+polygon = PackedVector2Array(844, -603.965, 557, -630.874, 220, -617.918, 126, -528.22, 283, -434.536, 328, -339.855, 485, -291.019, 633, -303.976, 700, -255.14, 893, -255.14, 1104, -282.05, 1315, -407.626, 1239, -532.206, 1342, -621.904)
+
+[node name="BlockLightOccluder2D" type="LightOccluder2D" parent="Blockout/Jungle Sub Area/JungleRoom/Platform"]
+occluder = SubResource("OccluderPolygon2D_bby1y")
+
+[node name="BlockPolygon2D" type="Polygon2D" parent="Blockout/Jungle Sub Area/JungleRoom/Platform"]
+polygon = PackedVector2Array(844, -603.965, 557, -630.874, 220, -617.918, 126, -528.22, 283, -434.536, 328, -339.855, 485, -291.019, 633, -303.976, 700, -255.14, 893, -255.14, 1104, -282.05, 1315, -407.626, 1239, -532.206, 1342, -621.904)
+
+[node name="Platform2" parent="Blockout/Jungle Sub Area/JungleRoom" instance=ExtResource("1_1upqg")]
+position = Vector2(27363, 2041)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-436, -846.148, 121, -921.893, 633, -882.028, 669, -783.36, 602, -689.676, 458, -569.082, 220, -639.844, -81, -720.572, -189, -506.294, -409, -662.766, -462, -779.374)
+
+[node name="Block2StaticBody2D" type="StaticBody2D" parent="Blockout/Jungle Sub Area/JungleRoom/Platform2"]
+
+[node name="Block2CollisionPolygon2D" type="CollisionPolygon2D" parent="Blockout/Jungle Sub Area/JungleRoom/Platform2/Block2StaticBody2D"]
+polygon = PackedVector2Array(-436, -846.148, 121, -921.893, 633, -882.028, 669, -783.36, 602, -689.676, 458, -569.082, 220, -639.844, -81, -720.572, -189, -506.294, -409, -662.766, -462, -779.374)
+
+[node name="Block2LightOccluder2D" type="LightOccluder2D" parent="Blockout/Jungle Sub Area/JungleRoom/Platform2"]
+occluder = SubResource("OccluderPolygon2D_37s26")
+
+[node name="Block2Polygon2D" type="Polygon2D" parent="Blockout/Jungle Sub Area/JungleRoom/Platform2"]
+polygon = PackedVector2Array(-436, -846.148, 121, -921.893, 633, -882.028, 669, -783.36, 602, -689.676, 458, -569.082, 220, -639.844, -81, -720.572, -189, -506.294, -409, -662.766, -462, -779.374)
+
+[node name="Platform3" parent="Blockout/Jungle Sub Area/JungleRoom" instance=ExtResource("1_1upqg")]
+position = Vector2(29882, 1906)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(893, -603.965, 1288, -603.965, 1728, -568.086, 1930, -425.566, 1688, -303.976, 1549, -170.426, 1405, -22.9227, 1257, 53.8186, 983, -179.395, 988, -443.505)
+
+[node name="Block3StaticBody2D" type="StaticBody2D" parent="Blockout/Jungle Sub Area/JungleRoom/Platform3"]
+
+[node name="Block3CollisionPolygon2D" type="CollisionPolygon2D" parent="Blockout/Jungle Sub Area/JungleRoom/Platform3/Block3StaticBody2D"]
+polygon = PackedVector2Array(893, -603.965, 1288, -603.965, 1728, -568.086, 1930, -425.566, 1688, -303.976, 1549, -170.426, 1405, -22.9227, 1257, 53.8186, 983, -179.395, 988, -443.505)
+
+[node name="Block3LightOccluder2D" type="LightOccluder2D" parent="Blockout/Jungle Sub Area/JungleRoom/Platform3"]
+occluder = SubResource("OccluderPolygon2D_rlfwp")
+
+[node name="Block3Polygon2D" type="Polygon2D" parent="Blockout/Jungle Sub Area/JungleRoom/Platform3"]
+polygon = PackedVector2Array(893, -603.965, 1288, -603.965, 1728, -568.086, 1930, -425.566, 1688, -303.976, 1549, -170.426, 1405, -22.9227, 1257, 53.8186, 983, -179.395, 988, -443.505)
+
+[node name="Platform4" parent="Blockout/Jungle Sub Area/JungleRoom" instance=ExtResource("1_1upqg")]
+position = Vector2(28449, 2391)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(719, -452.475, 979, -474.401, 1285, -416.596, 1338, -255.14, 1150, -152.486, 1047, -4.98315, 898, -120.594, 813, -215.274, 634, -237.201, 625, -429.552)
+
+[node name="Block4StaticBody2D" type="StaticBody2D" parent="Blockout/Jungle Sub Area/JungleRoom/Platform4"]
+
+[node name="Block4CollisionPolygon2D" type="CollisionPolygon2D" parent="Blockout/Jungle Sub Area/JungleRoom/Platform4/Block4StaticBody2D"]
+polygon = PackedVector2Array(719, -452.475, 979, -474.401, 1285, -416.596, 1338, -255.14, 1150, -152.486, 1047, -4.98315, 898, -120.594, 813, -215.274, 634, -237.201, 625, -429.552)
+
+[node name="Block4LightOccluder2D" type="LightOccluder2D" parent="Blockout/Jungle Sub Area/JungleRoom/Platform4"]
+occluder = SubResource("OccluderPolygon2D_xyy3r")
+
+[node name="Block4Polygon2D" type="Polygon2D" parent="Blockout/Jungle Sub Area/JungleRoom/Platform4"]
+polygon = PackedVector2Array(719, -452.475, 979, -474.401, 1285, -416.596, 1338, -255.14, 1150, -152.486, 1047, -4.98315, 898, -120.594, 813, -215.274, 634, -237.201, 625, -429.552)
+
+[node name="Canopy2" parent="Blockout/Jungle Sub Area/JungleRoom" instance=ExtResource("1_1upqg")]
+position = Vector2(35400, 3128)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-802, -3884.91, 10627, -3739.4, 11746, -3401.54, 10220, -2827.47, 9483, -2759.7, 9033, -2759.7, 5211, -2886.27, 3117, -2894.25, 1346, -2954.04, -112, -3122.48, -875, -2911.19)
+
+[node name="Block5StaticBody2D" type="StaticBody2D" parent="Blockout/Jungle Sub Area/JungleRoom/Canopy2"]
+
+[node name="Block5CollisionPolygon2D" type="CollisionPolygon2D" parent="Blockout/Jungle Sub Area/JungleRoom/Canopy2/Block5StaticBody2D"]
+polygon = PackedVector2Array(-802, -3884.91, 10627, -3739.4, 11746, -3401.54, 10220, -2827.47, 9483, -2759.7, 9033, -2759.7, 5211, -2886.27, 3117, -2894.25, 1346, -2954.04, -112, -3122.48, -875, -2911.19)
+
+[node name="Block5LightOccluder2D" type="LightOccluder2D" parent="Blockout/Jungle Sub Area/JungleRoom/Canopy2"]
+occluder = SubResource("OccluderPolygon2D_6243p")
+
+[node name="Block5Polygon2D" type="Polygon2D" parent="Blockout/Jungle Sub Area/JungleRoom/Canopy2"]
+color = Color(0, 0.682353, 0.454902, 0.745098)
+polygon = PackedVector2Array(-802, -3884.91, 10627, -3739.4, 11746, -3401.54, 10220, -2827.47, 9483, -2759.7, 9033, -2759.7, 5211, -2886.27, 3117, -2894.25, 1346, -2954.04, -112, -3122.48, -875, -2911.19)
+
+[node name="UpperTree" parent="Blockout/Jungle Sub Area/JungleRoom" instance=ExtResource("1_1upqg")]
+position = Vector2(37937, 3262)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(788, -3158.36, 1181, -2886.27, 1365, -2518.51, 1454, -2119.86, 1524, -1575.69, 1467, -1031.52, 1912, -785.354, 2426, -613.931, 2953, -759.441, 2877, -1297.63, 2997, -1709.24, 2947, -2682.96, 3061, -3037.76, 3435, -3196.23)
+
+[node name="UpperTreeStaticBody2D" type="StaticBody2D" parent="Blockout/Jungle Sub Area/JungleRoom/UpperTree"]
+
+[node name="UpperTreeCollisionPolygon2D" type="CollisionPolygon2D" parent="Blockout/Jungle Sub Area/JungleRoom/UpperTree/UpperTreeStaticBody2D"]
+polygon = PackedVector2Array(788, -3158.36, 1181, -2886.27, 1365, -2518.51, 1454, -2119.86, 1524, -1575.69, 1467, -1031.52, 1912, -785.354, 2426, -613.931, 2953, -759.441, 2877, -1297.63, 2997, -1709.24, 2947, -2682.96, 3061, -3037.76, 3435, -3196.23)
+
+[node name="UpperTreeLightOccluder2D" type="LightOccluder2D" parent="Blockout/Jungle Sub Area/JungleRoom/UpperTree"]
+occluder = SubResource("OccluderPolygon2D_52a6p")
+
+[node name="UpperTreePolygon2D" type="Polygon2D" parent="Blockout/Jungle Sub Area/JungleRoom/UpperTree"]
+color = Color(0.130448, 0.0556599, 2.40654e-08, 1)
+polygon = PackedVector2Array(788, -3158.36, 1181, -2886.27, 1365, -2518.51, 1454, -2119.86, 1524, -1575.69, 1467, -1031.52, 1912, -785.354, 2426, -613.931, 2953, -759.441, 2877, -1297.63, 2997, -1709.24, 2947, -2682.96, 3061, -3037.76, 3435, -3196.23)
+
+[node name="Stump3" parent="Blockout/Jungle Sub Area/JungleRoom" instance=ExtResource("1_1upqg")]
+position = Vector2(36199, 3186)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(442, -218.264, 599, -199.328, 742, -222.251, 813, -246.17, 999, -350.818, 1008, -450.482, 1232, -426.563, 1355, -369.754, 1574, -355.801, 1574, -289.026, 1565, -151.49, 1617, -108.634, 1836, -42.8555, 1056, -46.842)
+
+[node name="BlockStaticBody2D" type="StaticBody2D" parent="Blockout/Jungle Sub Area/JungleRoom/Stump3"]
+
+[node name="BlockCollisionPolygon2D" type="CollisionPolygon2D" parent="Blockout/Jungle Sub Area/JungleRoom/Stump3/BlockStaticBody2D"]
+polygon = PackedVector2Array(442, -218.264, 599, -199.328, 742, -222.251, 813, -246.17, 999, -350.818, 1008, -450.482, 1232, -426.563, 1355, -369.754, 1574, -355.801, 1574, -289.026, 1565, -151.49, 1617, -108.634, 1836, -42.8555, 1056, -46.842)
+
+[node name="BlockLightOccluder2D" type="LightOccluder2D" parent="Blockout/Jungle Sub Area/JungleRoom/Stump3"]
+occluder = SubResource("OccluderPolygon2D_my5gf")
+
+[node name="BlockPolygon2D" type="Polygon2D" parent="Blockout/Jungle Sub Area/JungleRoom/Stump3"]
+color = Color(0.219683, 0.109245, 3.60981e-08, 1)
+polygon = PackedVector2Array(442, -218.264, 599, -199.328, 742, -222.251, 813, -246.17, 999, -350.818, 1008, -450.482, 1232, -426.563, 1355, -369.754, 1574, -355.801, 1574, -289.026, 1565, -151.49, 1617, -108.634, 1836, -42.8555, 1056, -46.842)
+
+[node name="Platform5" parent="Blockout/Jungle Sub Area/JungleRoom" instance=ExtResource("1_1upqg")]
+position = Vector2(36984, 2230)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-500, -1033.52, -300, -1052.45, -114, -1052.45, 33, -1071.39, 276, -1067.4, 595, -1033.52, 590, -905.947, 466, -854.122, 328, -835.185, 100, -621.904, -19, -545.163, -271, -625.891, -381, -797.313, -428, -972.722)
+
+[node name="BlockStaticBody2D" type="StaticBody2D" parent="Blockout/Jungle Sub Area/JungleRoom/Platform5"]
+
+[node name="BlockCollisionPolygon2D" type="CollisionPolygon2D" parent="Blockout/Jungle Sub Area/JungleRoom/Platform5/BlockStaticBody2D"]
+polygon = PackedVector2Array(-500, -1033.52, -300, -1052.45, -114, -1052.45, 33, -1071.39, 276, -1067.4, 595, -1033.52, 590, -905.947, 466, -854.122, 328, -835.185, 100, -621.904, -19, -545.163, -271, -625.891, -381, -797.313, -428, -972.722)
+
+[node name="BlockLightOccluder2D" type="LightOccluder2D" parent="Blockout/Jungle Sub Area/JungleRoom/Platform5"]
+occluder = SubResource("OccluderPolygon2D_is33e")
+
+[node name="BlockPolygon2D" type="Polygon2D" parent="Blockout/Jungle Sub Area/JungleRoom/Platform5"]
+polygon = PackedVector2Array(-500, -1033.52, -300, -1052.45, -114, -1052.45, 33, -1071.39, 276, -1067.4, 595, -1033.52, 590, -905.947, 466, -854.122, 328, -835.185, 100, -621.904, -19, -545.163, -271, -625.891, -381, -797.313, -428, -972.722)
+
+[node name="Block" parent="Blockout/Jungle Sub Area/JungleRoom" instance=ExtResource("1_1upqg")]
+position = Vector2(42325, 2386)
+color = Color(1, 1, 1, 0)
+polygon = PackedVector2Array(-291, -318.925, 170, -336.865, 488, -360.784, 728, -324.905, 997, -217.268, 847, -61.7917, 722, -7.97314, 590, -1.99329, 320, 56.8086, 266, 146.506, 170, 182.385, -40, 134.547, -159, 20.9294, -255, -103.651, -345, -175.409)
+
+[node name="BlockStaticBody2D" type="StaticBody2D" parent="Blockout/Jungle Sub Area/JungleRoom/Block"]
+
+[node name="BlockCollisionPolygon2D" type="CollisionPolygon2D" parent="Blockout/Jungle Sub Area/JungleRoom/Block/BlockStaticBody2D"]
+polygon = PackedVector2Array(-291, -318.925, 170, -336.865, 488, -360.784, 728, -324.905, 997, -217.268, 847, -61.7917, 722, -7.97314, 590, -1.99329, 320, 56.8086, 266, 146.506, 170, 182.385, -40, 134.547, -159, 20.9294, -255, -103.651, -345, -175.409)
+
+[node name="BlockLightOccluder2D" type="LightOccluder2D" parent="Blockout/Jungle Sub Area/JungleRoom/Block"]
+occluder = SubResource("OccluderPolygon2D_647v3")
+
+[node name="BlockPolygon2D" type="Polygon2D" parent="Blockout/Jungle Sub Area/JungleRoom/Block"]
+polygon = PackedVector2Array(-291, -318.925, 170, -336.865, 488, -360.784, 728, -324.905, 997, -217.268, 847, -61.7917, 722, -7.97314, 590, -1.99329, 320, 56.8086, 266, 146.506, 170, 182.385, -40, 134.547, -159, 20.9294, -255, -103.651, -345, -175.409)
+
+[node name="Lush Caves Sub Area" type="Node2D" parent="Blockout"]
+
+[node name="Ruins Sub Area" type="Node2D" parent="Blockout"]
+
 [node name="Player" parent="." instance=ExtResource("1_u4u4q")]
-position = Vector2(2, -2)
+position = Vector2(178, -558)

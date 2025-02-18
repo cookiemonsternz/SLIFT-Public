@@ -1,0 +1,167 @@
+[gd_scene load_steps=2 format=3 uid="uid://oe525ghnvnev"]
+
+[ext_resource type="PackedScene" uid="uid://brkdvlqw0t3sp" path="res://scenes/characters/player.tscn" id="1_u4u4q"]
+
+[node name="Jungle Level" type="Node2D"]
+
+[node name="RoomLevelBlockout" type="Node2D" parent="."]
+
+[node name="Ruins Sub Area" type="Node2D" parent="RoomLevelBlockout"]
+
+[node name="Grand Chamber" type="Polygon2D" parent="RoomLevelBlockout/Ruins Sub Area"]
+position = Vector2(-30824, 1281)
+color = Color(0.654847, 0.430938, 0.453808, 1)
+polygon = PackedVector2Array(61060, 11932, 62619, 12034, 62789, 9559, 74146, 10169, 73739, 18645, 61195, 17662)
+
+[node name="Vertical Shaft" type="Polygon2D" parent="RoomLevelBlockout/Ruins Sub Area"]
+position = Vector2(-30824, 1281)
+color = Color(0.66212, 0.430984, 0.421107, 1)
+polygon = PackedVector2Array(74556, 6825, 75598, 6825, 75920, 23952, 74055, 24037, 74384, 10704)
+
+[node name="Parkour Room" type="Polygon2D" parent="RoomLevelBlockout/Ruins Sub Area"]
+position = Vector2(-30824, 1281)
+color = Color(0.505882, 0.47451, 0.643137, 1)
+polygon = PackedVector2Array(74108, 21118, 73318, 21096, 73125, 20349, 64604, 20178, 64753, 23510, 73360, 23552, 73318, 22591, 74108, 22549)
+
+[node name="Upgrade Room" type="Polygon2D" parent="RoomLevelBlockout/Ruins Sub Area"]
+position = Vector2(-30824, 1281)
+color = Color(0.6, 0.486275, 0.203922, 1)
+polygon = PackedVector2Array(65324, 23487, 66380, 23551, 66476, 24383, 69308, 24399, 69356, 26479, 64524, 26271, 64380, 24431, 65660, 24447, 65420, 23583)
+
+[node name="Reg Gameplay 4" type="Polygon2D" parent="RoomLevelBlockout/Ruins Sub Area"]
+position = Vector2(-30251, -1520)
+color = Color(0.393996, 0.521354, 0.601673, 1)
+polygon = PackedVector2Array(75235, 20102, 80163, 20230, 82243, 21094, 83043, 22630, 79683, 23142, 77315, 22534, 75427, 22054)
+
+[node name="Challenge Room2" type="Polygon2D" parent="RoomLevelBlockout/Ruins Sub Area"]
+position = Vector2(-30824, 1281)
+color = Color(0.505882, 0.47451, 0.643137, 1)
+polygon = PackedVector2Array(75640, 10558, 84107, 10596, 84412, 11928, 75811, 11757)
+
+[node name="Vertical Shaft2" type="Polygon2D" parent="RoomLevelBlockout/Ruins Sub Area"]
+position = Vector2(-30824, 1281)
+color = Color(0.66212, 0.430984, 0.421107, 1)
+polygon = PackedVector2Array(84088, 8446, 83898, 23135, 85668, 23268, 85611, 8503)
+
+[node name="Passage Room" type="Polygon2D" parent="RoomLevelBlockout/Ruins Sub Area"]
+position = Vector2(-30824, 1281)
+color = Color(0.654847, 0.430938, 0.453808, 1)
+polygon = PackedVector2Array(82313, 22934, 88144, 23443, 88246, 27969, 82550, 27731, 82252, 23308)
+
+[node name="To Mines" type="Polygon2D" parent="RoomLevelBlockout/Ruins Sub Area"]
+position = Vector2(-30824, 1281)
+color = Color(0, 0.491357, 0.946228, 1)
+polygon = PackedVector2Array(84734, 27768, 85546, 27821, 85782, 33127, 84272, 33096)
+
+[node name="From Mines" type="Polygon2D" parent="RoomLevelBlockout/Ruins Sub Area"]
+position = Vector2(-30824, 1281)
+color = Color(0, 0.491357, 0.946228, 1)
+polygon = PackedVector2Array(88237, 26508, 90874, 26572, 90938, 31281, 89646, 31238, 89646, 27298, 88237, 27319)
+
+[node name="Big Door" type="Polygon2D" parent="RoomLevelBlockout/Ruins Sub Area"]
+position = Vector2(-30668, -972)
+color = Color(0.530101, 0.506636, 0.352617, 1)
+polygon = PackedVector2Array(54933, 12111, 59790, 12232, 60826, 12542, 60987, 19901, 60220, 19928, 58471, 19834, 55740, 19444, 54193, 19565)
+
+[node name="Secret Reward Room" type="Polygon2D" parent="RoomLevelBlockout/Ruins Sub Area"]
+position = Vector2(-30824, 1281)
+color = Color(0.6, 0.486275, 0.203922, 1)
+polygon = PackedVector2Array(54883, 12753, 54465, 12674, 53922, 12289, 53164, 12414, 52360, 12696, 53243, 12855, 53809, 13183, 54612, 13104, 54872, 13160)
+
+[node name="Lush Caves Sub Area" type="Node2D" parent="RoomLevelBlockout"]
+
+[node name="Reg Gameplay 1" type="Polygon2D" parent="RoomLevelBlockout/Lush Caves Sub Area"]
+position = Vector2(-30251, -1520)
+color = Color(0.393996, 0.521354, 0.601673, 1)
+polygon = PackedVector2Array(49403, 5020, 49079, 9206, 41326, 9796, 41221, 5011)
+
+[node name="Reg Gameplay 4" type="Polygon2D" parent="RoomLevelBlockout/Lush Caves Sub Area"]
+position = Vector2(-26382, 3730)
+color = Color(0.393996, 0.521354, 0.601673, 1)
+polygon = PackedVector2Array(49403, 5020, 49926, 9166, 45494, 10004, 42180, 10309, 40593, 9725, 40199, 7210, 41221, 5011, 42893, 4981, 42773, 4165, 43452, 4105, 43588, 5041, 45977, 4671, 48239, 4905, 48360, 4075, 49085, 4090, 49009.6, 4981.13)
+
+[node name="Challenge Room" type="Polygon2D" parent="RoomLevelBlockout/Lush Caves Sub Area"]
+position = Vector2(-28647, -793)
+color = Color(0.507461, 0.473755, 0.644052, 1)
+polygon = PackedVector2Array(39728, 7941, 39200, 7546, 39055, 5824, 34372, 5815, 34358, 8146, 39126, 8378, 39172, 7655, 39714, 8031)
+
+[node name="Reward Room" type="Polygon2D" parent="RoomLevelBlockout/Lush Caves Sub Area"]
+position = Vector2(-30399, -541)
+color = Color(0.598421, 0.486665, 0.205045, 1)
+polygon = PackedVector2Array(36179, 6077, 33795, 6016, 33358, 5653, 31723, 5667, 31192, 6548, 31884, 7086, 33728, 7167, 33943, 6622, 36179, 6699)
+
+[node name="UNCONFIRMED Room" type="Polygon2D" parent="RoomLevelBlockout/Lush Caves Sub Area"]
+position = Vector2(-30399, -541)
+color = Color(0.696711, 0.11869, 1, 1)
+polygon = PackedVector2Array(82458, 4607, 83622, 6383, 83817, 6437, 83985, 7513, 83588, 8778, 77154, 8670, 76348, 8136, 76288, 7057, 76509, 6322, 77548, 5908, 83182, 6291, 82285, 4596)
+
+[node name="Reg Gameplay 2" type="Polygon2D" parent="RoomLevelBlockout/Lush Caves Sub Area"]
+position = Vector2(-30399, -541)
+color = Color(0.392157, 0.521569, 0.6, 1)
+polygon = PackedVector2Array(50902, 3924, 55317, 4247, 55317, 3098, 56345, 3198, 56506, 4428, 60820, 4529, 62896, 5759, 63279, 6625, 63924, 8359, 63622, 9165, 61384, 9125, 57857, 8762, 57736, 10274, 56244, 10173, 56264, 11766, 55438, 11685, 55397, 10113, 55317, 8440, 51063, 8198, 50257, 7210, 50217, 5275)
+
+[node name="Reg Gameplay 3" type="Polygon2D" parent="RoomLevelBlockout/Lush Caves Sub Area"]
+position = Vector2(-30399, -541)
+color = Color(0.392157, 0.521569, 0.6, 1)
+polygon = PackedVector2Array(63800, 6969, 64646, 6908, 65370, 6047, 68648, 5549, 73661, 5911, 75866, 6440, 75625, 7074, 76214, 7044, 76350, 8071, 75745, 8131, 75836, 8660, 72317, 8736, 72393, 7240, 70037, 7165, 68693, 8449, 65552, 8298, 64887, 8464, 64797, 8011, 64117, 8162)
+
+[node name="Upgrade Puzzle" type="Polygon2D" parent="RoomLevelBlockout/Lush Caves Sub Area"]
+color = Color(0.384714, 0.625409, 0.50872, 1)
+polygon = PackedVector2Array(2841, 6623, 2871, 7816, 10921, 8465, 10815, 11788, 2705, 11350, 2192, 6517)
+
+[node name="Upgrade Room" type="Polygon2D" parent="RoomLevelBlockout/Lush Caves Sub Area"]
+color = Color(0.6, 0.486275, 0.203922, 1)
+polygon = PackedVector2Array(10899, 8853, 11953, 8815, 11876, 8384, 13527, 8384, 13565, 9247, 12016, 9222, 10873, 9234)
+
+[node name="Generic Gameplay" type="Polygon2D" parent="RoomLevelBlockout/Lush Caves Sub Area"]
+color = Color(0.390293, 0.523463, 0.597179, 1)
+polygon = PackedVector2Array(9057, 11711, 10060, 11787, 10010, 12536, 10797, 12676, 10810, 14022, 6263, 13857, 6289, 12587, 9146, 12625)
+
+[node name="Generic Gameplay2" type="Polygon2D" parent="RoomLevelBlockout/Lush Caves Sub Area"]
+color = Color(0.390293, 0.523463, 0.597179, 1)
+polygon = PackedVector2Array(6251, 12968, 5336, 12917, 5273, 12714, 2911, 12650, 2873, 15432, 7584, 15521, 7584, 14479, 5451, 14454, 5324, 13679, 6263, 13666)
+
+[node name="To Mines2" type="Polygon2D" parent="RoomLevelBlockout/Lush Caves Sub Area"]
+position = Vector2(-78329, -12386)
+color = Color(0, 0.491357, 0.946228, 1)
+polygon = PackedVector2Array(84734, 27768, 85546, 27821, 85782, 33127, 84272, 33096)
+
+[node name="Jungle Sub Area" type="Node2D" parent="RoomLevelBlockout"]
+
+[node name="Entrance_DarkRoom" type="Polygon2D" parent="RoomLevelBlockout/Jungle Sub Area"]
+polygon = PackedVector2Array(-539, -131, 861, 1053, 890, 1188, -233, 1135, -450, 1601, -582, 2107, 230, 2278, 1043, 2524, 2810, 2503, 3167, 2517, 3509, 2257, 3505, 1708, 3192, 1316, 2561, 1181, 2219, 988, 1535, 750, 252, -711)
+
+[node name="Atmospheric jungle vibe area" type="Polygon2D" parent="RoomLevelBlockout/Jungle Sub Area"]
+position = Vector2(209, -222)
+color = Color(0.986555, 1, 0.830747, 1)
+polygon = PackedVector2Array(3052, 2573, 4493, 2504, 5649, 2383, 7103, 2618, 8354, 2510, 9211, 2707, 9727, 2635, 10389, 2635, 11266, 2652, 11543, 2714, 11514, 2793, 2957, 2719)
+
+[node name="Small Crossroad Cave" type="Polygon2D" parent="RoomLevelBlockout/Jungle Sub Area"]
+position = Vector2(-3415, -343)
+color = Color(0.552956, 0.552956, 0.552956, 1)
+polygon = PackedVector2Array(15474, 574, 14698, 950, 14522, 1238, 14618, 1422, 14978, 1526, 15738, 1550, 17082, 1502, 18890, 1630, 19778, 1494, 20874, 1734, 21730, 1598, 22186, 1430, 22170, 1030, 21794, 598, 21002, 310, 18834, 6, 18674, -938, 17802, -2314, 16154, -2306, 15402, -842, 16386, -58)
+
+[node name="Small Crossroad Cave2" type="Polygon2D" parent="RoomLevelBlockout/Jungle Sub Area"]
+position = Vector2(-3415, -343)
+color = Color(0.501407, 0.501406, 0.501406, 1)
+polygon = PackedVector2Array(15014, 2789, 15970, 2758, 16743, 2641, 17762, 2798, 17811, 2938, 17403, 2920, 17017, 2767, 16379, 2866, 15198, 2924, 15063, 2902)
+
+[node name="Small Crossroad Cave3" type="Polygon2D" parent="RoomLevelBlockout/Jungle Sub Area"]
+position = Vector2(-3415, -343)
+color = Color(0.501407, 0.501406, 0.501406, 1)
+polygon = PackedVector2Array(19016, 2718, 19172, 2955, 20553, 3061, 22247, 2950, 22589, 3036, 22272, 2784, 21017, 2864, 20165, 2920)
+
+[node name="Upper Jungle (shifting light field trhings)" type="Polygon2D" parent="RoomLevelBlockout/Jungle Sub Area"]
+position = Vector2(9535, 1307)
+scale = Vector2(0.415, 0.415)
+color = Color(0.427469, 0.540556, 0.380019, 1)
+polygon = PackedVector2Array(22266, 2808, 24138, 2878, 25862, 2842, 28609, 3130, 33554, 3164, 35963, 3037, 39588, 3319, 44127, 3808, 48271, 3727, 50392, 3648, 51731, 3639, 53629, 3521, 55570, 3928, 57555, 4104, 60461, 4184, 67887, 4642, 67834, 5018, 22439, 3081, 22267, 2905)
+
+[node name="Lore Cave" type="Polygon2D" parent="RoomLevelBlockout/Jungle Sub Area"]
+position = Vector2(10549, 1381)
+scale = Vector2(0.4, 0.4)
+color = Color(0.603952, 0.473972, 0.341625, 1)
+polygon = PackedVector2Array(67702, 4981, 75013, 5676, 79424, 5808, 87096, 6240, 92046, 6132, 96649, 6935, 105363, 7259, 107433, 7221, 107623, 5946, 106900, 3149, 105701, -371, 103704, -3573, 102232, -5013, 99672, -6581, 97624, -7061, 95096, -6965, 92088, -5813, 90328, -4405, 88536, -3413, 86264, -3733, 84344, -4469, 82360, -5173, 80248, -5493, 77624, -4981, 75160, -4245, 73016, -3637, 71736, -3381, 69976, -2581, 68056, -1749, 66552, -469, 66493, 323, 66866, 1092, 67224, 1643, 68024, 3051, 70104, 3275, 71864, 3051, 73880, 3403, 75960, 3435, 78264, 3179, 79864, 3211, 81592, 3723, 83672, 3979, 85400, 3627, 86488, 3019, 87640, 2731, 89112, 2475, 90040, 1451, 90968, 107, 91832, -309, 92824, -661, 93144, -1397, 94040, -2325, 94968, -2677, 95992, -2901, 97272, -2965, 98296, -2805, 99992, -2133, 101048, -1621, 103800, 683, 103896, 1067, 104472, 2603, 104920, 3659, 105144, 4715, 105048, 5547, 104760, 6187, 104088, 6731, 102168, 6763, 90520, 5739, 67800, 4651)
+
+[node name="Player" parent="." instance=ExtResource("1_u4u4q")]
+position = Vector2(2, -2)

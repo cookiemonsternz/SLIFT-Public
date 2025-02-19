@@ -27,7 +27,7 @@ func remove_upgrade(side: int, index: int):
 # These functions are triggered by player events and are called on all installed upgrades
 
 
-func _process(delta: float) -> void:
+func _on_process(delta: float) -> void:
 	var player = get_tree().get_first_node_in_group("Player")
 	var root = get_tree().root
 	for upgrade in installed_upgrades_left:
@@ -37,7 +37,7 @@ func _process(delta: float) -> void:
 		if upgrade.has_method("update_process"):
 			upgrade.update_process(player, root)
 
-func _physics_process(delta: float) -> void:
+func _on_physics_process(delta: float) -> void:
 	var player = get_tree().get_first_node_in_group("Player")
 	var root = get_tree().root
 	for upgrade in installed_upgrades_left:

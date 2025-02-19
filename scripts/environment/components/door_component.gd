@@ -18,7 +18,8 @@ var is_open: bool = false
 signal door_opened
 signal door_closed
 
-func open():
+func open(a=null, b=null, c=null, d=null, e=null, f=null):
+	print("OPENEING : " + name)
 	if not is_open:
 		door_opened.emit()
 		is_open = true
@@ -42,4 +43,3 @@ func close():
 			position_tweener.tween_property(door_animatable_body, "position", closed_position, tween_duration)\
 				.set_trans(tween_transition_type)\
 				.set_ease(tween_easing_mode)
-			

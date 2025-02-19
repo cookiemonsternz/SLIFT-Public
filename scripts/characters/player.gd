@@ -63,7 +63,10 @@ var is_dead = false
 var can_coyote: bool = false
 var coyote_jump_available := true
 var coyote_timer_reset := true
-var current_move_mode := Enums.MoveModes.GROUND
+var current_move_mode := Enums.MoveModes.GROUND :
+	set(value):
+		print("CHANGING MOVE MODE TO : ", value)
+		current_move_mode = value
 var is_sliding := false
 var can_var_jump := true
 var vel_x: float = 0
@@ -87,16 +90,20 @@ func _process(delta: float) -> void:
 		get_tree().quit()
 	#print(position)
 	if Input.is_action_just_pressed("test_input"):
-		var yank_upgrade = YankArmUpgrade.new()
-		arm_upgrade_component.add_upgrade(Enums.Grapples.Left, 0, yank_upgrade)
-		var damage_upgrade = DamageArmUpgrade.new()
-		arm_upgrade_component.add_upgrade(Enums.Grapples.Right, 0, damage_upgrade)
+		var dash_upgrade = DashArmUpgrade.new()
+		arm_upgrade_component.add_upgrade(Enums.Grapples.Left, 0, dash_upgrade)
+		#var yank_upgrade = YankArmUpgrade.new()
+		#arm_upgrade_component.add_upgrade(Enums.Grapples.Left, 0, yank_upgrade)
+		#tiivar damage_upgrade = DamageArmUpgrade.new()
+		#arm_upgrade_component.add_upgrade(Enums.Grapples.Right, 0, damage_upgrade)
 	match current_move_mode:
 		Enums.MoveModes.GROUND:
 			handle_ground_movement(delta)
+			arm_upgrade_component._on_process(delta)
+			move_and_slide()
 		Enums.MoveModes.AIR:
 			handle_air_movement()
-			
+			arm_upgrade_component._on_process(delta)
 
 func handle_ground_movement(delta: float):
 	var input_chosen = Input.get_axis("move_left", "move_right")
@@ -146,8 +153,6 @@ func handle_ground_movement(delta: float):
 		velocity.x = move_speed * input_chosen
 	else:
 		velocity.x = abs(velocity.x) * input_chosen
-
-	move_and_slide()
 
 func handle_sliding(input_chosen: float, delta: float):
 	# If we have low velocity change back to regular move mode

@@ -12,11 +12,8 @@ class_name Player extends CharacterBody2D
 @export var do_delete_timer: Timer
 
 
-@export_subgroup("Distance")
-@export var has_max_distance: bool = false
+@export_subgroup("")
 @export var max_distance: float = 1000
-
-@export_subgroup("Launching")
 @export var launch_type: Enums.LaunchType = Enums.LaunchType.Transform_Launch
 
 var grapple_distance_vectors: Array[Vector2] = [Vector2.ZERO, Vector2.ZERO]
@@ -25,9 +22,6 @@ var grapple_target_positions: Array[Vector2] = [Vector2.ZERO, Vector2.ZERO]
 # The target body which the grapple connects to
 var grapple_targets: Array[PhysicsBody2D] = [null, null]
 var grapple_target_markers: Array[Node2D] = [null, null]
-# Normally null, init a new one when we need it
-# Need to refactor this if we want multiple grapples (l/r)
-var spring_joints: Array[DampedSpringJoint2D] = [null, null]
 
 #### Player Movement ####
 @export_group("Player Movement")
@@ -58,11 +52,9 @@ var spring_joints: Array[DampedSpringJoint2D] = [null, null]
 
 var is_dead = false
 var can_coyote: bool = false
-var coyote_jump_available := true
 var coyote_timer_reset := true
 var current_move_mode := Enums.MoveModes.GROUND
 var is_sliding := false
-var can_var_jump := true
 var vel_x: float = 0
 
 
@@ -75,34 +67,64 @@ func _ready() -> void:
 		modulate = Color(1.0, 0.0, 0.0)
 	health_component.entity_died.connect(callable)
 
+	# Basic grapple upgrades
 	var grapple_upgrade = GrappleArmUpgrade.new()
 	arm_upgrade_component.add_upgrade(Enums.Grapples.Left, 0, grapple_upgrade)
 	var grapple_upgrade2 = GrappleArmUpgrade.new()
 	arm_upgrade_component.add_upgrade(Enums.Grapples.Right, 0, grapple_upgrade2)
 
 func _process(delta: float) -> void:
+
 	if death_screen.visible == true:
 		move_speed = 0
 		jump_velocity = 0
 		is_dead = true
+
 	if Input.is_action_just_pressed("quit"):
 		get_tree().quit()
 	#print(position)
+
 	if Input.is_action_just_pressed("test_input"):
+		arm_upgrade_component.remove_upgrade(Enums.Grapples.Left, 0)
 		var dash_upgrade = DashArmUpgrade.new()
 		arm_upgrade_component.add_upgrade(Enums.Grapples.Left, 0, dash_upgrade)
 		#var yank_upgrade = YankArmUpgrade.new()
 		#arm_upgrade_component.add_upgrade(Enums.Grapples.Left, 0, yank_upgrade)
 		#tiivar damage_upgrade = DamageArmUpgrade.new()
 		#arm_upgrade_component.add_upgrade(Enums.Grapples.Right, 0, damage_upgrade)
+
 	match current_move_mode:
 		Enums.MoveModes.GROUND:
-			handle_ground_movement(delta)
 			arm_upgrade_component._on_process(delta)
-			move_and_slide()
 		Enums.MoveModes.AIR:
 			handle_air_movement()
 			arm_upgrade_component._on_process(delta)
+		Enums.MoveModes.DASH:
+			arm_upgrade_component._on_process(delta)
+
+func _physics_process(delta: float) -> void:
+	arm_upgrade_component._on_physics_process(delta)
+	handle_grapple_input()
+	match current_move_mode:
+		Enums.MoveModes.GROUND:
+			# Make sure the physics follow snaps to player position
+			# Use these functions instead of overriding position directly bc
+			# position propertie is effectively read only (eg will cause desync with physics server if written)
+			player_physics_follow.set_pos(global_position)
+			player_physics_follow.set_vel(velocity)
+
+			handle_ground_movement(delta)
+			move_and_slide()
+		Enums.MoveModes.AIR:
+			pass
+			# If the player is in the air and the player is not moving and the arms are not connected
+			# we move the player down a bit to make sure the player doesn't get stuck in roofs
+			# also stops bouncing after hitting head for some reason
+			# if spring_joints[0] == null and spring_joints[1] == null and player_physics_follow.linear_velocity.x == 0 and player_physics_follow.linear_velocity.y == 0:
+			# 	player_physics_follow.set_pos(Vector2(player_physics_follow.global_position.x, player_physics_follow.global_position.y - 1))
+		Enums.MoveModes.DASH:
+			player_physics_follow.set_pos(global_position)
+			player_physics_follow.set_vel(velocity)
 
 func handle_ground_movement(delta: float):
 	var input_chosen = Input.get_axis("move_left", "move_right")
@@ -129,19 +151,10 @@ func handle_ground_movement(delta: float):
 		velocity.y = jump_velocity
 	
 	if on_floor:
-		can_var_jump = true
 		can_coyote = true
 		coyote_timer_reset = true
 	
 	else:
-		###--- VARIABLE JUMP HEIGHT ---###
-		#if holding_jump and can_var_jump and not is_sliding:
-			#velocity.y += gravity_strength * delta  * 0.75
-		#else:
-			#if Input.is_action_just_released("jump") and can_var_jump and not is_sliding:
-			#	velocity.y = 0
-			#	can_var_jump = false
-		###---						---###
 		velocity.y += gravity_strength * delta
 	
 	if is_sliding:
@@ -201,23 +214,6 @@ func handle_air_movement():
 		
 		current_move_mode = Enums.MoveModes.GROUND
 
-func _physics_process(_delta: float) -> void:
-	handle_grapple_input()
-	match current_move_mode:
-		Enums.MoveModes.GROUND:
-			# Make sure the physics follow snaps to player position
-			# Use these functions instead of overriding position directly bc
-			# position propertie is effectively read only (eg will cause desync with physics server if written)
-			player_physics_follow.set_pos(global_position)
-			player_physics_follow.set_vel(velocity)
-		Enums.MoveModes.AIR:
-			pass
-			# If the player is in the air and the player is not moving and the arms are not connected
-			# we move the player down a bit to make sure the player doesn't get stuck in roofs
-			# also stops bouncing after hitting head for some reason
-			# if spring_joints[0] == null and spring_joints[1] == null and player_physics_follow.linear_velocity.x == 0 and player_physics_follow.linear_velocity.y == 0:
-			# 	player_physics_follow.set_pos(Vector2(player_physics_follow.global_position.x, player_physics_follow.global_position.y - 1))
-
 func handle_grapple_input():
 	if Input.is_action_just_pressed("grapple_left"):
 		set_grapple_target(Enums.Grapples.Left)
@@ -267,7 +263,7 @@ func set_grapple_target(side: int) -> void:
 	
 	if raycast.is_colliding():
 		# check that we are within the max distance
-		if raycast.get_collision_point().distance_to(global_position) <= max_distance or not has_max_distance:
+		if raycast.get_collision_point().distance_to(global_position) <= max_distance:
 			match side:
 				Enums.Grapples.Left:
 					grapple_target_positions[0] = raycast.get_collision_point()

@@ -13,15 +13,13 @@ var spring_joint: DampedSpringJoint2D
 
 func _init():
 	texture = loaded_texture
-	upgrade_name = "CHANGEME"
+	upgrade_name = "Grapple Arm Upgrade"
 
 # Called once every process frame
-func update_process(player: Player, root: Node):
+func update_process(player: Player, _root: Node):
 	match player.current_move_mode:
 		Enums.MoveModes.AIR:
 			player.global_position = player.player_physics_follow.global_position
-			
-					
 
 # Called once every physics frame
 # func update_physics(player: Player, root: Node):
@@ -32,13 +30,13 @@ func update_process(player: Player, root: Node):
 # 	pass
 
 # Called when an arm connects (e.g the spring is created)
-func _on_arm_connected(side: int, target_position: Vector2, target_body: PhysicsBody2D, player: Player, root: Node):
+func _on_arm_connected(_side: int, target_position: Vector2, target_body: PhysicsBody2D, player: Player, _root: Node):
 	var grapple_distance_vector = player.global_position - target_position
 	spring_joint = create_spring_joint(player.global_position, target_position, player.player_physics_follow, target_body, grapple_distance_vector.length(), grapple_distance_vector.length() - rest_distance)
 	player.current_move_mode = Enums.MoveModes.AIR
 
 # Called when an arm is released
-func _on_arm_released(side: int, player: Player, root: Node):
+func _on_arm_released(_side: int, _player: Player, _root: Node):
 	if spring_joint != null:
 		spring_joint.queue_free()
 
@@ -47,7 +45,7 @@ func _on_arm_released(side: int, player: Player, root: Node):
 # 	pass
 
 # Called when the player lands
-func _on_player_landed(player: Player, root: Node):
+func _on_player_landed(_player: Player, _root: Node):
 	if spring_joint != null:
 		spring_joint.queue_free()
 

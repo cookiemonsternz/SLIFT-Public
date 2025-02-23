@@ -59,7 +59,7 @@ func _process(delta: float) -> void:
 func draw_rope(delta: float) -> void:
 	if not straight_line:
 		if len(self.points) != 0:
-			if to_global(points[len(points) - 1]).distance_to(player.grapple_target_positions[side]) < 20:
+			if to_global(points[len(points) - 1]).distance_to(player.grapple_target_markers[side].global_position) < 20:
 				straight_line = true
 				player.grapple(side)
 			else:
@@ -71,20 +71,20 @@ func draw_rope(delta: float) -> void:
 		else:
 			wave_size = 0
 			if len(self.points) != 2:
-				self.points = [grapple_origin.global_position, player.grapple_target_positions[side]]
+				self.points = [grapple_origin.global_position, player.grapple_target_markers[side].global_position]
 			draw_rope_no_waves()
 
 func draw_rope_waves() -> void:
 	for i in range (0, precision):
 		var delta = float(i) / (precision - 1.0)
 		var offset = perpendicular_vector(player.grapple_distance_vectors[side]).normalized() * animation_curve.sample_baked(delta) * wave_size
-		var target_position = grapple_origin.global_position.lerp(player.grapple_target_positions[side], delta) + offset * animation_scale
+		var target_position = grapple_origin.global_position.lerp(player.grapple_target_markers[side].global_position, delta) + offset * animation_scale
 		var current_position = grapple_origin.global_position.lerp(target_position, rope_progression_curve.sample_baked(move_time * rope_progression_speed))
 		set_point_position(i, to_local(current_position))
 
 func draw_rope_no_waves():
 	set_point_position(0, to_local(grapple_origin.global_position))
-	set_point_position(1, to_local(player.grapple_target_positions[side]))
+	set_point_position(1, to_local(player.grapple_target_markers[side].global_position))
 
 
 func perpendicular_vector(v: Vector2) -> Vector2:

@@ -15,19 +15,16 @@ class_name Player extends CharacterBody2D
 @export_subgroup("Distance")
 @export var has_max_distance: bool = false
 @export var max_distance: float = 1000
-@export var rest_distance: float = 250
 
 @export_subgroup("Launching")
 @export var launch_type: Enums.LaunchType = Enums.LaunchType.Transform_Launch
-@export var launch_speed: float = 1
-@export var damping: float = 1
-@export var bias: float = 0
 
 var grapple_distance_vectors: Array[Vector2] = [Vector2.ZERO, Vector2.ZERO]
 var grapple_target_positions: Array[Vector2] = [Vector2.ZERO, Vector2.ZERO]
 
 # The target body which the grapple connects to
 var grapple_targets: Array[PhysicsBody2D] = [null, null]
+var grapple_target_markers: Array[Node2D] = [null, null]
 # Normally null, init a new one when we need it
 # Need to refactor this if we want multiple grapples (l/r)
 var spring_joints: Array[DampedSpringJoint2D] = [null, null]
@@ -63,10 +60,7 @@ var is_dead = false
 var can_coyote: bool = false
 var coyote_jump_available := true
 var coyote_timer_reset := true
-var current_move_mode := Enums.MoveModes.GROUND :
-	set(value):
-		print("CHANGING MOVE MODE TO : ", value)
-		current_move_mode = value
+var current_move_mode := Enums.MoveModes.GROUND
 var is_sliding := false
 var can_var_jump := true
 var vel_x: float = 0
@@ -80,6 +74,11 @@ func _ready() -> void:
 		printerr("Player died, last damage : ", damage, ", damage type : ", damage_type, ", damage source : ", damage_source)
 		modulate = Color(1.0, 0.0, 0.0)
 	health_component.entity_died.connect(callable)
+
+	var grapple_upgrade = GrappleArmUpgrade.new()
+	arm_upgrade_component.add_upgrade(Enums.Grapples.Left, 0, grapple_upgrade)
+	var grapple_upgrade2 = GrappleArmUpgrade.new()
+	arm_upgrade_component.add_upgrade(Enums.Grapples.Right, 0, grapple_upgrade2)
 
 func _process(delta: float) -> void:
 	if death_screen.visible == true:
@@ -108,7 +107,6 @@ func _process(delta: float) -> void:
 func handle_ground_movement(delta: float):
 	var input_chosen = Input.get_axis("move_left", "move_right")
 	var hit_jump = Input.is_action_just_pressed("player_jump")
-	var holding_jump = Input.is_action_pressed("player_jump")
 	var on_floor = is_on_floor()
 		
 	if can_coyote and velocity.y > 0 and coyote_timer_reset:
@@ -181,7 +179,7 @@ func handle_sliding(input_chosen: float, delta: float):
 
 func handle_air_movement():
 	# Set position to the rigidbody position
-	global_position = player_physics_follow.global_position
+	# global_position = player_physics_follow.global_position
 
 	if not ground_is_colliding():
 		is_sliding = false
@@ -195,12 +193,10 @@ func handle_air_movement():
 			is_sliding = true
 		
 		# Delete arms and disable ropes
-		if spring_joints[1] != null:
-			spring_joints[1].queue_free()
+		if rope2.enabled:
 			rope2.disable()
 		
-		if spring_joints[0] != null:
-			spring_joints[0].queue_free()
+		if rope1.enabled:
 			rope1.disable()
 		
 		current_move_mode = Enums.MoveModes.GROUND
@@ -215,11 +211,12 @@ func _physics_process(_delta: float) -> void:
 			player_physics_follow.set_pos(global_position)
 			player_physics_follow.set_vel(velocity)
 		Enums.MoveModes.AIR:
+			pass
 			# If the player is in the air and the player is not moving and the arms are not connected
 			# we move the player down a bit to make sure the player doesn't get stuck in roofs
 			# also stops bouncing after hitting head for some reason
-			if spring_joints[0] == null and spring_joints[1] == null and player_physics_follow.linear_velocity.x == 0 and player_physics_follow.linear_velocity.y == 0:
-				player_physics_follow.set_pos(Vector2(player_physics_follow.global_position.x, player_physics_follow.global_position.y - 1))
+			# if spring_joints[0] == null and spring_joints[1] == null and player_physics_follow.linear_velocity.x == 0 and player_physics_follow.linear_velocity.y == 0:
+			# 	player_physics_follow.set_pos(Vector2(player_physics_follow.global_position.x, player_physics_follow.global_position.y - 1))
 
 func handle_grapple_input():
 	if Input.is_action_just_pressed("grapple_left"):
@@ -227,8 +224,8 @@ func handle_grapple_input():
 		arm_upgrade_component.arm_shot(Enums.Grapples.Left)
 	elif Input.is_action_just_released("grapple_left"):
 		rope1.disable()
-		if spring_joints[0] != null:
-			spring_joints[0].queue_free()
+		# if spring_joints[0] != null:
+		# 	spring_joints[0].queue_free()
 		if grapple_targets[0] != null:
 			# This case is for the temporary static body that is spawned when shooting at tilemaps
 			# As tilemaps are not physics body's we need to create one to attach the spring to, but after 
@@ -236,6 +233,9 @@ func handle_grapple_input():
 			if grapple_targets[0].name == "DELETE_ME1":
 				grapple_targets[0].queue_free()
 			grapple_targets[0] = null
+		if grapple_target_markers[0] != null:
+			grapple_target_markers[0].queue_free()
+			grapple_target_markers[0] = null
 		arm_upgrade_component.arm_released(Enums.Grapples.Left)
 	
 	# etc. etc.
@@ -244,12 +244,15 @@ func handle_grapple_input():
 		arm_upgrade_component.arm_shot(Enums.Grapples.Right)
 	elif Input.is_action_just_released("grapple_right"):
 		rope2.disable()
-		if spring_joints[1] != null:
-			spring_joints[1].queue_free()
+		# if spring_joints[1] != null:
+		# 	spring_joints[1].queue_free()
 		if grapple_targets[1] != null:
 			if grapple_targets[1].name == "DELETE_ME2":
 				grapple_targets[1].queue_free()
 			grapple_targets[1] = null
+		if grapple_target_markers[1] != null:
+			grapple_target_markers[1].queue_free()
+			grapple_target_markers[1] = null
 		arm_upgrade_component.arm_released(Enums.Grapples.Right)
 
 
@@ -280,9 +283,20 @@ func set_grapple_target(side: int) -> void:
 						get_tree().root.add_child(temp_static_body)
 
 						grapple_targets[0] = temp_static_body
+
+						var temp_marker = Node2D.new()
+						temp_marker.name = "DELETE_ME1"
+						grapple_targets[0].add_child(temp_marker)
+						grapple_target_markers[0] = temp_marker
+						temp_marker.global_position = grapple_target_positions[0]
 					else:
 						# Otherwise just use the colliding physics body
 						grapple_targets[0] = raycast.get_collider()
+						var temp_marker = Node2D.new()
+						temp_marker.name = "DELETE_ME1"
+						grapple_targets[0].add_child(temp_marker)
+						grapple_target_markers[0] = temp_marker
+						temp_marker.global_position = grapple_target_positions[0]
 					
 					rope1.enable()
 				Enums.Grapples.Right:
@@ -296,10 +310,19 @@ func set_grapple_target(side: int) -> void:
 						temp_static_body.name = "DELETE_ME2"
 
 						get_tree().root.add_child(temp_static_body)
-
 						grapple_targets[1] = temp_static_body
+						var temp_marker = Node2D.new()
+						temp_marker.name = "DELETE_ME2"
+						grapple_targets[1].add_child(temp_marker)
+						grapple_target_markers[1] = temp_marker
+						temp_marker.global_position = grapple_target_positions[1]
 					else:
 						grapple_targets[1] = raycast.get_collider()
+						var temp_marker = Node2D.new()
+						temp_marker.name = "DELETE_ME2"
+						grapple_targets[1].add_child(temp_marker)
+						grapple_target_markers[1] = temp_marker
+						temp_marker.global_position = grapple_target_positions[1]
 					
 					rope2.enable()
 
@@ -311,57 +334,11 @@ func grapple(side: int) -> void:
 			# Do delete timer is used to delete arms if the player is still on the ground when the timer runs out.
 			do_delete_timer.start()
 
-			current_move_mode = Enums.MoveModes.AIR
-
 			match side:
 				Enums.Grapples.Left:
-					# Create a spring and call the relevant func on all arm upgrades.
-					spring_joints[0] = create_spring_joint(global_position, grapple_target_positions[0], player_physics_follow, grapple_targets[0], grapple_distance_vectors[0].length(), grapple_distance_vectors[0].length() - rest_distance)
-					arm_upgrade_component.arm_connected(Enums.Grapples.Left, grapple_target_positions[0])
-					###--- GRAPPLE ARM LENGTH EQUALISATION ---###
-					#if spring_joints[1] != null:
-						#spring_joints[1].rest_length = grapple_distance_vectors[0].length() - rest_distance
-					###---                                 ---###
-				# etc. etc.
+					arm_upgrade_component.arm_connected(Enums.Grapples.Left, grapple_target_positions[0], grapple_targets[0])
 				Enums.Grapples.Right:
-					spring_joints[1] = create_spring_joint(global_position, grapple_target_positions[1], player_physics_follow, grapple_targets[1], grapple_distance_vectors[1].length(), grapple_distance_vectors[1].length() - rest_distance)
-					arm_upgrade_component.arm_connected(Enums.Grapples.Right, grapple_target_positions[1])
-					#if spring_joints[0] != null:
-						#spring_joints[0].rest_length = grapple_distance_vectors[1].length() - rest_distance
-			
-
-func create_spring_joint(point_a: Vector2, point_b: Vector2, body_a: PhysicsBody2D, body_b: PhysicsBody2D, length: float, rest_length: float) -> DampedSpringJoint2D:
-	
-	# This stops the bug when if you spam grapples eventually it will try to set one of the nodes to null
-	# This is possibly due to raycast2d inconsistencies?
-	# TODO : Find a better solution
-	if body_a == null or body_b == null:
-		return DampedSpringJoint2D.new()
-	var spring = DampedSpringJoint2D.new()
-	
-	# Need to set all length and other spring vars before attaching nodes or adding to tree
-
-	spring.length = length
-	spring.rest_length = max(rest_length, 30)
-	
-	spring.stiffness = launch_speed
-	
-	spring.damping = damping
-	
-	spring.bias = bias
-	
-	spring.disable_collision = false
-	
-	spring.global_position = point_a
-	spring.look_at(point_b)
-	spring.rotation_degrees -= 90
-	
-	spring.node_a = body_a.get_path()
-	spring.node_b = body_b.get_path()
-	
-	get_tree().root.add_child(spring)
-	
-	return spring
+					arm_upgrade_component.arm_connected(Enums.Grapples.Right, grapple_target_positions[1], grapple_targets[1])
 
 
 func _on_button_pressed() -> void:

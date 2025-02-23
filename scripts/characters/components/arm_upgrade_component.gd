@@ -59,17 +59,17 @@ func arm_shot(side: int):
 			if upgrade.has_method("_on_arm_shot"):
 				upgrade._on_arm_shot(side, player, root)
 
-func arm_connected(side: int, target_position: Vector2):
+func arm_connected(side: int, target_position: Vector2, target_body: PhysicsBody2D):
 	var player = get_tree().get_first_node_in_group("Player")
 	var root = get_tree().root
 	if side == Enums.Grapples.Left:
 		for upgrade in installed_upgrades_left:
 			if upgrade.has_method("_on_arm_connected"):
-				upgrade._on_arm_connected(side, target_position, player, root)
+				upgrade._on_arm_connected(side, target_position, target_body, player, root)
 	elif side == Enums.Grapples.Right:
 		for upgrade in installed_upgrades_right:
 			if upgrade.has_method("_on_arm_connected"):
-				upgrade._on_arm_connected(side, target_position, player, root)
+				upgrade._on_arm_connected(side, target_position, target_body, player, root)
 
 func arm_released(side: int):
 	var player = get_tree().get_first_node_in_group("Player")

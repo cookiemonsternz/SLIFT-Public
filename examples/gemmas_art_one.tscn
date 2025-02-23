@@ -19,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://bnloo8slqycyf" path="res://assets/Images/rock_smart_shape_2d/fill_1.png" id="17_ljftl"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/shape_material.gd" id="18_qmhqh"]
 
-[sub_resource type="Resource" id="Resource_kt8r4"]
+[sub_resource type="Resource" id="Resource_bwvur"]
 script = ExtResource("2_gv5ql")
 texture_idx = 0
 flip = false
@@ -27,12 +27,12 @@ width = 1.0
 
 [sub_resource type="Resource" id="Resource_dh26o"]
 script = ExtResource("3_yi02a")
-position = Vector2(107, 213)
+position = Vector2(146.988, 213.421)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_kt8r4")
+properties = SubResource("Resource_bwvur")
 
-[sub_resource type="Resource" id="Resource_5t5en"]
+[sub_resource type="Resource" id="Resource_7mq0t"]
 script = ExtResource("2_gv5ql")
 texture_idx = 0
 flip = false
@@ -43,9 +43,9 @@ script = ExtResource("3_yi02a")
 position = Vector2(235.651, 172.467)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_5t5en")
+properties = SubResource("Resource_7mq0t")
 
-[sub_resource type="Resource" id="Resource_dpool"]
+[sub_resource type="Resource" id="Resource_2mns3"]
 script = ExtResource("2_gv5ql")
 texture_idx = 0
 flip = false
@@ -56,9 +56,9 @@ script = ExtResource("3_yi02a")
 position = Vector2(276.919, 332.189)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_dpool")
+properties = SubResource("Resource_2mns3")
 
-[sub_resource type="Resource" id="Resource_johpi"]
+[sub_resource type="Resource" id="Resource_i8hvr"]
 script = ExtResource("2_gv5ql")
 texture_idx = 0
 flip = false
@@ -66,12 +66,12 @@ width = 1.0
 
 [sub_resource type="Resource" id="Resource_kxq3s"]
 script = ExtResource("3_yi02a")
-position = Vector2(107, 213)
+position = Vector2(146.988, 213.421)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_johpi")
+properties = SubResource("Resource_i8hvr")
 
-[sub_resource type="Resource" id="Resource_u5pur"]
+[sub_resource type="Resource" id="Resource_vm3vp"]
 script = ExtResource("2_gv5ql")
 texture_idx = 0
 flip = false
@@ -82,7 +82,7 @@ script = ExtResource("3_yi02a")
 position = Vector2(575.168, 147.937)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_u5pur")
+properties = SubResource("Resource_vm3vp")
 
 [sub_resource type="Resource" id="Resource_ybjkl"]
 script = ExtResource("2_gv5ql")
@@ -97,7 +97,7 @@ point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
 properties = SubResource("Resource_ybjkl")
 
-[sub_resource type="Resource" id="Resource_0hi0r"]
+[sub_resource type="Resource" id="Resource_7mtqi"]
 script = ExtResource("2_gv5ql")
 texture_idx = 0
 flip = false
@@ -108,9 +108,9 @@ script = ExtResource("3_yi02a")
 position = Vector2(602.887, 278.29)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_0hi0r")
+properties = SubResource("Resource_7mtqi")
 
-[sub_resource type="Resource" id="Resource_4f05a"]
+[sub_resource type="Resource" id="Resource_8rs54"]
 script = ExtResource("2_gv5ql")
 texture_idx = 0
 flip = false
@@ -121,9 +121,9 @@ script = ExtResource("3_yi02a")
 position = Vector2(618.755, 191.234)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_4f05a")
+properties = SubResource("Resource_8rs54")
 
-[sub_resource type="Resource" id="Resource_yra2r"]
+[sub_resource type="Resource" id="Resource_pm511"]
 script = ExtResource("2_gv5ql")
 texture_idx = 0
 flip = false
@@ -131,10 +131,10 @@ width = 1.0
 
 [sub_resource type="Resource" id="Resource_akyqk"]
 script = ExtResource("3_yi02a")
-position = Vector2(393.83, 135.268)
+position = Vector2(369.897, 165.593)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_yra2r")
+properties = SubResource("Resource_pm511")
 
 [sub_resource type="Resource" id="Resource_koh7q"]
 script = ExtResource("4_cg5p0")
@@ -281,4 +281,4 @@ collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 visible = false
 modulate = Color(1, 1, 1, 0.3)
-polygon = PackedVector2Array(107, 213, 235.651, 172.467, 393.83, 135.268, 575.168, 147.937, 618.755, 191.234, 602.887, 278.29, 495.557, 335.612, 276.919, 332.189, 107, 213)
+polygon = PackedVector2Array(146.988, 213.421, 235.651, 172.467, 369.897, 165.593, 575.168, 147.937, 618.755, 191.234, 602.887, 278.29, 495.557, 335.612, 276.919, 332.189, 146.988, 213.421)

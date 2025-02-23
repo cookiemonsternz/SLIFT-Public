@@ -12,7 +12,8 @@ enum Grapples {
 
 enum MoveModes {
 	GROUND, 
-	AIR
+	AIR,
+	DASH
 }
 
 enum DamageType {

@@ -12,7 +12,7 @@ func update_physics(player: Player, root: Node):
 func _on_arm_shot(side: Enums.Grapples, player: Player, root: Node):
 	pass
 
-func _on_arm_connected(side: Enums.Grapples, target_position: Vector2, player: Player, root: Node):
+func _on_arm_connected(side: Enums.Grapples, target_position: Vector2, target_body: PhysicsBody2D, player: Player, root: Node):
 	pass
 
 func _on_arm_released(side: Enums.Grapples, player: Player, root: Node):

@@ -69,8 +69,6 @@ raycast = NodePath("GrappleComponentS/RayCast2D")
 player_physics_follow = NodePath("GrappleComponentS/PlayerPhysicsFollow")
 do_delete_timer = NodePath("DoDeleteTimer")
 launch_type = 1
-launch_speed = 20.0
-damping = 0.9
 jump_buffer_timer = NodePath("JumpBufferTimer")
 coyote_time_timer = NodePath("CoyoteTimeTimer")
 ground_casts = NodePath("GroundCasts")
@@ -158,7 +156,8 @@ physics_interpolation_mode = 1
 texture = SubResource("Texture2D_7im1b")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.75, 0.75)
+zoom = Vector2(0.5, 0.5)
+process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 15.0
 

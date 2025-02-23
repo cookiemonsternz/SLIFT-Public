@@ -30,7 +30,7 @@ func update_physics(player: Player, root: Node):
 	#pass
 
 # Called when an arm connects (e.g the spring is created)
-func _on_arm_connected(side: int, target_position: Vector2, player: Player, root: Node):
+func _on_arm_connected(side: int, target_position: Vector2, target_body: PhysicsBody2D, player: Player, root: Node):
 	queue_yank = true
 	queued_target_pos = target_position
 	queued_side = side

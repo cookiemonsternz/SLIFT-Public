@@ -13,6 +13,7 @@ config_version=5
 config/name="SLIFT"
 run/main_scene="res://scenes/demo_level.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
+run/max_fps=144
 config/icon="res://assets/icon.svg"
 
 [autoload]
@@ -23,11 +24,9 @@ Enums="*res://scripts/enums.gd"
 
 window/size/viewport_width=1820
 window/size/viewport_height=980
-window/size/resizable=false
-window/size/borderless=true
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_width"
-window/vsync/vsync_mode=0
+window/vsync/vsync_mode=2
 
 [editor_plugins]
 
@@ -99,5 +98,10 @@ quit={
 
 [physics]
 
+common/physics_ticks_per_second=120
 common/physics_jitter_fix=0.0
 common/physics_interpolation=true
+
+[rendering]
+
+anti_aliasing/quality/msaa_2d=1

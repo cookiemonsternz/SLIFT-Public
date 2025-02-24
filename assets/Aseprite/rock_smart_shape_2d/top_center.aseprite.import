@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://8apfpu7wj3i5"
+path="res://.godot/imported/top_center.aseprite-0f587e50fff12bc91072c374af034130.res"
+
+[deps]
+
+source_file="res://assets/Aseprite/rock_smart_shape_2d/top_center.aseprite"
+dest_files=["res://.godot/imported/top_center.aseprite-0f587e50fff12bc91072c374af034130.res"]
+
+[params]
+

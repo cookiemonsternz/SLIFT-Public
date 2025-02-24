@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://beptvgdjblyce"
+path="res://.godot/imported/smart_shape_2d.ase-f1eca985875531762fdf470111a7761f.res"
+
+[deps]
+
+source_file="res://assets/Aseprite/rock_smart_shape_2d/smart_shape_2d.ase"
+dest_files=["res://.godot/imported/smart_shape_2d.ase-f1eca985875531762fdf470111a7761f.res"]
+
+[params]
+

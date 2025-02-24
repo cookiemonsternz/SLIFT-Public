@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b0ay5w2mtfn5r"
-path="res://.godot/imported/top_center.png-45b86d0e6c4158e76f94a2ba5783773d.ctex"
+path="res://.godot/imported/top_center.png-dcee4f28c5f10b2717fda226a9d7e713.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Images/chris_rock_smart_shape_2d/top_center.png"
-dest_files=["res://.godot/imported/top_center.png-45b86d0e6c4158e76f94a2ba5783773d.ctex"]
+source_file="res://assets/Images/rock_smart_shape_2d/top_center.png"
+dest_files=["res://.godot/imported/top_center.png-dcee4f28c5f10b2717fda226a9d7e713.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bwa6y748p6brx"
-path="res://.godot/imported/pebble_taper_right.png-76478ba4f1fac35a97eb75c3d1af1de8.ctex"
+path="res://.godot/imported/pebble_taper_right.png-b3832ac1ac31def1fa920f6e4dfb5586.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Images/rock_smart_shape_2d/pebble_taper_right.png"
-dest_files=["res://.godot/imported/pebble_taper_right.png-76478ba4f1fac35a97eb75c3d1af1de8.ctex"]
+source_file="res://assets/Images/_UNUSED_rock_smart_shape_2d/pebble_taper_right.png"
+dest_files=["res://.godot/imported/pebble_taper_right.png-b3832ac1ac31def1fa920f6e4dfb5586.ctex"]
 
 [params]
 

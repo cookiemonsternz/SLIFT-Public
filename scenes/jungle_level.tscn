@@ -1291,7 +1291,7 @@ shape = SubResource("RectangleShape2D_ajj0d")
 texture = SubResource("Texture2D_468j6")
 
 [node name="Player" parent="." instance=ExtResource("1_u4u4q")]
-position = Vector2(13075, 2067)
+position = Vector2(465, -498)
 
 [node name="Button" parent="." node_paths=PackedStringArray("linked_door") instance=ExtResource("7_8wwkk")]
 position = Vector2(37088, 19189)

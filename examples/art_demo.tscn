@@ -1,24 +1,31 @@
-[gd_scene load_steps=66 format=4 uid="uid://cem68wgd3m8lp"]
+[gd_scene load_steps=49 format=4 uid="uid://cem68wgd3m8lp"]
 
 [ext_resource type="Script" path="res://addons/rmsmartshape/shapes/shape_closed.gd" id="1_dfoti"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/vertex_properties.gd" id="2_mnaib"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/shapes/point.gd" id="3_fnrc7"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/shapes/point_array.gd" id="4_240xg"]
-[ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="5_e8fpo"]
-[ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material.gd" id="6_gqlxx"]
-[ext_resource type="Texture2D" uid="uid://b0ay5w2mtfn5r" path="res://assets/Images/chris_rock_smart_shape_2d/top_center.png" id="7_y31bf"]
-[ext_resource type="Texture2D" uid="uid://6tg05wjnjsnx" path="res://assets/Images/chris_rock_smart_shape_2d/top_taper_left.png" id="8_2hy5x"]
-[ext_resource type="Texture2D" uid="uid://c7bbf271iawwr" path="res://assets/Images/chris_rock_smart_shape_2d/top_taper_right.png" id="9_2si8s"]
-[ext_resource type="Script" path="res://addons/rmsmartshape/normal_range.gd" id="10_h4sw8"]
-[ext_resource type="Texture2D" uid="uid://hwxme3glfxen" path="res://assets/Images/chris_rock_smart_shape_2d/all_around.png" id="11_j33jk"]
-[ext_resource type="Texture2D" uid="uid://drqjiduurdaym" path="res://assets/Images/chris_rock_smart_shape_2d/all_around_taper_left.png" id="12_bw1hi"]
-[ext_resource type="Texture2D" uid="uid://c4wtbc5tece82" path="res://assets/Images/chris_rock_smart_shape_2d/all_around_taper_right.png" id="13_erscn"]
-[ext_resource type="Texture2D" uid="uid://b6ieew0k1pmf4" path="res://assets/Images/chris_rock_smart_shape_2d/fill.png" id="14_q6ohp"]
-[ext_resource type="Script" path="res://addons/rmsmartshape/materials/shape_material.gd" id="15_iot56"]
+[ext_resource type="Resource" uid="uid://dd1oj6th6i4p5" path="res://assets/rock_material.tres" id="6_lbukw"]
 [ext_resource type="Texture2D" uid="uid://cgv2eyr5csafp" path="res://assets/Images/rocks_and_shrubs.png" id="16_pq12e"]
 [ext_resource type="Texture2D" uid="uid://ce6us03tvq1jm" path="res://assets/Images/merged_shrubs.png" id="17_bava4"]
 [ext_resource type="Texture2D" uid="uid://5r0yoxd42v20" path="res://assets/Images/fly.png" id="18_mmmnr"]
 [ext_resource type="PackedScene" uid="uid://brkdvlqw0t3sp" path="res://scenes/characters/player.tscn" id="19_tvpq7"]
+
+[sub_resource type="Curve" id="Curve_ohvje"]
+_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.869565, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_5jx44"]
+curve = SubResource("Curve_ohvje")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_r8n1y"]
+particle_flag_disable_z = true
+emission_shape = 3
+emission_box_extents = Vector3(400, 400, 1)
+spread = 180.0
+initial_velocity_min = 2.0
+initial_velocity_max = 8.0
+gravity = Vector3(0, 0, 0)
+scale_curve = SubResource("CurveTexture_5jx44")
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_22gd8"]
 polygon = PackedVector2Array(661.036, 258.909, 710.035, 255.903, 729.035, 255.9, 744.036, 259.898, 748.036, 259.897, 768.035, 257.895, 799.035, 255.89, 806.035, 254.889, 813.035, 252.888, 826.035, 251.887, 862.035, 253.882, 879.035, 255.879, 888.035, 257.878, 903.036, 261.876, 932.037, 269.872, 938.037, 272.871, 942.038, 276.871, 947.039, 282.87, 962.045, 325.868, 963.045, 329.868, 963.046, 332.868, 963.046, 335.868, 962.047, 338.868, 960.047, 341.868, 959.697, 336.271, 957.424, 340.156, 951.18, 350.79, 944.388, 367.945, 943.352, 370.546, 941.858, 372.978, 939.931, 375.247, 937.6, 377.36, 931.829, 381.142, 924.761, 384.372, 907.594, 389.375, 887.819, 392.765, 817.076, 398.096, 812.307, 398.16, 810.176, 397.872, 808.193, 397.38, 806.342, 396.69, 804.609, 395.808, 801.433, 393.496, 798.539, 390.494, 795.804, 386.853, 790.313, 377.861, 775.772, 354.466, 764.736, 340.882, 749.867, 326.586, 721.472, 328.458, 709.451, 327.468, 698.783, 325.432, 689.394, 322.531, 681.209, 318.942, 674.154, 314.845, 668.156, 310.419, 659.035, 301.297, 653.252, 293.007, 650.216, 286.983, 649.336, 284.656, 646.549, 282.468, 644.108, 280.119, 641.894, 277.277, 641.09, 275.751, 640.802, 274.976, 640.603, 274.198, 640.506, 273.422, 640.521, 272.651, 639.038, 274.912, 639.037, 272.912, 639.037, 270.912, 639.037, 269.912, 641.037, 267.912, 643.037, 266.912, 646.036, 264.911, 650.036, 262.911)
@@ -103,7 +110,7 @@ properties = SubResource("Resource_r3u2n")
 
 [sub_resource type="Resource" id="Resource_lckjh"]
 script = ExtResource("2_mnaib")
-texture_idx = 0
+texture_idx = 1
 flip = false
 width = 1.0
 
@@ -213,82 +220,6 @@ tessellation_stages = 4
 tessellation_tolerance = 6.0
 curve_bake_interval = 20.0
 
-[sub_resource type="Resource" id="Resource_m8nbw"]
-script = ExtResource("6_gqlxx")
-textures = Array[Texture2D]([ExtResource("7_y31bf")])
-textures_corner_outer = Array[Texture2D]([])
-textures_corner_inner = Array[Texture2D]([])
-textures_taper_left = Array[Texture2D]([ExtResource("8_2hy5x")])
-textures_taper_right = Array[Texture2D]([ExtResource("9_2si8s")])
-textures_taper_corner_left = Array[Texture2D]([])
-textures_taper_corner_right = Array[Texture2D]([])
-randomize_texture = false
-use_corner_texture = false
-use_taper_texture = true
-fit_mode = 0
-
-[sub_resource type="Resource" id="Resource_r8wx2"]
-script = ExtResource("10_h4sw8")
-begin = 35.0
-distance = 100.0
-edgeRendering = Vector2(0, 0)
-
-[sub_resource type="Resource" id="Resource_ma3qy"]
-script = ExtResource("5_e8fpo")
-edge_material = SubResource("Resource_m8nbw")
-normal_range = SubResource("Resource_r8wx2")
-weld = true
-taper_sharp_corners = true
-render = true
-z_index = 0
-z_as_relative = true
-offset = -0.2
-
-[sub_resource type="Resource" id="Resource_qq55n"]
-script = ExtResource("6_gqlxx")
-textures = Array[Texture2D]([ExtResource("11_j33jk")])
-textures_corner_outer = Array[Texture2D]([])
-textures_corner_inner = Array[Texture2D]([])
-textures_taper_left = Array[Texture2D]([ExtResource("12_bw1hi")])
-textures_taper_right = Array[Texture2D]([ExtResource("13_erscn")])
-textures_taper_corner_left = Array[Texture2D]([])
-textures_taper_corner_right = Array[Texture2D]([])
-randomize_texture = false
-use_corner_texture = true
-use_taper_texture = true
-fit_mode = 0
-
-[sub_resource type="Resource" id="Resource_8ccqh"]
-script = ExtResource("10_h4sw8")
-begin = 0.0
-distance = 360.0
-edgeRendering = Vector2(0, 0)
-
-[sub_resource type="Resource" id="Resource_g6vmt"]
-script = ExtResource("5_e8fpo")
-edge_material = SubResource("Resource_qq55n")
-normal_range = SubResource("Resource_8ccqh")
-weld = false
-taper_sharp_corners = false
-render = true
-z_index = -1
-z_as_relative = true
-offset = -0.2
-
-[sub_resource type="Resource" id="Resource_kwh3a"]
-script = ExtResource("15_iot56")
-_edge_meta_materials = Array[ExtResource("5_e8fpo")]([SubResource("Resource_ma3qy"), SubResource("Resource_g6vmt")])
-fill_textures = Array[Texture2D]([ExtResource("14_q6ohp")])
-fill_texture_z_index = -2
-fill_texture_show_behind_parent = false
-fill_texture_scale = 1.0
-fill_texture_absolute_position = false
-fill_texture_absolute_rotation = false
-fill_texture_offset = Vector2(0, 0)
-fill_texture_angle_offset = 0.0
-fill_mesh_offset = 0.0
-render_offset = 0.0
-
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aty1y"]
 texture = ExtResource("16_pq12e")
 2:0/0 = 0
@@ -359,24 +290,16 @@ glow_bloom = 0.34
 adjustment_enabled = true
 adjustment_color_correction = SubResource("GradientTexture1D_3scmm")
 
-[sub_resource type="Curve" id="Curve_ohvje"]
-_data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(0.869565, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
-point_count = 3
-
-[sub_resource type="CurveTexture" id="CurveTexture_5jx44"]
-curve = SubResource("Curve_ohvje")
-
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_r8n1y"]
-particle_flag_disable_z = true
-emission_shape = 3
-emission_box_extents = Vector3(400, 400, 1)
-spread = 180.0
-initial_velocity_min = 2.0
-initial_velocity_max = 8.0
-gravity = Vector3(0, 0, 0)
-scale_curve = SubResource("CurveTexture_5jx44")
-
 [node name="Node2D" type="Node2D"]
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+z_index = -4
+texture_filter = 1
+position = Vector2(813, 327)
+amount = 64
+process_material = SubResource("ParticleProcessMaterial_r8n1y")
+texture = ExtResource("18_mmmnr")
+lifetime = 12.0
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
 rotation = 0.454682
@@ -398,19 +321,22 @@ texture_filter = 1
 texture_repeat = 2
 script = ExtResource("1_dfoti")
 _points = SubResource("Resource_c3l83")
-shape_material = SubResource("Resource_kwh3a")
+shape_material = ExtResource("6_lbukw")
 tessellation_stages = 4
+collision_generation_method = 1
+collision_size = 57.0
+collision_offset = 5.0
 collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
-visible = false
 modulate = Color(1, 1, 1, 0.3)
-polygon = PackedVector2Array(649.217, 266.118, 710.171, 260.418, 725.794, 260.379, 743.366, 263.435, 747.57, 263.775, 752.611, 263.574, 799.806, 260.674, 804.924, 258.665, 810.021, 257.336, 821.396, 256.277, 857.588, 257.442, 875.676, 258.651, 880.898, 259.593, 884.828, 260.777, 906.47, 268.211, 928.867, 273.56, 934.677, 275.965, 943.136, 280.904, 960.031, 325.471, 960.839, 327.478, 961.258, 329.334, 961.322, 331.091, 961.061, 332.799, 960.509, 334.509, 959.697, 336.271, 957.424, 340.156, 951.18, 350.79, 944.388, 367.945, 943.352, 370.546, 941.858, 372.978, 939.931, 375.247, 937.6, 377.36, 931.829, 381.142, 924.761, 384.372, 907.594, 389.375, 887.819, 392.765, 817.076, 398.096, 812.307, 398.16, 810.176, 397.872, 808.193, 397.38, 806.342, 396.69, 804.609, 395.808, 801.433, 393.496, 798.539, 390.494, 795.804, 386.853, 790.313, 377.861, 775.772, 354.466, 764.736, 340.882, 749.867, 326.586, 721.472, 328.458, 709.451, 327.468, 698.783, 325.432, 689.394, 322.531, 681.209, 318.942, 674.154, 314.845, 668.156, 310.419, 659.035, 301.297, 653.252, 293.007, 650.216, 286.983, 649.336, 284.656, 646.549, 282.468, 644.108, 280.119, 641.894, 277.277, 641.09, 275.751, 640.802, 274.976, 640.603, 274.198, 640.506, 273.422, 640.521, 272.651, 640.659, 271.889, 640.93, 271.14, 641.346, 270.409, 641.918, 269.7, 642.655, 269.016, 643.57, 268.361, 645.974, 267.156, 649.217, 266.118)
+polygon = PackedVector2Array(648.719, 263.68, 710.052, 257.923, 726.006, 257.896, 743.681, 260.957, 747.621, 261.279, 752.485, 261.078, 799.271, 258.257, 804.152, 256.291, 809.59, 254.88, 821.32, 253.782, 857.711, 254.945, 875.981, 256.173, 881.48, 257.165, 885.594, 258.398, 907.167, 265.812, 929.636, 271.187, 935.786, 273.73, 944.957, 279.363, 962.359, 324.561, 963.219, 326.735, 963.729, 329.013, 963.809, 331.234, 963.488, 333.372, 962.835, 335.416, 961.912, 337.425, 959.581, 341.421, 953.421, 351.884, 946.712, 368.868, 945.58, 371.664, 943.877, 374.442, 941.724, 376.983, 939.125, 379.333, 933.035, 383.325, 925.631, 386.71, 908.155, 391.808, 888.124, 395.245, 817.187, 400.593, 812.156, 400.65, 809.707, 400.325, 807.455, 399.765, 805.339, 398.976, 803.306, 397.934, 799.796, 395.375, 796.639, 392.113, 793.737, 388.256, 788.184, 379.172, 773.739, 355.915, 762.899, 342.572, 749.068, 328.774, 721.452, 330.952, 709.114, 329.942, 698.18, 327.855, 688.522, 324.871, 680.078, 321.168, 672.784, 316.932, 666.529, 312.31, 657.124, 302.897, 651.109, 294.285, 647.93, 287.988, 647.38, 286.092, 644.91, 284.353, 642.254, 281.789, 639.8, 278.629, 638.812, 276.77, 638.418, 275.721, 638.151, 274.662, 638.015, 273.553, 638.04, 272.404, 638.252, 271.24, 638.667, 270.095, 639.285, 269.006, 640.093, 267.999, 641.077, 267.082, 642.282, 266.226, 645.032, 264.847)
 
 [node name="ColorRect" type="ColorRect" parent="."]
 light_mask = 3
 visibility_layer = 3
-z_index = -8
+z_index = -14
+z_as_relative = false
 offset_left = 38.0
 offset_top = 11.0
 offset_right = 1447.0
@@ -430,14 +356,6 @@ color = Color(0.536495, 0.505829, 0.585938, 1)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_qrcev")
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
-texture_filter = 1
-position = Vector2(813, 327)
-amount = 64
-process_material = SubResource("ParticleProcessMaterial_r8n1y")
-texture = ExtResource("18_mmmnr")
-lifetime = 12.0
-
 [node name="Player" parent="." instance=ExtResource("19_tvpq7")]
-position = Vector2(774, 236)
+position = Vector2(778, 223)
 scale = Vector2(0.35, 0.35)

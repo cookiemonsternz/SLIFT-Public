@@ -2,11 +2,11 @@ class_name GrappleArmUpgrade extends ArmUpgrade
 
 var loaded_texture: Texture = preload("res://assets/Images/grapple_arm_upgrade.png")
 
-const launch_speed = 20
+const launch_speed = 15
 const damping = 0.9
 const bias = 0
 
-const rest_distance = 250
+const rest_distance = 170
 
 
 var spring_joint: DampedSpringJoint2D

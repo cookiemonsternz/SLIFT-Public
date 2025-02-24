@@ -217,6 +217,7 @@ scale = Vector2(1, 1)
 
 [node name="RoomLevelBlockout" type="Node2D" parent="."]
 modulate = Color(1, 1, 1, 0.156863)
+scale = Vector2(0.5, 0.5)
 
 [node name="Jungle Sub Area" type="Node2D" parent="RoomLevelBlockout"]
 
@@ -400,6 +401,7 @@ color = Color(0.6, 0.486275, 0.203922, 1)
 polygon = PackedVector2Array(54883, 12753, 54465, 12674, 53922, 12289, 53164, 12414, 52360, 12696, 53243, 12855, 53809, 13183, 54612, 13104, 54872, 13160)
 
 [node name="Blockout" type="Node2D" parent="."]
+scale = Vector2(0.5, 0.5)
 
 [node name="Jungle Sub Area" type="Node2D" parent="Blockout"]
 
@@ -1291,7 +1293,7 @@ shape = SubResource("RectangleShape2D_ajj0d")
 texture = SubResource("Texture2D_468j6")
 
 [node name="Player" parent="." instance=ExtResource("1_u4u4q")]
-position = Vector2(465, -498)
+position = Vector2(103, -187)
 
 [node name="Button" parent="." node_paths=PackedStringArray("linked_door") instance=ExtResource("7_8wwkk")]
 position = Vector2(37088, 19189)

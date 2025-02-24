@@ -1,6 +1,6 @@
 class_name YankArmUpgrade extends ArmUpgrade
 
-const YANK_AMOUNT = 400
+const YANK_AMOUNT = 200
 const YANK_AMOUNT_OBJECT = 80000
 
 var queue_yank: bool = false

@@ -10,18 +10,18 @@
 [ext_resource type="PackedScene" uid="uid://hjhxmdpa6ntd" path="res://scenes/characters/components/arm_upgrade_component.tscn" id="7_i54cr"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rh5mj"]
-radius = 32.0
-height = 126.0
+radius = 16.0
+height = 64.0
 
 [sub_resource type="Resource" id="Resource_12rae"]
 script = ExtResource("2_61cpy")
-width = 0.5
+width = 0.481
 
 [sub_resource type="Texture2D" id="Texture2D_7im1b"]
 resource_local_to_scene = false
 resource_name = ""
 script = ExtResource("1_42r4y")
-size = Vector2i(128, 128)
+size = Vector2i(64, 64)
 shape = SubResource("Resource_12rae")
 fill_type = 0
 fill_color = Color(1, 1, 1, 1)
@@ -39,8 +39,8 @@ offset = Vector2(0, 0)
 rotation = 0.0
 scale = Vector2(1, 1)
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l5py8"]
-polygon = PackedVector2Array(-5, -64, 7, -65, 17, -61, 26, -53, 32, -40, 32, 17, 32, 43, 23, 56, 12, 64, -11, 64, -25, 55, -32, 40, -33, 18, -33, -38, -28, -50, -20, -58, -12, -63)
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_lavc5"]
+polygon = PackedVector2Array(0, -32, 9, -29, 15, -21, 16, 18, 12, 27, 5, 32, -4, 32, -11, 28, -16, 20, -16, 6, -16, -18, -13, -24, -8, -30)
 
 [sub_resource type="Curve" id="Curve_5ylw7"]
 min_value = -1.0
@@ -55,8 +55,8 @@ point_count = 2
 friction = 0.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eru5a"]
-radius = 30.0
-height = 122.0
+radius = 16.0
+height = 64.0
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("grapple_origin", "rope1", "rope2", "raycast", "player_physics_follow", "do_delete_timer", "jump_buffer_timer", "coyote_time_timer", "ground_casts", "death_screen", "win_screen", "win_button", "health_component", "arm_upgrade_component") groups=["Player"]]
 collision_layer = 8
@@ -76,7 +76,12 @@ ground_casts = NodePath("GroundCasts")
 death_screen = NodePath("DeathScreen")
 win_screen = NodePath("WinScreen")
 win_button = NodePath("WinScreen/Button")
+jump_velocity = -350.0
+gravity_strength = 1000
+move_speed = 250.0
 coyote_time_time = 0.25
+slow_speed = 400
+stop_speed = 800
 health_component = NodePath("Components/HealthComponent")
 arm_upgrade_component = NodePath("Components/ArmUpgradeComponent")
 
@@ -156,7 +161,6 @@ shape = SubResource("CapsuleShape2D_rh5mj")
 texture = SubResource("Texture2D_7im1b")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.5, 0.5)
 process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 15.0
@@ -176,32 +180,32 @@ wait_time = 0.327
 one_shot = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-occluder = SubResource("OccluderPolygon2D_l5py8")
+occluder = SubResource("OccluderPolygon2D_lavc5")
 
 [node name="GroundCasts" type="Node2D" parent="."]
 
 [node name="GroundCast1" type="RayCast2D" parent="GroundCasts"]
-position = Vector2(-25, 0)
-target_position = Vector2(0, 67)
+position = Vector2(-12, 0)
+target_position = Vector2(0, 33)
 collision_mask = 51
 
 [node name="GroundCast2" type="RayCast2D" parent="GroundCasts"]
-position = Vector2(-12, 0)
-target_position = Vector2(0, 67)
+position = Vector2(-6, 0)
+target_position = Vector2(0, 33)
 collision_mask = 51
 
 [node name="GroundCast3" type="RayCast2D" parent="GroundCasts"]
-target_position = Vector2(0, 67)
+target_position = Vector2(0, 33)
 collision_mask = 51
 
 [node name="GroundCast4" type="RayCast2D" parent="GroundCasts"]
-position = Vector2(12, 0)
-target_position = Vector2(0, 67)
+position = Vector2(6, 0)
+target_position = Vector2(0, 33)
 collision_mask = 51
 
 [node name="GroundCast5" type="RayCast2D" parent="GroundCasts"]
-position = Vector2(25, 0)
-target_position = Vector2(0, 67)
+position = Vector2(12, 0)
+target_position = Vector2(0, 33)
 collision_mask = 51
 
 [node name="Components" type="Node" parent="."]
@@ -243,7 +247,9 @@ physics_interpolation_mode = 1
 top_level = true
 collision_layer = 64
 collision_mask = 37
+mass = 0.5
 physics_material_override = SubResource("PhysicsMaterial_djybv")
+gravity_scale = 0.5
 lock_rotation = true
 script = ExtResource("5_8xicw")
 
@@ -253,9 +259,6 @@ shape = SubResource("CapsuleShape2D_eru5a")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.1
 one_shot = true
-
-[node name="LightOccluder2D2" type="LightOccluder2D" parent="."]
-occluder = SubResource("OccluderPolygon2D_l5py8")
 
 [node name="ArmUpgradeUI" parent="." instance=ExtResource("2_fyt53")]
 visible = false

@@ -10,7 +10,7 @@ var stop_dash_timer : Timer
 
 
 const DASH_TIME = 0.6
-const DASH_SPEED = 900
+const DASH_SPEED = 450
 const DASH_MULTIPLIER = 2
 
 func _init():

@@ -2,13 +2,13 @@
 
 importer="aseprite_wizard.plugin.noop"
 type="PackedDataContainer"
-uid="uid://dvm6at0ikmj2h"
-path="res://.godot/imported/vines.ase-ea64daa668b7edc561f25b7e2652a0f9.res"
+uid="uid://b2f7drj5i3f41"
+path="res://.godot/imported/vines.ase-2d46616ca828e44fc1944b8702ac1abe.res"
 
 [deps]
 
-source_file="res://assets/aseprite/vines.ase"
-dest_files=["res://.godot/imported/vines.ase-ea64daa668b7edc561f25b7e2652a0f9.res"]
+source_file="res://assets/Aseprite/vines.ase"
+dest_files=["res://.godot/imported/vines.ase-2d46616ca828e44fc1944b8702ac1abe.res"]
 
 [params]
 

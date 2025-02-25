@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://c3wxkq4jmthgk" path="res://scenes/block.tscn" id="1_1upqg"]
 [ext_resource type="PackedScene" uid="uid://brkdvlqw0t3sp" path="res://scenes/characters/player.tscn" id="1_u4u4q"]
-[ext_resource type="TileSet" uid="uid://qag0bwndf7or" path="res://assets/godot_assets/testing_tileset.tres" id="3_0js3c"]
+[ext_resource type="TileSet" uid="uid://qag0bwndf7or" path="res://assets/testing_tileset.tres" id="3_0js3c"]
 [ext_resource type="PackedScene" uid="uid://cunvwyyo5nyju" path="res://scenes/characters/enemies/enemy_basic.tscn" id="3_ll2i5"]
 [ext_resource type="Script" path="res://scripts/environment/components/door_component.gd" id="4_30c34"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/shape_texture_2d.gd" id="5_mtndk"]

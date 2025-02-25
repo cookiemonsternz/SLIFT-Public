@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cxxiy4fqvyxvn"
+path="res://.godot/imported/arm_upgrade_ui_background.aseprite-a7b28398061ab2829e4596f9eb177171.res"
+
+[deps]
+
+source_file="res://assets/Images/arm_upgrade_ui_background.aseprite"
+dest_files=["res://.godot/imported/arm_upgrade_ui_background.aseprite-a7b28398061ab2829e4596f9eb177171.res"]
+
+[params]
+

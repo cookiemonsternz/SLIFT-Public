@@ -1,6 +1,6 @@
 class_name DashArmUpgrade extends ArmUpgrade
 
-var loaded_texture: Texture = preload("res://assets/images/ui/arm_upgrade_menu/arm_upgrades/dash_arm_upgrade.png")
+var loaded_texture: Texture = preload("res://assets/Images/dash_arm_upgrade.png")
 
 
 var arm_side: int = 0

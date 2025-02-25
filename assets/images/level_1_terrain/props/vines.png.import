@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bqls2c8qdvgi0"
-path="res://.godot/imported/vines.png-a89387a33726f6220009fe9eee686391.ctex"
+path="res://.godot/imported/vines.png-1c6f032122f9d3ba62905fab57e72500.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/level_1_terrain/props/vines.png"
-dest_files=["res://.godot/imported/vines.png-a89387a33726f6220009fe9eee686391.ctex"]
+source_file="res://assets/Images/level_1_terrain/props/vines.png"
+dest_files=["res://.godot/imported/vines.png-1c6f032122f9d3ba62905fab57e72500.ctex"]
 
 [params]
 

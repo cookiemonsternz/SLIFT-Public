@@ -3,12 +3,12 @@
 importer="aseprite_wizard.plugin.noop"
 type="PackedDataContainer"
 uid="uid://db4snyant5kkm"
-path="res://.godot/imported/dash_arm_upgrade.aseprite-173452b495b36e90871324fe21fce03d.res"
+path="res://.godot/imported/dash_arm_upgrade.aseprite-a5c4fdaeaa4bb8fbeb07badf81407c92.res"
 
 [deps]
 
-source_file="res://assets/aseprite/ui/arm_upgrade_ui/arm_upgrades/dash_arm_upgrade.aseprite"
-dest_files=["res://.godot/imported/dash_arm_upgrade.aseprite-173452b495b36e90871324fe21fce03d.res"]
+source_file="res://assets/Aseprite/ui/arm_upgrade_ui/arm_upgrades/dash_arm_upgrade.aseprite"
+dest_files=["res://.godot/imported/dash_arm_upgrade.aseprite-a5c4fdaeaa4bb8fbeb07badf81407c92.res"]
 
 [params]
 

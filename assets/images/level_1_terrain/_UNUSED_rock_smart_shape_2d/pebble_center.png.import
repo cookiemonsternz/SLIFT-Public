@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bc12dlcrh7req"
-path="res://.godot/imported/pebble_center.png-a9737088a14871036c40c30d286c9a40.ctex"
+path="res://.godot/imported/pebble_center.png-d97edb81c214ff23d3196a92c2a7c61e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/level_1_terrain/_UNUSED_rock_smart_shape_2d/pebble_center.png"
-dest_files=["res://.godot/imported/pebble_center.png-a9737088a14871036c40c30d286c9a40.ctex"]
+source_file="res://assets/Images/level_1_terrain/_UNUSED_rock_smart_shape_2d/pebble_center.png"
+dest_files=["res://.godot/imported/pebble_center.png-d97edb81c214ff23d3196a92c2a7c61e.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bqtoe77875jay"
-path="res://.godot/imported/rockus.png-7695436857d103a6a56c96cc1cf48ad4.ctex"
+path="res://.godot/imported/rockus.png-5363a45e6f11fd6bf77f1162cd9c7e9b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Aseprite/rock_smart_shape_2d/rockus.png"
-dest_files=["res://.godot/imported/rockus.png-7695436857d103a6a56c96cc1cf48ad4.ctex"]
+source_file="res://assets/Aseprite/level_1_terrain/rock_smart_shape_2d/rockus.png"
+dest_files=["res://.godot/imported/rockus.png-5363a45e6f11fd6bf77f1162cd9c7e9b.ctex"]
 
 [params]
 

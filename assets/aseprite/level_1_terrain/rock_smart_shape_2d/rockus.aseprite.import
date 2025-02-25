@@ -3,12 +3,12 @@
 importer="aseprite_wizard.plugin.noop"
 type="PackedDataContainer"
 uid="uid://cgv186g36qyfr"
-path="res://.godot/imported/rockus.aseprite-c3ec46a587daeaaed366217172ced5d5.res"
+path="res://.godot/imported/rockus.aseprite-5426e0c105ebde74bad2a987a2b5b070.res"
 
 [deps]
 
-source_file="res://assets/Aseprite/rock_smart_shape_2d/rockus.aseprite"
-dest_files=["res://.godot/imported/rockus.aseprite-c3ec46a587daeaaed366217172ced5d5.res"]
+source_file="res://assets/Aseprite/level_1_terrain/rock_smart_shape_2d/rockus.aseprite"
+dest_files=["res://.godot/imported/rockus.aseprite-5426e0c105ebde74bad2a987a2b5b070.res"]
 
 [params]
 

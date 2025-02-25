@@ -3077,21 +3077,8 @@ position = Vector2(5499, -723)
 color = Color(1, 0.394217, 0.37802, 1)
 polygon = PackedVector2Array(28634, 7250, 29066, 7642, 29658, 7882, 30170, 7274)
 
-[node name="Player" parent="." instance=ExtResource("2_uo0tt")]
+[node name="Player2" parent="." instance=ExtResource("2_uo0tt")]
 position = Vector2(1325, 2843)
-
-[node name="Node2D" parent="."]
-_import_path = NodePath("")
-unique_name_in_owner = false
-process_mode = 0
-process_priority = 0
-process_physics_priority = 0
-process_thread_group = 0
-physics_interpolation_mode = 0
-auto_translate_mode = 0
-editor_description = ""
-position = Vector2(3244, 2972)
-script = null
 
 [node name="Parallax2D" type="ParallaxBackground" parent="."]
 scroll_ignore_camera_zoom = true

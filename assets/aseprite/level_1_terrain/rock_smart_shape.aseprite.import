@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://6vn7o4iyh2v1"
+path="res://.godot/imported/rock_smart_shape.aseprite-d71f465a628049e360bd04712674767a.res"
+
+[deps]
+
+source_file="res://assets/aseprite/level_1_terrain/rock_smart_shape.aseprite"
+dest_files=["res://.godot/imported/rock_smart_shape.aseprite-d71f465a628049e360bd04712674767a.res"]
+
+[params]
+

@@ -8,7 +8,7 @@ var queued_target_pos: Vector2 = Vector2.ZERO
 var queued_side: int
 
 func _init() -> void:
-	texture = load("res://assets/Images/yank_arm_upgrade.png")
+	texture = load("res://assets/images/ui/arm_upgrade_menu/arm_upgrades/dash_arm_upgrade.png")
 	upgrade_name = "YankArmUpgrade"
 
 # Called once every process frame

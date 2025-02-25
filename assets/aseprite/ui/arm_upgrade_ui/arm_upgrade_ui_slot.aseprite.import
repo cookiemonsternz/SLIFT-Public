@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://d3id0giu680dh"
+path="res://.godot/imported/arm_upgrade_ui_slot.aseprite-a9718ac366550e99d3d97b10c0fb93f5.res"
+
+[deps]
+
+source_file="res://assets/aseprite/ui/arm_upgrade_ui/arm_upgrade_ui_slot.aseprite"
+dest_files=["res://.godot/imported/arm_upgrade_ui_slot.aseprite-a9718ac366550e99d3d97b10c0fb93f5.res"]
+
+[params]
+

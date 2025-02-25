@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cubxqmf8ty57u"
+path="res://.godot/imported/lamp_light_beam.aseprite-ccf21407bcc9221ffc9c8a988bbc58b2.res"
+
+[deps]
+
+source_file="res://assets/aseprite/light_shapes/lamp_light_beam.aseprite"
+dest_files=["res://.godot/imported/lamp_light_beam.aseprite-ccf21407bcc9221ffc9c8a988bbc58b2.res"]
+
+[params]
+

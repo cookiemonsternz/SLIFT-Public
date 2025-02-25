@@ -1,0 +1,89 @@
+[gd_resource type="Resource" script_class="SS2D_Material_Shape" load_steps=18 format=3 uid="uid://dd1oj6th6i4p5"]
+
+[ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="1_7t76t"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material.gd" id="2_l03v6"]
+[ext_resource type="Texture2D" uid="uid://b0ay5w2mtfn5r" path="res://assets/images/level_1_terrain/rock_smart_shape_2d/top_center.png" id="3_igcm5"]
+[ext_resource type="Texture2D" uid="uid://6tg05wjnjsnx" path="res://assets/images/level_1_terrain/rock_smart_shape_2d/top_taper_left.png" id="4_wyurj"]
+[ext_resource type="Texture2D" uid="uid://c7bbf271iawwr" path="res://assets/images/level_1_terrain/rock_smart_shape_2d/top_taper_right.png" id="5_5qvff"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/normal_range.gd" id="6_x4o2b"]
+[ext_resource type="Texture2D" uid="uid://hwxme3glfxen" path="res://assets/images/level_1_terrain/rock_smart_shape_2d/all_around.png" id="7_wje6g"]
+[ext_resource type="Texture2D" uid="uid://drqjiduurdaym" path="res://assets/images/level_1_terrain/rock_smart_shape_2d/all_around_taper_left.png" id="8_6gbep"]
+[ext_resource type="Texture2D" uid="uid://c4wtbc5tece82" path="res://assets/images/level_1_terrain/rock_smart_shape_2d/all_around_taper_right.png" id="9_a8rrr"]
+[ext_resource type="Texture2D" uid="uid://b6ieew0k1pmf4" path="res://assets/images/level_1_terrain/rock_smart_shape_2d/fill.png" id="10_kuy35"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/materials/shape_material.gd" id="11_e6pin"]
+
+[sub_resource type="Resource" id="Resource_m8nbw"]
+script = ExtResource("2_l03v6")
+textures = Array[Texture2D]([ExtResource("3_igcm5")])
+textures_corner_outer = Array[Texture2D]([])
+textures_corner_inner = Array[Texture2D]([])
+textures_taper_left = Array[Texture2D]([ExtResource("4_wyurj")])
+textures_taper_right = Array[Texture2D]([ExtResource("5_5qvff")])
+textures_taper_corner_left = Array[Texture2D]([])
+textures_taper_corner_right = Array[Texture2D]([])
+randomize_texture = false
+use_corner_texture = false
+use_taper_texture = true
+fit_mode = 0
+
+[sub_resource type="Resource" id="Resource_r8wx2"]
+script = ExtResource("6_x4o2b")
+begin = 35.0
+distance = 100.0
+edgeRendering = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_ma3qy"]
+script = ExtResource("1_7t76t")
+edge_material = SubResource("Resource_m8nbw")
+normal_range = SubResource("Resource_r8wx2")
+weld = true
+taper_sharp_corners = true
+render = true
+z_index = 0
+z_as_relative = true
+offset = -0.2
+
+[sub_resource type="Resource" id="Resource_qq55n"]
+script = ExtResource("2_l03v6")
+textures = Array[Texture2D]([ExtResource("7_wje6g")])
+textures_corner_outer = Array[Texture2D]([])
+textures_corner_inner = Array[Texture2D]([])
+textures_taper_left = Array[Texture2D]([ExtResource("8_6gbep")])
+textures_taper_right = Array[Texture2D]([ExtResource("9_a8rrr")])
+textures_taper_corner_left = Array[Texture2D]([])
+textures_taper_corner_right = Array[Texture2D]([])
+randomize_texture = false
+use_corner_texture = true
+use_taper_texture = true
+fit_mode = 0
+
+[sub_resource type="Resource" id="Resource_8ccqh"]
+script = ExtResource("6_x4o2b")
+begin = 0.0
+distance = 360.0
+edgeRendering = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_g6vmt"]
+script = ExtResource("1_7t76t")
+edge_material = SubResource("Resource_qq55n")
+normal_range = SubResource("Resource_8ccqh")
+weld = false
+taper_sharp_corners = false
+render = true
+z_index = -1
+z_as_relative = true
+offset = -0.2
+
+[resource]
+script = ExtResource("11_e6pin")
+_edge_meta_materials = Array[ExtResource("1_7t76t")]([SubResource("Resource_ma3qy"), SubResource("Resource_g6vmt")])
+fill_textures = Array[Texture2D]([ExtResource("10_kuy35")])
+fill_texture_z_index = -2
+fill_texture_show_behind_parent = false
+fill_texture_scale = 2.0
+fill_texture_absolute_position = false
+fill_texture_absolute_rotation = false
+fill_texture_offset = Vector2(0, 0)
+fill_texture_angle_offset = 0.0
+fill_mesh_offset = 0.0
+render_offset = 0.0

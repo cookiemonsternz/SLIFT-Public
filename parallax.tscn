@@ -1,0 +1,80 @@
+[gd_scene load_steps=9 format=3 uid="uid://cglpht8m4qi3b"]
+
+[ext_resource type="Script" path="res://addons/shape_texture_2d/shape_texture_2d.gd" id="1_asggo"]
+[ext_resource type="Texture2D" uid="uid://3e6o02ee32nu" path="res://assets/Images/mountain_bg.png" id="1_rousx"]
+[ext_resource type="Texture2D" uid="uid://by1wovjpib6xm" path="res://assets/Images/mountain_lower_bg.png" id="2_m10yg"]
+[ext_resource type="Script" path="res://addons/shape_texture_2d/drawable_rectangle.gd" id="2_vuhah"]
+[ext_resource type="PackedScene" uid="uid://brkdvlqw0t3sp" path="res://scenes/characters/player.tscn" id="3_sm6ck"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_73scv"]
+size = Vector2(1490, 481)
+
+[sub_resource type="Resource" id="Resource_qi5cf"]
+script = ExtResource("2_vuhah")
+corner_rounding = 0.0
+
+[sub_resource type="Texture2D" id="Texture2D_op52v"]
+resource_local_to_scene = false
+resource_name = ""
+script = ExtResource("1_asggo")
+size = Vector2i(128, 128)
+shape = SubResource("Resource_qi5cf")
+fill_type = 0
+fill_color = Color(1, 1, 1, 1)
+fill_from = Vector2(0, 0)
+fill_to = Vector2(1, 0)
+fill_repeat = "pad"
+stroke_type = 0
+stroke_width = 0.0
+stroke_color = Color(0, 0, 0, 1)
+stroke_from = Vector2(0, 0)
+stroke_to = Vector2(1, 0)
+stroke_repeat = "pad"
+stroke_joint = "round"
+offset = Vector2(0, 0)
+rotation = 0.0
+scale = Vector2(1, 1)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Parallax2D" type="ParallaxBackground" parent="."]
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Parallax2D"]
+position = Vector2(-443, 2372)
+motion_scale = Vector2(0.05, 0.01)
+motion_mirroring = Vector2(4500, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D/ParallaxLayer"]
+texture_filter = 1
+position = Vector2(-96, -1775)
+rotation = -0.00289191
+scale = Vector2(7, 7)
+texture = ExtResource("1_rousx")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Parallax2D"]
+position = Vector2(-631, 397)
+motion_scale = Vector2(0.08, 0.01)
+motion_mirroring = Vector2(4500, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D/ParallaxLayer2"]
+texture_filter = 1
+position = Vector2(104.457, 841.051)
+rotation = -0.00289191
+scale = Vector2(7, 7)
+texture = ExtResource("2_m10yg")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(1933, 1586)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_73scv")
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(-1, -7.62939e-06)
+scale = Vector2(11.6406, 3.75)
+texture = SubResource("Texture2D_op52v")
+
+[node name="Player" parent="." instance=ExtResource("3_sm6ck")]
+position = Vector2(1959, 1201)

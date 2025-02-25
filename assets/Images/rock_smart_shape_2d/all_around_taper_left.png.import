@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://drqjiduurdaym"
-path="res://.godot/imported/all_around_taper_left.png-4e9e850d8977a00b61ee59d75aff60ad.ctex"
+path="res://.godot/imported/all_around_taper_left.png-1c2a46ab0f91b93c11a05ecb7c914ca9.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Images/chris_rock_smart_shape_2d/all_around_taper_left.png"
-dest_files=["res://.godot/imported/all_around_taper_left.png-4e9e850d8977a00b61ee59d75aff60ad.ctex"]
+source_file="res://assets/Images/rock_smart_shape_2d/all_around_taper_left.png"
+dest_files=["res://.godot/imported/all_around_taper_left.png-1c2a46ab0f91b93c11a05ecb7c914ca9.ctex"]
 
 [params]
 

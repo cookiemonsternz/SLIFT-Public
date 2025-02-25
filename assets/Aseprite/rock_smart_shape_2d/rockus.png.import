@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://12b7a7ljcvn2"
-path="res://.godot/imported/rock_smart_shape_2d.png-bd7533bfce0b67fef32f20bade882098.ctex"
+uid="uid://bqtoe77875jay"
+path="res://.godot/imported/rockus.png-7695436857d103a6a56c96cc1cf48ad4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Images/_UNUSED_rock_smart_shape_2d/rock_smart_shape_2d.png"
-dest_files=["res://.godot/imported/rock_smart_shape_2d.png-bd7533bfce0b67fef32f20bade882098.ctex"]
+source_file="res://assets/Aseprite/rock_smart_shape_2d/rockus.png"
+dest_files=["res://.godot/imported/rockus.png-7695436857d103a6a56c96cc1cf48ad4.ctex"]
 
 [params]
 

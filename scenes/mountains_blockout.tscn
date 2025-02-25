@@ -1,4 +1,4 @@
-[gd_scene load_steps=155 format=3 uid="uid://c7yqtwlty8ego"]
+[gd_scene load_steps=157 format=3 uid="uid://c7yqtwlty8ego"]
 
 [ext_resource type="PackedScene" uid="uid://c3wxkq4jmthgk" path="res://scenes/block.tscn" id="1_08how"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/shape_texture_2d.gd" id="2_ds7ry"]
@@ -7,6 +7,8 @@
 [ext_resource type="Script" path="res://scripts/environment/components/door_component.gd" id="5_yikd6"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/drawable_rectangle.gd" id="6_w8k5w"]
 [ext_resource type="PackedScene" uid="uid://cq1dq0pgfte7e" path="res://scenes/environment/button.tscn" id="7_hxt1i"]
+[ext_resource type="Texture2D" uid="uid://3e6o02ee32nu" path="res://assets/Images/mountain_bg.png" id="8_syk6g"]
+[ext_resource type="Texture2D" uid="uid://by1wovjpib6xm" path="res://assets/Images/mountain_lower_bg.png" id="9_eamgw"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_0npeu"]
 polygon = PackedVector2Array(579, -111.624, 376, -105.644, 197, -97.6709, -9, -26.9094, -117, -15.9463, -233, -68.7683, -258, -179.396, -213, -316.932, -103, -445.499, -35, -577.055, -34, -877.044, 38, -965.745, 202, -1050.46, 471, -1091.32, 745, -1113.25, 1127, -1019.56, 1360, -938.836, 1463, -809.273, 1486, -620.908, 1423, -415.599, 1342, -281.053, 1320, -151.49, 1172, -66.7749, 965, -52.822)
@@ -3081,3 +3083,46 @@ polygon = PackedVector2Array(29305, 7314, 29101, 7989, 29749, 8548, 30556, 7646)
 position = Vector2(5499, -723)
 color = Color(1, 0.394217, 0.37802, 1)
 polygon = PackedVector2Array(28634, 7250, 29066, 7642, 29658, 7882, 30170, 7274)
+
+[node name="Player" parent="." instance=ExtResource("2_uo0tt")]
+position = Vector2(1325, 2843)
+
+[node name="Node2D" parent="."]
+_import_path = NodePath("")
+unique_name_in_owner = false
+process_mode = 0
+process_priority = 0
+process_physics_priority = 0
+process_thread_group = 0
+physics_interpolation_mode = 0
+auto_translate_mode = 0
+editor_description = ""
+position = Vector2(3244, 2972)
+script = null
+
+[node name="Parallax2D" type="ParallaxBackground" parent="."]
+scroll_ignore_camera_zoom = true
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="Parallax2D"]
+position = Vector2(-416, 2686)
+motion_scale = Vector2(0.05, 0.01)
+motion_mirroring = Vector2(4500, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D/ParallaxLayer"]
+texture_filter = 1
+position = Vector2(-96, -1775)
+rotation = -0.00289191
+scale = Vector2(7, 7)
+texture = ExtResource("8_syk6g")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="Parallax2D"]
+position = Vector2(-604, 711)
+motion_scale = Vector2(0.08, 0.01)
+motion_mirroring = Vector2(4500, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D/ParallaxLayer2"]
+texture_filter = 1
+position = Vector2(104.457, 841.051)
+rotation = -0.00289191
+scale = Vector2(7, 7)
+texture = ExtResource("9_eamgw")

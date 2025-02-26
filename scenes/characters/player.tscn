@@ -82,6 +82,7 @@ move_speed = 250.0
 coyote_time_time = 0.25
 slow_speed = 400
 stop_speed = 800
+cutoff_speed = 8
 health_component = NodePath("Components/HealthComponent")
 arm_upgrade_component = NodePath("Components/ArmUpgradeComponent")
 

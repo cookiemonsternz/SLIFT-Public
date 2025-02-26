@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://c3wxkq4jmthgk" path="res://scenes/block.tscn" id="1_fcwui"]
 [ext_resource type="PackedScene" uid="uid://brkdvlqw0t3sp" path="res://scenes/characters/player.tscn" id="2_ns7jw"]
 [ext_resource type="TileSet" uid="uid://qag0bwndf7or" path="res://assets/testing_tileset.tres" id="3_qv20r"]
-[ext_resource type="PackedScene" path="res://scenes/environment/best_moving_platform.tscn" id="4_ekc2y"]
+[ext_resource type="PackedScene" uid="uid://c22877u0nrk3r" path="res://scenes/environment/best_moving_platform.tscn" id="4_ekc2y"]
 
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_4f7ha"]
 polygon = PackedVector2Array(220, 168.433, 191, -58.8018, -185, -63.7852, -219, 133.551)

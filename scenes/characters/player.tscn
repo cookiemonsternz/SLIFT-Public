@@ -161,7 +161,6 @@ shape = SubResource("CapsuleShape2D_rh5mj")
 texture = SubResource("Texture2D_7im1b")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2, 2)
 process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 15.0
@@ -222,6 +221,7 @@ arm_upgrade_ui = NodePath("../../ArmUpgradeUI")
 [node name="GrappleOrigin" type="Marker2D" parent="GrappleComponentS"]
 
 [node name="Rope1" parent="GrappleComponentS" node_paths=PackedStringArray("grapple_origin", "player") instance=ExtResource("4_bcbn3")]
+width = 4.0
 grapple_origin = NodePath("../GrappleOrigin")
 player = NodePath("../..")
 animation_curve = SubResource("Curve_5ylw7")
@@ -230,6 +230,7 @@ rope_progression_curve = SubResource("Curve_gldd0")
 rope_progression_speed = 9.0
 
 [node name="Rope2" parent="GrappleComponentS" node_paths=PackedStringArray("grapple_origin", "player") instance=ExtResource("4_bcbn3")]
+width = 4.0
 grapple_origin = NodePath("../GrappleOrigin")
 player = NodePath("../..")
 side = 1

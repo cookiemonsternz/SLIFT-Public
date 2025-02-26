@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://cgxfx1ibrau8y"
+path="res://.godot/imported/button_sprite_sheet.aseprite-078177c72387d0a6a6a393dc9e2a7f97.res"
+
+[deps]
+
+source_file="res://assets/images/button_sprite_sheet.aseprite"
+dest_files=["res://.godot/imported/button_sprite_sheet.aseprite-078177c72387d0a6a6a393dc9e2a7f97.res"]
+
+[params]
+

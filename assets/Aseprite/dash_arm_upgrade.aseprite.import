@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://duu36lrwyomcp"
+path="res://.godot/imported/dash_arm_upgrade.aseprite-21f10faa3ce540fc19c703fa3f63e1a1.res"
+
+[deps]
+
+source_file="res://assets/aseprite/dash_arm_upgrade.aseprite"
+dest_files=["res://.godot/imported/dash_arm_upgrade.aseprite-21f10faa3ce540fc19c703fa3f63e1a1.res"]
+
+[params]
+

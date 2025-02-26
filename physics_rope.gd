@@ -4,7 +4,8 @@ extends Node2D
 
 var line_2d
 var rigidbodies
-
+var start_end_pos
+var seg_len
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -60,10 +61,10 @@ func create_rope(start_pos: Vector2, end_pos: Vector2, start_body: PhysicsBody2D
 	var normalized_direction = direction.normalized()
 	var rope_segment_size = Vector2(segment_length, rope_thickness)
 	var rope_segment_rotation = start_pos.angle_to_point(end_pos)
-	
+	seg_len = segment_length
 	# Create the rope segments with proper positioning
 	for i in n_segments:
-		var segment_position = start_pos + normalized_direction * segment_length * i
+		var segment_position = start_pos + normalized_direction * segment_length * (i+0.5)
 		rigidbodies.append(create_rope_rigidbody(
 			segment_position,
 			rope_segment_rotation,
@@ -85,14 +86,28 @@ func create_rope(start_pos: Vector2, end_pos: Vector2, start_body: PhysicsBody2D
 
 func create_line_2d():
 	var line = Line2D.new()
+	line.width = rope_thickness
+	line.end_cap_mode = Line2D.LINE_CAP_ROUND
+	line.begin_cap_mode = Line2D.LINE_CAP_ROUND
+	line.joint_mode = Line2D.LINE_JOINT_ROUND
 	add_child(line)
 	line_2d = line
 
 func draw_rope(rigidbodies: Array[RigidBody2D], line2d: Line2D):
 	if len(rigidbodies) > len(line2d.points):
 		var cache_len = len(line2d.points)
+		#print(start_end_pos)
+		line2d.add_point(start_end_pos[0])
+		#print(line2d.points)
 		for i in range(len(rigidbodies) - len(line2d.points)):
 			line2d.add_point(rigidbodies[i+cache_len].global_position)
-	for i in len(rigidbodies):
-		line2d.set_point_position(i, rigidbodies[i].global_position)
+		#print(line2d.points)
+		line2d.add_point(start_end_pos[1])
+		#print(line2d.points)
+	for i in range(len(rigidbodies)-1):
+		line2d.set_point_position(i+1, rigidbodies[i].global_position)
+		#print(Vector2(seg_len, 0).rotated(rigidbodies[0].global_rotation))
+		line2d.set_point_position(0, rigidbodies[0].global_position - Vector2(seg_len/2, 0).rotated(rigidbodies[0].global_rotation))
+		line2d.set_point_position(len(line2d.points)-1, rigidbodies[-1].global_position + Vector2(seg_len/2, 0).rotated(rigidbodies[-1].global_rotation))
+		#print(line2d.points[0], " : ", line2d.points[-1])
 		

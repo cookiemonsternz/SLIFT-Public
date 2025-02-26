@@ -42,8 +42,9 @@ func _on_arm_connected(side: int, target_position: Vector2, target_body: Physics
 			
 		var physics_rope_instance = physics_rope_scene.instantiate()
 		root.add_child(physics_rope_instance)
-		physics_rope_instance.rigidbodies = physics_rope_instance.create_rope(second_pos, first_pos, first_body, second_body)
-		
+		#print(round(second_pos.distance_to(first_pos) / 50))
+		physics_rope_instance.rigidbodies = physics_rope_instance.create_rope(second_pos, first_pos, first_body, second_body, round(second_pos.distance_to(first_pos) / 50))
+		physics_rope_instance.start_end_pos = [second_pos, first_pos]
 		first_body = null
 		second_body = null
 

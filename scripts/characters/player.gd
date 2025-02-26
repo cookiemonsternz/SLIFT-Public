@@ -43,8 +43,9 @@ var grapple_target_markers: Array[Node2D] = [null, null]
 @export var move_speed = 500.0 # Movement speed
 @export var coyote_time_time = 0.1 # Time in seconds to allow a coyote jump
 @export var slow_speed = 800
-@export var mantain_speed = 0
+@export var speed_up_speed = 600
 @export var stop_speed = 1600
+@export var cutoff_speed = 10
 
 @export_group("Components")
 @export var health_component: HealthComponent
@@ -167,7 +168,7 @@ func handle_ground_movement(delta: float):
 
 func handle_sliding(input_chosen: float, delta: float):
 	# If we have low velocity change back to regular move mode
-	if vel_x > -25 and vel_x < 25:
+	if vel_x > -cutoff_speed and vel_x < cutoff_speed:
 		is_sliding = false
 		vel_x = 0
 	
@@ -179,13 +180,17 @@ func handle_sliding(input_chosen: float, delta: float):
 		vel_x -= slow_speed * delta
 	# Case for sliding left when holding right
 	if vel_x > 0 and input_chosen > 0:
-		vel_x -= mantain_speed * delta
+		if abs(vel_x) < move_speed:
+			vel_x += speed_up_speed * delta
+		#vel_x -= mantain_speed * delta
 	# Case for sliding left when holding right
 	if vel_x < 0 and input_chosen > 0:
 		vel_x += stop_speed * delta
 	# Case for sliding left when holding left
 	if vel_x < 0 and input_chosen < 0:
-		vel_x += mantain_speed * delta
+		if abs(vel_x) < move_speed:
+			vel_x -= speed_up_speed * delta
+		#vel_x += mantain_speed * delta
 	# Case for sliding right when holding nothing
 	if vel_x < 0 and input_chosen == 0:
 		vel_x += slow_speed * delta

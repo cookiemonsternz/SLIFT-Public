@@ -48,7 +48,7 @@ func create_rope_rigidbody(body_position: Vector2, body_rotation: float, size: V
 	rigidbody.global_transform.origin = body_position
 	rigidbody.rotation = body_rotation
 	rigidbody.set_collision_layer_value(1, false)
-	rigidbody.set_collision_mask_value(1, false)
+	#rigidbody.set_collision_mask_value(1, false)
 	rigidbody.set_collision_layer_value(10, true)
 	return rigidbody
 

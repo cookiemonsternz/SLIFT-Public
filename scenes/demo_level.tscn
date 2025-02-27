@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://nsfenexf57o1"]
+[gd_scene load_steps=20 format=4 uid="uid://nsfenexf57o1"]
 
 [ext_resource type="TileSet" uid="uid://b30kfa4ed8aqy" path="res://assets/tileset.tres" id="1_6f6xr"]
 [ext_resource type="PackedScene" uid="uid://brkdvlqw0t3sp" path="res://scenes/characters/player.tscn" id="2_x1y1f"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://cwvhio0pg786r" path="res://scenes/yank_pickup.tscn" id="6_eg85y"]
 [ext_resource type="PackedScene" uid="uid://ciq52b3cuisor" path="res://scenes/environment/win_area.tscn" id="7_2yaey"]
 [ext_resource type="PackedScene" uid="uid://cunvwyyo5nyju" path="res://scenes/characters/enemies/enemy_basic.tscn" id="8_ywse6"]
+[ext_resource type="PackedScene" uid="uid://c22877u0nrk3r" path="res://scenes/environment/moving_platform.tscn" id="9_2skja"]
+[ext_resource type="Script" path="res://addons/shape_texture_2d/drawable_rectangle.gd" id="10_narhn"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ekj6v"]
 radius = 89.0898
@@ -45,6 +47,41 @@ _data = {
 "points": PackedVector2Array(-122.053, 10.6908, 122.053, -10.6908, 1201, -141, -48.1085, 20.4907, 48.1085, -20.4907, 1411, -143, 40.9813, 65.9265, -40.9813, -65.9265, 1487, -257, 38.3086, 32.0724, -38.3086, -32.0724, 1392, -335, 93.5444, 2.6727, -93.5444, -2.6727, 1119, -388, 17.818, -50.7812, -17.818, 50.7812, 942, -291, -34.745, -34.745, 34.745, 34.745, 994, -204, -102.453, 12.4726, 102.453, -12.4726, 1201, -141)
 }
 point_count = 8
+
+[sub_resource type="Curve2D" id="Curve2D_kirl2"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 72, 5, 0, 0, 0, 0, 403, 5, 0, 0, 0, 0, 403, -158, 0, 0, 0, 0, 100, -70, 0, 0, 0, 0, -55, 8, 0, 0, 0, 0, 72, 5)
+}
+point_count = 6
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hglpa"]
+size = Vector2(189, 20)
+
+[sub_resource type="Resource" id="Resource_pix4c"]
+script = ExtResource("10_narhn")
+corner_rounding = 0.0
+
+[sub_resource type="Texture2D" id="Texture2D_s5f17"]
+resource_local_to_scene = false
+resource_name = ""
+script = ExtResource("3_kvnmx")
+size = Vector2i(128, 128)
+shape = SubResource("Resource_pix4c")
+fill_type = 0
+fill_color = Color(1, 1, 1, 1)
+fill_from = Vector2(0, 0)
+fill_to = Vector2(1, 0)
+fill_repeat = "pad"
+stroke_type = 0
+stroke_width = 0.0
+stroke_color = Color(0, 0, 0, 1)
+stroke_from = Vector2(0, 0)
+stroke_to = Vector2(1, 0)
+stroke_repeat = "pad"
+stroke_joint = "round"
+offset = Vector2(0, 0)
+rotation = 0.0
+scale = Vector2(1, 1)
 
 [node name="Node2D" type="Node2D"]
 position = Vector2(0, 43)
@@ -110,7 +147,8 @@ scale = Vector2(2, 2)
 position = Vector2(61320, -4469)
 
 [node name="Player" parent="." instance=ExtResource("2_x1y1f")]
-position = Vector2(274, -168)
+position = Vector2(-7, -45)
+cutoff_speed = 10
 
 [node name="EnemyBasic" parent="." node_paths=PackedStringArray("path_follow_2d") instance=ExtResource("8_ywse6")]
 position = Vector2(1205, -142)
@@ -123,3 +161,20 @@ curve = SubResource("Curve2D_ph0sy")
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
 position = Vector2(1201, -141)
 rotation = -0.0873685
+
+[node name="MovingPlatform" parent="." node_paths=PackedStringArray("platform_body") instance=ExtResource("9_2skja")]
+position = Vector2(151, -51)
+curve = SubResource("Curve2D_kirl2")
+do_rotation = true
+platform_body = NodePath("AnimatableBody2D")
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="MovingPlatform"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MovingPlatform/AnimatableBody2D"]
+position = Vector2(84.5, 0)
+shape = SubResource("RectangleShape2D_hglpa")
+
+[node name="Sprite2D" type="Sprite2D" parent="MovingPlatform/AnimatableBody2D"]
+position = Vector2(84.5, -5.66244e-07)
+scale = Vector2(1.47656, 0.15625)
+texture = SubResource("Texture2D_s5f17")

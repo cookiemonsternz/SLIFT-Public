@@ -54,7 +54,7 @@ func create_rope_rigidbody(body_position: Vector2, body_rotation: float, size: V
 
 func create_rope(start_pos: Vector2, end_pos: Vector2, start_body: PhysicsBody2D, end_body: PhysicsBody2D, n_segments: int = 15):
 	var rigidbodies: Array[RigidBody2D] = []
-	
+	n_segments = max(min(n_segments, 100), 3)
 	# Calculate the direction vector from start to end
 	var direction = end_pos - start_pos
 	var segment_length = direction.length() / n_segments

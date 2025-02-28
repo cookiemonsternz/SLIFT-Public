@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://mnljijyrg1ql"]
 
 [ext_resource type="Script" path="res://scripts/characters/components/arm_upgrade_system/arm_upgrade_ui.gd" id="1_e2r2u"]
-[ext_resource type="Texture2D" uid="uid://xjcomaw5vkqs" path="res://assets/Images/arm_upgrade_ui_background.png" id="2_2kne4"]
+[ext_resource type="Texture2D" uid="uid://xjcomaw5vkqs" path="res://assets/images/arm_upgrade_ui_background.png" id="2_2kne4"]
 [ext_resource type="PackedScene" uid="uid://dhmg8tvkkyv10" path="res://scenes/characters/components/arm_upgrade_ui_slot.tscn" id="3_kap2d"]
 
 [node name="ArmUpgradeUI" type="Control"]

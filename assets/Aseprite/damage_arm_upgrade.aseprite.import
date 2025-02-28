@@ -3,12 +3,12 @@
 importer="aseprite_wizard.plugin.noop"
 type="PackedDataContainer"
 uid="uid://0i1xgajq88ke"
-path="res://.godot/imported/damage_arm_upgrade.aseprite-104ca8ed92fe106b60841a73db01c3da.res"
+path="res://.godot/imported/damage_arm_upgrade.aseprite-18a1ff6d7cb4bb037055d6d44709a559.res"
 
 [deps]
 
-source_file="res://assets/aseprite/damage_arm_upgrade.aseprite"
-dest_files=["res://.godot/imported/damage_arm_upgrade.aseprite-104ca8ed92fe106b60841a73db01c3da.res"]
+source_file="res://assets/Aseprite/damage_arm_upgrade.aseprite"
+dest_files=["res://.godot/imported/damage_arm_upgrade.aseprite-18a1ff6d7cb4bb037055d6d44709a559.res"]
 
 [params]
 

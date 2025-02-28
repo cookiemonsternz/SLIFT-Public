@@ -84,7 +84,7 @@ progress = 355.726
 remote_path = NodePath("../../AnimatableBody2D")
 
 [node name="AnimatableBody2D" type="AnimatableBody2D" parent="."]
-position = Vector2(-2.46985, -4.78536)
+position = Vector2(-2.46985, -4.78535)
 rotation = -0.0985498
 
 [node name="Sprite2D" type="Sprite2D" parent="AnimatableBody2D"]

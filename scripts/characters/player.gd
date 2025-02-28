@@ -86,9 +86,9 @@ func _process(delta: float) -> void:
 	#print(position)
 
 	if Input.is_action_just_pressed("test_input"):
-		arm_upgrade_component.remove_upgrade(Enums.Grapples.Left, 0)
+		#arm_upgrade_component.remove_upgrade(Enums.Grapples.Left, 0)
 		var dash_upgrade = TetherArmUpgrade.new()
-		arm_upgrade_component.add_upgrade(Enums.Grapples.Left, 0, dash_upgrade)
+		arm_upgrade_component.add_upgrade_pool(dash_upgrade)
 		#var yank_upgrade = YankArmUpgrade.new()
 		#arm_upgrade_component.add_upgrade(Enums.Grapples.Left, 0, yank_upgrade)
 		#tiivar damage_upgrade = DamageArmUpgrade.new()

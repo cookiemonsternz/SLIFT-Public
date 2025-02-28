@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://mnljijyrg1ql"]
+[gd_scene load_steps=5 format=3 uid="uid://mnljijyrg1ql"]
 
 [ext_resource type="Script" path="res://scripts/characters/components/arm_upgrade_system/arm_upgrade_ui.gd" id="1_e2r2u"]
 [ext_resource type="Texture2D" uid="uid://xjcomaw5vkqs" path="res://assets/images/arm_upgrade_ui_background.png" id="2_2kne4"]
+[ext_resource type="PackedScene" uid="uid://b6kpf4v0ows2k" path="res://scenes/characters/components/arm_upgrade_ui_pool_item.tscn" id="2_3lj1i"]
 [ext_resource type="PackedScene" uid="uid://dhmg8tvkkyv10" path="res://scenes/characters/components/arm_upgrade_ui_slot.tscn" id="3_kap2d"]
 
 [node name="ArmUpgradeUI" type="Control"]
@@ -12,19 +13,24 @@ offset_right = 222.0
 offset_bottom = 78.0
 mouse_filter = 2
 script = ExtResource("1_e2r2u")
+pool_item_scene = ExtResource("2_3lj1i")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="."]
-texture_filter = 1
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
-offset_right = 222.0
-offset_bottom = 78.0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ArmUpgradeSlots" type="NinePatchRect" parent="VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(222, 78)
+layout_mode = 2
 texture = ExtResource("2_2kne4")
 patch_margin_left = 7
 patch_margin_top = 7
 patch_margin_right = 7
 patch_margin_bottom = 7
 
-[node name="GridContainer" type="GridContainer" parent="NinePatchRect"]
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/ArmUpgradeSlots"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -40,54 +46,68 @@ grow_vertical = 2
 mouse_filter = 2
 columns = 6
 
-[node name="ArmUpgradeUISlot1" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kap2d")]
+[node name="ArmUpgradeUISlot1" parent="VBoxContainer/ArmUpgradeSlots/GridContainer" instance=ExtResource("3_kap2d")]
 layout_mode = 2
 
-[node name="ArmUpgradeUISlot2" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kap2d")]
+[node name="ArmUpgradeUISlot2" parent="VBoxContainer/ArmUpgradeSlots/GridContainer" instance=ExtResource("3_kap2d")]
 layout_mode = 2
 index = 1
 
-[node name="ArmUpgradeUISlot3" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kap2d")]
+[node name="ArmUpgradeUISlot3" parent="VBoxContainer/ArmUpgradeSlots/GridContainer" instance=ExtResource("3_kap2d")]
 layout_mode = 2
 index = 2
 
-[node name="ArmUpgradeUISlot4" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kap2d")]
+[node name="ArmUpgradeUISlot4" parent="VBoxContainer/ArmUpgradeSlots/GridContainer" instance=ExtResource("3_kap2d")]
 layout_mode = 2
 index = 3
 
-[node name="ArmUpgradeUISlot5" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kap2d")]
+[node name="ArmUpgradeUISlot5" parent="VBoxContainer/ArmUpgradeSlots/GridContainer" instance=ExtResource("3_kap2d")]
 layout_mode = 2
 index = 4
 
-[node name="ArmUpgradeUISlot6" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kap2d")]
+[node name="ArmUpgradeUISlot6" parent="VBoxContainer/ArmUpgradeSlots/GridContainer" instance=ExtResource("3_kap2d")]
 layout_mode = 2
 index = 5
 
-[node name="ArmUpgradeUISlot7" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kap2d")]
+[node name="ArmUpgradeUISlot7" parent="VBoxContainer/ArmUpgradeSlots/GridContainer" instance=ExtResource("3_kap2d")]
 layout_mode = 2
 side = 1
 
-[node name="ArmUpgradeUISlot8" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kap2d")]
+[node name="ArmUpgradeUISlot8" parent="VBoxContainer/ArmUpgradeSlots/GridContainer" instance=ExtResource("3_kap2d")]
 layout_mode = 2
 index = 1
 side = 1
 
-[node name="ArmUpgradeUISlot9" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kap2d")]
+[node name="ArmUpgradeUISlot9" parent="VBoxContainer/ArmUpgradeSlots/GridContainer" instance=ExtResource("3_kap2d")]
 layout_mode = 2
 index = 2
 side = 1
 
-[node name="ArmUpgradeUISlot10" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kap2d")]
+[node name="ArmUpgradeUISlot10" parent="VBoxContainer/ArmUpgradeSlots/GridContainer" instance=ExtResource("3_kap2d")]
 layout_mode = 2
 index = 3
 side = 1
 
-[node name="ArmUpgradeUISlot11" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kap2d")]
+[node name="ArmUpgradeUISlot11" parent="VBoxContainer/ArmUpgradeSlots/GridContainer" instance=ExtResource("3_kap2d")]
 layout_mode = 2
 index = 4
 side = 1
 
-[node name="ArmUpgradeUISlot12" parent="NinePatchRect/GridContainer" instance=ExtResource("3_kap2d")]
+[node name="ArmUpgradeUISlot12" parent="VBoxContainer/ArmUpgradeSlots/GridContainer" instance=ExtResource("3_kap2d")]
 layout_mode = 2
 index = 5
 side = 1
+
+[node name="ArmUpgradePool" type="NinePatchRect" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="GridContainer" type="GridContainer" parent="VBoxContainer/ArmUpgradePool"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -20.0
+offset_right = 20.0
+offset_bottom = 40.0
+grow_horizontal = 2
+columns = 6

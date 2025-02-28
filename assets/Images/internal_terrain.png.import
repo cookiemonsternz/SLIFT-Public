@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://d1lbkynmlr1mk"
-path="res://.godot/imported/tether_arm_upgrade.png-522cd50bf8e3e9e8b8ec60d2756cfd60.ctex"
+uid="uid://0hq2gu04swd6"
+path="res://.godot/imported/internal_terrain.png-5ac5049f447c43ecd2560eac2a1dff7b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Images/tether_arm_upgrade.png"
-dest_files=["res://.godot/imported/tether_arm_upgrade.png-522cd50bf8e3e9e8b8ec60d2756cfd60.ctex"]
+source_file="res://assets/Images/internal_terrain.png"
+dest_files=["res://.godot/imported/internal_terrain.png-5ac5049f447c43ecd2560eac2a1dff7b.ctex"]
 
 [params]
 

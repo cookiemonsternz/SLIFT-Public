@@ -1,13 +1,14 @@
-[gd_scene load_steps=49 format=4 uid="uid://cem68wgd3m8lp"]
+[gd_scene load_steps=50 format=4 uid="uid://cem68wgd3m8lp"]
 
 [ext_resource type="Script" path="res://addons/rmsmartshape/shapes/shape_closed.gd" id="1_dfoti"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/vertex_properties.gd" id="2_mnaib"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/shapes/point.gd" id="3_fnrc7"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/shapes/point_array.gd" id="4_240xg"]
 [ext_resource type="Resource" uid="uid://dd1oj6th6i4p5" path="res://assets/rock_material.tres" id="6_lbukw"]
-[ext_resource type="Texture2D" uid="uid://cgv2eyr5csafp" path="res://assets/images/rocks_and_shrubs.png" id="16_pq12e"]
-[ext_resource type="Texture2D" uid="uid://ce6us03tvq1jm" path="res://assets/images/merged_shrubs.png" id="17_bava4"]
-[ext_resource type="Texture2D" uid="uid://5r0yoxd42v20" path="res://assets/images/fly.png" id="18_mmmnr"]
+[ext_resource type="TileSet" uid="uid://bk4o7or21mjax" path="res://assets/internal_props.tres" id="10_wmhed"]
+[ext_resource type="Texture2D" uid="uid://cgv2eyr5csafp" path="res://assets/Images/rocks_and_shrubs.png" id="16_pq12e"]
+[ext_resource type="Texture2D" uid="uid://ce6us03tvq1jm" path="res://assets/Images/merged_shrubs.png" id="17_bava4"]
+[ext_resource type="Texture2D" uid="uid://5r0yoxd42v20" path="res://assets/Images/fly.png" id="18_mmmnr"]
 [ext_resource type="PackedScene" uid="uid://brkdvlqw0t3sp" path="res://scenes/characters/player.tscn" id="19_tvpq7"]
 
 [sub_resource type="Curve" id="Curve_ohvje"]
@@ -368,3 +369,9 @@ environment = SubResource("Environment_qrcev")
 
 [node name="Player" parent="." instance=ExtResource("19_tvpq7")]
 position = Vector2(778, 223)
+
+[node name="TileMapLayer2" type="TileMapLayer" parent="."]
+modulate = Color(1, 1, 1, 0.301961)
+texture_filter = 1
+tile_map_data = PackedByteArray("AAAyABEAAQAAAAAAAAA2ABMAAgACAAEAAAAsABIAAAACAAEAAAAzABcAAQAAAAAAAGAwABMAAAADAAEAAAA=")
+tile_set = ExtResource("10_wmhed")

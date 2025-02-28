@@ -1,0 +1,28 @@
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://bk4o7or21mjax"]
+
+[ext_resource type="Texture2D" uid="uid://0hq2gu04swd6" path="res://assets/Images/internal_terrain.png" id="1_anm8r"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nqbqw"]
+texture = ExtResource("1_anm8r")
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pw4h8"]
+texture = ExtResource("1_anm8r")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_d5e0o"]
+texture = ExtResource("1_anm8r")
+texture_region_size = Vector2i(32, 16)
+2:1/0 = 0
+
+[resource]
+sources/0 = SubResource("TileSetAtlasSource_nqbqw")
+sources/1 = SubResource("TileSetAtlasSource_pw4h8")
+sources/2 = SubResource("TileSetAtlasSource_d5e0o")

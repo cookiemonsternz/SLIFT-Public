@@ -1,6 +1,9 @@
 extends Control
 
-@onready var slots: Array = $NinePatchRect/GridContainer.get_children()
+@onready var slots: Array = $VBoxContainer/ArmUpgradeSlots/GridContainer.get_children()
+@onready var pool: Array = $VBoxContainer/ArmUpgradePool/GridContainer.get_children()
+
+@export var pool_item_scene: PackedScene
 
 var is_open = false
 
@@ -30,6 +33,15 @@ func update_slots(installed_upgrades):
 	for i in range(6):
 		if not installed_upgrades[1].has(i):
 			slots[i + 6].update(null)
+
+func update_pool(new_pool: Array[ArmUpgrade]):
+	for upgrade in new_pool:
+		if len(new_pool) > len($VBoxContainer/ArmUpgradePool/GridContainer.get_children()):
+			for i in range(len(new_pool) - len($VBoxContainer/ArmUpgradePool/GridContainer.get_children())):
+				var pool_item_instance = pool_item_scene.instantiate()
+				
+				$VBoxContainer/ArmUpgradePool/GridContainer.add_child(pool_item_instance)
+				pool_item_instance.update(new_pool[i])
 
 func open():
 	visible = true

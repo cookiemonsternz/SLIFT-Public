@@ -5,6 +5,7 @@ class_name ArmUpgradeComponent extends Node
 var installed_upgrades_left := {}
 var installed_upgrades_right := {}
 
+var upgrade_pool: Array[ArmUpgrade] = []
 
 func add_upgrade(side: int, index: int, upgrade: ArmUpgrade):
 	print(upgrade.upgrade_name)
@@ -14,7 +15,6 @@ func add_upgrade(side: int, index: int, upgrade: ArmUpgrade):
 		installed_upgrades_right[index] = upgrade
 	print([installed_upgrades_left, installed_upgrades_right])
 	arm_upgrade_ui.update_slots([installed_upgrades_left, installed_upgrades_right])
-	
 
 func remove_upgrade(side: int, index: int):
 	if side == Enums.Grapples.Left:
@@ -56,6 +56,13 @@ func move_upgrade(side1: int, index1: int, side2: int, index2: int):
 					installed_upgrades_right.erase(index1)
 	arm_upgrade_ui.update_slots([installed_upgrades_left, installed_upgrades_right])
 
+func add_upgrade_pool(upgrade: ArmUpgrade):
+	upgrade_pool.append(upgrade)
+	arm_upgrade_ui.update_pool(upgrade_pool)
+
+func remove_upgrade_pool(upgrade: ArmUpgrade):
+	upgrade_pool.remove_at(upgrade_pool.find(upgrade))
+	arm_upgrade_ui.update_pool(upgrade_pool)
 
 ###--- ARM UPGRADE CALLABLES ---###
 # These functions are triggered by player events and are called on all installed upgrades

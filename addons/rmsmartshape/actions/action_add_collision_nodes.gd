@@ -35,6 +35,7 @@ func do() -> void:
 	var poly: CollisionPolygon2D = CollisionPolygon2D.new()
 	static_body.add_child(poly, true)
 	poly.owner = owner
+
 	# TODO: Make this a option at some point
 	poly.modulate.a = 0.3
 	poly.visible = false

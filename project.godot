@@ -22,8 +22,9 @@ Enums="*res://scripts/enums.gd"
 
 [display]
 
-window/size/viewport_width=1820
-window/size/viewport_height=980
+window/size/viewport_width=2560
+window/size/viewport_height=1440
+window/size/mode=3
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_width"
 window/vsync/vsync_mode=2

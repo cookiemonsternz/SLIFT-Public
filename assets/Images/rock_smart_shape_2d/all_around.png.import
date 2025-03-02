@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://hwxme3glfxen"
-path="res://.godot/imported/all_around.png-a0d6f32b5ab9a12864a1221a23783574.ctex"
+path="res://.godot/imported/all_around.png-f4a8e654b0ca681f6b4cb48e5d217050.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/rock_smart_shape_2d/all_around.png"
-dest_files=["res://.godot/imported/all_around.png-a0d6f32b5ab9a12864a1221a23783574.ctex"]
+source_file="res://assets/Images/rock_smart_shape_2d/all_around.png"
+dest_files=["res://.godot/imported/all_around.png-f4a8e654b0ca681f6b4cb48e5d217050.ctex"]
 
 [params]
 

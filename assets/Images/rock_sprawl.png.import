@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bksips5lawatc"
-path="res://.godot/imported/deadstuff.png-778bee8789f5b38ab12d171381936dfc.ctex"
+uid="uid://c221vvqugvsng"
+path="res://.godot/imported/rock_sprawl.png-db622244b8070b38ecba3e535897c27f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Images/deadstuff.png"
-dest_files=["res://.godot/imported/deadstuff.png-778bee8789f5b38ab12d171381936dfc.ctex"]
+source_file="res://assets/Images/rock_sprawl.png"
+dest_files=["res://.godot/imported/rock_sprawl.png-db622244b8070b38ecba3e535897c27f.ctex"]
 
 [params]
 

@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://b2dnt82itn2yv"
+path="res://.godot/imported/deadstuff.aseprite-9501fb2e3b642bb922b09b12e3ba5091.res"
+
+[deps]
+
+source_file="res://assets/Images/deadstuff.aseprite"
+dest_files=["res://.godot/imported/deadstuff.aseprite-9501fb2e3b642bb922b09b12e3ba5091.res"]
+
+[params]
+

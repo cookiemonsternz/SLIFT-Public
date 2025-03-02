@@ -1,14 +1,12 @@
-[gd_scene load_steps=50 format=4 uid="uid://cem68wgd3m8lp"]
+[gd_scene load_steps=42 format=4 uid="uid://cem68wgd3m8lp"]
 
 [ext_resource type="Script" path="res://addons/rmsmartshape/shapes/shape_closed.gd" id="1_dfoti"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/vertex_properties.gd" id="2_mnaib"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/shapes/point.gd" id="3_fnrc7"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/shapes/point_array.gd" id="4_240xg"]
+[ext_resource type="TileSet" uid="uid://doacjulfdn0ow" path="res://assets/rocksnshrubs.tres" id="6_bf300"]
 [ext_resource type="Resource" uid="uid://dd1oj6th6i4p5" path="res://assets/rock_material.tres" id="6_lbukw"]
 [ext_resource type="TileSet" uid="uid://bk4o7or21mjax" path="res://assets/internal_props.tres" id="10_wmhed"]
-[ext_resource type="Texture2D" uid="uid://cgv2eyr5csafp" path="res://assets/Images/rocks_and_shrubs.png" id="16_pq12e"]
-[ext_resource type="Texture2D" uid="uid://ce6us03tvq1jm" path="res://assets/Images/merged_shrubs.png" id="17_bava4"]
-[ext_resource type="Texture2D" uid="uid://5r0yoxd42v20" path="res://assets/Images/fly.png" id="18_mmmnr"]
 [ext_resource type="PackedScene" uid="uid://brkdvlqw0t3sp" path="res://scenes/characters/player.tscn" id="19_tvpq7"]
 
 [sub_resource type="Curve" id="Curve_ohvje"]
@@ -44,7 +42,7 @@ point_in = Vector2(-19.6863, 5.0397)
 point_out = Vector2(19.6863, -5.0397)
 properties = SubResource("Resource_ylyvf")
 
-[sub_resource type="Resource" id="Resource_rcbwf"]
+[sub_resource type="Resource" id="Resource_fche7"]
 script = ExtResource("2_mnaib")
 texture_idx = 0
 flip = false
@@ -55,9 +53,9 @@ script = ExtResource("3_fnrc7")
 position = Vector2(799.806, 260.674)
 point_in = Vector2(-17.1094, 0.479568)
 point_out = Vector2(13.9561, -6.36584)
-properties = SubResource("Resource_rcbwf")
+properties = SubResource("Resource_fche7")
 
-[sub_resource type="Resource" id="Resource_xmxr5"]
+[sub_resource type="Resource" id="Resource_1xuvr"]
 script = ExtResource("2_mnaib")
 texture_idx = 0
 flip = false
@@ -68,9 +66,9 @@ script = ExtResource("3_fnrc7")
 position = Vector2(943.136, 280.904)
 point_in = Vector2(-15.1248, -9.1777)
 point_out = Vector2(6.35669, 10.919)
-properties = SubResource("Resource_xmxr5")
+properties = SubResource("Resource_1xuvr")
 
-[sub_resource type="Resource" id="Resource_oltga"]
+[sub_resource type="Resource" id="Resource_23ucu"]
 script = ExtResource("2_mnaib")
 texture_idx = 0
 flip = false
@@ -81,9 +79,9 @@ script = ExtResource("3_fnrc7")
 position = Vector2(944.388, 367.945)
 point_in = Vector2(8.50446, -28.6632)
 point_out = Vector2(-8.50446, 28.6632)
-properties = SubResource("Resource_oltga")
+properties = SubResource("Resource_23ucu")
 
-[sub_resource type="Resource" id="Resource_jbm8p"]
+[sub_resource type="Resource" id="Resource_jpomp"]
 script = ExtResource("2_mnaib")
 texture_idx = 0
 flip = false
@@ -94,9 +92,9 @@ script = ExtResource("3_fnrc7")
 position = Vector2(817.076, 398.096)
 point_in = Vector2(27.4033, -2.67734)
 point_out = Vector2(-27.4033, 2.67734)
-properties = SubResource("Resource_jbm8p")
+properties = SubResource("Resource_jpomp")
 
-[sub_resource type="Resource" id="Resource_m7plq"]
+[sub_resource type="Resource" id="Resource_geyxu"]
 script = ExtResource("2_mnaib")
 texture_idx = 0
 flip = false
@@ -107,7 +105,7 @@ script = ExtResource("3_fnrc7")
 position = Vector2(749.867, 326.586)
 point_in = Vector2(45.6465, 38.7087)
 point_out = Vector2(-83.8533, 12.7956)
-properties = SubResource("Resource_m7plq")
+properties = SubResource("Resource_geyxu")
 
 [sub_resource type="Resource" id="Resource_cwsyp"]
 script = ExtResource("3_fnrc7")
@@ -129,7 +127,7 @@ point_in = Vector2(-26.3008, 1.73239)
 point_out = Vector2(26.3008, -1.73239)
 properties = SubResource("Resource_lckjh")
 
-[sub_resource type="Resource" id="Resource_4o5ak"]
+[sub_resource type="Resource" id="Resource_xa52j"]
 script = ExtResource("2_mnaib")
 texture_idx = 0
 flip = false
@@ -140,9 +138,9 @@ script = ExtResource("3_fnrc7")
 position = Vector2(752.611, 263.574)
 point_in = Vector2(-14.9616, 1.4174)
 point_out = Vector2(14.9616, -1.4174)
-properties = SubResource("Resource_4o5ak")
+properties = SubResource("Resource_xa52j")
 
-[sub_resource type="Resource" id="Resource_j70o0"]
+[sub_resource type="Resource" id="Resource_iyejj"]
 script = ExtResource("2_mnaib")
 texture_idx = 0
 flip = false
@@ -153,9 +151,9 @@ script = ExtResource("3_fnrc7")
 position = Vector2(649.336, 284.656)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_j70o0")
+properties = SubResource("Resource_iyejj")
 
-[sub_resource type="Resource" id="Resource_qiupy"]
+[sub_resource type="Resource" id="Resource_gio0d"]
 script = ExtResource("2_mnaib")
 texture_idx = 0
 flip = false
@@ -166,9 +164,9 @@ script = ExtResource("3_fnrc7")
 position = Vector2(857.588, 257.442)
 point_in = Vector2(-23.4144, -4.38819)
 point_out = Vector2(33.4257, 1.05109)
-properties = SubResource("Resource_qiupy")
+properties = SubResource("Resource_gio0d")
 
-[sub_resource type="Resource" id="Resource_2lcyx"]
+[sub_resource type="Resource" id="Resource_qnhx7"]
 script = ExtResource("2_mnaib")
 texture_idx = 0
 flip = false
@@ -179,9 +177,9 @@ script = ExtResource("3_fnrc7")
 position = Vector2(906.47, 268.211)
 point_in = Vector2(-25.9626, -6.51697)
 point_out = Vector2(25.9626, 6.51697)
-properties = SubResource("Resource_2lcyx")
+properties = SubResource("Resource_qnhx7")
 
-[sub_resource type="Resource" id="Resource_5bx5w"]
+[sub_resource type="Resource" id="Resource_4yccn"]
 script = ExtResource("2_mnaib")
 texture_idx = 0
 flip = false
@@ -192,7 +190,7 @@ script = ExtResource("3_fnrc7")
 position = Vector2(960.031, 325.471)
 point_in = Vector2(-5.40112, -11.1919)
 point_out = Vector2(5.40112, 11.1919)
-properties = SubResource("Resource_5bx5w")
+properties = SubResource("Resource_4yccn")
 
 [sub_resource type="Resource" id="Resource_c3l83"]
 script = ExtResource("4_240xg")
@@ -221,70 +219,6 @@ tessellation_stages = 4
 tessellation_tolerance = 6.0
 curve_bake_interval = 20.0
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aty1y"]
-texture = ExtResource("16_pq12e")
-4:0/0 = 0
-5:0/0 = 0
-6:0/0 = 0
-7:0/0 = 0
-4:3/0 = 0
-5:3/0 = 0
-6:3/0 = 0
-7:3/0 = 0
-7:4/0 = 0
-7:5/0 = 0
-6:5/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_3r48q"]
-texture = ExtResource("16_pq12e")
-texture_region_size = Vector2i(32, 16)
-0:0/0 = 0
-1:0/0 = 0
-1:3/0 = 0
-0:3/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rkpob"]
-texture = ExtResource("16_pq12e")
-margins = Vector2i(0, 16)
-separation = Vector2i(0, 16)
-texture_region_size = Vector2i(32, 32)
-0:1/0 = 0
-1:1/0 = 0
-2:1/0 = 0
-1:0/0 = 0
-0:0/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_w0afg"]
-texture = ExtResource("17_bava4")
-texture_region_size = Vector2i(32, 32)
-2:0/0 = 0
-4:1/0 = 0
-4:2/0 = 0
-5:0/0 = 0
-5:1/0 = 0
-5:2/0 = 0
-0:3/0 = 0
-1:4/0 = 0
-0:5/0 = 0
-0:6/0 = 0
-1:5/0 = 0
-1:6/0 = 0
-2:6/0 = 0
-
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_m5a4j"]
-texture = ExtResource("16_pq12e")
-texture_region_size = Vector2i(32, 32)
-2:3/0 = 0
-3:3/0 = 0
-
-[sub_resource type="TileSet" id="TileSet_b6vu8"]
-tile_size = Vector2i(1, 1)
-sources/0 = SubResource("TileSetAtlasSource_aty1y")
-sources/1 = SubResource("TileSetAtlasSource_3r48q")
-sources/3 = SubResource("TileSetAtlasSource_rkpob")
-sources/4 = SubResource("TileSetAtlasSource_w0afg")
-sources/5 = SubResource("TileSetAtlasSource_m5a4j")
-
 [sub_resource type="Gradient" id="Gradient_o60jf"]
 colors = PackedColorArray(0.0406265, 0.0380859, 0.046875, 1, 1, 0.786194, 0.558594, 1)
 
@@ -308,7 +242,6 @@ texture_filter = 1
 position = Vector2(813, 327)
 amount = 64
 process_material = SubResource("ParticleProcessMaterial_r8n1y")
-texture = ExtResource("18_mmmnr")
 lifetime = 12.0
 
 [node name="DirectionalLight2D" type="DirectionalLight2D" parent="."]
@@ -358,7 +291,7 @@ color = Color(0.0509804, 0.0509804, 0.0509804, 0.878431)
 z_index = -3
 texture_filter = 1
 tile_map_data = PackedByteArray("AAA/A/gABAACAAAAAADfAv4ABAACAAYAAADUAvsABAAFAAIAAADoAv4ABAAEAAIAAADDAv0ABAAEAAIAAAC5AvwABAAEAAIAAACxAv8ABAAEAAIAAACpAgUBBAAEAAIAAAChAv4ABAAEAAIAAACYAgEBBAAFAAIAAACEAggBBAAEAAIAAGCLAgIBBAAEAAIAAADtAgIBBAAEAAIAAADYAvoABAAEAAIAAAD4AgEBBAAEAAIAAAABAwUBBAAEAAIAAABKA/cABAABAAQAAAA4A/sABAAFAAAAAADlAgABBAAEAAEAAADfAv8ABAACAAAAAADYAgABBAAEAAEAABCqAgEBBAAFAAAAACCtAvwABAAAAAMAACDLAvoABAAFAAEAAACRAv4ABAAFAAEAAADuAgMBBAAFAAEAAACgAgYBBAAFAAEAAAC9AgYBBAAFAAEAAADAAgIBBAAFAAEAAACVAgIBBAAFAAEAAACFAgkBBAAFAAEAAAAzA5EBBAAFAAEAACA2A5wBBAAFAAEAACAvA5kBBAAFAAEAACAxA5IBBAAFAAEAACA1A6MBBAAFAAEAACA1A68BBAAFAAEAACAzA6sBBAAFAAEAACA7A6YBBAAEAAIAACA6A5kBBAAEAAIAACA8A5IBBAAFAAEAACBCA44BBAAFAAEAACCHAgMBBAABAAQAAAA=")
-tile_set = SubResource("TileSet_b6vu8")
+tile_set = ExtResource("6_bf300")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 visible = false

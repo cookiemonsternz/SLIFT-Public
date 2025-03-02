@@ -816,7 +816,7 @@ func _init() -> void:
 func _enter_tree() -> void:
 	# Call this again because get_node() only works when the node is inside the tree
 	set_collision_polygon_node_path(collision_polygon_node_path)
-	set_light_occluder_node_path(light_occluder_node_path)
+	#set_light_occluder_node_path(light_occluder_node_path)
 
 	# Handle material changes if scene is (re-)entered (e.g. after switching to another)
 	if shape_material != null:
@@ -1067,7 +1067,7 @@ func bake_light_occluder() -> void:
 	# 	_light_occluder_node.queue_free()
 	# 	set_light_occluder_node_path("")
 		
-	if light_occluder_node_path == null or light_occluder_node_path.is_empty() or not _light_occluder_node:
+	if (light_occluder_node_path == null or light_occluder_node_path.is_empty() or not _light_occluder_node) and Engine.is_editor_hint():
 		if not get_parent() is StaticBody2D:
 			return
 		var occ: LightOccluder2D = LightOccluder2D.new()

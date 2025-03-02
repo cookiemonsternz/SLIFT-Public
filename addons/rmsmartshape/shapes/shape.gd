@@ -1070,6 +1070,9 @@ func bake_light_occluder() -> void:
 	if (light_occluder_node_path == null or light_occluder_node_path.is_empty() or not _light_occluder_node) and Engine.is_editor_hint():
 		if not get_parent() is StaticBody2D:
 			return
+		for child in get_parent().get_children():
+			if child is LightOccluder2D:
+				return
 		var occ: LightOccluder2D = LightOccluder2D.new()
 		get_parent().add_child(occ, true)
 		occ.owner = get_tree().edited_scene_root
@@ -1669,6 +1672,11 @@ func force_update() -> void:
 	queue_redraw()
 	_dirty = false
 
+
+# func _process(delta: float) -> void:
+# 	for child in get_parent().get_children():
+# 			if child is LightOccluder2D:
+# 				child.queue_free()
 
 ## Returns a float between 0.0 and 1.0.[br]
 ## 0.0 means that this tessellated point is at the same position as the vertex.[br]

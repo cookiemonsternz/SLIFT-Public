@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://xjcomaw5vkqs"
-path="res://.godot/imported/arm_upgrade_ui_background.png-be422d38c2e5aa6710d2580b5c495d18.ctex"
+path="res://.godot/imported/arm_upgrade_ui_background.png-bb538d91d9f252012a1d6241e3be8743.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Images/arm_upgrade_ui_background.png"
-dest_files=["res://.godot/imported/arm_upgrade_ui_background.png-be422d38c2e5aa6710d2580b5c495d18.ctex"]
+source_file="res://assets/images/arm_upgrade_ui_background.png"
+dest_files=["res://.godot/imported/arm_upgrade_ui_background.png-bb538d91d9f252012a1d6241e3be8743.ctex"]
 
 [params]
 

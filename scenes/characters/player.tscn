@@ -21,7 +21,7 @@ width = 0.481
 resource_local_to_scene = false
 resource_name = ""
 script = ExtResource("1_42r4y")
-size = Vector2i(64, 64)
+size = Vector2i(256, 256)
 shape = SubResource("Resource_12rae")
 fill_type = 0
 fill_color = Color(1, 1, 1, 1)
@@ -159,9 +159,11 @@ vertical_alignment = 1
 shape = SubResource("CapsuleShape2D_rh5mj")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
+scale = Vector2(0.25, 0.25)
 texture = SubResource("Texture2D_7im1b")
 
 [node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(3, 3)
 process_callback = 0
 position_smoothing_enabled = true
 position_smoothing_speed = 15.0

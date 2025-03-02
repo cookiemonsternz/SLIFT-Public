@@ -22,6 +22,7 @@ var _dirty: bool = false
 var _edges: Array[SS2D_Edge] = []
 var _meshes: Array[SS2D_Mesh] = []
 var _collision_polygon_node: CollisionPolygon2D
+var _light_occluder_node: LightOccluder2D
 # Whether or not the plugin should allow editing this shape
 var can_edit: bool = true
 
@@ -52,6 +53,31 @@ enum CollisionUpdateMode {
 	## increases loading times as collision generation is deferred to runtime.
 	Runtime,
 	## Update collisions both in editor and during runtime. This is the default behavior in older
+	## SS2D versions.
+	EditorAndRuntime,
+}
+
+enum LightOccluderGenerationMethod {
+	## Uses the shape curve to generate a light occluder polygon. Usually this method is accurate enough.
+	## For open shapes, a precise method will be used instead, as the fast method is not suitable.
+	Fast,
+	## Uses the edge generation algorithm to create an accurate light occluder representation that
+	## exactly matches the shape's visuals.
+	## Depending on the shape's complexity, this method is very expensive.
+	Precise,
+}
+
+enum LightOccluderUpdateMode {
+	## Only update light occluders in editor. If the corresponding LightOccluderPolygon2D is part of the same
+	## scene, it will be saved automatically by Godot, hence no additional regeneration at runtime
+	## is necessary, which reduces the loading times.
+	## Does not work if the LightOccluderPolygon2D is part of an instanced scene, as only the scene root
+	## node will be saved by Godot.
+	Editor,
+	## Only update light occluders during runtime. Improves the shape-editing performance in editor but
+	## increases loading times as light occluder generation is deferred to runtime.
+	Runtime,
+	## Update light occluders both in editor and during runtime. This is the default behavior in older
 	## SS2D versions.
 	EditorAndRuntime,
 }
@@ -142,6 +168,27 @@ var collision_offset: float = 0.0 : set = set_collision_offset
 ## NodePath to CollisionPolygon2D node for which polygon data will be generated.
 @export_node_path("CollisionPolygon2D") var collision_polygon_node_path: NodePath : set = set_collision_polygon_node_path
 
+@export_group("Light Occluder")
+
+## Controls which method should be used to generate the collision shape.
+@export var light_occluder_generation_method := LightOccluderGenerationMethod.Fast : set = set_light_occluder_generation_method
+
+## Controls when to update collisions.
+@export var light_occluder_update_mode := LightOccluderUpdateMode.Editor : set = set_light_occluder_update_mode
+
+## Controls size of generated polygon for LightOccluderPolygon2D.
+@export_range(0.0, 64.0, 1.0, "or_greater")
+var light_occluder_size: float = 32 : set = set_light_occluder_size
+
+## Controls offset of generated polygon for LightOccluderPolygon2D.
+@export_range(-64.0, 64.0, 1.0, "or_greater", "or_lesser")
+var light_occluder_offset: float = 0.0 : set = set_light_occluder_offset
+
+## NodePath to LightOccluder2D node for which polygon data will be generated.
+@export_node_path("LightOccluder2D") var light_occluder_node_path: NodePath : set = set_light_occluder_node_path
+
+## Controls which method should
+
 #####################
 #-SETTERS / GETTERS-#
 #####################
@@ -161,6 +208,22 @@ func set_collision_polygon_node_path(value: NodePath) -> void:
 
 	if not _collision_polygon_node:
 		push_error("collision_polygon_node_path should point to proper CollisionPolygon2D node.")
+
+func set_light_occluder_node_path(value: NodePath) -> void:
+	light_occluder_node_path = value
+	set_as_dirty()
+
+	if not is_inside_tree():
+		return
+
+	if light_occluder_node_path.is_empty():
+		_light_occluder_node = null
+		return
+
+	_light_occluder_node = get_node(light_occluder_node_path) as LightOccluder2D
+
+	if not _light_occluder_node:
+		push_error("light_occluder_node_path should point to proper LightOccluder2D node.")
 
 
 func get_collision_polygon_node() -> CollisionPolygon2D:
@@ -214,8 +277,18 @@ func set_collision_generation_method(value: CollisionGenerationMethod) -> void:
 	set_as_dirty()
 
 
+func set_light_occluder_generation_method(value: LightOccluderGenerationMethod) -> void:
+	light_occluder_generation_method = value
+	set_as_dirty()
+
+
 func set_collision_update_mode(value: CollisionUpdateMode) -> void:
 	collision_update_mode = value
+	set_as_dirty()
+
+
+func set_light_occluder_update_mode(value: LightOccluderUpdateMode) -> void:
+	light_occluder_update_mode = value
 	set_as_dirty()
 
 
@@ -225,8 +298,20 @@ func set_collision_size(s: float) -> void:
 	notify_property_list_changed()
 
 
+func set_light_occluder_size(s: float) -> void:
+	light_occluder_size = s
+	set_as_dirty()
+	notify_property_list_changed()
+
+
 func set_collision_offset(s: float) -> void:
 	collision_offset = s
+	set_as_dirty()
+	notify_property_list_changed()
+
+
+func set_light_occluder_offset(s: float) -> void:
+	light_occluder_offset = s
 	set_as_dirty()
 	notify_property_list_changed()
 
@@ -531,6 +616,8 @@ func clone(clone_point_array: bool = true) -> SS2D_Shape:
 	copy.editor_debug = editor_debug
 	copy.collision_size = collision_size
 	copy.collision_offset = collision_offset
+	copy.light_occluder_size = light_occluder_size
+	copy.light_occluder_offset = light_occluder_offset
 	#copy.material_overrides = s.material_overrides
 	copy.name = get_name().rstrip("0123456789")
 	if clone_point_array:
@@ -729,6 +816,7 @@ func _init() -> void:
 func _enter_tree() -> void:
 	# Call this again because get_node() only works when the node is inside the tree
 	set_collision_polygon_node_path(collision_polygon_node_path)
+	set_light_occluder_node_path(light_occluder_node_path)
 
 	# Handle material changes if scene is (re-)entered (e.g. after switching to another)
 	if shape_material != null:
@@ -900,7 +988,57 @@ func _generate_collision_points_precise() -> PackedVector2Array:
 	return points
 
 
+func _generate_light_occluder_points_precise() -> PackedVector2Array:
+	var points := PackedVector2Array()
+	var num_points: int = _points.get_point_count()
+	if num_points < 2:
+		return points
+
+	var csize: float = 1.0 if is_shape_closed() else light_occluder_size
+	var indices := PackedInt32Array(range(num_points))
+	var edge_data := SS2D_IndexMap.new(indices, null)
+	var edge: SS2D_Edge = _build_edge_with_material(edge_data, light_occluder_offset - 1.0, csize)
+	_weld_quad_array(edge.quads, false)
+
+	if is_shape_closed():
+		var first_quad: SS2D_Quad = edge.quads[0]
+		var last_quad: SS2D_Quad = edge.quads.back()
+		SS2D_Shape.weld_quads(last_quad, first_quad)
+
+	if not edge.quads.is_empty():
+		# Top edge (typically point A unless corner quad)
+		for quad in edge.quads:
+			if quad.corner == SS2D_Quad.CORNER.NONE:
+				points.push_back(quad.pt_a)
+			elif quad.corner == SS2D_Quad.CORNER.OUTER:
+				points.push_back(quad.pt_d)
+			elif quad.corner == SS2D_Quad.CORNER.INNER:
+				pass
+
+		if not is_shape_closed():
+			# Right Edge (point d, the first or final quad will never be a corner)
+			points.push_back(edge.quads[edge.quads.size() - 1].pt_d)
+
+			# Bottom Edge (typically point c)
+			for quad_index in edge.quads.size():
+				var quad: SS2D_Quad = edge.quads[edge.quads.size() - 1 - quad_index]
+				if quad.corner == SS2D_Quad.CORNER.NONE:
+					points.push_back(quad.pt_c)
+				elif quad.corner == SS2D_Quad.CORNER.OUTER:
+					pass
+				elif quad.corner == SS2D_Quad.CORNER.INNER:
+					points.push_back(quad.pt_b)
+
+			# Left Edge (point b)
+			points.push_back(edge.quads[0].pt_b)
+	return points
+
+
 func _generate_collision_points_fast() -> PackedVector2Array:
+	return _points.get_tessellated_points()
+
+
+func _generate_light_occluder_points_fast() -> PackedVector2Array:
 	return _points.get_tessellated_points()
 
 
@@ -921,6 +1059,41 @@ func bake_collision() -> void:
 
 	var xform := _collision_polygon_node.get_global_transform().affine_inverse() * get_global_transform()
 	_collision_polygon_node.polygon = xform * generated_points
+
+
+func bake_light_occluder() -> void:
+	# if light_occluder_node_path:
+	# 	print("Deleting Light Occluder Node")
+	# 	_light_occluder_node.queue_free()
+	# 	set_light_occluder_node_path("")
+		
+	if light_occluder_node_path == null or light_occluder_node_path.is_empty() or not _light_occluder_node:
+		if not get_parent() is StaticBody2D:
+			return
+		var occ: LightOccluder2D = LightOccluder2D.new()
+		get_parent().add_child(occ, true)
+		occ.owner = get_tree().edited_scene_root
+		print(occ, " : ", occ.owner, " : ", occ.get_path())
+		set_light_occluder_node_path(occ.get_path())
+
+	if not _light_occluder_node:
+		return
+
+	if light_occluder_update_mode == LightOccluderUpdateMode.Editor and not Engine.is_editor_hint() \
+			or light_occluder_update_mode == LightOccluderUpdateMode.Runtime and Engine.is_editor_hint():
+		return
+
+	var generated_points: PackedVector2Array
+
+	if light_occluder_generation_method == LightOccluderGenerationMethod.Fast and is_shape_closed():
+		generated_points = _generate_light_occluder_points_fast()
+	else:
+		generated_points = _generate_light_occluder_points_precise()
+
+	var xform := _light_occluder_node.get_global_transform().affine_inverse() * get_global_transform()
+	var _occluder_polygon := OccluderPolygon2D.new()
+	_occluder_polygon.set_polygon(xform * generated_points)
+	_light_occluder_node.occluder = _occluder_polygon
 
 
 func cache_edges() -> void:
@@ -1489,6 +1662,7 @@ func force_update() -> void:
 	clear_cached_data()
 
 	bake_collision()
+	bake_light_occluder()
 	if get_point_count() >= 2:
 		cache_edges()
 		cache_meshes()

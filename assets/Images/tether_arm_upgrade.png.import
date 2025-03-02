@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d1lbkynmlr1mk"
-path="res://.godot/imported/tether_arm_upgrade.png-522cd50bf8e3e9e8b8ec60d2756cfd60.ctex"
+path="res://.godot/imported/tether_arm_upgrade.png-51756396ca2f83346ffeb5b22209b4e7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Images/tether_arm_upgrade.png"
-dest_files=["res://.godot/imported/tether_arm_upgrade.png-522cd50bf8e3e9e8b8ec60d2756cfd60.ctex"]
+source_file="res://assets/images/tether_arm_upgrade.png"
+dest_files=["res://.godot/imported/tether_arm_upgrade.png-51756396ca2f83346ffeb5b22209b4e7.ctex"]
 
 [params]
 

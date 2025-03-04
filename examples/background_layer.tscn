@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://bbly51r4ghjum"]
+
+[ext_resource type="Script" path="res://examples/background_layer.gd" id="1_kbxnm"]
+
+[node name="BackgroundLayer" type="CanvasGroup"]
+script = ExtResource("1_kbxnm")

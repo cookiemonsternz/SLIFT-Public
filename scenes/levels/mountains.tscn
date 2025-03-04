@@ -29378,6 +29378,7 @@ shadow_enabled = true
 shadow_filter = 2
 
 [node name="Parallax2D" type="ParallaxBackground" parent="."]
+layer = -10
 scroll_ignore_camera_zoom = true
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="Parallax2D"]

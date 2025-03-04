@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://54qh07kpoxp4"
-path="res://.godot/imported/top_right.png-94c20861686761fd46aafd19e968a8f6.ctex"
+path="res://.godot/imported/top_right.png-62013893974dff4be8245efd21c99f9d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/level_1_terrain/top_right.png"
-dest_files=["res://.godot/imported/top_right.png-94c20861686761fd46aafd19e968a8f6.ctex"]
+source_file="res://assets/Images/level_1_terrain/top_right.png"
+dest_files=["res://.godot/imported/top_right.png-62013893974dff4be8245efd21c99f9d.ctex"]
 
 [params]
 

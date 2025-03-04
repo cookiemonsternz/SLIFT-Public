@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://uo52gqa7301o"
-path="res://.godot/imported/yank_arm_upgrade.png-f5460ed18b5f8421275937c20518b61a.ctex"
+path="res://.godot/imported/yank_arm_upgrade.png-aa49c2c9637261ba24bf1063832dcabe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/yank_arm_upgrade.png"
-dest_files=["res://.godot/imported/yank_arm_upgrade.png-f5460ed18b5f8421275937c20518b61a.ctex"]
+source_file="res://assets/Images/yank_arm_upgrade.png"
+dest_files=["res://.godot/imported/yank_arm_upgrade.png-aa49c2c9637261ba24bf1063832dcabe.ctex"]
 
 [params]
 

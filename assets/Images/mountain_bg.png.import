@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://3e6o02ee32nu"
-path="res://.godot/imported/mountain_bg.png-7afbf34490e073b80904d436150143d0.ctex"
+path="res://.godot/imported/mountain_bg.png-3a9a7e9dfb8f88443b4172a58a0a631d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/mountain_bg.png"
-dest_files=["res://.godot/imported/mountain_bg.png-7afbf34490e073b80904d436150143d0.ctex"]
+source_file="res://assets/Images/mountain_bg.png"
+dest_files=["res://.godot/imported/mountain_bg.png-3a9a7e9dfb8f88443b4172a58a0a631d.ctex"]
 
 [params]
 

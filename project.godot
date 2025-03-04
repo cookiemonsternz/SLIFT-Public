@@ -37,6 +37,7 @@ enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addon
 
 Player="Player Character"
 button_activate=""
+camera=""
 
 [input]
 

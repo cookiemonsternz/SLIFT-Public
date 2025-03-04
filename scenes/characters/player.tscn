@@ -162,11 +162,17 @@ shape = SubResource("CapsuleShape2D_rh5mj")
 scale = Vector2(0.25, 0.25)
 texture = SubResource("Texture2D_7im1b")
 
-[node name="Camera2D" type="Camera2D" parent="."]
+[node name="Camera2D" type="Camera2D" parent="." groups=["camera"]]
 zoom = Vector2(3, 3)
 process_callback = 0
 position_smoothing_enabled = true
-position_smoothing_speed = 15.0
+position_smoothing_speed = 2.5
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+drag_left_margin = 0.1
+drag_top_margin = 0.1
+drag_right_margin = 0.1
+drag_bottom_margin = 0.1
 
 [node name="JumpBufferTimer" type="Timer" parent="."]
 one_shot = true
@@ -184,6 +190,7 @@ one_shot = true
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="."]
 occluder = SubResource("OccluderPolygon2D_lavc5")
+occluder_light_mask = 2
 
 [node name="GroundCasts" type="Node2D" parent="."]
 

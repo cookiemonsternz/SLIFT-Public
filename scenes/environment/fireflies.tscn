@@ -35,8 +35,7 @@ turbulence_enabled = true
 turbulence_noise_speed_random = 0.05
 turbulence_influence_min = 0.0
 
-[node name="Fireflies" type="GPUParticles2D"]
-modulate = Color(1, 0.140625, 0.140625, 1)
+[node name="GPUParticles2D" type="GPUParticles2D"]
 z_index = -6
 texture_filter = 1
 texture_repeat = 1

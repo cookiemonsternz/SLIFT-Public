@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://biut6jq8l1isu"
-path="res://.godot/imported/dash_arm_upgrade.png-0da4d6fc43b2b1a50bfbaeca97804b57.ctex"
+path="res://.godot/imported/dash_arm_upgrade.png-c348140b73412684d12b897c0738f945.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/dash_arm_upgrade.png"
-dest_files=["res://.godot/imported/dash_arm_upgrade.png-0da4d6fc43b2b1a50bfbaeca97804b57.ctex"]
+source_file="res://assets/Images/dash_arm_upgrade.png"
+dest_files=["res://.godot/imported/dash_arm_upgrade.png-c348140b73412684d12b897c0738f945.ctex"]
 
 [params]
 

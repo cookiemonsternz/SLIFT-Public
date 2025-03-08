@@ -3,12 +3,12 @@
 importer="aseprite_wizard.plugin.noop"
 type="PackedDataContainer"
 uid="uid://1vo5avnij12q"
-path="res://.godot/imported/rock.aseprite-e2c8120bd3e3864825ecd38f4b754114.res"
+path="res://.godot/imported/rock.aseprite-e8a37b579f43b4cf87bb9e6715a2e132.res"
 
 [deps]
 
-source_file="res://assets/aseprite/rock.aseprite"
-dest_files=["res://.godot/imported/rock.aseprite-e2c8120bd3e3864825ecd38f4b754114.res"]
+source_file="res://assets/Aseprite/rock.aseprite"
+dest_files=["res://.godot/imported/rock.aseprite-e8a37b579f43b4cf87bb9e6715a2e132.res"]
 
 [params]
 

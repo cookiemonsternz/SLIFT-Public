@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://cbuos8efp2bg2"]
+[gd_scene load_steps=49 format=3 uid="uid://cbuos8efp2bg2"]
 
 [ext_resource type="Script" path="res://addons/rmsmartshape/shapes/shape_closed.gd" id="1_iqqjp"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/vertex_properties.gd" id="2_gv5ql"]
@@ -6,20 +6,20 @@
 [ext_resource type="Script" path="res://addons/rmsmartshape/shapes/point_array.gd" id="4_cg5p0"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="5_lk1it"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material.gd" id="6_tll7q"]
-[ext_resource type="Texture2D" uid="uid://dk2ugnlke8lko" path="res://assets/Images/rock_smart_shape_2d/vines_center.png" id="7_axfef"]
-[ext_resource type="Texture2D" uid="uid://cx60idvaew1nn" path="res://assets/Images/rock_smart_shape_2d/vines-taper-left.png" id="8_veox6"]
-[ext_resource type="Texture2D" uid="uid://sc0wawvd13gq" path="res://assets/Images/rock_smart_shape_2d/vines_taper_right.png" id="9_a384h"]
+[ext_resource type="Texture2D" uid="uid://dk2ugnlke8lko" path="res://assets/images/_UNUSED_rock_smart_shape_2d/vines_center.png" id="7_axfef"]
+[ext_resource type="Texture2D" uid="uid://cx60idvaew1nn" path="res://assets/images/_UNUSED_rock_smart_shape_2d/vines-taper-left.png" id="8_veox6"]
+[ext_resource type="Texture2D" uid="uid://sc0wawvd13gq" path="res://assets/images/_UNUSED_rock_smart_shape_2d/vines_taper_right.png" id="9_a384h"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/normal_range.gd" id="10_y7ab5"]
-[ext_resource type="Texture2D" uid="uid://bc12dlcrh7req" path="res://assets/Images/rock_smart_shape_2d/pebble_center.png" id="11_byy0b"]
-[ext_resource type="Texture2D" uid="uid://c5qauvt0jb6mo" path="res://assets/Images/rock_smart_shape_2d/pebble_taper_left.png" id="12_5vtng"]
-[ext_resource type="Texture2D" uid="uid://bwa6y748p6brx" path="res://assets/Images/rock_smart_shape_2d/pebble_taper_right.png" id="13_3l6t6"]
-[ext_resource type="Texture2D" uid="uid://dxr0nqf2dnim2" path="res://assets/Images/rock_smart_shape_2d/rock_center.png" id="14_fiwyr"]
-[ext_resource type="Texture2D" uid="uid://budvjjlgifgpq" path="res://assets/Images/rock_smart_shape_2d/rock_taper_left.png" id="15_yryak"]
-[ext_resource type="Texture2D" uid="uid://ydw82ljkxq4e" path="res://assets/Images/rock_smart_shape_2d/rock_taper_right.png" id="16_mnukg"]
-[ext_resource type="Texture2D" uid="uid://bnloo8slqycyf" path="res://assets/Images/rock_smart_shape_2d/fill_1.png" id="17_ljftl"]
+[ext_resource type="Texture2D" uid="uid://bc12dlcrh7req" path="res://assets/images/_UNUSED_rock_smart_shape_2d/pebble_center.png" id="11_byy0b"]
+[ext_resource type="Texture2D" uid="uid://c5qauvt0jb6mo" path="res://assets/images/_UNUSED_rock_smart_shape_2d/pebble_taper_left.png" id="12_5vtng"]
+[ext_resource type="Texture2D" uid="uid://bwa6y748p6brx" path="res://assets/images/_UNUSED_rock_smart_shape_2d/pebble_taper_right.png" id="13_3l6t6"]
+[ext_resource type="Texture2D" uid="uid://dxr0nqf2dnim2" path="res://assets/images/_UNUSED_rock_smart_shape_2d/rock_center.png" id="14_fiwyr"]
+[ext_resource type="Texture2D" uid="uid://budvjjlgifgpq" path="res://assets/images/_UNUSED_rock_smart_shape_2d/rock_taper_left.png" id="15_yryak"]
+[ext_resource type="Texture2D" uid="uid://ydw82ljkxq4e" path="res://assets/images/_UNUSED_rock_smart_shape_2d/rock_taper_right.png" id="16_mnukg"]
+[ext_resource type="Texture2D" uid="uid://bnloo8slqycyf" path="res://assets/images/_UNUSED_rock_smart_shape_2d/fill_1.png" id="17_ljftl"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/shape_material.gd" id="18_qmhqh"]
 
-[sub_resource type="Resource" id="Resource_bwvur"]
+[sub_resource type="Resource" id="Resource_kno5j"]
 script = ExtResource("2_gv5ql")
 texture_idx = 0
 flip = false
@@ -30,9 +30,9 @@ script = ExtResource("3_yi02a")
 position = Vector2(146.988, 213.421)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_bwvur")
+properties = SubResource("Resource_kno5j")
 
-[sub_resource type="Resource" id="Resource_7mq0t"]
+[sub_resource type="Resource" id="Resource_fay54"]
 script = ExtResource("2_gv5ql")
 texture_idx = 0
 flip = false
@@ -43,9 +43,9 @@ script = ExtResource("3_yi02a")
 position = Vector2(235.651, 172.467)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_7mq0t")
+properties = SubResource("Resource_fay54")
 
-[sub_resource type="Resource" id="Resource_2mns3"]
+[sub_resource type="Resource" id="Resource_qwqd6"]
 script = ExtResource("2_gv5ql")
 texture_idx = 0
 flip = false
@@ -56,9 +56,9 @@ script = ExtResource("3_yi02a")
 position = Vector2(276.919, 332.189)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_2mns3")
+properties = SubResource("Resource_qwqd6")
 
-[sub_resource type="Resource" id="Resource_i8hvr"]
+[sub_resource type="Resource" id="Resource_hjvbi"]
 script = ExtResource("2_gv5ql")
 texture_idx = 0
 flip = false
@@ -69,9 +69,9 @@ script = ExtResource("3_yi02a")
 position = Vector2(146.988, 213.421)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_i8hvr")
+properties = SubResource("Resource_hjvbi")
 
-[sub_resource type="Resource" id="Resource_vm3vp"]
+[sub_resource type="Resource" id="Resource_dvr5c"]
 script = ExtResource("2_gv5ql")
 texture_idx = 0
 flip = false
@@ -82,7 +82,7 @@ script = ExtResource("3_yi02a")
 position = Vector2(575.168, 147.937)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_vm3vp")
+properties = SubResource("Resource_dvr5c")
 
 [sub_resource type="Resource" id="Resource_ybjkl"]
 script = ExtResource("2_gv5ql")
@@ -97,7 +97,7 @@ point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
 properties = SubResource("Resource_ybjkl")
 
-[sub_resource type="Resource" id="Resource_7mtqi"]
+[sub_resource type="Resource" id="Resource_f4vip"]
 script = ExtResource("2_gv5ql")
 texture_idx = 0
 flip = false
@@ -108,9 +108,9 @@ script = ExtResource("3_yi02a")
 position = Vector2(602.887, 278.29)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_7mtqi")
+properties = SubResource("Resource_f4vip")
 
-[sub_resource type="Resource" id="Resource_8rs54"]
+[sub_resource type="Resource" id="Resource_siuho"]
 script = ExtResource("2_gv5ql")
 texture_idx = 0
 flip = false
@@ -121,9 +121,9 @@ script = ExtResource("3_yi02a")
 position = Vector2(618.755, 191.234)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_8rs54")
+properties = SubResource("Resource_siuho")
 
-[sub_resource type="Resource" id="Resource_pm511"]
+[sub_resource type="Resource" id="Resource_7kspy"]
 script = ExtResource("2_gv5ql")
 texture_idx = 0
 flip = false
@@ -134,7 +134,7 @@ script = ExtResource("3_yi02a")
 position = Vector2(369.897, 165.593)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_pm511")
+properties = SubResource("Resource_7kspy")
 
 [sub_resource type="Resource" id="Resource_koh7q"]
 script = ExtResource("4_cg5p0")
@@ -266,6 +266,9 @@ fill_texture_angle_offset = 0.0
 fill_mesh_offset = 0.0
 render_offset = 0.0
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_qb5pi"]
+polygon = PackedVector2Array(146.988, 213.421, 235.651, 172.467, 369.897, 165.593, 575.168, 147.937, 618.755, 191.234, 602.887, 278.29, 495.557, 335.612, 276.919, 332.189, 146.988, 213.421)
+
 [node name="GemmasArtOne" type="Node2D"]
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -277,8 +280,12 @@ script = ExtResource("1_iqqjp")
 _points = SubResource("Resource_koh7q")
 shape_material = SubResource("Resource_c0ktb")
 collision_polygon_node_path = NodePath("../CollisionPolygon2D")
+light_occluder_node_path = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/GemmasArtOne/StaticBody2D/LightOccluder2D")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 visible = false
 modulate = Color(1, 1, 1, 0.3)
 polygon = PackedVector2Array(146.988, 213.421, 235.651, 172.467, 369.897, 165.593, 575.168, 147.937, 618.755, 191.234, 602.887, 278.29, 495.557, 335.612, 276.919, 332.189, 146.988, 213.421)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="StaticBody2D"]
+occluder = SubResource("OccluderPolygon2D_qb5pi")

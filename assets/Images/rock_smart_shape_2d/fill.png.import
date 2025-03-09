@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b6ieew0k1pmf4"
-path="res://.godot/imported/fill.png-e1191cae62b9f317d49c97f32ab3676e.ctex"
+path="res://.godot/imported/fill.png-077cc42dcda707a2bbb9faebcc6c089f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/rock_smart_shape_2d/fill.png"
-dest_files=["res://.godot/imported/fill.png-e1191cae62b9f317d49c97f32ab3676e.ctex"]
+source_file="res://assets/Images/rock_smart_shape_2d/fill.png"
+dest_files=["res://.godot/imported/fill.png-077cc42dcda707a2bbb9faebcc6c089f.ctex"]
 
 [params]
 

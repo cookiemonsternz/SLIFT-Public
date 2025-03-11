@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://wgr6int5yyng"
-path="res://.godot/imported/fill_3.png-fbfa007d5ecb02f5170a2438fc1f3c21.ctex"
+uid="uid://cfg8m821kb4ln"
+path="res://.godot/imported/bg_edge.png-7e746dc86719d67e7df1b3cc693800be.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/_UNUSED_rock_smart_shape_2d/fill_3.png"
-dest_files=["res://.godot/imported/fill_3.png-fbfa007d5ecb02f5170a2438fc1f3c21.ctex"]
+source_file="res://assets/images/bg_edge.png"
+dest_files=["res://.godot/imported/bg_edge.png-7e746dc86719d67e7df1b3cc693800be.ctex"]
 
 [params]
 

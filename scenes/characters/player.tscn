@@ -222,6 +222,8 @@ collision_mask = 51
 
 [node name="HealthComponent" parent="Components" node_paths=PackedStringArray("owning_entity") instance=ExtResource("6_orm0g")]
 owning_entity = NodePath("../..")
+health_regen = false
+shield_regen = false
 
 [node name="ArmUpgradeComponent" parent="Components" node_paths=PackedStringArray("arm_upgrade_ui") instance=ExtResource("7_i54cr")]
 arm_upgrade_ui = NodePath("../../ArmUpgradeUI")

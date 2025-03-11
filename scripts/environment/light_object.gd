@@ -33,6 +33,7 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if not Engine.is_editor_hint():
+		#print(bodies_in_light)
 		for body: PhysicsBody2D in bodies_in_light:
 			if not timers.has(body):
 				timers[body] = create_timer(damage_body.bind(body))
@@ -55,14 +56,14 @@ func create_timer(on_finish: Callable):
 
 func _on_body_entered_light_collider(body) -> void:
 	if not Engine.is_editor_hint():
-		print("HI")
-		if body.is_in_group("Player"):
+		#print(body)
+		if body is Player:
 			bodies_in_light.append(body)
 			print(timers, " : ", bodies_in_light)
 
 func _on_body_exited_light_collider(body) -> void:
 	if not Engine.is_editor_hint():
-		print("HI")
+		#print("HI")
 		if bodies_in_light.find(body) != -1:
 			bodies_in_light.pop_at(bodies_in_light.find(body))
 		if timers.has(body):
@@ -85,32 +86,36 @@ func create_the_nodes():
 		self.remove_child(self.get_node("Marker2D"))
 
 
-	var static_bodyd = StaticBody2D.new()
-	static_bodyd.set_name("StaticBody2D")
-	var sprited = Sprite2D.new()
-	sprited.set_name("Sprite2D")
-	var light_occluderd = LightOccluder2D.new()
-	light_occluderd.set_name("LightOccluder2D")
-	var lightd = PointLight2D.new()
-	lightd.set_name("PointLight2D")
+	#var static_bodyd = StaticBody2D.new()
+	#static_bodyd.set_name("StaticBody2D")
+	#var sprited = Sprite2D.new()
+	#sprited.set_name("Sprite2D")
+	#var light_occluderd = LightOccluder2D.new()
+	#light_occluderd.set_name("LightOccluder2D")
+	#var lightd = PointLight2D.new()
+	#lightd.set_name("PointLight2D")
 	var aread = Area2D.new()
 	aread.set_name("Area2D")
 	var markerd = Marker2D.new()
 	markerd.set_name("Marker2D")
-	
-	self.add_child(static_bodyd)
-	self.add_child(sprited)
-	self.add_child(light_occluderd)
-	self.add_child(lightd)
+	var coll_shape = CollisionShape2D.new()
+	coll_shape.set_name("CollisionShape2D")
+	#self.add_child(static_bodyd)
+	#self.add_child(sprited)
+	#self.add_child(light_occluderd)
+	#self.add_child(lightd)
 	self.add_child(aread)
 	self.add_child(markerd)
-	static_bodyd.set_owner(self)
-	sprited.set_owner(self)
-	light_occluderd.set_owner(self)
-	lightd.set_owner(self)
-	aread.set_owner(self)
-	markerd.set_owner(self)
-
+	#static_bodyd.set_owner(self)
+	#sprited.set_owner(self)
+	#light_occluderd.set_owner(self)
+	#lightd.set_owner(self)
+	aread.set_owner(get_tree().edited_scene_root)
+	markerd.set_owner(get_tree().edited_scene_root)
+	aread.add_child(coll_shape)
+	coll_shape.set_owner(get_tree().edited_scene_root)
+	var shape = RectangleShape2D.new()
+	coll_shape.shape = shape
 	# var static_body_collision_shape = CollisionShape2D.new()
 	# static_body_collision_shape.set_name("CollisionShape2D")
 	# static_bodyd.add_child(static_body_collision_shape)
@@ -120,9 +125,13 @@ func create_the_nodes():
 	# aread.add_child(area_collision_shape)
 	# area_collision_shape.set_owner(aread)
 
-	self.physics_body = static_bodyd
-	self.sprite = sprited
-	self.light_occluder = light_occluderd
-	self.light = lightd
+	#self.physics_body = static_bodyd
+	#self.sprite = sprited
+	#self.light_occluder = light_occluderd
+	#self.light = lightd
+	
+	aread.collision_layer = 0b100
+	aread.collision_mask = 0b101001000
+	
 	self.light_collider = aread
 	self.light_origin = markerd

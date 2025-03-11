@@ -1,6 +1,6 @@
 class_name GrappleArmUpgrade extends ArmUpgrade
 
-var loaded_texture: Texture = preload("res://assets/Images/grapple_arm_upgrade.png")
+var loaded_texture: Texture = preload("res://assets/images/grapple_arm_upgrade.png")
 
 const launch_speed = 15
 const damping = 0.9

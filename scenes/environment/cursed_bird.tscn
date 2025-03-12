@@ -148,7 +148,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vufqn"]
-radius = 147.103
+radius = 93.5
 
 [node name="Bird" type="AnimatedSprite2D"]
 texture_filter = 1

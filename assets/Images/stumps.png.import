@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dcrqs7shxjth4"
-path="res://.godot/imported/fill.png-cf8a8a2b4ff42f84e8dc1f48f0aecdb1.ctex"
+uid="uid://cyh85u58teahj"
+path="res://.godot/imported/stumps.png-4c546622e34759a911b090d0f3d0de1d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Images/jungle/surface_smart_shape/fill.png"
-dest_files=["res://.godot/imported/fill.png-cf8a8a2b4ff42f84e8dc1f48f0aecdb1.ctex"]
+source_file="res://assets/Images/stumps.png"
+dest_files=["res://.godot/imported/stumps.png-4c546622e34759a911b090d0f3d0de1d.ctex"]
 
 [params]
 

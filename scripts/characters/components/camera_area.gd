@@ -5,6 +5,8 @@ extends ColorRect
 
 @export var tween_time: float = 3
 
+@export var reset_on_exit: bool = true
+
 var collision_shape: CollisionShape2D
 var camera: Camera2D
 
@@ -41,6 +43,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 
 func _on_area_2d_body_exited(body: Node2D) -> void:
+	if not reset_on_exit: return;
 	print("Exited Area")
 	var tween = get_tree().create_tween()
 	

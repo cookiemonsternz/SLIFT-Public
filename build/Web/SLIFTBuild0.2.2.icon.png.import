@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://3ayd7pp23044"
-path="res://.godot/imported/SLIFT.icon.png-99e8275592ea1a9959e1a27750d48ef6.ctex"
+uid="uid://c80p4r5ebtqux"
+path="res://.godot/imported/SLIFTBuild0.2.2.icon.png-3c934bddc43a20a76d9ebcd84f11600e.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://build/Web/SLIFT.icon.png"
-dest_files=["res://.godot/imported/SLIFT.icon.png-99e8275592ea1a9959e1a27750d48ef6.ctex"]
+source_file="res://build/Web/SLIFTBuild0.2.2.icon.png"
+dest_files=["res://.godot/imported/SLIFTBuild0.2.2.icon.png-3c934bddc43a20a76d9ebcd84f11600e.ctex"]
 
 [params]
 

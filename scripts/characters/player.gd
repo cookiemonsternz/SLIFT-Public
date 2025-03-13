@@ -46,6 +46,7 @@ var grapple_target_markers: Array[Node2D] = [null, null]
 @export var speed_up_speed = 600
 @export var stop_speed = 1600
 @export var cutoff_speed = 10
+@export var max_fall_speed = 2000
 
 @export_group("Components")
 @export var health_component: HealthComponent
@@ -71,8 +72,8 @@ func _ready() -> void:
 	# Basic grapple upgrades
 	var grapple_upgrade = GrappleArmUpgrade.new()
 	arm_upgrade_component.add_upgrade(Enums.Grapples.Left, 0, grapple_upgrade)
-	var grapple_upgrade2 = GrappleArmUpgrade.new()
-	arm_upgrade_component.add_upgrade(Enums.Grapples.Right, 0, grapple_upgrade2)
+	#var grapple_upgrade2 = GrappleArmUpgrade.new()
+	#arm_upgrade_component.add_upgrade(Enums.Grapples.Right, 0, grapple_upgrade2)
 
 func _process(delta: float) -> void:
 
@@ -154,8 +155,7 @@ func handle_ground_movement(delta: float):
 	if on_floor:
 		can_coyote = true
 		coyote_timer_reset = true
-	
-	else:
+	elif velocity.y < max_fall_speed:
 		velocity.y += gravity_strength * delta
 	
 	if is_sliding:
@@ -220,10 +220,10 @@ func handle_air_movement():
 		current_move_mode = Enums.MoveModes.GROUND
 
 func handle_grapple_input():
-	if Input.is_action_just_pressed("grapple_left"):
+	if Input.is_action_just_pressed("grapple_left") and len(arm_upgrade_component.installed_upgrades_left.values()) > 0:
 		set_grapple_target(Enums.Grapples.Left)
 		arm_upgrade_component.arm_shot(Enums.Grapples.Left)
-	elif Input.is_action_just_released("grapple_left"):
+	elif Input.is_action_just_released("grapple_left") and len(arm_upgrade_component.installed_upgrades_left.values()) > 0:
 		rope1.disable()
 		# if spring_joints[0] != null:
 		# 	spring_joints[0].queue_free()
@@ -240,10 +240,10 @@ func handle_grapple_input():
 		arm_upgrade_component.arm_released(Enums.Grapples.Left)
 	
 	# etc. etc.
-	if Input.is_action_just_pressed("grapple_right"):
+	if Input.is_action_just_pressed("grapple_right") and len(arm_upgrade_component.installed_upgrades_right.values()) > 0:
 		set_grapple_target(Enums.Grapples.Right)
 		arm_upgrade_component.arm_shot(Enums.Grapples.Right)
-	elif Input.is_action_just_released("grapple_right"):
+	elif Input.is_action_just_released("grapple_right") and len(arm_upgrade_component.installed_upgrades_right.values()) > 0:
 		rope2.disable()
 		# if spring_joints[1] != null:
 		# 	spring_joints[1].queue_free()

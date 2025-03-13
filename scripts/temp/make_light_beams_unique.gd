@@ -13,7 +13,10 @@ func on_do_stuff():
 	for child: ColorRect in get_children():
 		print(child)
 		child.material.set("shader", shade)
-		child.material.set("shader_parameter/color", Vector4(1.0, 0.95, 0.825, 0.25))
+		child.material.set("shader_parameter/color", Vector4(1.0, 0.95, 0.825, 1.0))
+		child.material.set("shader_parameter/falloff", 2.0)
+		child.material.set("shader_parameter/ray1_intensity", 0.7)
+		child.material.set("shader_parameter/ray2_intensity", 0.7)
 		child.material = child.material.duplicate(true)
 		child.material.set_shader_parameter("shader_parameter/seed", randf_range(-50, 50))
 		

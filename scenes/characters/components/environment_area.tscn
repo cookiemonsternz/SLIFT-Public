@@ -1,0 +1,33 @@
+[gd_scene load_steps=5 format=3 uid="uid://cw374rrjoweq1"]
+
+[ext_resource type="Script" path="res://scripts/characters/components/environment_area.gd" id="1_8fi53"]
+
+[sub_resource type="Gradient" id="Gradient_ahucf"]
+colors = PackedColorArray(0.0406265, 0.0380859, 0.046875, 1, 1, 0.786194, 0.558594, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_w6ra5"]
+gradient = SubResource("Gradient_ahucf")
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0f3nj"]
+
+[node name="EnvironmentArea" type="ColorRect"]
+offset_right = 32.0
+offset_bottom = 32.0
+color = Color(0.187256, 0.203125, 0, 0.113725)
+script = ExtResource("1_8fi53")
+color_correction = SubResource("GradientTexture1D_w6ra5")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 328
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_0f3nj")
+debug_color = Color(0.300781, 0.7, 0, 0.42)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_0f3nj")
+debug_color = Color(0.300781, 0.7, 0, 0.42)
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

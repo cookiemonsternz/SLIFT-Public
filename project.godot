@@ -25,6 +25,7 @@ Enums="*res://scripts/enums.gd"
 window/size/viewport_width=2560
 window/size/viewport_height=1440
 window/size/mode=3
+window/size/resizable=false
 window/stretch/mode="canvas_items"
 window/stretch/aspect="keep_width"
 window/vsync/vsync_mode=2
@@ -38,6 +39,7 @@ enabled=PackedStringArray("res://addons/AsepriteWizard/plugin.cfg", "res://addon
 Player="Player Character"
 button_activate=""
 camera=""
+environment=""
 
 [input]
 
@@ -117,3 +119,4 @@ textures/vram_compression/import_etc2_astc=true
 lights_and_shadows/directional_shadow/soft_shadow_filter_quality=3
 lights_and_shadows/directional_shadow/16_bits=false
 anti_aliasing/quality/msaa_2d=1
+anti_aliasing/quality/use_debanding=true

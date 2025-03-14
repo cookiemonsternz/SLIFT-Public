@@ -1,4 +1,4 @@
-[gd_scene load_steps=4665 format=4 uid="uid://d3cnaovpnistq"]
+[gd_scene load_steps=4686 format=4 uid="uid://d3cnaovpnistq"]
 
 [ext_resource type="Script" path="res://addons/rmsmartshape/normal_range.gd" id="2_to1aa"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/vertex_properties.gd" id="3_42gl6"]
@@ -13,10 +13,8 @@
 [ext_resource type="Shader" path="res://assets/shader/visibility_mask.gdshader" id="8_w4l83"]
 [ext_resource type="Texture2D" uid="uid://dwaqh3pcncfoj" path="res://assets/images/lamp_light_beam.png" id="9_o8afx"]
 [ext_resource type="Texture2D" uid="uid://bq6vh3n727wj4" path="res://assets/images/point_light.png" id="9_p7ouj"]
-[ext_resource type="Script" path="res://addons/shape_texture_2d/shape_texture_2d.gd" id="9_ystci"]
 [ext_resource type="PackedScene" uid="uid://dbe5l6x8cnnnw" path="res://scenes/environment/lights/light_object.tscn" id="10_rtcur"]
 [ext_resource type="Script" path="res://scripts/environment/components/door_component.gd" id="11_b0yir"]
-[ext_resource type="Script" path="res://addons/shape_texture_2d/drawable_rectangle.gd" id="12_8evjo"]
 [ext_resource type="TileSet" uid="uid://bk4o7or21mjax" path="res://assets/internal_props.tres" id="12_moqj5"]
 [ext_resource type="PackedScene" uid="uid://cq1dq0pgfte7e" path="res://scenes/environment/button.tscn" id="13_nrm64"]
 [ext_resource type="TileSet" uid="uid://doacjulfdn0ow" path="res://assets/rocksnshrubs.tres" id="13_w4jb0"]
@@ -32,8 +30,12 @@
 [ext_resource type="Shader" path="res://assets/shader/godrays.gdshader" id="19_wkq80"]
 [ext_resource type="Texture2D" uid="uid://5r0yoxd42v20" path="res://assets/images/fly.png" id="20_kb3tc"]
 [ext_resource type="Texture2D" uid="uid://cfg8m821kb4ln" path="res://assets/images/bg_edge.png" id="26_6ifpl"]
+[ext_resource type="Texture2D" uid="uid://x4x1xgs805tg" path="res://assets/images/door.png" id="33_g5ym4"]
 [ext_resource type="PackedScene" uid="uid://cwvhio0pg786r" path="res://scenes/yank_pickup.tscn" id="33_wswv2"]
 [ext_resource type="Script" path="res://scripts/environment/falling_thingy.gd" id="34_4td44"]
+[ext_resource type="Script" path="res://scripts/temp/door_sprite_mountains.gd" id="34_p7cg8"]
+[ext_resource type="Texture2D" uid="uid://dw1egfvnn50yt" path="res://assets/images/boulder.png" id="35_4ece5"]
+[ext_resource type="PackedScene" uid="uid://c2n2wu6pbhe0u" path="res://scenes/environment/cursed_bird.tscn" id="36_u66l4"]
 
 [sub_resource type="Resource" id="Resource_ga64q"]
 script = ExtResource("2_to1aa")
@@ -29899,35 +29901,6 @@ turbulence_influence_min = 0.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_22mll"]
 size = Vector2(706.613, 86.4619)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rqc82"]
-size = Vector2(86, 312)
-
-[sub_resource type="Resource" id="Resource_ibv1s"]
-script = ExtResource("12_8evjo")
-corner_rounding = 0.0
-
-[sub_resource type="Texture2D" id="Texture2D_f0usc"]
-resource_local_to_scene = false
-resource_name = ""
-script = ExtResource("9_ystci")
-size = Vector2i(128, 128)
-shape = SubResource("Resource_ibv1s")
-fill_type = 0
-fill_color = Color(1, 1, 1, 1)
-fill_from = Vector2(0, 0)
-fill_to = Vector2(1, 0)
-fill_repeat = "pad"
-stroke_type = 0
-stroke_width = 0.0
-stroke_color = Color(0, 0, 0, 1)
-stroke_from = Vector2(0, 0)
-stroke_to = Vector2(1, 0)
-stroke_repeat = "pad"
-stroke_joint = "round"
-offset = Vector2(0, 0)
-rotation = 0.0
-scale = Vector2(1, 1)
 
 [sub_resource type="Shader" id="Shader_22pxr"]
 code = "/*
@@ -72051,6 +72024,151 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4b67u"]
 size = Vector2(75, 148)
 
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_gnabu"]
+friction = 6.0
+rough = true
+absorbent = true
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_def53"]
+radius = 42.0119
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rqc82"]
+size = Vector2(60, 309)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5wyx3"]
+atlas = ExtResource("33_g5ym4")
+region = Rect2(0, 0, 30, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_351cs"]
+atlas = ExtResource("33_g5ym4")
+region = Rect2(30, 0, 30, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ba6wu"]
+atlas = ExtResource("33_g5ym4")
+region = Rect2(60, 0, 30, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3reb4"]
+atlas = ExtResource("33_g5ym4")
+region = Rect2(90, 0, 30, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_20n4a"]
+atlas = ExtResource("33_g5ym4")
+region = Rect2(120, 0, 30, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_em2qx"]
+atlas = ExtResource("33_g5ym4")
+region = Rect2(150, 0, 30, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xauao"]
+atlas = ExtResource("33_g5ym4")
+region = Rect2(180, 0, 30, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jycml"]
+atlas = ExtResource("33_g5ym4")
+region = Rect2(210, 0, 30, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbcnb"]
+atlas = ExtResource("33_g5ym4")
+region = Rect2(240, 0, 30, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wxb47"]
+atlas = ExtResource("33_g5ym4")
+region = Rect2(270, 0, 30, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sl26q"]
+atlas = ExtResource("33_g5ym4")
+region = Rect2(300, 0, 30, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8oec"]
+atlas = ExtResource("33_g5ym4")
+region = Rect2(330, 0, 30, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pyvjn"]
+atlas = ExtResource("33_g5ym4")
+region = Rect2(360, 0, 30, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k8cya"]
+atlas = ExtResource("33_g5ym4")
+region = Rect2(390, 0, 30, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_neksm"]
+atlas = ExtResource("33_g5ym4")
+region = Rect2(420, 0, 30, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nuuan"]
+atlas = ExtResource("33_g5ym4")
+region = Rect2(450, 0, 30, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m554r"]
+atlas = ExtResource("33_g5ym4")
+region = Rect2(480, 0, 30, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iiuxt"]
+atlas = ExtResource("33_g5ym4")
+region = Rect2(510, 0, 30, 80)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7vw3n"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5wyx3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_351cs")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ba6wu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3reb4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_20n4a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_em2qx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xauao")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jycml")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gbcnb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wxb47")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sl26q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8oec")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pyvjn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k8cya")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_neksm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nuuan")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m554r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iiuxt")
+}],
+"loop": false,
+"name": &"default",
+"speed": 16.0
+}]
+
 [node name="Mountains" type="Node2D"]
 
 [node name="StartingArea" type="Node2D" parent="."]
@@ -73991,7 +74109,7 @@ shape = SubResource("RectangleShape2D_22mll")
 [node name="Marker2D" type="Marker2D" parent="Fireflies/Fireflies35/LightObject"]
 
 [node name="Player" parent="." instance=ExtResource("6_lcucq")]
-position = Vector2(-669, 110)
+position = Vector2(10070, 2274)
 
 [node name="Root" type="Node2D" parent="."]
 visible = false
@@ -74540,29 +74658,6 @@ polygon = PackedVector2Array(-842, 172.419, -1002, 172.419, -1120, 167.436, -129
 [node name="Block48" parent="Root/Blocks" instance=ExtResource("8_tc2d6")]
 position = Vector2(53462, -50815)
 polygon = PackedVector2Array(286, -114.614, 218, -118.601, 135, -108.634, 50, -68.7686, -40, 1.99316, -171, 81.7246, -390, 79.7314, -541, 67.7715, -671, 101.657, -405, 252.15, -152, 300.985, 262, 459.451, 556, 516.26, 706, 535.196, 622, 162.452, 645, 39.8652, 613, -50.8291, 496, -112.62, 335, -118.601)
-
-[node name="Door" type="Node2D" parent="Root" node_paths=PackedStringArray("owning_entity", "door_animatable_body")]
-position = Vector2(25035, 4768)
-script = ExtResource("11_b0yir")
-owning_entity = NodePath(".")
-door_animatable_body = NodePath("AnimatableBody2D")
-use_tween = true
-open_position = Vector2(0, -150)
-
-[node name="AnimatableBody2D" type="AnimatableBody2D" parent="Root/Door"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Root/Door/AnimatableBody2D"]
-position = Vector2(1, -159)
-shape = SubResource("RectangleShape2D_rqc82")
-
-[node name="Sprite2D" type="Sprite2D" parent="Root/Door/AnimatableBody2D"]
-position = Vector2(-0.00145292, -159)
-scale = Vector2(0.656257, 2.45313)
-texture = SubResource("Texture2D_f0usc")
-
-[node name="Button" parent="Root" node_paths=PackedStringArray("linked_door") instance=ExtResource("13_nrm64")]
-position = Vector2(24892, 4768)
-linked_door = NodePath("../Door")
 
 [node name="Light" type="Polygon2D" parent="Root"]
 position = Vector2(-2095, -2717)
@@ -77284,4 +77379,58 @@ collision_mask = 328
 position = Vector2(27.5, 51)
 shape = SubResource("RectangleShape2D_4b67u")
 
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+position = Vector2(10509, 2247)
+collision_mask = 329
+mass = 3.354
+physics_material_override = SubResource("PhysicsMaterial_gnabu")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
+shape = SubResource("CircleShape2D_def53")
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("35_4ece5")
+offset = Vector2(28.5, -28.5)
+
+[node name="Door" type="Node2D" parent="." node_paths=PackedStringArray("owning_entity", "door_animatable_body")]
+z_index = -5
+position = Vector2(12502, 2385)
+script = ExtResource("11_b0yir")
+owning_entity = NodePath(".")
+door_animatable_body = NodePath("AnimatableBody2D")
+use_tween = true
+open_position = Vector2(0, -150)
+tween_transition_type = 3
+
+[node name="AnimatableBody2D" type="AnimatableBody2D" parent="Door"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Door/AnimatableBody2D"]
+position = Vector2(2, -157)
+shape = SubResource("RectangleShape2D_rqc82")
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="Door/AnimatableBody2D"]
+texture_filter = 1
+position = Vector2(2, -73)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_7vw3n")
+script = ExtResource("34_p7cg8")
+
+[node name="Button" parent="." node_paths=PackedStringArray("linked_door") instance=ExtResource("13_nrm64")]
+visible = false
+position = Vector2(12446, 2384)
+scale = Vector2(0.5, 0.5)
+linked_door = NodePath("../Door")
+
+[node name="Bird" parent="." instance=ExtResource("36_u66l4")]
+position = Vector2(12001, 2650)
+
+[node name="Bird2" parent="." instance=ExtResource("36_u66l4")]
+position = Vector2(11967, 2650)
+
+[node name="Bird3" parent="." instance=ExtResource("36_u66l4")]
+position = Vector2(11986, 2650)
+
 [connection signal="body_entered" from="Area2D" to="AnimationPlayer" method="fall"]
+[connection signal="button_pressed" from="Button" to="Door/AnimatableBody2D/Sprite2D" method="on_pressed"]

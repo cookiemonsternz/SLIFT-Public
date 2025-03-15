@@ -2,10 +2,10 @@
 
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="1_libn6"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material.gd" id="2_ye1nt"]
-[ext_resource type="Texture2D" uid="uid://bhbmculpr1s6a" path="res://assets/Images/mines_smart_texture/mines_topcenter5.png" id="3_863mm"]
+[ext_resource type="Texture2D" uid="uid://bhbmculpr1s6a" path="res://assets/images/mines_smart_texture/mines_topcenter5.png" id="3_863mm"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/normal_range.gd" id="4_4pou8"]
-[ext_resource type="Texture2D" uid="uid://bdr1q0enef7jk" path="res://assets/Images/mines_smart_texture/allroundmins.png" id="5_pq4nx"]
-[ext_resource type="Texture2D" uid="uid://7gkaf2o25ok4" path="res://assets/Images/mines_smart_texture/mine-fil4.png" id="6_mrrsq"]
+[ext_resource type="Texture2D" uid="uid://bdr1q0enef7jk" path="res://assets/images/mines_smart_texture/allroundmins.png" id="5_pq4nx"]
+[ext_resource type="Texture2D" uid="uid://7gkaf2o25ok4" path="res://assets/images/mines_smart_texture/mine-fil4.png" id="6_mrrsq"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/shape_material.gd" id="7_nqd0d"]
 
 [sub_resource type="Resource" id="Resource_x3vxb"]

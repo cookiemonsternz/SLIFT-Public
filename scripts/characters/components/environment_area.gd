@@ -5,6 +5,9 @@ extends ColorRect
 
 @export var tween_time: float = 3
 
+@export var tween_easing: Tween.EaseType = Tween.EaseType.EASE_IN_OUT
+@export var tween_transition: Tween.TransitionType = Tween.TransitionType.TRANS_QUART
+
 @export var reset_on_exit: bool = true
 
 var collision_shape: CollisionShape2D
@@ -32,13 +35,13 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	print("Entered area")
 	var tween = get_tree().create_tween()
 	
-	tween.set_ease(Tween.EASE_IN_OUT)
-	tween.set_trans(Tween.TRANS_QUART)
+	tween.set_ease(tween_easing)
+	tween.set_trans(tween_transition)
 	tween.tween_method(set_exposure, environment.environment.tonemap_exposure, exposure, tween_time)
 	var tween2 = get_tree().create_tween()
 	
-	tween2.set_ease(Tween.EASE_IN_OUT)
-	tween2.set_trans(Tween.TRANS_QUART)
+	tween2.set_ease(tween_easing)
+	tween2.set_trans(tween_transition)
 	tween2.tween_method(set_color_correction, environment.environment.adjustment_color_correction, color_correction, tween_time)
 
 
@@ -47,13 +50,13 @@ func _on_area_2d_body_exited(body: Node2D) -> void:
 	print("Exited Area")
 	var tween = get_tree().create_tween()
 	
-	tween.set_ease(Tween.EASE_IN_OUT)
-	tween.set_trans(Tween.TRANS_QUART)
+	tween.set_ease(tween_easing)
+	tween.set_trans(tween_transition)
 	tween.tween_method(set_exposure, environment.environment.tonemap_exposure, cache_exposure, tween_time)
 	var tween2 = get_tree().create_tween()
 	
-	tween2.set_ease(Tween.EASE_IN_OUT)
-	tween2.set_trans(Tween.TRANS_QUART)
+	tween2.set_ease(tween_easing)
+	tween2.set_trans(tween_transition)
 	tween2.tween_method(set_color_correction, environment.environment.adjustment_color_correction, cache_color_correction, tween_time)
 
 

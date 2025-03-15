@@ -14,3 +14,7 @@ func _ready() -> void:
 func _process(delta: float) -> void:
 	path_follow_2d.progress += speed * delta
 	owning_entity.global_position = path_follow_2d.global_position
+	if path_follow_2d.progress_ratio > 0.5:
+		owning_entity.scale = Vector2(-1, 1)
+	else:
+		owning_entity.scale = Vector2(1, 1)

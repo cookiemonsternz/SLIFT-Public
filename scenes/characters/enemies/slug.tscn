@@ -1,0 +1,107 @@
+[gd_scene load_steps=15 format=3 uid="uid://g8ou1g5upd31"]
+
+[ext_resource type="Texture2D" uid="uid://cu0w1sbj0not" path="res://assets/aseprite/slug_enemy.png" id="1_0jhsg"]
+[ext_resource type="Script" path="res://scripts/characters/enemies/enemy_basic.gd" id="1_8bt7k"]
+[ext_resource type="Script" path="res://scripts/temp/slug.gd" id="2_3tv0v"]
+[ext_resource type="PackedScene" uid="uid://bl4uuboi1j8w1" path="res://scenes/characters/components/enemy_damage_component.tscn" id="3_fbxgv"]
+[ext_resource type="PackedScene" uid="uid://cln5aujysamf1" path="res://scenes/characters/components/enemy_knockback_component.tscn" id="4_cfe0u"]
+[ext_resource type="PackedScene" uid="uid://lnbyo5qn1pea" path="res://scenes/characters/components/enemy_path_movement_component.tscn" id="5_l866l"]
+[ext_resource type="PackedScene" uid="uid://2yvmq877upop" path="res://scenes/characters/components/health_component.tscn" id="6_ikib3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_g07se"]
+atlas = ExtResource("1_0jhsg")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3cwqb"]
+atlas = ExtResource("1_0jhsg")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j62bg"]
+atlas = ExtResource("1_0jhsg")
+region = Rect2(32, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l2yeu"]
+atlas = ExtResource("1_0jhsg")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1v0cr"]
+atlas = ExtResource("1_0jhsg")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_cells"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_g07se")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3cwqb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j62bg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l2yeu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1v0cr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rnr0k"]
+radius = 7.0
+height = 28.0
+
+[node name="Slug" type="Node2D"]
+script = ExtResource("1_8bt7k")
+
+[node name="Slug" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(0, -10)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_cells")
+autoplay = "default"
+frame_progress = 0.935138
+script = ExtResource("2_3tv0v")
+
+[node name="EnemyDamageComponent" parent="." node_paths=PackedStringArray("damage_collider", "owning_entity") instance=ExtResource("3_fbxgv")]
+damage_collider = NodePath("../DamageArea2D")
+owning_entity = NodePath("..")
+damage = 3.0
+
+[node name="EnemyKnockbackComponent" parent="." node_paths=PackedStringArray("damage_collider", "knockback_origin") instance=ExtResource("4_cfe0u")]
+damage_collider = NodePath("../DamageArea2D")
+knockback_amount = 20.0
+knockback_origin = NodePath("../Marker2D")
+
+[node name="EnemyPathMovementComponent" parent="." node_paths=PackedStringArray("owning_entity") instance=ExtResource("5_l866l")]
+owning_entity = NodePath("..")
+speed = 62.0
+
+[node name="HealthComponent" parent="." node_paths=PackedStringArray("owning_entity") instance=ExtResource("6_ikib3")]
+owning_entity = NodePath("..")
+max_health = 3.0
+health = 3.0
+health_regen = false
+max_shield = 0.0
+shield = 0.0
+shield_regen = false
+shield_regen_rate = 0.0
+shield_regen_amount = 0.0
+
+[node name="DamageArea2D" type="Area2D" parent="."]
+position = Vector2(1, 2)
+collision_layer = 128
+collision_mask = 72
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea2D"]
+position = Vector2(-1, -2)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_rnr0k")
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(0, 4)

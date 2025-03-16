@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="SS2D_Material_Shape" load_steps=18 format=3 uid="uid://dqmlul4uh41ar"]
+[gd_resource type="Resource" script_class="SS2D_Material_Shape" load_steps=13 format=3 uid="uid://dqmlul4uh41ar"]
 
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="1_yr6cb"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material.gd" id="2_tcsro"]
@@ -6,9 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://6h67ofr323gp" path="res://assets/images/jungle/surface_smart_shape/grass_left.png" id="4_nnb2e"]
 [ext_resource type="Texture2D" uid="uid://br4xopeynvq26" path="res://assets/images/jungle/surface_smart_shape/grass_right.png" id="5_pbbss"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/normal_range.gd" id="6_hpfxf"]
-[ext_resource type="Texture2D" uid="uid://cj3g0vgv54n2o" path="res://assets/images/jungle/surface_smart_shape/all_around_center.png" id="7_ndlms"]
-[ext_resource type="Texture2D" uid="uid://7ol2a4m8cntl" path="res://assets/images/jungle/surface_smart_shape/all_around_left.png" id="8_seh4o"]
-[ext_resource type="Texture2D" uid="uid://d1fx0nspfwbsg" path="res://assets/images/jungle/surface_smart_shape/all_around_right.png" id="9_a6kts"]
+[ext_resource type="Resource" uid="uid://cvg2aam5fn50x" path="res://assets/jungle_surface_smart_shape_edge_all_around.tres" id="7_4lal3"]
 [ext_resource type="Texture2D" uid="uid://dcrqs7shxjth4" path="res://assets/images/jungle/surface_smart_shape/fill.png" id="10_e7m24"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/shape_material.gd" id="11_16rmj"]
 
@@ -43,40 +41,9 @@ z_index = 0
 z_as_relative = true
 offset = 0.0
 
-[sub_resource type="Resource" id="Resource_ouo3w"]
-script = ExtResource("2_tcsro")
-textures = Array[Texture2D]([ExtResource("7_ndlms")])
-textures_corner_outer = Array[Texture2D]([])
-textures_corner_inner = Array[Texture2D]([])
-textures_taper_left = Array[Texture2D]([ExtResource("8_seh4o")])
-textures_taper_right = Array[Texture2D]([ExtResource("9_a6kts")])
-textures_taper_corner_left = Array[Texture2D]([])
-textures_taper_corner_right = Array[Texture2D]([])
-randomize_texture = false
-use_corner_texture = true
-use_taper_texture = true
-fit_mode = 0
-
-[sub_resource type="Resource" id="Resource_un7u8"]
-script = ExtResource("6_hpfxf")
-begin = 0.0
-distance = 360.0
-edgeRendering = Vector2(0, 0)
-
-[sub_resource type="Resource" id="Resource_wjwqp"]
-script = ExtResource("1_yr6cb")
-edge_material = SubResource("Resource_ouo3w")
-normal_range = SubResource("Resource_un7u8")
-weld = false
-taper_sharp_corners = false
-render = true
-z_index = -1
-z_as_relative = true
-offset = 0.0
-
 [resource]
 script = ExtResource("11_16rmj")
-_edge_meta_materials = Array[ExtResource("1_yr6cb")]([SubResource("Resource_h42mp"), SubResource("Resource_wjwqp")])
+_edge_meta_materials = Array[ExtResource("1_yr6cb")]([SubResource("Resource_h42mp"), ExtResource("7_4lal3")])
 fill_textures = Array[Texture2D]([ExtResource("10_e7m24")])
 fill_texture_z_index = -2
 fill_texture_show_behind_parent = false

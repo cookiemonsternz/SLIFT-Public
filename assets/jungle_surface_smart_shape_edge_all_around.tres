@@ -1,6 +1,6 @@
-[gd_resource type="Resource" script_class="SS2D_Material_Edge_Metadata" load_steps=5 format=3 uid="uid://cvg2aam5fn50x"]
+[gd_resource type="Resource" script_class="SS2D_Material_Edge_Metadata" load_steps=5 format=3 uid="uid://be43xcrs3kk7g"]
 
-[ext_resource type="Resource" uid="uid://ddcbnijrqp2la" path="res://assets/jungle_surface_smart_shape_edge_all_around_2.tres" id="1_ckrha"]
+[ext_resource type="Resource" path="res://assets/jungle_surface_smart_shape_edge_all_around_2.tres" id="1_ckrha"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/normal_range.gd" id="5_os3lt"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="6_djs2p"]
 

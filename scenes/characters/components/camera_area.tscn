@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://bftqr1nflbats"]
+[gd_scene load_steps=3 format=3 uid="uid://24cc1683tocv"]
 
 [ext_resource type="Script" path="res://scripts/characters/components/camera_area.gd" id="1_w0265"]
 

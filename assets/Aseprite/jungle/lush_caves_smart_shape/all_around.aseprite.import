@@ -1,0 +1,14 @@
+[remap]
+
+importer="aseprite_wizard.plugin.noop"
+type="PackedDataContainer"
+uid="uid://djwlewn7hcapc"
+path="res://.godot/imported/all_around.aseprite-6eb39891df4a316ac87134da16f85de1.res"
+
+[deps]
+
+source_file="res://assets/aseprite/jungle/lush_caves_smart_shape/all_around.aseprite"
+dest_files=["res://.godot/imported/all_around.aseprite-6eb39891df4a316ac87134da16f85de1.res"]
+
+[params]
+

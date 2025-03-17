@@ -8,7 +8,8 @@ func _ready():
 func start_fire(_body):
 	self_modulate = Color(1.0, 1.0, 1.0, 1.0)
 	play("start_fire")
-	animation_finished.connect(play_loop)
+	if not is_connected("animation_finished", play_loop):
+		animation_finished.connect(play_loop)
 
 func play_loop():
 	play("loop_fire")

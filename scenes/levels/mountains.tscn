@@ -24,7 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://bwwh3jf1cbmdh" path="res://assets/images/viney.png" id="17_bram3"]
 [ext_resource type="Texture2D" uid="uid://3e6o02ee32nu" path="res://assets/images/mountain_bg.png" id="18_8tatq"]
 [ext_resource type="Script" path="res://scripts/temp/make_light_beams_unique.gd" id="18_dy7hx"]
-[ext_resource type="PackedScene" path="res://scenes/characters/components/camera_area.tscn" id="19_5sgu6"]
+[ext_resource type="PackedScene" uid="uid://24cc1683tocv" path="res://scenes/characters/components/camera_area.tscn" id="19_5sgu6"]
 [ext_resource type="Material" uid="uid://02rowv7hmxiv" path="res://assets/firefly_decorative_process.tres" id="19_u011p"]
 [ext_resource type="Texture2D" uid="uid://by1wovjpib6xm" path="res://assets/images/mountain_lower_bg.png" id="19_v8b2g"]
 [ext_resource type="Shader" path="res://assets/shader/godrays.gdshader" id="19_wkq80"]

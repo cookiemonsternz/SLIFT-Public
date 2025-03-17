@@ -33,6 +33,16 @@
 [ext_resource type="Texture2D" uid="uid://b5ewsbs8u2nnr" path="res://assets/images/j1.png" id="22_3i0ly"]
 [ext_resource type="Texture2D" uid="uid://fdx848434af6" path="res://assets/images/j2.png" id="23_b468h"]
 [ext_resource type="Texture2D" uid="uid://bj4n8k0jdt3uf" path="res://assets/images/j3.png" id="24_rts5g"]
+[ext_resource type="Texture2D" uid="uid://cyh85u58teahj" path="res://assets/Images/stumps.png" id="15_2qgnh"]
+[ext_resource type="Texture2D" uid="uid://dtsm7p5hbatff" path="res://assets/Images/stumpp.png" id="16_6id23"]
+[ext_resource type="Texture2D" uid="uid://bouju17oqpgyq" path="res://assets/Images/chungus_amongus_stump.png" id="17_8e72o"]
+[ext_resource type="Texture2D" uid="uid://demyielvdv55u" path="res://assets/Images/log.png" id="19_wqpj4"]
+[ext_resource type="Texture2D" uid="uid://c446ageta20m4" path="res://assets/Images/plants.png" id="20_88lw0"]
+[ext_resource type="Texture2D" uid="uid://c673ke74hcjad" path="res://assets/Images/jungle_bg_inner_caves.png" id="21_ciguq"]
+[ext_resource type="Texture2D" uid="uid://b5ewsbs8u2nnr" path="res://assets/Images/j1.png" id="22_3i0ly"]
+[ext_resource type="Texture2D" uid="uid://fdx848434af6" path="res://assets/Images/j2.png" id="23_b468h"]
+[ext_resource type="Texture2D" uid="uid://bj4n8k0jdt3uf" path="res://assets/Images/j3.png" id="24_rts5g"]
+[ext_resource type="Texture2D" uid="uid://ba7ejul7v5vro" path="res://assets/Images/mossy_stuff.png" id="25_h4xdo"]
 
 [sub_resource type="Gradient" id="Gradient_h8vo7"]
 interpolation_mode = 2
@@ -60116,6 +60126,40 @@ texture_region_size = Vector2i(150, 150)
 tile_size = Vector2i(1, 1)
 sources/0 = SubResource("TileSetAtlasSource_pf78d")
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_604xv"]
+texture = ExtResource("25_h4xdo")
+texture_region_size = Vector2i(148, 16)
+0:4/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_tfe21"]
+texture = ExtResource("25_h4xdo")
+texture_region_size = Vector2i(45, 32)
+1:4/0 = 0
+4:4/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hewu8"]
+texture = ExtResource("25_h4xdo")
+texture_region_size = Vector2i(30, 20)
+5:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dhf3o"]
+texture = ExtResource("25_h4xdo")
+texture_region_size = Vector2i(21, 41)
+9:1/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rjmhy"]
+texture = ExtResource("25_h4xdo")
+texture_region_size = Vector2i(54, 20)
+4:3/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_0uy0m"]
+tile_size = Vector2i(1, 1)
+sources/0 = SubResource("TileSetAtlasSource_604xv")
+sources/1 = SubResource("TileSetAtlasSource_tfe21")
+sources/2 = SubResource("TileSetAtlasSource_hewu8")
+sources/3 = SubResource("TileSetAtlasSource_dhf3o")
+sources/4 = SubResource("TileSetAtlasSource_rjmhy")
+
 [node name="Node2D" type="Node2D"]
 
 [node name="Surface" type="Node2D" parent="."]
@@ -60499,7 +60543,6 @@ collision_polygon_node_path = NodePath("../CollisionPolygon2D")
 light_occluder_node_path = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/Node2D/Surface/Forest/Platforms/StaticBody2D/LightOccluder2D")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Surface/Forest/Platforms/StaticBody2D"]
-visible = false
 modulate = Color(1, 1, 1, 0.3)
 polygon = PackedVector2Array(12974.4, 1668, 12953.9, 1666.59, 12942.6, 1662.34, 12934.9, 1653.15, 12931.3, 1639.72, 12932.7, 1589.51, 12937.7, 1368.19, 12941.9, 1356.87, 12946.2, 1351.92, 12964.5, 1342.73, 12975.2, 1334.95, 12984.3, 1329.3, 13011.9, 1323.64, 13084.8, 1322.22, 13189.4, 1317.98, 13256.6, 1321.52, 13342.9, 1329.3, 13998.8, 1355.46, 14470.1, 1385.36, 14558.2, 1394.71, 14627.6, 1400.05, 14694.3, 1416.06, 14786.4, 1442.76, 14846.5, 1454.77, 14950.6, 1486.81, 15076.1, 1498.82, 15433.6, 1496.67, 15577.4, 1493.68, 15730.2, 1483.19, 15874.1, 1474.2, 16026.9, 1460.71, 16125.8, 1459.22, 16247.1, 1481.69, 16368.5, 1504.16, 16467.4, 1511.66, 16566.3, 1504.16, 16852.4, 1471, 16980.2, 1445.77, 17114.8, 1425.59, 17240.9, 1412.14, 17395.6, 1402.05, 17619.3, 1386.91, 17747.1, 1385.23, 18032.9, 1395.46, 18156, 1425.16, 18355.4, 1467.59, 18574.6, 1524.16, 18979.9, 1567.99, 19211.2, 1567.99, 19419.9, 1574.73, 19693.8, 1565.75, 20456.4, 1560.69, 20694.4, 1548, 20958, 1548, 21164.4, 1548, 21339, 1573.39, 21775.4, 1661.95, 22242, 1731.36, 22411.8, 1742.68, 22519.4, 1742.68, 22651.6, 1740.79, 22770.4, 1735.13, 22912, 1733.24, 23032.8, 1746.46, 23100.8, 1759.67, 23231, 1763.45, 23329.2, 1757.78, 23480, 1753.48, 23614.4, 1761.56, 23891.8, 1786.1, 23964.4, 1795.79, 24027.8, 1797.91, 24093.2, 1797.91, 24201.4, 1794.58, 24264.4, 1787.48, 24329, 1789.05, 24385.6, 1794.58, 24625.2, 1817.45, 24774.6, 1829.8, 24937.2, 1839.9, 25106.8, 1850, 25367.4, 1865.67, 25527.2, 1879.81, 25701.2, 1895.37, 25804.4, 1902.44, 26020, 1906.03, 26318.4, 1907.44, 26674.8, 1901.78, 26990.2, 1915.5, 27195.4, 1950.82, 27358.6, 1955.87, 27536.8, 1949.14, 27865.4, 1923.69, 28072.4, 1923.69, 28269.8, 1933.21, 28517.2, 1940.34, 29477.4, 2001.66, 29492.2, 2006.34, 29503.4, 2015.68, 29520.8, 2027.02, 29528.8, 2043.04, 29538.8, 2059.72, 29538.8, 2067.06, 29531.6, 2076.42, 29498.2, 2084.42, 29425.4, 2085.08, 29309.2, 2084.42, 29191.2, 2089.1, 28515, 2075.88, 26805.2, 2108.9, 26041.2, 2070.9, 24661.8, 2029.68, 22893.6, 2013.8, 21176.4, 2010.08, 19056.6, 1936.38, 15175.9, 1783.01, 13340.6, 1716.56, 13036.5, 1717.37, 12992.5, 1707.85, 12981.8, 1684.07, 12974.4, 1668)
 
@@ -62506,68 +62549,77 @@ tile_set = SubResource("TileSet_4hmfw")
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(1867, 636)
+position = Vector2(1908, 301)
 scale = Vector2(0.33, 0.33)
-motion_scale = Vector2(0.7, 0.7)
-motion_offset = Vector2(-400, 0)
-motion_mirroring = Vector2(7680, 0)
+motion_scale = Vector2(0.7, 0)
+motion_offset = Vector2(-400, -600)
+motion_mirroring = Vector2(23272, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(6.06024, -81.8182)
+position = Vector2(-1275.76, 651.515)
 texture = ExtResource("22_3i0ly")
 centered = false
 
+[node name="ColorRect" type="ColorRect" parent="ParallaxBackground/ParallaxLayer"]
+offset_left = 521.0
+offset_top = 1712.0
+offset_right = 105361.0
+offset_bottom = 3479.0
+color = Color(0.184314, 0.243137, 0.27451, 1)
+
 [node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
 z_index = -1
-position = Vector2(2388, 673)
-motion_scale = Vector2(0.6, 0.6)
+position = Vector2(2415, 703)
+motion_scale = Vector2(0.6, 0)
+motion_offset = Vector2(0, -600)
 motion_mirroring = Vector2(1900, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
-scale = Vector2(0.33, 0.33)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("23_b468h")
 
 [node name="Sprite2D2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
 position = Vector2(3800, -1.90735e-06)
-scale = Vector2(0.33, 0.33)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("23_b468h")
 
 [node name="Sprite2D3" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
 position = Vector2(7600.4, 0.200004)
-scale = Vector2(0.33, 0.33)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("23_b468h")
 
 [node name="Sprite2D4" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
 position = Vector2(11400.4, 0.200004)
-scale = Vector2(0.33, 0.33)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("23_b468h")
 
 [node name="Sprite2D5" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
 position = Vector2(15200.4, 0.200012)
-scale = Vector2(0.33, 0.33)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("23_b468h")
 
 [node name="Sprite2D6" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
 position = Vector2(19000.4, 0.200012)
-scale = Vector2(0.33, 0.33)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("23_b468h")
 
 [node name="Sprite2D7" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
 position = Vector2(22800.8, 0.400024)
-scale = Vector2(0.33, 0.33)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("23_b468h")
 
 [node name="Sprite2D8" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
 position = Vector2(26600.8, 0.400024)
-scale = Vector2(0.33, 0.33)
+scale = Vector2(0.4, 0.4)
 texture = ExtResource("23_b468h")
 
 [node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
 z_index = -2
-position = Vector2(1971, 321)
-scale = Vector2(0.33, 0.33)
-motion_scale = Vector2(0.5, 0.5)
-motion_mirroring = Vector2(3840, 0)
+position = Vector2(1755, 406)
+scale = Vector2(0.33, 0.4)
+motion_scale = Vector2(0.5, 0)
+motion_offset = Vector2(0, -600)
+motion_mirroring = Vector2(11636, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
 position = Vector2(3511, 730)
@@ -62616,5 +62668,11 @@ texture = ExtResource("24_rts5g")
 [node name="Sprite2D12" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
 position = Vector2(87975.7, 731.212)
 texture = ExtResource("24_rts5g")
+
+[node name="MossyStuff" type="TileMapLayer" parent="."]
+texture_filter = 1
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAAnB1MCAAAAAAQAAACpBlkCAgAFAAMAAACNB0oCAwAJAAEAAAAoBUACBAAEAAMAAADBBDgCAQABAAQAAADsCFkCAQAEAAQAABDyClMCAQABAAQAAAA=")
+tile_set = SubResource("TileSet_0uy0m")
 
 [connection signal="body_entered" from="Layout/Blockout/Lush Caves Sub Area/ChallengeRoom/Door Trigger" to="Layout/Blockout/Lush Caves Sub Area/ChallengeRoom/Doro2" method="open"]

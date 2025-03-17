@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ba7ejul7v5vro"
-path="res://.godot/imported/mossy_stuff.png-ae4d1a82bb513914996fd9dedde780fa.ctex"
+uid="uid://d1dvlpeqhielj"
+path="res://.godot/imported/all_around_left.png-73ec3f40ab42ec2ec33ea59d1c87873d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/mossy_stuff.png"
-dest_files=["res://.godot/imported/mossy_stuff.png-ae4d1a82bb513914996fd9dedde780fa.ctex"]
+source_file="res://assets/images/jungle/lush_cave_smart_shape/all_around_left.png"
+dest_files=["res://.godot/imported/all_around_left.png-73ec3f40ab42ec2ec33ea59d1c87873d.ctex"]
 
 [params]
 

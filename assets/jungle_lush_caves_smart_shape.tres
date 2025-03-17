@@ -1,0 +1,55 @@
+[gd_resource type="Resource" script_class="SS2D_Material_Shape" load_steps=12 format=3 uid="uid://chxbkm641jsar"]
+
+[ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="1_dvu36"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material.gd" id="2_0igym"]
+[ext_resource type="Texture2D" uid="uid://bxyaadwr7u1m7" path="res://assets/images/jungle/lush_cave_smart_shape/all_around.png" id="3_h5ujj"]
+[ext_resource type="Texture2D" uid="uid://d1dvlpeqhielj" path="res://assets/images/jungle/lush_cave_smart_shape/all_around_left.png" id="4_u2t0l"]
+[ext_resource type="Texture2D" uid="uid://dc0s3odysl3wn" path="res://assets/images/jungle/lush_cave_smart_shape/all_around_right.png" id="5_7wibt"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/normal_range.gd" id="6_f14yj"]
+[ext_resource type="Texture2D" uid="uid://bmcuiu8dcixdr" path="res://assets/images/jungle/lush_cave_smart_shape/fill.png" id="7_nb34v"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/materials/shape_material.gd" id="8_i1aby"]
+
+[sub_resource type="Resource" id="Resource_cd6f0"]
+script = ExtResource("2_0igym")
+textures = Array[Texture2D]([ExtResource("3_h5ujj")])
+textures_corner_outer = Array[Texture2D]([])
+textures_corner_inner = Array[Texture2D]([])
+textures_taper_left = Array[Texture2D]([ExtResource("4_u2t0l")])
+textures_taper_right = Array[Texture2D]([ExtResource("5_7wibt")])
+textures_taper_corner_left = Array[Texture2D]([])
+textures_taper_corner_right = Array[Texture2D]([])
+randomize_texture = false
+use_corner_texture = true
+use_taper_texture = true
+fit_mode = 0
+
+[sub_resource type="Resource" id="Resource_a1tnw"]
+script = ExtResource("6_f14yj")
+begin = 0.0
+distance = 360.0
+edgeRendering = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_p0iye"]
+script = ExtResource("1_dvu36")
+edge_material = SubResource("Resource_cd6f0")
+normal_range = SubResource("Resource_a1tnw")
+weld = false
+taper_sharp_corners = false
+render = true
+z_index = 0
+z_as_relative = true
+offset = 0.0
+
+[resource]
+script = ExtResource("8_i1aby")
+_edge_meta_materials = Array[ExtResource("1_dvu36")]([SubResource("Resource_p0iye")])
+fill_textures = Array[Texture2D]([ExtResource("7_nb34v")])
+fill_texture_z_index = -10
+fill_texture_show_behind_parent = false
+fill_texture_scale = 2.0
+fill_texture_absolute_position = false
+fill_texture_absolute_rotation = false
+fill_texture_offset = Vector2(0, 0)
+fill_texture_angle_offset = 0.0
+fill_mesh_offset = 0.0
+render_offset = 0.0

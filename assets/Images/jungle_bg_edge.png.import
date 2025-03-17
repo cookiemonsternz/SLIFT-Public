@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ba7ejul7v5vro"
-path="res://.godot/imported/mossy_stuff.png-ae4d1a82bb513914996fd9dedde780fa.ctex"
+uid="uid://7ques7rilhvn"
+path="res://.godot/imported/jungle_bg_edge.png-546b384fcaace0f1f5ecf56d21782035.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/mossy_stuff.png"
-dest_files=["res://.godot/imported/mossy_stuff.png-ae4d1a82bb513914996fd9dedde780fa.ctex"]
+source_file="res://assets/images/jungle_bg_edge.png"
+dest_files=["res://.godot/imported/jungle_bg_edge.png-546b384fcaace0f1f5ecf56d21782035.ctex"]
 
 [params]
 

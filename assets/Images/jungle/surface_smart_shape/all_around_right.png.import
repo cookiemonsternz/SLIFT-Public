@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d1fx0nspfwbsg"
-path="res://.godot/imported/all_around_right.png-1d4ee725f730651797d59603bb553ca2.ctex"
+path="res://.godot/imported/all_around_right.png-c8ac1470fa04f9ccf59a9aa50b1ac194.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/jungle/surface_smart_shape/all_around_right.png"
-dest_files=["res://.godot/imported/all_around_right.png-1d4ee725f730651797d59603bb553ca2.ctex"]
+source_file="res://assets/Images/jungle/surface_smart_shape/all_around_right.png"
+dest_files=["res://.godot/imported/all_around_right.png-c8ac1470fa04f9ccf59a9aa50b1ac194.ctex"]
 
 [params]
 

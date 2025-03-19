@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="1_yr6cb"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material.gd" id="2_tcsro"]
-[ext_resource type="Texture2D" uid="uid://c2ex21luk5v8b" path="res://assets/images/jungle/surface_smart_shape/grass_center.png" id="3_1nn0g"]
-[ext_resource type="Texture2D" uid="uid://6h67ofr323gp" path="res://assets/images/jungle/surface_smart_shape/grass_left.png" id="4_nnb2e"]
-[ext_resource type="Texture2D" uid="uid://br4xopeynvq26" path="res://assets/images/jungle/surface_smart_shape/grass_right.png" id="5_pbbss"]
+[ext_resource type="Texture2D" uid="uid://c2ex21luk5v8b" path="res://assets/Images/jungle/surface_smart_shape/grass_center.png" id="3_1nn0g"]
+[ext_resource type="Texture2D" uid="uid://6h67ofr323gp" path="res://assets/Images/jungle/surface_smart_shape/grass_left.png" id="4_nnb2e"]
+[ext_resource type="Texture2D" uid="uid://br4xopeynvq26" path="res://assets/Images/jungle/surface_smart_shape/grass_right.png" id="5_pbbss"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/normal_range.gd" id="6_hpfxf"]
-[ext_resource type="Resource" uid="uid://be43xcrs3kk7g" path="res://assets/jungle_surface_smart_shape_edge_all_around.tres" id="7_4lal3"]
-[ext_resource type="Texture2D" uid="uid://dcrqs7shxjth4" path="res://assets/images/jungle/surface_smart_shape/fill.png" id="10_e7m24"]
+[ext_resource type="Resource" uid="uid://dtx64jwl505ub" path="res://assets/jungle_surface_smart_shape_edge_all_around.tres" id="7_4lal3"]
+[ext_resource type="Texture2D" uid="uid://dcrqs7shxjth4" path="res://assets/Images/jungle/surface_smart_shape/fill.png" id="10_e7m24"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/shape_material.gd" id="11_16rmj"]
 
 [sub_resource type="Resource" id="Resource_bggi1"]

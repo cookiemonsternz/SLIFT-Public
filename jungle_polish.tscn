@@ -11,21 +11,21 @@
 [ext_resource type="Resource" uid="uid://dqmlul4uh41ar" path="res://assets/jungle_surface_smart_shape.tres" id="5_ttojk"]
 [ext_resource type="PackedScene" uid="uid://deo0jmrp88uhw" path="res://scenes/environment/moving_fireflies.tscn" id="6_cwdo4"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/drawable_rectangle.gd" id="6_muq10"]
-[ext_resource type="PackedScene" path="res://scenes/environment/cursed_bird.tscn" id="6_q2adn"]
+[ext_resource type="PackedScene" uid="uid://cj8a2rc4e7o33" path="res://scenes/environment/cursed_bird.tscn" id="6_q2adn"]
 [ext_resource type="PackedScene" uid="uid://cq1dq0pgfte7e" path="res://scenes/environment/button.tscn" id="7_jpjas"]
 [ext_resource type="Script" path="res://scripts/temp/make_light_beams_unique.gd" id="7_pvs60"]
 [ext_resource type="PackedScene" uid="uid://cm5ngvdr2ih4g" path="res://scenes/environment/door.tscn" id="8_4b8jt"]
 [ext_resource type="Shader" path="res://assets/shader/godrays.gdshader" id="8_d0d0l"]
 [ext_resource type="Resource" uid="uid://dd1oj6th6i4p5" path="res://assets/rock_material.tres" id="9_kjl7v"]
 [ext_resource type="PackedScene" uid="uid://brkdvlqw0t3sp" path="res://scenes/characters/player.tscn" id="9_tbmxy"]
-[ext_resource type="Texture2D" uid="uid://1dbhajxjhdcv" path="res://assets/Images/player_corpse.png" id="10_awqok"]
+[ext_resource type="Texture2D" uid="uid://1dbhajxjhdcv" path="res://assets/images/player_corpse.png" id="10_awqok"]
 [ext_resource type="PackedScene" uid="uid://24cc1683tocv" path="res://scenes/characters/components/camera_area.tscn" id="10_napt0"]
 [ext_resource type="PackedScene" path="res://scenes/characters/components/environment_area.tscn" id="11_1b5c6"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="11_x3tbi"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/shape_material.gd" id="12_ij0s0"]
-[ext_resource type="Texture2D" uid="uid://cyh85u58teahj" path="res://assets/Images/stumps.png" id="15_2qgnh"]
+[ext_resource type="Texture2D" uid="uid://cyh85u58teahj" path="res://assets/images/stumps.png" id="15_2qgnh"]
 [ext_resource type="PackedScene" uid="uid://cwvhio0pg786r" path="res://scenes/yank_pickup.tscn" id="15_d15ul"]
-[ext_resource type="Texture2D" uid="uid://dtsm7p5hbatff" path="res://assets/Images/stumpp.png" id="16_6id23"]
+[ext_resource type="Texture2D" uid="uid://dtsm7p5hbatff" path="res://assets/images/stumpp.png" id="16_6id23"]
 [ext_resource type="PackedScene" uid="uid://k16lf66m0y1v" path="res://scenes/characters/enemies/slug.tscn" id="16_bybx2"]
 [ext_resource type="Texture2D" uid="uid://bouju17oqpgyq" path="res://assets/Images/chungus_amongus_stump.png" id="17_8e72o"]
 [ext_resource type="Texture2D" uid="uid://demyielvdv55u" path="res://assets/Images/log.png" id="19_wqpj4"]
@@ -63049,6 +63049,16 @@ curve_bake_interval = 20.0
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_l0mts"]
 polygon = PackedVector2Array(9744.38, 8347.48, 9226.78, 8348.88, 9198.93, 8341.66, 9179.35, 8333.09, 9165.44, 8323.63, 9144.38, 8303.94, 9132.08, 8294.66, 9115.15, 8286.38, 9091.02, 8279.58, 8953.12, 8269.42, 8823.72, 8279.58, 8776.29, 8292.08, 8733.64, 8311.85, 8715.2, 8324.1, 8699.27, 8337.75, 8686.27, 8352.66, 8676.64, 8368.68, 8663.45, 8404.6, 8655.64, 8442.7, 8654.09, 8477.74, 8655.94, 8492.46, 8657.57, 8498.83, 8659.68, 8504.44, 8663.46, 8515.23, 8665.83, 8526.6, 8669.1, 8549.7, 8671.4, 8560.76, 8675.08, 8571.03, 8677.66, 8575.77, 8680.84, 8580.19, 8684.72, 8584.24, 8689.38, 8587.88, 8699.42, 8590.86, 8718.49, 8593, 9185.76, 8585.06, 9475.68, 8594.96, 9599.92, 8588.35, 9690.23, 8588.32, 9723.47, 8591.52, 9734.74, 8594.22, 9741.54, 8597.78, 9745.1, 8602.73, 9747.22, 8609.39, 9748.05, 8617.47, 9747.78, 8626.69, 9738.92, 8669.44, 9718.92, 8725.06, 8757.26, 8699.62, 8335.82, 8541.22, 8704.94, 8153.72, 9567.6, 8227.26, 9669.79, 8239.53, 9740.24, 8253.8, 9753.41, 8258.09, 9763.59, 8262.65, 9770.21, 8267.46, 9772.66, 8272.52, 9771.12, 8294.88, 9765.54, 8317.68, 9761.39, 8327.91, 9756.44, 8336.64, 9753.68, 8340.28, 9750.75, 8343.35, 9747.64, 8345.77, 9744.38, 8347.48)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_eu02h"]
+texture = ExtResource("26_yn3mm")
+texture_region_size = Vector2i(64, 92)
+0:0/0 = 0
+1:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_v0ch0"]
+tile_size = Vector2i(64, 92)
+sources/0 = SubResource("TileSetAtlasSource_eu02h")
+
 [sub_resource type="Curve2D" id="Curve2D_fqx4d"]
 _data = {
 "points": PackedVector2Array(0, 0, 0, 0, -8, 2, 0, 0, 0, 0, 1018, -3, 0, 0, 0, 0, 16, -1, 0, 0, 0, 0, -8, 2, 0, 0, 0, 0, 228, 81)
@@ -66181,6 +66191,24 @@ polygon = PackedVector2Array(9744.38, 8347.48, 9226.78, 8348.88, 9198.93, 8341.6
 [node name="LightOccluder2D" type="LightOccluder2D" parent="LushCaves/RewardRoom3/Wall"]
 occluder = SubResource("OccluderPolygon2D_l0mts")
 
+[node name="Ruins" type="Node2D" parent="."]
+
+[node name="HangingPlatforms" type="TileMapLayer" parent="Ruins"]
+texture_filter = 1
+texture_repeat = 1
+position = Vector2(64, 0)
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AACWACYAAAAAAAAAAACXACYAAAABAAAAAACYACYAAAABAAAAAACZACYAAAABAAAAAACaACYAAAABAAAAAACbACYAAAABAAAAAACcACYAAAABAAAAAACdACYAAAABAAAAAACeACYAAAAAAAAAABCcACoAAAAAAAAAAACdACoAAAABAAAAAACeACoAAAABAAAAAACfACoAAAABAAAAAACgACoAAAAAAAAAABCXACsAAAAAAAAAABCWACsAAAABAAAAAACVACsAAAABAAAAAACUACsAAAAAAAAAAACWAC4AAAAAAAAAAACXAC4AAAABAAAAAACYAC4AAAABAAAAAACZAC4AAAABAAAAAACaAC4AAAABAAAAAACbAC4AAAAAAAAAABCgAC0AAAAAAAAAAAChAC0AAAABAAAAAACiAC0AAAABAAAAAACjAC0AAAABAAAAAACkAC0AAAABAAAAAAClAC0AAAABAAAAAACmAC0AAAABAAAAAACnAC0AAAAAAAAAABCnADEAAAAAAAAAABCmADEAAAABAAAAAAClADEAAAABAAAAAACkADEAAAABAAAAAACjADEAAAABAAAAAACiADEAAAABAAAAAAChADEAAAABAAAAAACgADEAAAAAAAAAAACiACUAAAAAAAAAAACjACUAAAABAAAAAACkACUAAAABAAAAAAClACUAAAABAAAAAACmACUAAAABAAAAAACnACUAAAABAAAAAACoACUAAAAAAAAAABA=")
+tile_set = SubResource("TileSet_v0ch0")
+
+[node name="HangingPlatforms2" type="TileMapLayer" parent="Ruins"]
+texture_filter = 1
+texture_repeat = 1
+rotation = 0.785398
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AACgANf/AAAAAAAAAAChANf/AAABAAAAAACiANf/AAABAAAAAACjANf/AAABAAAAAACkANf/AAABAAAAAAClANf/AAAAAAAAABA=")
+tile_set = SubResource("TileSet_v0ch0")
+
 [node name="Player" parent="." instance=ExtResource("9_tbmxy")]
 position = Vector2(6116, 2038)
 
@@ -66193,7 +66221,6 @@ scale = Vector2(5, 5)
 
 [node name="Layout" type="Node2D" parent="."]
 visible = false
-modulate = Color(1, 1, 1, 0.141)
 metadata/_edit_lock_ = true
 
 [node name="RoomLevelBlockout" type="Node2D" parent="Layout"]

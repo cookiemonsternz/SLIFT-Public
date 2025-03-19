@@ -3,12 +3,12 @@
 importer="aseprite_wizard.plugin.noop"
 type="PackedDataContainer"
 uid="uid://d03f7pnm0qboy"
-path="res://.godot/imported/smart_shape.aseprite-e47185f90dba050a7fdd365eac19cd7c.res"
+path="res://.godot/imported/smart_shape.aseprite-4e5a630b183d5734acbe494661b9aebd.res"
 
 [deps]
 
-source_file="res://assets/aseprite/jungle/surface_smart_shape/smart_shape.aseprite"
-dest_files=["res://.godot/imported/smart_shape.aseprite-e47185f90dba050a7fdd365eac19cd7c.res"]
+source_file="res://assets/Aseprite/jungle/surface_smart_shape/smart_shape.aseprite"
+dest_files=["res://.godot/imported/smart_shape.aseprite-4e5a630b183d5734acbe494661b9aebd.res"]
 
 [params]
 

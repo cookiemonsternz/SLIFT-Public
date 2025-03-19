@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://7gkaf2o25ok4"
-path="res://.godot/imported/mine-fil4.png-bbc11222301242a446a60369e143af28.ctex"
+path="res://.godot/imported/mine-fil4.png-e37a589bf93fc62b7b2d717125fe9237.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/mines_smart_texture/mine-fil4.png"
-dest_files=["res://.godot/imported/mine-fil4.png-bbc11222301242a446a60369e143af28.ctex"]
+source_file="res://assets/Images/mines_smart_texture/mine-fil4.png"
+dest_files=["res://.godot/imported/mine-fil4.png-e37a589bf93fc62b7b2d717125fe9237.ctex"]
 
 [params]
 

@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bqhpetlydm4ka"
-path="res://.godot/imported/fryasinthedryas.png-c320b15c97e756cdf504acaa68cb552d.ctex"
+path="res://.godot/imported/fryasinthedryas.png-4d0c5c80863febdd572c0f4002c38392.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/fryasinthedryas.png"
-dest_files=["res://.godot/imported/fryasinthedryas.png-c320b15c97e756cdf504acaa68cb552d.ctex"]
+source_file="res://assets/Images/fryasinthedryas.png"
+dest_files=["res://.godot/imported/fryasinthedryas.png-4d0c5c80863febdd572c0f4002c38392.ctex"]
 
 [params]
 

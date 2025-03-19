@@ -3,12 +3,12 @@
 importer="aseprite_wizard.plugin.noop"
 type="PackedDataContainer"
 uid="uid://27nku7a5h3u4"
-path="res://.godot/imported/smart_shape.aseprite-f4af5f53ecd57565bceda4d4f979088a.res"
+path="res://.godot/imported/smart_shape.aseprite-4dd839faadb46d6e030959960a943d84.res"
 
 [deps]
 
-source_file="res://assets/aseprite/jungle/lush_caves_smart_shape/smart_shape.aseprite"
-dest_files=["res://.godot/imported/smart_shape.aseprite-f4af5f53ecd57565bceda4d4f979088a.res"]
+source_file="res://assets/Aseprite/jungle/lush_caves_smart_shape/smart_shape.aseprite"
+dest_files=["res://.godot/imported/smart_shape.aseprite-4dd839faadb46d6e030959960a943d84.res"]
 
 [params]
 

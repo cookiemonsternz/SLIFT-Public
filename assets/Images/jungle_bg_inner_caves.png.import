@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c673ke74hcjad"
-path="res://.godot/imported/jungle_bg_inner_caves.png-de5299c1509b1922e594c06f0c5f9299.ctex"
+path="res://.godot/imported/jungle_bg_inner_caves.png-8f34a6c60b1d3a85e1d9efa85190fd1a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/jungle_bg_inner_caves.png"
-dest_files=["res://.godot/imported/jungle_bg_inner_caves.png-de5299c1509b1922e594c06f0c5f9299.ctex"]
+source_file="res://assets/Images/jungle_bg_inner_caves.png"
+dest_files=["res://.godot/imported/jungle_bg_inner_caves.png-8f34a6c60b1d3a85e1d9efa85190fd1a.ctex"]
 
 [params]
 

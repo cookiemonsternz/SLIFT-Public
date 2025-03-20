@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bmcuiu8dcixdr"
-path="res://.godot/imported/fill.png-18fb7015df1256520f95a84eb86aa173.ctex"
+path="res://.godot/imported/fill.png-6b14b447e67c7c0283049683418dae2a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/jungle/lush_cave_smart_shape/fill.png"
-dest_files=["res://.godot/imported/fill.png-18fb7015df1256520f95a84eb86aa173.ctex"]
+source_file="res://assets/Images/jungle/lush_cave_smart_shape/fill.png"
+dest_files=["res://.godot/imported/fill.png-6b14b447e67c7c0283049683418dae2a.ctex"]
 
 [params]
 

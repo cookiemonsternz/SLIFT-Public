@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dttf32o3ig2gv"
-path="res://.godot/imported/door_tilemap.png-dd025cf1b735836bee1d8bb0f61bb8cd.ctex"
+path="res://.godot/imported/door_tilemap.png-aea456d139dbd4b89edeb02a7ee83311.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/jungle/door_tilemap.png"
-dest_files=["res://.godot/imported/door_tilemap.png-dd025cf1b735836bee1d8bb0f61bb8cd.ctex"]
+source_file="res://assets/Images/jungle/door_tilemap.png"
+dest_files=["res://.godot/imported/door_tilemap.png-aea456d139dbd4b89edeb02a7ee83311.ctex"]
 
 [params]
 

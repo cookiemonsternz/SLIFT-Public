@@ -3,12 +3,12 @@
 importer="aseprite_wizard.plugin.noop"
 type="PackedDataContainer"
 uid="uid://cyoa78gpiwbm3"
-path="res://.godot/imported/lamp.ase-530911904565785f83f64aa56ca99725.res"
+path="res://.godot/imported/lamp.ase-b88279735d6aa1782757bdc651a8bd85.res"
 
 [deps]
 
-source_file="res://assets/aseprite/lamp.ase"
-dest_files=["res://.godot/imported/lamp.ase-530911904565785f83f64aa56ca99725.res"]
+source_file="res://assets/Aseprite/lamp.ase"
+dest_files=["res://.godot/imported/lamp.ase-b88279735d6aa1782757bdc651a8bd85.res"]
 
 [params]
 

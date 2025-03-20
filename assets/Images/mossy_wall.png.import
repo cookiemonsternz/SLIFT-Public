@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://b7ns6glmi00cf"
-path="res://.godot/imported/mossy_wall.png-40119b95796e70547e43e136ac932251.ctex"
+path="res://.godot/imported/mossy_wall.png-880a2b71c1efc3af5a6b77f48b6b43d8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/mossy_wall.png"
-dest_files=["res://.godot/imported/mossy_wall.png-40119b95796e70547e43e136ac932251.ctex"]
+source_file="res://assets/Images/mossy_wall.png"
+dest_files=["res://.godot/imported/mossy_wall.png-880a2b71c1efc3af5a6b77f48b6b43d8.ctex"]
 
 [params]
 

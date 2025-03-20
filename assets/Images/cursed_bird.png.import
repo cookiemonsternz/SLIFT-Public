@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://crix13hvvh146"
-path="res://.godot/imported/cursed_bird.png-dcc69ca221e619084ce9e9cb09b8b04f.ctex"
+path="res://.godot/imported/cursed_bird.png-c3a9ace05fdbb4d324a460cd2abc5284.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/images/cursed_bird.png"
-dest_files=["res://.godot/imported/cursed_bird.png-dcc69ca221e619084ce9e9cb09b8b04f.ctex"]
+source_file="res://assets/Images/cursed_bird.png"
+dest_files=["res://.godot/imported/cursed_bird.png-c3a9ace05fdbb4d324a460cd2abc5284.ctex"]
 
 [params]
 

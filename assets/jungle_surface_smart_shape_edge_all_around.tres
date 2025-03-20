@@ -17,6 +17,6 @@ normal_range = SubResource("Resource_un7u8")
 weld = false
 taper_sharp_corners = false
 render = true
-z_index = -1
+z_index = 0
 z_as_relative = true
 offset = 0.0

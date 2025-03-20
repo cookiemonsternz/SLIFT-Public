@@ -1,4 +1,4 @@
-[gd_scene load_steps=43 format=3 uid="uid://dchib4ho0n8da"]
+[gd_scene load_steps=47 format=3 uid="uid://dchib4ho0n8da"]
 
 [ext_resource type="Script" path="res://addons/rmsmartshape/shapes/shape.gd" id="1_6s64w"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/vertex_properties.gd" id="2_thvye"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material.gd" id="6_ochy2"]
 [ext_resource type="Texture2D" uid="uid://71o28xdbwd11" path="res://assets/images/jungle/ruins_smart_shape/top_surface.png" id="7_ftrmg"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/normal_range.gd" id="8_d1vhq"]
+[ext_resource type="Texture2D" uid="uid://bxyaadwr7u1m7" path="res://assets/images/jungle/lush_cave_smart_shape/all_around.png" id="9_b4v4n"]
 [ext_resource type="Texture2D" uid="uid://bmcuiu8dcixdr" path="res://assets/images/jungle/lush_cave_smart_shape/fill.png" id="9_g0387"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/shape_material.gd" id="10_d4o0e"]
 [ext_resource type="PackedScene" uid="uid://brkdvlqw0t3sp" path="res://scenes/characters/player.tscn" id="11_f48uh"]
@@ -211,8 +212,8 @@ fit_mode = 0
 
 [sub_resource type="Resource" id="Resource_28gqo"]
 script = ExtResource("8_d1vhq")
-begin = 0.0
-distance = 360.0
+begin = 45.0
+distance = 90.0
 edgeRendering = Vector2(0, 0)
 
 [sub_resource type="Resource" id="Resource_xwfgg"]
@@ -226,9 +227,40 @@ z_index = 0
 z_as_relative = true
 offset = 0.0
 
+[sub_resource type="Resource" id="Resource_wbsj4"]
+script = ExtResource("6_ochy2")
+textures = Array[Texture2D]([ExtResource("9_b4v4n")])
+textures_corner_outer = Array[Texture2D]([])
+textures_corner_inner = Array[Texture2D]([])
+textures_taper_left = Array[Texture2D]([])
+textures_taper_right = Array[Texture2D]([])
+textures_taper_corner_left = Array[Texture2D]([])
+textures_taper_corner_right = Array[Texture2D]([])
+randomize_texture = false
+use_corner_texture = true
+use_taper_texture = true
+fit_mode = 0
+
+[sub_resource type="Resource" id="Resource_h8ij2"]
+script = ExtResource("8_d1vhq")
+begin = 135.0
+distance = 270.0
+edgeRendering = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_ae34f"]
+script = ExtResource("5_losjm")
+edge_material = SubResource("Resource_wbsj4")
+normal_range = SubResource("Resource_h8ij2")
+weld = false
+taper_sharp_corners = false
+render = true
+z_index = -2
+z_as_relative = true
+offset = 0.1
+
 [sub_resource type="Resource" id="Resource_spqtd"]
 script = ExtResource("10_d4o0e")
-_edge_meta_materials = Array[ExtResource("5_losjm")]([SubResource("Resource_xwfgg")])
+_edge_meta_materials = Array[ExtResource("5_losjm")]([SubResource("Resource_xwfgg"), SubResource("Resource_ae34f")])
 fill_textures = Array[Texture2D]([ExtResource("9_g0387")])
 fill_texture_z_index = -10
 fill_texture_show_behind_parent = false
@@ -240,7 +272,7 @@ fill_texture_angle_offset = 0.0
 fill_mesh_offset = 0.0
 render_offset = 0.0
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_2gtca"]
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_siwni"]
 polygon = PackedVector2Array(-49.5726, 43.8943, 36.7334, 74.3862, 49.4621, 76.9108, 60.3017, 77.5885, 70.077, 76.5202, 79.6143, 73.8044, 91.8068, 71.0066, 108.319, 69.3703, 240.734, 60.9296, 295.787, 48.3119, 308.101, 47.3452, 322.681, 47.7498, 364.327, 53.6734, 433.916, 74.3336, 518.185, 114.168, 556.979, 140.112, 588.829, 169.453, 601.044, 185.254, 610.197, 201.728, 615.846, 218.819, 617.547, 236.47, 615.207, 253.391, 609.364, 268.405, 600.523, 281.624, 589.19, 293.162, 575.867, 303.131, 561.06, 311.644, 529.005, 324.751, 469.242, 338.428, 442.154, 341.389, 170.238, 344.107, 54.9248, 281.419, -131.782, 198.816, -149.902, 159.545, -145.966, 136.959, -131.124, 89.6879, -118.108, 66.3889, -109.943, 56.5025, -100.575, 48.4292, -89.9279, 42.6502, -77.9267, 39.6472, -64.4987, 39.9011)
 
 [node name="Node2D2" type="Node2D"]
@@ -286,7 +318,7 @@ polygon = PackedVector2Array(-49.5728, 43.895, 36.7328, 74.3887, 49.4618, 76.912
 
 [node name="LightOccluder2D" type="LightOccluder2D" parent="StaticBody2D"]
 visible = false
-occluder = SubResource("OccluderPolygon2D_2gtca")
+occluder = SubResource("OccluderPolygon2D_siwni")
 
 [node name="Player" parent="." instance=ExtResource("11_f48uh")]
 position = Vector2(150, 28)

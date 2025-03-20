@@ -3,12 +3,12 @@
 importer="aseprite_wizard.plugin.noop"
 type="PackedDataContainer"
 uid="uid://c0lhiaryml2py"
-path="res://.godot/imported/Sprite-0004.aseprite-79d693a460a01f432a33a950b03a4a41.res"
+path="res://.godot/imported/Sprite-0004.aseprite-fcbf53f2b3f279bf98cf948fccc58619.res"
 
 [deps]
 
-source_file="res://assets/Images/Sprite-0004.aseprite"
-dest_files=["res://.godot/imported/Sprite-0004.aseprite-79d693a460a01f432a33a950b03a4a41.res"]
+source_file="res://assets/images/Sprite-0004.aseprite"
+dest_files=["res://.godot/imported/Sprite-0004.aseprite-fcbf53f2b3f279bf98cf948fccc58619.res"]
 
 [params]
 

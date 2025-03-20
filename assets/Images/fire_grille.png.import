@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://epnduneo17ro"
-path="res://.godot/imported/fire_grille.png-4b129e2de3228044b1b15eac1acecfcf.ctex"
+path="res://.godot/imported/fire_grille.png-bdbcdc7b3a2814d73beeba71a8633bdd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Images/fire_grille.png"
-dest_files=["res://.godot/imported/fire_grille.png-4b129e2de3228044b1b15eac1acecfcf.ctex"]
+source_file="res://assets/images/fire_grille.png"
+dest_files=["res://.godot/imported/fire_grille.png-bdbcdc7b3a2814d73beeba71a8633bdd.ctex"]
 
 [params]
 

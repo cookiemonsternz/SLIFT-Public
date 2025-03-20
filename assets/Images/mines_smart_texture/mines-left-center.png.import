@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bjyw5xhccwc8r"
-path="res://.godot/imported/mines-left-center.png-05d4803763aaeda13fd13c7cd9601a1f.ctex"
+path="res://.godot/imported/mines-left-center.png-343ebdba49e98eaf2219c62eec7f3223.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Images/mines_smart_texture/mines-left-center.png"
-dest_files=["res://.godot/imported/mines-left-center.png-05d4803763aaeda13fd13c7cd9601a1f.ctex"]
+source_file="res://assets/images/mines_smart_texture/mines-left-center.png"
+dest_files=["res://.godot/imported/mines-left-center.png-343ebdba49e98eaf2219c62eec7f3223.ctex"]
 
 [params]
 

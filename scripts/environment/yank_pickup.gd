@@ -1,10 +1,13 @@
 extends Node2D
 
-### TODO ###
-# Delete this
+@export var upgrade: Script
 
 var can_get: bool = false
 var gotten: bool = false
+
+func _ready():
+	$Sprite2D3.texture = upgrade.new().texture
+
 func _process(delta: float) -> void:
 	if gotten:
 		if Input.is_action_just_pressed("arm_upgrade_ui"):
@@ -30,7 +33,7 @@ func _process(delta: float) -> void:
 		for i: PhysicsBody2D in $CanPickupArea.get_overlapping_bodies():
 			if i.is_in_group("Player"):
 				var player: Player = i
-				player.arm_upgrade_component.add_upgrade_pool(GrappleArmUpgrade.new())
+				player.arm_upgrade_component.add_upgrade_pool(upgrade.new())
 				can_get = true
 
 

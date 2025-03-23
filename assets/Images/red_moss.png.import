@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://d2i2m3e3kpr7h"
-path="res://.godot/imported/red_moss.png-b319e40dee84cd211bdb4f4b02ec99c2.ctex"
+path="res://.godot/imported/red_moss.png-045f25b8c15f7de948b2111ebd816410.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Images/red_moss.png"
-dest_files=["res://.godot/imported/red_moss.png-b319e40dee84cd211bdb4f4b02ec99c2.ctex"]
+source_file="res://assets/images/red_moss.png"
+dest_files=["res://.godot/imported/red_moss.png-045f25b8c15f7de948b2111ebd816410.ctex"]
 
 [params]
 

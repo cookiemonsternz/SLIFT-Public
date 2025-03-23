@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bnk87ypvfeq3i"
-path="res://.godot/imported/tombs.png-c0b7e31a02139f633cfe34801b24cbd5.ctex"
+path="res://.godot/imported/tombs.png-ae6d748e6bf25765ca1ae53b976642c1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Images/tombs.png"
-dest_files=["res://.godot/imported/tombs.png-c0b7e31a02139f633cfe34801b24cbd5.ctex"]
+source_file="res://assets/images/tombs.png"
+dest_files=["res://.godot/imported/tombs.png-ae6d748e6bf25765ca1ae53b976642c1.ctex"]
 
 [params]
 

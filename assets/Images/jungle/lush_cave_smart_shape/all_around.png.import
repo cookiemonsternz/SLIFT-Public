@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://bxyaadwr7u1m7"
-path="res://.godot/imported/all_around.png-94d011e76f15bb165076766d409d1c28.ctex"
+path="res://.godot/imported/all_around.png-b6567764dd8d432418f13d90ef1d313d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Images/jungle/lush_cave_smart_shape/all_around.png"
-dest_files=["res://.godot/imported/all_around.png-94d011e76f15bb165076766d409d1c28.ctex"]
+source_file="res://assets/images/jungle/lush_cave_smart_shape/all_around.png"
+dest_files=["res://.godot/imported/all_around.png-b6567764dd8d432418f13d90ef1d313d.ctex"]
 
 [params]
 

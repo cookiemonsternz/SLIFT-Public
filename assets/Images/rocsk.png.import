@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://c1iw3wv45ua8a"
-path="res://.godot/imported/rocsk.png-9eafed9657c44b0d07593455dd2b9528.ctex"
+path="res://.godot/imported/rocsk.png-070f434aab6a719427de8f998f58d18c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Images/rocsk.png"
-dest_files=["res://.godot/imported/rocsk.png-9eafed9657c44b0d07593455dd2b9528.ctex"]
+source_file="res://assets/images/rocsk.png"
+dest_files=["res://.godot/imported/rocsk.png-070f434aab6a719427de8f998f58d18c.ctex"]
 
 [params]
 

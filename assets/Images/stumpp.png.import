@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dtsm7p5hbatff"
-path="res://.godot/imported/stumpp.png-f279c2540dae0c4e3acdf600ab094a35.ctex"
+path="res://.godot/imported/stumpp.png-1626026ecea15ceb23e6e638cbedc548.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Images/stumpp.png"
-dest_files=["res://.godot/imported/stumpp.png-f279c2540dae0c4e3acdf600ab094a35.ctex"]
+source_file="res://assets/images/stumpp.png"
+dest_files=["res://.godot/imported/stumpp.png-1626026ecea15ceb23e6e638cbedc548.ctex"]
 
 [params]
 

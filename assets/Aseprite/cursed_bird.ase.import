@@ -3,12 +3,12 @@
 importer="aseprite_wizard.plugin.noop"
 type="PackedDataContainer"
 uid="uid://cku18qufaaqbd"
-path="res://.godot/imported/cursed_bird.ase-d2203011d1df6ade183f8c6af52e688b.res"
+path="res://.godot/imported/cursed_bird.ase-7fcf354b598d01d6f9a3bd81e79fd8c0.res"
 
 [deps]
 
-source_file="res://assets/Aseprite/cursed_bird.ase"
-dest_files=["res://.godot/imported/cursed_bird.ase-d2203011d1df6ade183f8c6af52e688b.res"]
+source_file="res://assets/aseprite/cursed_bird.ase"
+dest_files=["res://.godot/imported/cursed_bird.ase-7fcf354b598d01d6f9a3bd81e79fd8c0.res"]
 
 [params]
 

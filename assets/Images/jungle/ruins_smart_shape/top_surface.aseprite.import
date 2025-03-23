@@ -3,12 +3,12 @@
 importer="aseprite_wizard.plugin.noop"
 type="PackedDataContainer"
 uid="uid://by72htn2numat"
-path="res://.godot/imported/top_surface.aseprite-20532ea1b49ac424b30ce4a0eaef6b8d.res"
+path="res://.godot/imported/top_surface.aseprite-60a7677a04920df0aee1e866033dcfcd.res"
 
 [deps]
 
-source_file="res://assets/Images/jungle/ruins_smart_shape/top_surface.aseprite"
-dest_files=["res://.godot/imported/top_surface.aseprite-20532ea1b49ac424b30ce4a0eaef6b8d.res"]
+source_file="res://assets/images/jungle/ruins_smart_shape/top_surface.aseprite"
+dest_files=["res://.godot/imported/top_surface.aseprite-60a7677a04920df0aee1e866033dcfcd.res"]
 
 [params]
 

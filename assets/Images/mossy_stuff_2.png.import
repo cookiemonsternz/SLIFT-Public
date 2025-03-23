@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://df24t7aunqvbe"
-path="res://.godot/imported/mossy_stuff_2.png-3c9093b4f4a6dd2cd97d8657190c1694.ctex"
+path="res://.godot/imported/mossy_stuff_2.png-70c117cab85523bf6bdd333303e3bbfb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Images/mossy_stuff_2.png"
-dest_files=["res://.godot/imported/mossy_stuff_2.png-3c9093b4f4a6dd2cd97d8657190c1694.ctex"]
+source_file="res://assets/images/mossy_stuff_2.png"
+dest_files=["res://.godot/imported/mossy_stuff_2.png-70c117cab85523bf6bdd333303e3bbfb.ctex"]
 
 [params]
 

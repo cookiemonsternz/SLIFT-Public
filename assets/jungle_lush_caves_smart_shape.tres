@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="1_dvu36"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material.gd" id="2_0igym"]
-[ext_resource type="Texture2D" uid="uid://bxyaadwr7u1m7" path="res://assets/Images/jungle/lush_cave_smart_shape/all_around.png" id="3_h5ujj"]
-[ext_resource type="Texture2D" uid="uid://d1dvlpeqhielj" path="res://assets/Images/jungle/lush_cave_smart_shape/all_around_left.png" id="4_u2t0l"]
-[ext_resource type="Texture2D" uid="uid://dc0s3odysl3wn" path="res://assets/Images/jungle/lush_cave_smart_shape/all_around_right.png" id="5_7wibt"]
+[ext_resource type="Texture2D" uid="uid://bxyaadwr7u1m7" path="res://assets/images/jungle/lush_cave_smart_shape/all_around.png" id="3_h5ujj"]
+[ext_resource type="Texture2D" uid="uid://d1dvlpeqhielj" path="res://assets/images/jungle/lush_cave_smart_shape/all_around_left.png" id="4_u2t0l"]
+[ext_resource type="Texture2D" uid="uid://dc0s3odysl3wn" path="res://assets/images/jungle/lush_cave_smart_shape/all_around_right.png" id="5_7wibt"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/normal_range.gd" id="6_f14yj"]
-[ext_resource type="Texture2D" uid="uid://bmcuiu8dcixdr" path="res://assets/Images/jungle/lush_cave_smart_shape/fill.png" id="7_nb34v"]
+[ext_resource type="Texture2D" uid="uid://bmcuiu8dcixdr" path="res://assets/images/jungle/lush_cave_smart_shape/fill.png" id="7_nb34v"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/shape_material.gd" id="8_i1aby"]
 
 [sub_resource type="Resource" id="Resource_cd6f0"]

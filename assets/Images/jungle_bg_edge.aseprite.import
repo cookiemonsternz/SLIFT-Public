@@ -3,12 +3,12 @@
 importer="aseprite_wizard.plugin.noop"
 type="PackedDataContainer"
 uid="uid://df0muxmbx58uj"
-path="res://.godot/imported/jungle_bg_edge.aseprite-bf9ca3b0fa625cc4d552876e4f39465b.res"
+path="res://.godot/imported/jungle_bg_edge.aseprite-8b929e6265159634fcd3b96bfc97df8d.res"
 
 [deps]
 
-source_file="res://assets/Images/jungle_bg_edge.aseprite"
-dest_files=["res://.godot/imported/jungle_bg_edge.aseprite-bf9ca3b0fa625cc4d552876e4f39465b.res"]
+source_file="res://assets/images/jungle_bg_edge.aseprite"
+dest_files=["res://.godot/imported/jungle_bg_edge.aseprite-8b929e6265159634fcd3b96bfc97df8d.res"]
 
 [params]
 

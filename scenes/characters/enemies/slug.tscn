@@ -56,12 +56,13 @@ radius = 7.0
 height = 28.0
 
 [node name="Slug" type="Node2D"]
+z_index = -10
 script = ExtResource("1_8bt7k")
 
 [node name="Slug" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 texture_repeat = 1
-position = Vector2(0, -10)
+position = Vector2(0, -16)
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_cells")
 autoplay = "default"
@@ -94,7 +95,7 @@ shield_regen_rate = 0.0
 shield_regen_amount = 0.0
 
 [node name="DamageArea2D" type="Area2D" parent="."]
-position = Vector2(1, 2)
+position = Vector2(1, -4)
 collision_layer = 128
 collision_mask = 72
 
@@ -104,4 +105,4 @@ rotation = 1.5708
 shape = SubResource("CapsuleShape2D_rnr0k")
 
 [node name="Marker2D" type="Marker2D" parent="."]
-position = Vector2(0, 4)
+position = Vector2(0, -2)

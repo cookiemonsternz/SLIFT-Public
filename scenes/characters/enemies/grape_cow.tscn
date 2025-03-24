@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://vf7k4jp3e44n"]
+[gd_scene load_steps=16 format=3 uid="uid://vf7k4jp3e44n"]
 
 [ext_resource type="Script" path="res://scripts/characters/enemies/enemy_basic.gd" id="1_bynk8"]
 [ext_resource type="Texture2D" uid="uid://7h3x1q8ksikl" path="res://assets/images/grape_cow/cow.png" id="2_pc2hm"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cln5aujysamf1" path="res://scenes/characters/components/enemy_knockback_component.tscn" id="4_morsv"]
 [ext_resource type="PackedScene" uid="uid://lnbyo5qn1pea" path="res://scenes/characters/components/enemy_path_movement_component.tscn" id="5_0873w"]
 [ext_resource type="PackedScene" uid="uid://2yvmq877upop" path="res://scenes/characters/components/health_component.tscn" id="6_ib026"]
+[ext_resource type="Texture2D" uid="uid://bq6vh3n727wj4" path="res://assets/images/point_light.png" id="7_x84y2"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_67pnd"]
 atlas = ExtResource("2_pc2hm")
@@ -62,6 +63,7 @@ radius = 8.99999
 height = 28.0
 
 [node name="Grape" type="Node2D"]
+z_index = -10
 script = ExtResource("1_bynk8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -84,6 +86,7 @@ knockback_origin = NodePath("../Marker2D")
 [node name="EnemyPathMovementComponent" parent="." node_paths=PackedStringArray("owning_entity") instance=ExtResource("5_0873w")]
 owning_entity = NodePath("..")
 speed = 62.0
+do_rotate = true
 
 [node name="HealthComponent" parent="." node_paths=PackedStringArray("owning_entity") instance=ExtResource("6_ib026")]
 owning_entity = NodePath("..")
@@ -100,3 +103,9 @@ shape = SubResource("CapsuleShape2D_qt3xj")
 
 [node name="Marker2D" type="Marker2D" parent="."]
 position = Vector2(-5, -16)
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(-5, -22)
+energy = 1.5
+shadow_enabled = true
+texture = ExtResource("7_x84y2")

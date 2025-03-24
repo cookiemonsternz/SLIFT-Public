@@ -30,7 +30,7 @@ func move_upgrade(side1: int, index1: int, side2: int, index2: int):
 			if installed_upgrades_left.has(index2):
 				var cache_upgrade_1 = installed_upgrades_left[index1] if side1 == Enums.Grapples.Left else installed_upgrades_right[index1]
 				if side1 == Enums.Grapples.Left:
-					installed_upgrades_left[index1] = installed_upgrades_right[index2]
+					installed_upgrades_left[index1] = installed_upgrades_left[index2]
 				else:
 					installed_upgrades_right[index1] = installed_upgrades_right[index2]
 				installed_upgrades_left[index2] = cache_upgrade_1

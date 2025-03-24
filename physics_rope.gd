@@ -49,6 +49,7 @@ func create_rope_rigidbody(body_position: Vector2, body_rotation: float, size: V
 	rigidbody.rotation = body_rotation
 	rigidbody.set_collision_layer_value(1, false)
 	#rigidbody.set_collision_mask_value(1, false)
+	rigidbody.set_collision_mask_value(2, true)
 	rigidbody.set_collision_layer_value(10, true)
 	return rigidbody
 
@@ -107,7 +108,6 @@ func draw_rope(rigidbodies: Array[RigidBody2D], line2d: Line2D):
 	for i in range(len(rigidbodies)-1):
 		line2d.set_point_position(i+1, rigidbodies[i].global_position)
 		#print(Vector2(seg_len, 0).rotated(rigidbodies[0].global_rotation))
-		line2d.set_point_position(0, rigidbodies[0].global_position - Vector2(seg_len/2, 0).rotated(rigidbodies[0].global_rotation))
-		line2d.set_point_position(len(line2d.points)-1, rigidbodies[-1].global_position + Vector2(seg_len/2, 0).rotated(rigidbodies[-1].global_rotation))
-		#print(line2d.points[0], " : ", line2d.points[-1])
-		
+	
+	line2d.set_point_position(0, rigidbodies[0].global_position - Vector2(seg_len/2, 0).rotated(rigidbodies[0].global_rotation))
+	line2d.set_point_position(len(line2d.points)-1, rigidbodies[-1].global_position + Vector2(seg_len/2, 0).rotated(rigidbodies[-1].global_rotation))

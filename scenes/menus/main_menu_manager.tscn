@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://cuv5kp467oyr4"]
+
+[ext_resource type="Script" path="res://scripts/menus/main_menu_manager.gd" id="1_3uo8s"]
+[ext_resource type="PackedScene" uid="uid://jhsr4kn0htoa" path="res://scenes/menus/main_menu.tscn" id="1_a3m5d"]
+[ext_resource type="PackedScene" uid="uid://d3cnaovpnistq" path="res://scenes/levels/mountains.tscn" id="2_qlpjl"]
+[ext_resource type="PackedScene" uid="uid://dblwhb4ehhk3q" path="res://scenes/menus/settings.tscn" id="3_nymtc"]
+[ext_resource type="PackedScene" uid="uid://dqfg08nv25mls" path="res://jungle_polish.tscn" id="3_om8uu"]
+
+[node name="MainMenuManager" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3uo8s")
+level_one_scene = ExtResource("2_qlpjl")
+level_two_scene = ExtResource("3_om8uu")
+
+[node name="MainMenu" parent="." instance=ExtResource("1_a3m5d")]
+layout_mode = 0
+anchors_preset = 0
+anchor_right = 0.0
+anchor_bottom = 0.0
+grow_horizontal = 1
+grow_vertical = 1
+
+[node name="Settings" parent="." instance=ExtResource("3_nymtc")]
+visible = false
+modulate = Color(1, 1, 1, 0)
+z_index = 300
+layout_mode = 1
+
+[connection signal="open_settings" from="MainMenu" to="." method="open_settings"]
+[connection signal="play_game" from="MainMenu" to="." method="load_level_one"]
+[connection signal="close_settings" from="Settings" to="." method="close_settings"]

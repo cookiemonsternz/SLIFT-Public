@@ -7,6 +7,7 @@
 [node name="CameraArea" type="ColorRect"]
 offset_right = 32.0
 offset_bottom = 32.0
+mouse_filter = 1
 color = Color(0.0349121, 0, 0.203125, 0.113725)
 script = ExtResource("1_w0265")
 

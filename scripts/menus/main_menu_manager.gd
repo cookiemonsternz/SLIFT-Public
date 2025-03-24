@@ -15,6 +15,30 @@ func load_level_one():
 	$MainMenu.queue_free()
 	$Settings.hide()
 
+func load_level_two():
+	current_level.queue_free()
+	create_timer(0.1, load_level_two_callback)
+	
+
+func load_level_two_callback(timer: Timer):
+	var level_two = level_two_scene.instantiate()
+	add_child(level_two)
+	current_level = level_two
+	
+	#$MainMenu.hide()
+	$Settings.hide()
+	timer.queue_free()
+
+func create_timer(length, callback):
+	var timer = Timer.new()
+	timer.autostart = false
+	timer.one_shot = true
+	add_child(timer)
+	
+	timer.wait_time = length
+	timer.timeout.connect(callback.bind(timer))
+	timer.start()
+
 func open_settings():
 	show_settings()
 	var tween = $Settings.create_tween()

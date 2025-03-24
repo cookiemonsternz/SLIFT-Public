@@ -1,4 +1,4 @@
-[gd_scene load_steps=4687 format=4 uid="uid://d3cnaovpnistq"]
+[gd_scene load_steps=4689 format=4 uid="uid://d3cnaovpnistq"]
 
 [ext_resource type="Script" path="res://addons/rmsmartshape/normal_range.gd" id="2_to1aa"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/vertex_properties.gd" id="3_42gl6"]
@@ -37,6 +37,7 @@
 [ext_resource type="Script" path="res://scripts/temp/door_sprite_mountains.gd" id="34_p7cg8"]
 [ext_resource type="Texture2D" uid="uid://2bp6w4t5d55v" path="res://assets/images/boulder.png" id="35_4ece5"]
 [ext_resource type="PackedScene" uid="uid://cj8a2rc4e7o33" path="res://scenes/environment/cursed_bird.tscn" id="36_u66l4"]
+[ext_resource type="Script" path="res://scripts/temp/transition_to_jungle.gd" id="38_0b687"]
 
 [sub_resource type="Resource" id="Resource_ga64q"]
 script = ExtResource("2_to1aa")
@@ -71717,7 +71718,7 @@ sources/3 = SubResource("TileSetAtlasSource_5ujxt")
 [sub_resource type="Gradient" id="Gradient_oejve"]
 colors = PackedColorArray(0.0406265, 0.0380859, 0.046875, 1, 1, 0.786194, 0.558594, 1)
 
-[sub_resource type="GradientTexture1D" id="GradientTexture1D_hjckh"]
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_siqh3"]
 gradient = SubResource("Gradient_oejve")
 
 [sub_resource type="Environment" id="Environment_cacq8"]
@@ -71727,7 +71728,7 @@ glow_intensity = 1.5
 glow_strength = 1.23
 glow_bloom = 0.47
 adjustment_enabled = true
-adjustment_color_correction = SubResource("GradientTexture1D_hjckh")
+adjustment_color_correction = SubResource("GradientTexture1D_siqh3")
 
 [sub_resource type="Gradient" id="Gradient_aopjv"]
 interpolation_mode = 2
@@ -72169,6 +72170,9 @@ animations = [{
 "name": &"default",
 "speed": 16.0
 }]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_520su"]
+size = Vector2(489, 230)
 
 [node name="Mountains" type="Node2D"]
 
@@ -74110,7 +74114,7 @@ shape = SubResource("RectangleShape2D_22mll")
 [node name="Marker2D" type="Marker2D" parent="Fireflies/Fireflies35/LightObject"]
 
 [node name="Player" parent="." instance=ExtResource("6_lcucq")]
-position = Vector2(-599, 102)
+position = Vector2(53932, 5562)
 
 [node name="Root" type="Node2D" parent="."]
 visible = false
@@ -77619,5 +77623,15 @@ position = Vector2(11967, 2650)
 [node name="Bird3" parent="." instance=ExtResource("36_u66l4")]
 position = Vector2(11986, 2650)
 
+[node name="Area2D2" type="Area2D" parent="."]
+position = Vector2(54948, 8514)
+collision_mask = 328
+script = ExtResource("38_0b687")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2"]
+position = Vector2(234.5, 81)
+shape = SubResource("RectangleShape2D_520su")
+
 [connection signal="body_entered" from="Area2D" to="AnimationPlayer" method="fall"]
 [connection signal="button_pressed" from="Button" to="Door/AnimatableBody2D/Sprite2D" method="on_pressed"]
+[connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]

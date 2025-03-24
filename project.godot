@@ -38,6 +38,7 @@ Player="Player Character"
 button_activate=""
 camera=""
 environment=""
+SceneManager=""
 
 [input]
 

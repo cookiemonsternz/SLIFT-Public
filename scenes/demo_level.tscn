@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=4 uid="uid://nsfenexf57o1"]
+[gd_scene load_steps=21 format=4 uid="uid://nsfenexf57o1"]
 
 [ext_resource type="TileSet" uid="uid://b30kfa4ed8aqy" path="res://assets/tileset.tres" id="1_6f6xr"]
 [ext_resource type="PackedScene" uid="uid://brkdvlqw0t3sp" path="res://scenes/characters/player.tscn" id="2_x1y1f"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cunvwyyo5nyju" path="res://scenes/characters/enemies/enemy_basic.tscn" id="8_ywse6"]
 [ext_resource type="PackedScene" uid="uid://c22877u0nrk3r" path="res://scenes/environment/moving_platform.tscn" id="9_2skja"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/drawable_rectangle.gd" id="10_narhn"]
+[ext_resource type="Script" path="res://scripts/characters/components/arm_upgrade_system/arm_upgrade_components/tether_arm_upgrade.gd" id="11_uhcis"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ekj6v"]
 radius = 89.0898
@@ -101,6 +102,8 @@ tile_map_data = PackedByteArray("AAD//wAAAAAEAAEAAAAAAAAAAAAEAAEAAAABAAAAAAAEAAE
 tile_set = ExtResource("1_6f6xr")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
+collision_layer = 2
+collision_mask = 513
 mass = 3.288
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
@@ -113,7 +116,7 @@ scale = Vector2(1.39757, 1.4)
 texture = SubResource("Texture2D_40s4x")
 
 [node name="RigidBody2D2" type="RigidBody2D" parent="."]
-position = Vector2(50449, -1293)
+position = Vector2(50449, -1295)
 mass = 700.0
 physics_material_override = SubResource("PhysicsMaterial_5cupf")
 
@@ -139,10 +142,6 @@ position = Vector2(45878, -1790)
 rotation = 1.5708
 scale = Vector2(1.20613, 2.02914)
 
-[node name="Yank Pickup" parent="." instance=ExtResource("6_eg85y")]
-position = Vector2(51668, -2775)
-scale = Vector2(2, 2)
-
 [node name="WinArea" parent="." instance=ExtResource("7_2yaey")]
 position = Vector2(61320, -4469)
 
@@ -151,11 +150,11 @@ position = Vector2(-7, -45)
 cutoff_speed = 10
 
 [node name="EnemyBasic" parent="." node_paths=PackedStringArray("path_follow_2d") instance=ExtResource("8_ywse6")]
-position = Vector2(1205, -142)
+position = Vector2(1155, -1107)
 path_follow_2d = NodePath("../Path2D/PathFollow2D")
 
 [node name="Path2D" type="Path2D" parent="."]
-position = Vector2(3, -7)
+position = Vector2(-98, -996)
 curve = SubResource("Curve2D_ph0sy")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
@@ -163,7 +162,7 @@ position = Vector2(1201, -141)
 rotation = -0.0873685
 
 [node name="MovingPlatform" parent="." node_paths=PackedStringArray("platform_body") instance=ExtResource("9_2skja")]
-position = Vector2(151, -51)
+position = Vector2(191, -1316)
 curve = SubResource("Curve2D_kirl2")
 do_rotation = true
 platform_body = NodePath("AnimatableBody2D")
@@ -178,3 +177,7 @@ shape = SubResource("RectangleShape2D_hglpa")
 position = Vector2(84.5, -5.66244e-07)
 scale = Vector2(1.47656, 0.15625)
 texture = SubResource("Texture2D_s5f17")
+
+[node name="Yank Pickup2" parent="." instance=ExtResource("6_eg85y")]
+position = Vector2(914, -145)
+upgrade = ExtResource("11_uhcis")

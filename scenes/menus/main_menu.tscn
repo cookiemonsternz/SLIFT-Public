@@ -1,0 +1,1331 @@
+[gd_scene load_steps=83 format=3 uid="uid://jhsr4kn0htoa"]
+
+[ext_resource type="Script" path="res://scenes/menus/main_menu.gd" id="1_kmjr8"]
+[ext_resource type="FontFile" uid="uid://bfuak37f8ee2d" path="res://assets/fonts/Times New Roman/times new roman bold.ttf" id="1_njq5k"]
+[ext_resource type="Texture2D" uid="uid://snj1a6t8dayb" path="res://assets/images/logo_rock.png" id="1_qd4sm"]
+[ext_resource type="FontFile" uid="uid://cjfkh5yysmaqo" path="res://assets/fonts/Times New Roman/times new roman.ttf" id="3_waxdg"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/shapes/shape.gd" id="4_wvjws"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/vertex_properties.gd" id="5_om51h"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/shapes/point.gd" id="6_rtsil"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/shapes/point_array.gd" id="7_01qfq"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="8_2663f"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material.gd" id="9_ob8q2"]
+[ext_resource type="Texture2D" uid="uid://b0ay5w2mtfn5r" path="res://assets/images/rock_smart_shape_2d/top_center.png" id="10_dlclk"]
+[ext_resource type="Texture2D" uid="uid://6tg05wjnjsnx" path="res://assets/images/rock_smart_shape_2d/top_taper_left.png" id="11_disjf"]
+[ext_resource type="Texture2D" uid="uid://c7bbf271iawwr" path="res://assets/images/rock_smart_shape_2d/top_taper_right.png" id="12_iucg7"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/normal_range.gd" id="13_56ey3"]
+[ext_resource type="Texture2D" uid="uid://hwxme3glfxen" path="res://assets/images/rock_smart_shape_2d/all_around.png" id="14_em4xp"]
+[ext_resource type="Texture2D" uid="uid://drqjiduurdaym" path="res://assets/images/rock_smart_shape_2d/all_around_taper_left.png" id="15_5k3yd"]
+[ext_resource type="Texture2D" uid="uid://c4wtbc5tece82" path="res://assets/images/rock_smart_shape_2d/all_around_taper_right.png" id="16_ao0j0"]
+[ext_resource type="Texture2D" uid="uid://b6ieew0k1pmf4" path="res://assets/images/rock_smart_shape_2d/fill.png" id="17_opn3i"]
+[ext_resource type="Script" path="res://addons/rmsmartshape/materials/shape_material.gd" id="18_dyx2c"]
+[ext_resource type="Texture2D" uid="uid://1dbhajxjhdcv" path="res://assets/images/player_corpse.png" id="19_ym1xe"]
+[ext_resource type="Texture2D" uid="uid://bq6vh3n727wj4" path="res://assets/images/point_light.png" id="20_5qcpp"]
+[ext_resource type="Texture2D" uid="uid://3e6o02ee32nu" path="res://assets/images/mountain_bg.png" id="21_x21ya"]
+[ext_resource type="Texture2D" uid="uid://by1wovjpib6xm" path="res://assets/images/mountain_lower_bg.png" id="22_qs0q6"]
+[ext_resource type="Texture2D" uid="uid://c2rhibic6qxc0" path="res://assets/images/bg_test.png" id="23_j8hs1"]
+[ext_resource type="Texture2D" uid="uid://cfg8m821kb4ln" path="res://assets/images/bg_edge.png" id="24_o0rmp"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mcxuk"]
+bg_color = Color(0.165656, 0.165656, 0.165656, 0.486275)
+corner_radius_top_left = 5
+corner_radius_top_right = 5
+corner_radius_bottom_right = 5
+corner_radius_bottom_left = 5
+expand_margin_right = 50.0
+expand_margin_bottom = 10.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ttu2c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lp4pc"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bhu8x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3u3sm"]
+
+[sub_resource type="Theme" id="Theme_3qbnn"]
+Button/colors/font_color = Color(1, 1, 1, 1)
+Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
+Button/colors/font_focus_color = Color(1, 1, 1, 1)
+Button/colors/font_hover_color = Color(0.41, 0.41, 0.41, 1)
+Button/colors/font_hover_pressed_color = Color(0.286275, 0.286275, 0.286275, 1)
+Button/colors/font_outline_color = Color(0, 0, 0, 0)
+Button/colors/font_pressed_color = Color(0.28485, 0.28485, 0.28485, 1)
+Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
+Button/colors/icon_focus_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
+Button/constants/align_to_largest_stylebox = 0
+Button/constants/h_separation = 4
+Button/constants/icon_max_width = 0
+Button/constants/outline_size = 0
+Button/font_sizes/font_size = 125
+Button/fonts/font = ExtResource("3_waxdg")
+Button/styles/focus = SubResource("StyleBoxEmpty_ttu2c")
+Button/styles/hover = SubResource("StyleBoxEmpty_lp4pc")
+Button/styles/normal = SubResource("StyleBoxEmpty_bhu8x")
+Button/styles/pressed = SubResource("StyleBoxEmpty_3u3sm")
+
+[sub_resource type="Resource" id="Resource_joadl"]
+script = ExtResource("5_om51h")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_2gef4"]
+script = ExtResource("6_rtsil")
+position = Vector2(537.635, 375.96)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_joadl")
+
+[sub_resource type="Resource" id="Resource_kfk6j"]
+script = ExtResource("5_om51h")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_o40mp"]
+script = ExtResource("6_rtsil")
+position = Vector2(514.446, 190.444)
+point_in = Vector2(12.7424, 12.7423)
+point_out = Vector2(-12.7424, -12.7423)
+properties = SubResource("Resource_kfk6j")
+
+[sub_resource type="Resource" id="Resource_pu38s"]
+script = ExtResource("5_om51h")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_km6m3"]
+script = ExtResource("6_rtsil")
+position = Vector2(428.228, 157.741)
+point_in = Vector2(22.1811, 20.7652)
+point_out = Vector2(-22.1811, -20.7652)
+properties = SubResource("Resource_pu38s")
+
+[sub_resource type="Resource" id="Resource_jytqx"]
+script = ExtResource("5_om51h")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_vnvc7"]
+script = ExtResource("6_rtsil")
+position = Vector2(754.402, 141.308)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_jytqx")
+
+[sub_resource type="Resource" id="Resource_xd8qi"]
+script = ExtResource("5_om51h")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_lty0t"]
+script = ExtResource("6_rtsil")
+position = Vector2(740.99, 375.96)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_xd8qi")
+
+[sub_resource type="Resource" id="Resource_s5v6s"]
+script = ExtResource("5_om51h")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_atxl7"]
+script = ExtResource("6_rtsil")
+position = Vector2(537.635, 375.96)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_s5v6s")
+
+[sub_resource type="Resource" id="Resource_1jogk"]
+script = ExtResource("5_om51h")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_qt2db"]
+script = ExtResource("6_rtsil")
+position = Vector2(494.607, 144.041)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_1jogk")
+
+[sub_resource type="Resource" id="Resource_cg2to"]
+script = ExtResource("7_01qfq")
+_points = {
+0: SubResource("Resource_2gef4"),
+1: SubResource("Resource_o40mp"),
+2: SubResource("Resource_km6m3"),
+3: SubResource("Resource_vnvc7"),
+4: SubResource("Resource_lty0t"),
+5: SubResource("Resource_atxl7"),
+6: SubResource("Resource_qt2db")
+}
+_point_order = PackedInt32Array(0, 1, 2, 6, 3, 4, 5)
+_constraints = {
+Vector2i(0, 5): 15
+}
+_next_key = 7
+_material_overrides = {}
+tessellation_stages = 3
+tessellation_tolerance = 6.0
+curve_bake_interval = 20.0
+
+[sub_resource type="Resource" id="Resource_m8nbw"]
+script = ExtResource("9_ob8q2")
+textures = Array[Texture2D]([ExtResource("10_dlclk")])
+textures_corner_outer = Array[Texture2D]([])
+textures_corner_inner = Array[Texture2D]([])
+textures_taper_left = Array[Texture2D]([ExtResource("11_disjf")])
+textures_taper_right = Array[Texture2D]([ExtResource("12_iucg7")])
+textures_taper_corner_left = Array[Texture2D]([])
+textures_taper_corner_right = Array[Texture2D]([])
+randomize_texture = false
+use_corner_texture = false
+use_taper_texture = true
+fit_mode = 0
+
+[sub_resource type="Resource" id="Resource_r8wx2"]
+script = ExtResource("13_56ey3")
+begin = 35.0
+distance = 100.0
+edgeRendering = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_ma3qy"]
+script = ExtResource("8_2663f")
+edge_material = SubResource("Resource_m8nbw")
+normal_range = SubResource("Resource_r8wx2")
+weld = true
+taper_sharp_corners = true
+render = true
+z_index = 0
+z_as_relative = true
+offset = -0.2
+
+[sub_resource type="Resource" id="Resource_qq55n"]
+script = ExtResource("9_ob8q2")
+textures = Array[Texture2D]([ExtResource("14_em4xp")])
+textures_corner_outer = Array[Texture2D]([])
+textures_corner_inner = Array[Texture2D]([])
+textures_taper_left = Array[Texture2D]([ExtResource("15_5k3yd")])
+textures_taper_right = Array[Texture2D]([ExtResource("16_ao0j0")])
+textures_taper_corner_left = Array[Texture2D]([])
+textures_taper_corner_right = Array[Texture2D]([])
+randomize_texture = false
+use_corner_texture = true
+use_taper_texture = true
+fit_mode = 0
+
+[sub_resource type="Resource" id="Resource_8ccqh"]
+script = ExtResource("13_56ey3")
+begin = 0.0
+distance = 360.0
+edgeRendering = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_g6vmt"]
+script = ExtResource("8_2663f")
+edge_material = SubResource("Resource_qq55n")
+normal_range = SubResource("Resource_8ccqh")
+weld = false
+taper_sharp_corners = false
+render = true
+z_index = -1
+z_as_relative = true
+offset = -0.2
+
+[sub_resource type="Resource" id="Resource_ugell"]
+script = ExtResource("18_dyx2c")
+_edge_meta_materials = Array[ExtResource("8_2663f")]([SubResource("Resource_ma3qy"), SubResource("Resource_g6vmt")])
+fill_textures = Array[Texture2D]([ExtResource("17_opn3i")])
+fill_texture_z_index = -2
+fill_texture_show_behind_parent = false
+fill_texture_scale = 4.0
+fill_texture_absolute_position = false
+fill_texture_absolute_rotation = false
+fill_texture_offset = Vector2(0, 0)
+fill_texture_angle_offset = 0.0
+fill_mesh_offset = 0.0
+render_offset = 0.0
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_lmttp"]
+polygon = PackedVector2Array(2150.54, 1503.84, 2093.78, 899.227, 2076.4, 808.296, 2067.22, 778.51, 2057.78, 761.776, 2046.49, 752.82, 2031.97, 744.929, 1994.87, 731.515, 1797.06, 679.277, 1751.12, 658.342, 1730.85, 645.561, 1712.91, 630.964, 1701.27, 616.66, 1698.85, 604.761, 1704.47, 595.063, 1716.97, 587.36, 1735.18, 581.448, 1757.93, 577.123, 1812.4, 572.416, 1978.43, 576.164, 3017.61, 565.233, 2963.96, 1503.84, 2150.54, 1503.84)
+
+[sub_resource type="Resource" id="Resource_nqfy3"]
+script = ExtResource("5_om51h")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_evmal"]
+script = ExtResource("6_rtsil")
+position = Vector2(490.073, -152.511)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_nqfy3")
+
+[sub_resource type="Resource" id="Resource_iu4aq"]
+script = ExtResource("5_om51h")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_fh1cu"]
+script = ExtResource("6_rtsil")
+position = Vector2(435.964, -40.7258)
+point_in = Vector2(4.75684, 33.8924)
+point_out = Vector2(-4.75684, -33.8924)
+properties = SubResource("Resource_iu4aq")
+
+[sub_resource type="Resource" id="Resource_yqfh3"]
+script = ExtResource("5_om51h")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_a2bqp"]
+script = ExtResource("6_rtsil")
+position = Vector2(469.261, 28.2482)
+point_in = Vector2(17.649, 16.3661)
+point_out = Vector2(-17.649, -16.3661)
+properties = SubResource("Resource_yqfh3")
+
+[sub_resource type="Resource" id="Resource_kmyx2"]
+script = ExtResource("5_om51h")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_jlfkv"]
+script = ExtResource("6_rtsil")
+position = Vector2(588.777, 36.5726)
+point_in = Vector2(92.1636, -15.4597)
+point_out = Vector2(-92.1636, 15.4597)
+properties = SubResource("Resource_kmyx2")
+
+[sub_resource type="Resource" id="Resource_h2cxs"]
+script = ExtResource("5_om51h")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_y6ady"]
+script = ExtResource("6_rtsil")
+position = Vector2(737.428, 1.49101)
+point_in = Vector2(27.9464, -29.7302)
+point_out = Vector2(-27.9464, 29.7302)
+properties = SubResource("Resource_h2cxs")
+
+[sub_resource type="Resource" id="Resource_64ia6"]
+script = ExtResource("5_om51h")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_iwciq"]
+script = ExtResource("6_rtsil")
+position = Vector2(751.104, -187.593)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_64ia6")
+
+[sub_resource type="Resource" id="Resource_8lslh"]
+script = ExtResource("5_om51h")
+texture_idx = 0
+flip = false
+width = 1.0
+
+[sub_resource type="Resource" id="Resource_tt2eu"]
+script = ExtResource("6_rtsil")
+position = Vector2(490.073, -152.511)
+point_in = Vector2(0, 0)
+point_out = Vector2(0, 0)
+properties = SubResource("Resource_8lslh")
+
+[sub_resource type="Resource" id="Resource_ker82"]
+script = ExtResource("7_01qfq")
+_points = {
+0: SubResource("Resource_evmal"),
+1: SubResource("Resource_fh1cu"),
+2: SubResource("Resource_a2bqp"),
+3: SubResource("Resource_jlfkv"),
+4: SubResource("Resource_y6ady"),
+5: SubResource("Resource_iwciq"),
+6: SubResource("Resource_tt2eu")
+}
+_point_order = PackedInt32Array(6, 5, 4, 3, 2, 1, 0)
+_constraints = {
+Vector2i(0, 6): 15
+}
+_next_key = 7
+_material_overrides = {}
+tessellation_stages = 3
+tessellation_tolerance = 6.0
+curve_bake_interval = 20.0
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_hwi2a"]
+polygon = PackedVector2Array(1960.29, -610.045, 3004.41, -750.372, 3018.98, -416.799, 3005.42, -162.383, 2984.16, -60.678, 2968.75, -22.1275, 2949.71, 5.96405, 2907.19, 43.6006, 2884.92, 57.7747, 2861.49, 69.3637, 2809.65, 86.3192, 2748.73, 97.533, 2355.11, 146.29, 2134.81, 176.382, 2004.3, 177.38, 1962.13, 168.602, 1944.95, 162.179, 1929.68, 154.509, 1902.74, 135.755, 1877.05, 112.993, 1829.13, 61.3305, 1791.11, 1.33407, 1762.77, -71.8071, 1743.85, -162.903, 1743.15, -190.266, 1747.69, -221.04, 1769.65, -289.963, 1844.94, -437.313, 1960.29, -610.045)
+
+[sub_resource type="Gradient" id="Gradient_j2c3l"]
+colors = PackedColorArray(0, 0, 0, 1, 0.819869, 0.850263, 0.940866, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_fvhjr"]
+gradient = SubResource("Gradient_j2c3l")
+
+[sub_resource type="Environment" id="Environment_lxp17"]
+background_mode = 3
+glow_enabled = true
+glow_intensity = 1.5
+glow_strength = 1.23
+glow_bloom = 0.47
+adjustment_enabled = true
+adjustment_color_correction = SubResource("GradientTexture1D_fvhjr")
+
+[sub_resource type="Shader" id="Shader_pqcpl"]
+code = "/*
+Shader from Godot Shaders - the free shader library.
+godotshaders.com/shader/god-rays
+
+Feel free to use, improve and change this shader according to your needs
+and consider sharing the modified result on godotshaders.com.
+*/
+
+shader_type canvas_item;
+
+uniform float angle = -0.3;
+uniform float position = -0.2;
+uniform float spread : hint_range(0.0, 1.0) = 0.5;
+uniform float cutoff : hint_range(-1.0, 1.0) = 0.1;
+uniform float falloff : hint_range(0.0, 2.0) = 0.2;
+uniform float falloff_top: hint_range(0.0, 2.0) = 0.2;
+uniform float edge_fade : hint_range(0.0, 1.0) = 0.15;
+
+uniform float speed = 1.0;
+uniform float ray1_density = 8.0;
+uniform float ray1_intensity : hint_range(0.0, 1.0) = 0.3;
+uniform float ray2_density = 30.0;
+uniform float ray2_intensity : hint_range(0.0, 1.0) = 0.3;
+
+uniform vec4 color: source_color = vec4(1.0, 0.95, 0.825, 0.25);
+
+uniform bool hdr = false;
+uniform float seed = 5.0;
+
+uniform sampler2D SCREEN_TEXTURE: hint_screen_texture;
+
+uniform int blend_mode: hint_range(0, 12, 1) = 0;
+
+// Random and noise functions from Book of Shader's chapter on Noise.
+float random(vec2 _uv) {
+    return fract(sin(dot(_uv.xy,
+                         vec2(12.9898, 78.233))) *
+        43758.5453123);
+}
+
+float noise (in vec2 uv) {
+    vec2 i = floor(uv);
+    vec2 f = fract(uv);
+
+    // Four corners in 2D of a tile
+    float a = random(i);
+    float b = random(i + vec2(1.0, 0.0));
+    float c = random(i + vec2(0.0, 1.0));
+    float d = random(i + vec2(1.0, 1.0));
+
+
+    // Smooth Interpolation
+
+    // Cubic Hermine Curve. Same as SmoothStep()
+    vec2 u = f * f * (3.0-2.0 * f);
+
+    // Mix 4 coorners percentages
+    return mix(a, b, u.x) +
+            (c - a)* u.y * (1.0 - u.x) +
+            (d - b) * u.x * u.y;
+}
+
+mat2 rotate(float _angle){
+    return mat2(vec2(cos(_angle), -sin(_angle)),
+                vec2(sin(_angle), cos(_angle)));
+}
+
+vec4 screen(vec4 base, vec4 blend){
+	return 1.0 - (1.0 - base) * (1.0 - blend);
+}
+
+vec4 multiply(vec4 base, vec4 blend){
+	return base * blend;
+}
+
+vec4 darken(vec4 base, vec4 blend){
+	return min(base, blend);
+}
+
+vec4 lighten(vec4 base, vec4 blend){
+	return max(base, blend);
+}
+
+vec4 difference(vec4 base, vec4 blend){
+	return abs(base - blend);
+}
+
+vec4 exclusion(vec4 base, vec4 blend){
+	return base + blend - 2.0 * base * blend;
+}
+
+vec4 overlay(vec4 base, vec4 blend){
+	vec4 limit = step(0.5, base);
+	return mix(2.0 * base * blend, 1.0 - 2.0 * (1.0 - base) * (1.0 - blend), limit);
+}
+
+vec4 hard_light(vec4 base, vec4 blend){
+	vec4 limit = step(0.5, blend);
+	return mix(2.0 * base * blend, 1.0 - 2.0 * (1.0 - base) * (1.0 - blend), limit);
+}
+
+vec4 soft_light(vec4 base, vec4 blend){
+	vec4 limit = step(0.5, blend);
+	return mix(2.0 * base * blend + base * base * (1.0 - 2.0 * blend), sqrt(base) * (2.0 * blend - 1.0) + (2.0 * base) * (1.0 - blend), limit);
+}
+
+vec4 color_dodge(vec4 base, vec4 blend){
+	return base / (1.0 - blend);
+}
+
+vec4 linear_dodge(vec4 base, vec4 blend){
+	return base + blend;
+}
+
+vec4 color_burn(vec4 base, vec4 blend){
+	return 1.0 - (1.0 - base) / blend;
+}
+
+vec4 linear_burn (vec4 base, vec4 blend)
+{
+	return base + blend - 1.0;
+}
+
+void fragment()
+{
+	
+	// Rotate, skew and move the UVs
+	vec2 transformed_uv = ( rotate(angle) * (UV - position) )  / ( (UV.y + spread) - (UV.y * spread) );
+	
+	// Animate the ray according the the new transformed UVs
+	vec2 ray1 = vec2(transformed_uv.x * ray1_density + sin(TIME * 0.1 * speed) * (ray1_density * 0.2) + seed, 1.0);
+	vec2 ray2 = vec2(transformed_uv.x * ray2_density + sin(TIME * 0.2 * speed) * (ray1_density * 0.2) + seed, 1.0);
+	
+	// Cut off the ray's edges
+	float cut = step(cutoff, transformed_uv.x) * step(cutoff, 1.0 - transformed_uv.x);
+	ray1 *= cut;
+	ray2 *= cut;
+	
+	// Apply the noise pattern (i.e. create the rays)
+	float rays;
+	
+	if (hdr){
+		// This is not really HDR, but check this to not clamp the two merged rays making 
+		// their values go over 1.0. Can make for some nice effect
+		rays = ((noise(ray1)*ray1_intensity) + (noise(ray2) * ray2_intensity)) ;
+	}
+	else{
+		 rays = clamp((noise(ray1)*ray1_intensity) + (noise(ray2) * ray2_intensity), 0., 1.);
+	}
+	
+	// Fade out edges
+	rays *= smoothstep(0.0, falloff, (1.0 - UV.y)); // Bottom
+	rays *= smoothstep(0.0, falloff_top, (UV.y)); // Top
+	rays *= smoothstep(0.0 + cutoff, edge_fade + cutoff, transformed_uv.x); // Left
+	rays *= smoothstep(0.0 + cutoff, edge_fade + cutoff, 1.0 - transformed_uv.x); // Right
+	
+	// Color to the rays
+	vec3 shine = vec3(rays) * color.rgb;
+
+	// Try different blending modes for a nicer effect. \"Screen\" is included in the code,
+	// but take a look at https://godotshaders.com/snippet/blending-modes/ for more.
+	// With \"Screen\" blend mode:
+	
+	
+	switch(blend_mode){
+		case 0:
+			shine = screen(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+			break;
+		case 1:
+			shine = multiply(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+			break;
+		case 2:
+			shine = darken(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+			break;
+		case 3:
+			shine = lighten(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+			break;
+		case 4:
+			shine = difference(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+			break;
+		case 5:
+			shine = exclusion(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+			break;
+		case 6:
+			shine = overlay(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+			break;
+		case 7:
+			shine = hard_light(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+			break;
+		case 8:
+			shine = soft_light(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+			break;
+		case 9:
+			shine = color_dodge(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+			break;
+		case 10:
+			shine = linear_dodge(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+			break;
+		case 11:
+			shine = color_burn(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+			break;
+		case 12:
+			shine = linear_burn(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+			break;
+	}
+	
+	COLOR = vec4(shine, rays * color.a);
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jxrl7"]
+shader = SubResource("Shader_pqcpl")
+shader_parameter/angle = -0.475
+shader_parameter/position = 0.2
+shader_parameter/spread = 0.5
+shader_parameter/cutoff = 0.1
+shader_parameter/falloff = 0.5
+shader_parameter/falloff_top = 0.2
+shader_parameter/edge_fade = 0.25
+shader_parameter/speed = 1.0
+shader_parameter/ray1_density = 15.0
+shader_parameter/ray1_intensity = 0.1
+shader_parameter/ray2_density = 15.0
+shader_parameter/ray2_intensity = 0.1
+shader_parameter/color = Color(1, 0.95, 0.825, 0.25)
+shader_parameter/hdr = true
+shader_parameter/seed = 5.0
+shader_parameter/blend_mode = 0
+
+[sub_resource type="Shader" id="Shader_vhhmj"]
+code = "/*
+Shader from Godot Shaders - the free shader library.
+godotshaders.com/shader/god-rays
+
+Feel free to use, improve and change this shader according to your needs
+and consider sharing the modified result on godotshaders.com.
+*/
+
+shader_type canvas_item;
+
+uniform float angle = -0.3;
+uniform float position = -0.2;
+uniform float spread : hint_range(0.0, 1.0) = 0.5;
+uniform float cutoff : hint_range(-1.0, 1.0) = 0.1;
+uniform float falloff : hint_range(0.0, 2.0) = 0.2;
+uniform float falloff_top: hint_range(0.0, 2.0) = 0.2;
+uniform float edge_fade : hint_range(0.0, 1.0) = 0.15;
+
+uniform float speed = 1.0;
+uniform float ray1_density = 8.0;
+uniform float ray1_intensity : hint_range(0.0, 1.0) = 0.3;
+uniform float ray2_density = 30.0;
+uniform float ray2_intensity : hint_range(0.0, 1.0) = 0.3;
+
+uniform vec4 color: source_color = vec4(1.0, 0.95, 0.825, 0.25);
+
+uniform bool hdr = false;
+uniform float seed = 5.0;
+
+uniform sampler2D SCREEN_TEXTURE: hint_screen_texture;
+
+uniform int blend_mode: hint_range(0, 12, 1) = 0;
+
+// Random and noise functions from Book of Shader's chapter on Noise.
+float random(vec2 _uv) {
+    return fract(sin(dot(_uv.xy,
+                         vec2(12.9898, 78.233))) *
+        43758.5453123);
+}
+
+float noise (in vec2 uv) {
+    vec2 i = floor(uv);
+    vec2 f = fract(uv);
+
+    // Four corners in 2D of a tile
+    float a = random(i);
+    float b = random(i + vec2(1.0, 0.0));
+    float c = random(i + vec2(0.0, 1.0));
+    float d = random(i + vec2(1.0, 1.0));
+
+
+    // Smooth Interpolation
+
+    // Cubic Hermine Curve. Same as SmoothStep()
+    vec2 u = f * f * (3.0-2.0 * f);
+
+    // Mix 4 coorners percentages
+    return mix(a, b, u.x) +
+            (c - a)* u.y * (1.0 - u.x) +
+            (d - b) * u.x * u.y;
+}
+
+mat2 rotate(float _angle){
+    return mat2(vec2(cos(_angle), -sin(_angle)),
+                vec2(sin(_angle), cos(_angle)));
+}
+
+vec4 screen(vec4 base, vec4 blend){
+	return 1.0 - (1.0 - base) * (1.0 - blend);
+}
+
+vec4 multiply(vec4 base, vec4 blend){
+	return base * blend;
+}
+
+vec4 darken(vec4 base, vec4 blend){
+	return min(base, blend);
+}
+
+vec4 lighten(vec4 base, vec4 blend){
+	return max(base, blend);
+}
+
+vec4 difference(vec4 base, vec4 blend){
+	return abs(base - blend);
+}
+
+vec4 exclusion(vec4 base, vec4 blend){
+	return base + blend - 2.0 * base * blend;
+}
+
+vec4 overlay(vec4 base, vec4 blend){
+	vec4 limit = step(0.5, base);
+	return mix(2.0 * base * blend, 1.0 - 2.0 * (1.0 - base) * (1.0 - blend), limit);
+}
+
+vec4 hard_light(vec4 base, vec4 blend){
+	vec4 limit = step(0.5, blend);
+	return mix(2.0 * base * blend, 1.0 - 2.0 * (1.0 - base) * (1.0 - blend), limit);
+}
+
+vec4 soft_light(vec4 base, vec4 blend){
+	vec4 limit = step(0.5, blend);
+	return mix(2.0 * base * blend + base * base * (1.0 - 2.0 * blend), sqrt(base) * (2.0 * blend - 1.0) + (2.0 * base) * (1.0 - blend), limit);
+}
+
+vec4 color_dodge(vec4 base, vec4 blend){
+	return base / (1.0 - blend);
+}
+
+vec4 linear_dodge(vec4 base, vec4 blend){
+	return base + blend;
+}
+
+vec4 color_burn(vec4 base, vec4 blend){
+	return 1.0 - (1.0 - base) / blend;
+}
+
+vec4 linear_burn (vec4 base, vec4 blend)
+{
+	return base + blend - 1.0;
+}
+
+void fragment()
+{
+	
+	// Rotate, skew and move the UVs
+	vec2 transformed_uv = ( rotate(angle) * (UV - position) )  / ( (UV.y + spread) - (UV.y * spread) );
+	
+	// Animate the ray according the the new transformed UVs
+	vec2 ray1 = vec2(transformed_uv.x * ray1_density + sin(TIME * 0.1 * speed) * (ray1_density * 0.2) + seed, 1.0);
+	vec2 ray2 = vec2(transformed_uv.x * ray2_density + sin(TIME * 0.2 * speed) * (ray1_density * 0.2) + seed, 1.0);
+	
+	// Cut off the ray's edges
+	float cut = step(cutoff, transformed_uv.x) * step(cutoff, 1.0 - transformed_uv.x);
+	ray1 *= cut;
+	ray2 *= cut;
+	
+	// Apply the noise pattern (i.e. create the rays)
+	float rays;
+	
+	if (hdr){
+		// This is not really HDR, but check this to not clamp the two merged rays making 
+		// their values go over 1.0. Can make for some nice effect
+		rays = ((noise(ray1)*ray1_intensity) + (noise(ray2) * ray2_intensity)) ;
+	}
+	else{
+		 rays = clamp((noise(ray1)*ray1_intensity) + (noise(ray2) * ray2_intensity), 0., 1.);
+	}
+	
+	// Fade out edges
+	rays *= smoothstep(0.0, falloff, (1.0 - UV.y)); // Bottom
+	rays *= smoothstep(0.0, falloff_top, (UV.y)); // Top
+	rays *= smoothstep(0.0 + cutoff, edge_fade + cutoff, transformed_uv.x); // Left
+	rays *= smoothstep(0.0 + cutoff, edge_fade + cutoff, 1.0 - transformed_uv.x); // Right
+	
+	// Color to the rays
+	vec3 shine = vec3(rays) * color.rgb;
+
+	// Try different blending modes for a nicer effect. \"Screen\" is included in the code,
+	// but take a look at https://godotshaders.com/snippet/blending-modes/ for more.
+	// With \"Screen\" blend mode:
+	
+	
+	switch(blend_mode){
+		case 0:
+			shine = screen(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+			break;
+		case 1:
+			shine = multiply(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+			break;
+		case 2:
+			shine = darken(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+			break;
+		case 3:
+			shine = lighten(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+			break;
+		case 4:
+			shine = difference(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+			break;
+		case 5:
+			shine = exclusion(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+			break;
+		case 6:
+			shine = overlay(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+			break;
+		case 7:
+			shine = hard_light(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+			break;
+		case 8:
+			shine = soft_light(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+			break;
+		case 9:
+			shine = color_dodge(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+			break;
+		case 10:
+			shine = linear_dodge(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+			break;
+		case 11:
+			shine = color_burn(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+			break;
+		case 12:
+			shine = linear_burn(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+			break;
+	}
+	
+	COLOR = vec4(shine, rays * color.a);
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_frjy5"]
+shader = SubResource("Shader_vhhmj")
+shader_parameter/angle = -0.475
+shader_parameter/position = 0.2
+shader_parameter/spread = 0.5
+shader_parameter/cutoff = 0.1
+shader_parameter/falloff = 2.0
+shader_parameter/falloff_top = 0.2
+shader_parameter/edge_fade = 0.25
+shader_parameter/speed = 1.0
+shader_parameter/ray1_density = 15.0
+shader_parameter/ray1_intensity = 0.1
+shader_parameter/ray2_density = 15.0
+shader_parameter/ray2_intensity = 0.1
+shader_parameter/color = Color(0.238097, 0.391445, 1, 0.25)
+shader_parameter/hdr = true
+shader_parameter/seed = -5.0
+shader_parameter/blend_mode = 0
+
+[sub_resource type="Shader" id="Shader_38jub"]
+code = "/*
+Shader from Godot Shaders - the free shader library.
+godotshaders.com/shader/god-rays
+
+Feel free to use, improve and change this shader according to your needs
+and consider sharing the modified result on godotshaders.com.
+*/
+
+shader_type canvas_item;
+
+uniform float angle = -0.3;
+uniform float position = -0.2;
+uniform float spread : hint_range(0.0, 1.0) = 0.5;
+uniform float cutoff : hint_range(-1.0, 1.0) = 0.1;
+uniform float falloff : hint_range(0.0, 2.0) = 0.2;
+uniform float falloff_top: hint_range(0.0, 2.0) = 0.2;
+uniform float edge_fade : hint_range(0.0, 1.0) = 0.15;
+
+uniform float speed = 1.0;
+uniform float ray1_density = 8.0;
+uniform float ray1_intensity : hint_range(0.0, 1.0) = 0.3;
+uniform float ray2_density = 30.0;
+uniform float ray2_intensity : hint_range(0.0, 1.0) = 0.3;
+
+uniform vec4 color: source_color = vec4(1.0, 0.95, 0.825, 0.25);
+
+uniform bool hdr = false;
+uniform float seed = 5.0;
+
+uniform sampler2D SCREEN_TEXTURE: hint_screen_texture;
+
+uniform int blend_mode: hint_range(0, 12, 1) = 0;
+
+// Random and noise functions from Book of Shader's chapter on Noise.
+float random(vec2 _uv) {
+    return fract(sin(dot(_uv.xy,
+                         vec2(12.9898, 78.233))) *
+        43758.5453123);
+}
+
+float noise (in vec2 uv) {
+    vec2 i = floor(uv);
+    vec2 f = fract(uv);
+
+    // Four corners in 2D of a tile
+    float a = random(i);
+    float b = random(i + vec2(1.0, 0.0));
+    float c = random(i + vec2(0.0, 1.0));
+    float d = random(i + vec2(1.0, 1.0));
+
+
+    // Smooth Interpolation
+
+    // Cubic Hermine Curve. Same as SmoothStep()
+    vec2 u = f * f * (3.0-2.0 * f);
+
+    // Mix 4 coorners percentages
+    return mix(a, b, u.x) +
+            (c - a)* u.y * (1.0 - u.x) +
+            (d - b) * u.x * u.y;
+}
+
+mat2 rotate(float _angle){
+    return mat2(vec2(cos(_angle), -sin(_angle)),
+                vec2(sin(_angle), cos(_angle)));
+}
+
+vec4 screen(vec4 base, vec4 blend){
+	return 1.0 - (1.0 - base) * (1.0 - blend);
+}
+
+vec4 multiply(vec4 base, vec4 blend){
+	return base * blend;
+}
+
+vec4 darken(vec4 base, vec4 blend){
+	return min(base, blend);
+}
+
+vec4 lighten(vec4 base, vec4 blend){
+	return max(base, blend);
+}
+
+vec4 difference(vec4 base, vec4 blend){
+	return abs(base - blend);
+}
+
+vec4 exclusion(vec4 base, vec4 blend){
+	return base + blend - 2.0 * base * blend;
+}
+
+vec4 overlay(vec4 base, vec4 blend){
+	vec4 limit = step(0.5, base);
+	return mix(2.0 * base * blend, 1.0 - 2.0 * (1.0 - base) * (1.0 - blend), limit);
+}
+
+vec4 hard_light(vec4 base, vec4 blend){
+	vec4 limit = step(0.5, blend);
+	return mix(2.0 * base * blend, 1.0 - 2.0 * (1.0 - base) * (1.0 - blend), limit);
+}
+
+vec4 soft_light(vec4 base, vec4 blend){
+	vec4 limit = step(0.5, blend);
+	return mix(2.0 * base * blend + base * base * (1.0 - 2.0 * blend), sqrt(base) * (2.0 * blend - 1.0) + (2.0 * base) * (1.0 - blend), limit);
+}
+
+vec4 color_dodge(vec4 base, vec4 blend){
+	return base / (1.0 - blend);
+}
+
+vec4 linear_dodge(vec4 base, vec4 blend){
+	return base + blend;
+}
+
+vec4 color_burn(vec4 base, vec4 blend){
+	return 1.0 - (1.0 - base) / blend;
+}
+
+vec4 linear_burn (vec4 base, vec4 blend)
+{
+	return base + blend - 1.0;
+}
+
+void fragment()
+{
+	
+	// Rotate, skew and move the UVs
+	vec2 transformed_uv = ( rotate(angle) * (UV - position) )  / ( (UV.y + spread) - (UV.y * spread) );
+	
+	// Animate the ray according the the new transformed UVs
+	vec2 ray1 = vec2(transformed_uv.x * ray1_density + sin(TIME * 0.1 * speed) * (ray1_density * 0.2) + seed, 1.0);
+	vec2 ray2 = vec2(transformed_uv.x * ray2_density + sin(TIME * 0.2 * speed) * (ray1_density * 0.2) + seed, 1.0);
+	
+	// Cut off the ray's edges
+	float cut = step(cutoff, transformed_uv.x) * step(cutoff, 1.0 - transformed_uv.x);
+	ray1 *= cut;
+	ray2 *= cut;
+	
+	// Apply the noise pattern (i.e. create the rays)
+	float rays;
+	
+	if (hdr){
+		// This is not really HDR, but check this to not clamp the two merged rays making 
+		// their values go over 1.0. Can make for some nice effect
+		rays = ((noise(ray1)*ray1_intensity) + (noise(ray2) * ray2_intensity)) ;
+	}
+	else{
+		 rays = clamp((noise(ray1)*ray1_intensity) + (noise(ray2) * ray2_intensity), 0., 1.);
+	}
+	
+	// Fade out edges
+	rays *= smoothstep(0.0, falloff, (1.0 - UV.y)); // Bottom
+	rays *= smoothstep(0.0, falloff_top, (UV.y)); // Top
+	rays *= smoothstep(0.0 + cutoff, edge_fade + cutoff, transformed_uv.x); // Left
+	rays *= smoothstep(0.0 + cutoff, edge_fade + cutoff, 1.0 - transformed_uv.x); // Right
+	
+	// Color to the rays
+	vec3 shine = vec3(rays) * color.rgb;
+
+	// Try different blending modes for a nicer effect. \"Screen\" is included in the code,
+	// but take a look at https://godotshaders.com/snippet/blending-modes/ for more.
+	// With \"Screen\" blend mode:
+	
+	
+	switch(blend_mode){
+		case 0:
+			shine = screen(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+			break;
+		case 1:
+			shine = multiply(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+			break;
+		case 2:
+			shine = darken(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+			break;
+		case 3:
+			shine = lighten(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+			break;
+		case 4:
+			shine = difference(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+			break;
+		case 5:
+			shine = exclusion(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+			break;
+		case 6:
+			shine = overlay(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+			break;
+		case 7:
+			shine = hard_light(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+			break;
+		case 8:
+			shine = soft_light(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+			break;
+		case 9:
+			shine = color_dodge(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+			break;
+		case 10:
+			shine = linear_dodge(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+			break;
+		case 11:
+			shine = color_burn(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+			break;
+		case 12:
+			shine = linear_burn(texture(SCREEN_TEXTURE, SCREEN_UV), vec4(color)).rgb;
+			break;
+	}
+	
+	COLOR = vec4(shine, rays * color.a);
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_qxpdb"]
+shader = SubResource("Shader_38jub")
+shader_parameter/angle = -0.5
+shader_parameter/position = 0.2
+shader_parameter/spread = 0.5
+shader_parameter/cutoff = 0.374
+shader_parameter/falloff = 1.424
+shader_parameter/falloff_top = 0.0
+shader_parameter/edge_fade = 0.202
+shader_parameter/speed = 1.0
+shader_parameter/ray1_density = 8.0
+shader_parameter/ray1_intensity = 1.0
+shader_parameter/ray2_density = 8.0
+shader_parameter/ray2_intensity = 1.0
+shader_parameter/color = Color(0.322593, 0.489063, 0.933524, 0.713726)
+shader_parameter/hdr = true
+shader_parameter/seed = -5.0
+shader_parameter/blend_mode = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_dql4x"]
+texture = ExtResource("23_j8hs1")
+texture_region_size = Vector2i(150, 150)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+3:1/0 = 0
+2:1/0 = 0
+1:1/0 = 0
+0:1/0 = 0
+0:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+1:2/0 = 0
+3:3/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4rem7"]
+texture = ExtResource("24_o0rmp")
+texture_region_size = Vector2i(150, 150)
+0:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_en1b2"]
+tile_size = Vector2i(8, 8)
+sources/0 = SubResource("TileSetAtlasSource_dql4x")
+sources/1 = SubResource("TileSetAtlasSource_4rem7")
+
+[node name="MainMenu" type="MarginContainer"]
+z_index = 256
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 120
+theme_override_constants/margin_top = 80
+theme_override_constants/margin_right = 120
+theme_override_constants/margin_bottom = 80
+script = ExtResource("1_kmjr8")
+
+[node name="Menu" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu"]
+layout_mode = 2
+
+[node name="TitleLogo" type="HBoxContainer" parent="Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+
+[node name="LogoCenterContainer" type="CenterContainer" parent="Menu/VBoxContainer/TitleLogo"]
+layout_mode = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="Menu/VBoxContainer/TitleLogo/LogoCenterContainer"]
+layout_mode = 2
+theme_override_constants/margin_bottom = 20
+
+[node name="TextureRect" type="TextureRect" parent="Menu/VBoxContainer/TitleLogo/LogoCenterContainer/MarginContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(256, 128)
+layout_mode = 2
+texture = ExtResource("1_qd4sm")
+
+[node name="Title" type="RichTextLabel" parent="Menu/VBoxContainer/TitleLogo"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("1_njq5k")
+theme_override_font_sizes/normal_font_size = 200
+text = "SLIFT"
+fit_content = true
+autowrap_mode = 0
+
+[node name="HSeparator" type="HSeparator" parent="Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_styles/separator = SubResource("StyleBoxFlat_mcxuk")
+
+[node name="MarginContainer" type="MarginContainer" parent="Menu/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 400
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Menu/VBoxContainer/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 70
+
+[node name="PlayButton" type="Button" parent="Menu/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_3qbnn")
+text = " PLAY"
+alignment = 0
+
+[node name="OptionsButton" type="Button" parent="Menu/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_3qbnn")
+theme_override_font_sizes/font_size = 100
+text = " OPTIONS"
+alignment = 0
+
+[node name="QuitButton" type="Button" parent="Menu/VBoxContainer/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_3qbnn")
+theme_override_font_sizes/font_size = 100
+text = " QUIT"
+alignment = 0
+
+[node name="Background" type="Node2D" parent="."]
+
+[node name="DirectionalLight2D" type="DirectionalLight2D" parent="Background"]
+rotation = -0.564175
+color = Color(0.521671, 0.624999, 1, 1)
+shadow_enabled = true
+shadow_filter = 2
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Background"]
+position = Vector2(-6, 385)
+
+[node name="SS2D_Shape" type="Node2D" parent="Background/StaticBody2D"]
+texture_filter = 1
+texture_repeat = 2
+scale = Vector2(4, 4)
+script = ExtResource("4_wvjws")
+_points = SubResource("Resource_cg2to")
+shape_material = SubResource("Resource_ugell")
+collision_polygon_node_path = NodePath("../CollisionPolygon2D")
+light_occluder_node_path = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/MainMenu/Background/StaticBody2D/LightOccluder2D")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Background/StaticBody2D"]
+visible = false
+modulate = Color(1, 1, 1, 0.3)
+polygon = PackedVector2Array(2150.54, 1503.84, 2093.78, 899.226, 2076.4, 808.295, 2067.23, 778.509, 2057.78, 761.776, 2046.49, 752.82, 2031.97, 744.928, 1994.87, 731.514, 1797.06, 679.277, 1751.11, 658.342, 1730.85, 645.561, 1712.91, 630.964, 1701.27, 616.661, 1698.85, 604.762, 1704.47, 595.063, 1716.97, 587.36, 1735.18, 581.449, 1757.93, 577.124, 1812.4, 572.416, 1978.43, 576.164, 3017.61, 565.232, 2963.96, 1503.84, 2150.54, 1503.84)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Background/StaticBody2D"]
+occluder = SubResource("OccluderPolygon2D_lmttp")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="Background"]
+position = Vector2(-6, 385)
+
+[node name="SS2D_Shape2" type="Node2D" parent="Background/StaticBody2D2"]
+texture_filter = 1
+texture_repeat = 2
+scale = Vector2(4, 4)
+script = ExtResource("4_wvjws")
+_points = SubResource("Resource_ker82")
+shape_material = SubResource("Resource_ugell")
+collision_polygon_node_path = NodePath("../CollisionPolygon2D")
+light_occluder_node_path = NodePath("/root/@EditorNode@16886/@Panel@13/@VBoxContainer@14/DockHSplitLeftL/DockHSplitLeftR/DockHSplitMain/@VBoxContainer@25/DockVSplitCenter/@VSplitContainer@52/@VBoxContainer@53/@PanelContainer@98/MainScreen/@CanvasItemEditor@9272/@VSplitContainer@9094/@HSplitContainer@9096/@HSplitContainer@9098/@Control@9099/@SubViewportContainer@9100/@SubViewport@9101/MainMenu/Background/StaticBody2D2/LightOccluder2D")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Background/StaticBody2D2"]
+visible = false
+modulate = Color(1, 1, 1, 0.3)
+polygon = PackedVector2Array(1960.29, -610.044, 3004.42, -750.372, 3018.98, -416.799, 3005.42, -162.383, 2984.16, -60.6781, 2968.75, -22.1275, 2949.71, 5.96404, 2907.19, 43.6006, 2884.92, 57.7747, 2861.49, 69.3637, 2809.65, 86.3191, 2748.74, 97.533, 2355.11, 146.29, 2134.81, 176.382, 2004.3, 177.38, 1962.13, 168.602, 1944.95, 162.179, 1929.68, 154.509, 1902.73, 135.755, 1877.04, 112.993, 1829.13, 61.3307, 1791.11, 1.33425, 1762.77, -71.807, 1743.86, -162.903, 1743.15, -190.266, 1747.69, -221.04, 1769.65, -289.962, 1844.94, -437.312, 1960.29, -610.044)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="Background/StaticBody2D2"]
+occluder = SubResource("OccluderPolygon2D_hwi2a")
+
+[node name="DarkenSceneRect" type="ColorRect" parent="Background"]
+light_mask = 3
+visibility_layer = 3
+z_index = -14
+z_as_relative = false
+offset_left = -1799.0
+offset_top = -7120.0
+offset_right = 63560.0
+offset_bottom = 22165.0
+rotation = 0.00111392
+mouse_filter = 2
+color = Color(0.01, 0.01, 0.01, 0.878431)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Background" groups=["environment"]]
+environment = SubResource("Environment_lxp17")
+
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+texture_filter = 1
+position = Vector2(1842, 885)
+scale = Vector2(4, 4)
+texture = ExtResource("19_ym1xe")
+
+[node name="PointLight2D" type="PointLight2D" parent="Background"]
+position = Vector2(2917, 887)
+color = Color(1, 0.771915, 0.350511, 1)
+energy = 4.0
+shadow_enabled = true
+shadow_filter = 2
+texture = ExtResource("20_5qcpp")
+texture_scale = 6.0
+
+[node name="LightBeams" type="Node2D" parent="Background"]
+
+[node name="ColorRect" type="ColorRect" parent="Background/LightBeams"]
+z_index = -7
+material = SubResource("ShaderMaterial_jxrl7")
+offset_left = -1148.0
+offset_top = -957.0
+offset_right = 2872.0
+offset_bottom = 1864.0
+mouse_filter = 2
+
+[node name="ColorRect2" type="ColorRect" parent="Background/LightBeams"]
+z_index = -7
+material = SubResource("ShaderMaterial_frjy5")
+offset_left = -1877.0
+offset_top = -157.0
+offset_right = 2143.0
+offset_bottom = 2664.0
+mouse_filter = 2
+
+[node name="ColorRect3" type="ColorRect" parent="Background/LightBeams"]
+z_index = -7
+material = SubResource("ShaderMaterial_qxpdb")
+offset_left = -37.0
+offset_top = -43.0
+offset_right = 2220.0
+offset_bottom = 1735.0
+mouse_filter = 2
+
+[node name="Background" type="Node2D" parent="Background"]
+
+[node name="Parallax2D" type="Parallax2D" parent="Background/Background"]
+z_index = -260
+repeat_size = Vector2(2500, 0)
+autoscroll = Vector2(8, 0)
+repeat_times = 10
+
+[node name="Sprite2D" type="Sprite2D" parent="Background/Background/Parallax2D"]
+z_index = -30
+position = Vector2(792, 831)
+scale = Vector2(4, 4)
+texture = ExtResource("21_x21ya")
+
+[node name="Parallax2D2" type="Parallax2D" parent="Background/Background"]
+z_index = -250
+repeat_size = Vector2(2000, 0)
+autoscroll = Vector2(20, 0)
+repeat_times = 10
+
+[node name="Sprite2D2" type="Sprite2D" parent="Background/Background/Parallax2D2"]
+z_index = -30
+position = Vector2(754, 1309)
+scale = Vector2(4, 4)
+texture = ExtResource("22_qs0q6")
+
+[node name="CaveWall" type="TileMapLayer" parent="Background"]
+modulate = Color(0.26, 0.26, 0.26, 1)
+z_index = -8
+texture_filter = 1
+scale = Vector2(4, 4)
+tile_map_data = PackedByteArray(0, 0, 68, 0, 21, 0, 1, 0, 0, 0, 0, 0, 0, 16, 86, 0, 20, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+tile_set = SubResource("TileSet_en1b2")
+
+[connection signal="pressed" from="Menu/VBoxContainer/MarginContainer/VBoxContainer/PlayButton" to="." method="_on_play_button_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/MarginContainer/VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]
+[connection signal="pressed" from="Menu/VBoxContainer/MarginContainer/VBoxContainer/QuitButton" to="." method="_on_quit_button_pressed"]

@@ -13,6 +13,7 @@ gradient = SubResource("Gradient_ahucf")
 [node name="EnvironmentArea" type="ColorRect"]
 offset_right = 32.0
 offset_bottom = 32.0
+mouse_filter = 1
 color = Color(0.187256, 0.203125, 0, 0.113725)
 script = ExtResource("1_8fi53")
 color_correction = SubResource("GradientTexture1D_w6ra5")

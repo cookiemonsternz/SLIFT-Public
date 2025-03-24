@@ -7,6 +7,7 @@
 [node name="BackgroundArea" type="ColorRect"]
 offset_right = 32.0
 offset_bottom = 32.0
+mouse_filter = 1
 color = Color(0.38081, 0, 0.0054477, 0.113725)
 script = ExtResource("1_gtvow")
 

@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://vf7k4jp3e44n"]
 
 [ext_resource type="Script" path="res://scripts/characters/enemies/enemy_basic.gd" id="1_bynk8"]
-[ext_resource type="Texture2D" uid="uid://7h3x1q8ksikl" path="res://assets/Images/grape_cow/cow.png" id="2_pc2hm"]
+[ext_resource type="Texture2D" uid="uid://7h3x1q8ksikl" path="res://assets/images/grape_cow/cow.png" id="2_pc2hm"]
 [ext_resource type="PackedScene" uid="uid://bl4uuboi1j8w1" path="res://scenes/characters/components/enemy_damage_component.tscn" id="3_ct15x"]
 [ext_resource type="PackedScene" uid="uid://cln5aujysamf1" path="res://scenes/characters/components/enemy_knockback_component.tscn" id="4_morsv"]
 [ext_resource type="PackedScene" uid="uid://lnbyo5qn1pea" path="res://scenes/characters/components/enemy_path_movement_component.tscn" id="5_0873w"]

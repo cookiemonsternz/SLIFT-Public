@@ -1,6 +1,9 @@
 class_name Player extends CharacterBody2D
 
 #### Grappling ####
+@export var anim_sprite: AnimatedSprite2D
+
+
 @export_group("Grappling")
 
 @export_subgroup("References")
@@ -30,9 +33,7 @@ var grapple_target_markers: Array[Node2D] = [null, null]
 @export var jump_buffer_timer: Timer
 @export var coyote_time_timer: Timer
 @export var ground_casts: Node2D
-@export var death_screen: Control
-@export var win_screen: Control
-@export var win_button: Button
+
 
 @export_subgroup("Jumping")
 @export var jump_velocity = -700.0 # Maximum jump strength
@@ -76,12 +77,6 @@ func _ready() -> void:
 	#arm_upgrade_component.add_upgrade(Enums.Grapples.Right, 0, grapple_upgrade2)
 
 func _process(delta: float) -> void:
-
-	if death_screen.visible == true:
-		move_speed = 0
-		jump_velocity = 0
-		is_dead = true
-
 	if Input.is_action_just_pressed("quit"):
 		get_tree().quit()
 	#print(position)
@@ -105,6 +100,8 @@ func _process(delta: float) -> void:
 			arm_upgrade_component._on_process(delta)
 
 func _physics_process(delta: float) -> void:
+	ground_casts.global_rotation = 0
+	set_animation()
 	arm_upgrade_component._on_physics_process(delta)
 	handle_grapple_input()
 	match current_move_mode:
@@ -341,11 +338,6 @@ func grapple(side: int) -> void:
 				Enums.Grapples.Right:
 					arm_upgrade_component.arm_connected(Enums.Grapples.Right, grapple_target_positions[1], grapple_targets[1])
 
-
-func _on_button_pressed() -> void:
-	get_tree().reload_current_scene()
-
-
 func ground_is_colliding() -> bool:
 	var n_colliding = 0
 	for i: RayCast2D in ground_casts.get_children():
@@ -354,3 +346,40 @@ func ground_is_colliding() -> bool:
 			if n_colliding > 1:
 				return true
 	return false
+
+
+func set_animation():
+	if current_move_mode == Enums.MoveModes.GROUND:
+		anim_sprite.position = Vector2(0, 0)
+		var vel = get_real_velocity()
+		if vel.x > 5 or vel.x < -5:
+			anim_sprite.play("Run")
+		if vel.length() < 10:
+			anim_sprite.play("Idle")
+		
+		if is_jumping():
+			if vel.y < -50:
+				anim_sprite.play("Jump")
+				anim_sprite.set_frame_and_progress(0, 0)
+				#print("0")
+			if vel.y > -50 and vel.y < 50:
+				anim_sprite.play("Jump")
+				anim_sprite.set_frame_and_progress(1, 0)
+				#print("1")
+			if vel.y > 50:
+				anim_sprite.play("Jump")
+				anim_sprite.set_frame_and_progress(2, 0)
+				#print("2")
+		if vel.x < -1:
+			anim_sprite.flip_h = true
+		elif vel.x > 1:
+			anim_sprite.flip_h = false
+
+func is_jumping() -> bool:
+	return not is_on_floor() and current_move_mode == Enums.MoveModes.GROUND
+
+func set_anim_swinging(connected: bool):
+	if connected:
+		anim_sprite.play("Swing")
+	else:
+		anim_sprite.play("SwingMidAir")

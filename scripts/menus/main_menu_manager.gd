@@ -13,7 +13,7 @@ func load_level_one():
 	current_level = level_one
 	
 	$MainMenu.queue_free()
-	$Settings.hide()
+	$Settings.queue_free()
 
 func load_level_two():
 	current_level.queue_free()
@@ -26,7 +26,7 @@ func load_level_two_callback(timer: Timer):
 	current_level = level_two
 	
 	#$MainMenu.hide()
-	$Settings.hide()
+	#$Settings.hide()
 	timer.queue_free()
 
 func create_timer(length, callback):

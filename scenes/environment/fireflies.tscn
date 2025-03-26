@@ -1,7 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://pq8ki36sv3fb"]
+[gd_scene load_steps=7 format=3 uid="uid://pq8ki36sv3fb"]
 
 [ext_resource type="Shader" path="res://assets/shader/visibility_mask.gdshader" id="1_esckx"]
-[ext_resource type="Texture2D" uid="uid://dwaqh3pcncfoj" path="res://assets/images/lamp_light_beam.png" id="2_j4it8"]
 [ext_resource type="Texture2D" uid="uid://5r0yoxd42v20" path="res://assets/images/fly.png" id="2_jf7if"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_o6aan"]
@@ -9,7 +8,6 @@ shader = ExtResource("1_esckx")
 shader_parameter/texture_scale = 1.0
 shader_parameter/texture_size = Vector2(512, 1024)
 shader_parameter/offset = Vector2(0, -256)
-shader_parameter/polygon = ExtResource("2_j4it8")
 
 [sub_resource type="Curve" id="Curve_vh5th"]
 _data = [Vector2(0.00578035, 0), 0.0, 0.0, 0, 0, Vector2(0.147399, 1), 0.0, 0.0, 0, 0, Vector2(0.83815, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -29,13 +27,14 @@ gravity = Vector3(0, 0, 0)
 scale_min = 2.0
 scale_max = 2.0
 scale_curve = SubResource("CurveTexture_y3wb3")
-hue_variation_min = -0.1
-hue_variation_max = 0.1
+hue_variation_min = 0.04
+hue_variation_max = 0.38
 turbulence_enabled = true
 turbulence_noise_speed_random = 0.05
 turbulence_influence_min = 0.0
 
 [node name="GPUParticles2D" type="GPUParticles2D"]
+modulate = Color(1, 0.3971, 0.334462, 1)
 z_index = -6
 texture_filter = 1
 texture_repeat = 1

@@ -1,4 +1,4 @@
-[gd_scene load_steps=4822 format=4 uid="uid://d3cnaovpnistq"]
+[gd_scene load_steps=4823 format=4 uid="uid://d3cnaovpnistq"]
 
 [ext_resource type="Script" path="res://addons/rmsmartshape/normal_range.gd" id="2_to1aa"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/vertex_properties.gd" id="3_42gl6"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://pq8ki36sv3fb" path="res://scenes/environment/fireflies.tscn" id="7_yptsg"]
 [ext_resource type="PackedScene" uid="uid://c3wxkq4jmthgk" path="res://scenes/block.tscn" id="8_tc2d6"]
 [ext_resource type="Shader" path="res://assets/shader/visibility_mask.gdshader" id="8_w4l83"]
+[ext_resource type="Script" path="res://scripts/temp/redo_fireflie_variations.gd" id="9_778i4"]
 [ext_resource type="Texture2D" uid="uid://dwaqh3pcncfoj" path="res://assets/images/lamp_light_beam.png" id="9_o8afx"]
 [ext_resource type="Texture2D" uid="uid://bq6vh3n727wj4" path="res://assets/images/point_light.png" id="9_p7ouj"]
 [ext_resource type="PackedScene" uid="uid://dbe5l6x8cnnnw" path="res://scenes/environment/lights/light_object.tscn" id="10_rtcur"]
@@ -39,22 +40,6 @@
 [ext_resource type="PackedScene" uid="uid://cj8a2rc4e7o33" path="res://scenes/environment/cursed_bird.tscn" id="36_u66l4"]
 [ext_resource type="Script" path="res://scripts/temp/transition_to_jungle.gd" id="38_0b687"]
 
-[sub_resource type="Resource" id="Resource_0u0ua"]
-script = ExtResource("2_to1aa")
-begin = 0.0
-distance = 360.0
-edgeRendering = Vector2(0, 0)
-
-[sub_resource type="Resource" id="Resource_1efyi"]
-script = ExtResource("3_vj8wy")
-normal_range = SubResource("Resource_0u0ua")
-weld = true
-taper_sharp_corners = false
-render = false
-z_index = 0
-z_as_relative = true
-offset = 0.0
-
 [sub_resource type="Resource" id="Resource_78kkh"]
 script = ExtResource("2_to1aa")
 begin = 0.0
@@ -64,6 +49,22 @@ edgeRendering = Vector2(0, 0)
 [sub_resource type="Resource" id="Resource_6v3lo"]
 script = ExtResource("3_vj8wy")
 normal_range = SubResource("Resource_78kkh")
+weld = true
+taper_sharp_corners = false
+render = false
+z_index = 0
+z_as_relative = true
+offset = 0.0
+
+[sub_resource type="Resource" id="Resource_0u0ua"]
+script = ExtResource("2_to1aa")
+begin = 0.0
+distance = 360.0
+edgeRendering = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_1efyi"]
+script = ExtResource("3_vj8wy")
+normal_range = SubResource("Resource_0u0ua")
 weld = true
 taper_sharp_corners = false
 render = false
@@ -3063,22 +3064,6 @@ polygon = PackedVector2Array(1719.31, -183.07, 1662.67, -614.595, 2812.91, -681.
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_4gqgu"]
 polygon = PackedVector2Array(1719.31, -183.07, 1662.67, -614.595, 2812.91, -681.993, 4236.2, -790.241, 4374.51, -790.707, 4883.59, -855.712, 5384.6, -810.753, 5980.76, -597.064, 7111.61, -321.832, 7684.23, 134.008, 7901.49, 1002.31, 8831.34, 1370.11, 9117.33, 1450.62, 9306.14, 1522.95, 9339.07, 1541.18, 9362.79, 1558.87, 9375.57, 1575.74, 9375.55, 1591.52, 9360.02, 1620.29, 9342.22, 1646.07, 9305.1, 1687.59, 9262.48, 1723.28, 9159.64, 1791.52, 9143.86, 1798.59, 9124.71, 1802.9, 9078.75, 1804.54, 8973.09, 1788.76, 8842.16, 1751.84, 8664.36, 1708.98, 7788.14, 1317.36, 7779.4, 1312.57, 7766.81, 1308.54, 7732.53, 1302.51, 7644.57, 1296.88, 7527.46, 1297.19, 7428.1, 1318.29, 7347.57, 1323.77, 7312.33, 1319.14, 7297.55, 1314.22, 7285.28, 1307.27, 7249.81, 1280.35, 7237.26, 1269.34, 7227.44, 1258.65, 7219.8, 1247.31, 7213.8, 1234.35, 7204.56, 1199.64, 7203.42, 1188.69, 7204.12, 1177.21, 7210.02, 1153.38, 7220.33, 1129.49, 7233.1, 1106.9, 7270.14, 1056.68, 7414.77, 843.093, 7418.98, 831.684, 7421.46, 818.98, 7421.92, 790.42, 7409.81, 725.816, 7372.74, 607.644, 7349.42, 551.075, 7306.6, 480.313, 7250.18, 412.673, 7218.71, 385.435, 7186.06, 365.479, 6238.89, 154.133, 6201.54, 141.22, 6180.34, 130.015, 6163.45, 121.183, 6138.33, 114.976, 6067.93, 109.258, 5878.81, 116.104, 5564.98, 135.03, 5550.77, 132.057, 5538.86, 127.387, 5528.94, 121.21, 5520.71, 113.726, 5513.87, 105.134, 5508.13, 95.6324, 5498.74, 74.6914, 5479.93, 30.6145, 5473.47, 20.2934, 5465.72, 10.6493, 5456.37, 1.87982, 5445.12, -5.81888, 5224.16, -126.764, 5090.25, -178.013, 5062.07, -183.393, 5037.43, -184.6, 5017.04, -181.036, 5001.63, -172.125, 4981.46, -151.977, 4948.05, -136.937, 4903.42, -126.46, 4849.57, -120.025, 4582.06, -124.279, 4214.03, -167.837, 4116.55, -119.532, 4047.18, -77.3678, 4022.63, -57.1136, 4014.8, -47.8583, 4010.66, -39.4417, 4002.69, -3.35107, 4001.15, 20.0183, 3999.94, 25.5953, 3997.37, 32.6404, 3988.66, 50.1315, 3959.93, 91.6045, 3941.71, 111.528, 3922.09, 128.204, 3912.03, 134.69, 3901.96, 139.604, 3891.99, 142.693, 3882.22, 143.697, 3821.22, 142.44, 3808.15, 140.127, 3794.59, 136.105, 3763.29, 121.108, 3754.81, 113.652, 3747.05, 101.973, 3733.37, 68.4, 3693.2, -112.427, 3684.01, -144.796, 3679.16, -155.687, 3674.05, -162.233, 3668.85, -165.769, 3663.72, -168.105, 3658.63, -169.397, 3653.57, -169.793, 3648.5, -169.44, 3643.39, -168.485, 3632.93, -165.366, 3610.19, -158.426, 3597.44, -156.981, 3590.61, -157.284, 3583.44, -158.464, 3576.44, -160.598, 3570.1, -163.588, 3564.37, -167.329, 3559.2, -171.712, 3550.36, -181.986, 3543.17, -193.56, 3523.03, -235.86, 3520.6, -238.811, 3517.96, -240.791, 3515.16, -241.911, 3512.26, -242.279, 3509.3, -242.001, 3506.34, -241.18, 3500.59, -238.351, 3491.23, -230.951, 3487.4, -226.956, 3387.65, -119.998, 3338.47, -112.571, 3237.96, -108.459, 3225.05, -111.095, 3212.09, -117.003, 3199.2, -125.705, 3186.49, -136.726, 3162.14, -163.833, 3140.02, -194.526, 3093.4, -277.17, 3024.84, -300.792, 2958.8, -314.875, 2923.58, -318.004, 2889.1, -316.815, 2831.42, -305.414, 2791.81, -290.146, 2768.98, -276.766, 2761.66, -271.028, 2672.05, -189.472, 2668.23, -161.585, 2664.95, -150.027, 2660.19, -138.626, 2653.66, -128.377, 2649.65, -123.996, 2645.1, -120.274, 2639.59, -117.268, 2632.89, -114.904, 2616.74, -111.856, 2579.51, -110.748, 2533.26, -114.584, 2448.79, -77.3233, 2400.49, -36.988, 2355.9, -23.2872, 2329.71, -31.0427, 2320.74, -38.1538, 2320.13, -56.9555, 2335.06, -86.9402, 2336.3, -89.0871, 2337.82, -91.1749, 2339.91, -93.4107, 2342.54, -95.395, 2344.06, -96.1681, 2345.71, -96.7314, 2347.48, -97.0334, 2349.37, -97.0243, 2351.39, -96.6543, 2353.52, -95.9265, 2355.09, -96.3917, 2356.27, -97.0818, 2357.13, -97.9148, 2357.68, -98.8621, 2357.97, -99.8975, 2358.04, -100.993, 2357.92, -102.121, 2357.65, -103.25, 2356.81, -105.403, 2355.84, -107.222, 2354.7, -108.952, 2348.74, -117.254, 2339.23, -121.998, 2323.78, -120.838, 2269.68, -103.574, 2221.51, -111.306, 2147.78, -164.249, 2065.5, -239, 2061.07, -243.269, 2045.55, -254.096, 2015.64, -268.499, 1968, -283.497, 1940.25, -288.005, 1914.89, -288.027, 1892.32, -284.759, 1872.95, -279.399, 1845.4, -267.195, 1835.5, -261)
 
-[sub_resource type="Resource" id="Resource_l7sw5"]
-script = ExtResource("2_to1aa")
-begin = 0.0
-distance = 360.0
-edgeRendering = Vector2(0, 0)
-
-[sub_resource type="Resource" id="Resource_myy32"]
-script = ExtResource("3_vj8wy")
-normal_range = SubResource("Resource_l7sw5")
-weld = true
-taper_sharp_corners = false
-render = false
-z_index = 0
-z_as_relative = true
-offset = 0.0
-
 [sub_resource type="Resource" id="Resource_nuajy"]
 script = ExtResource("2_to1aa")
 begin = 0.0
@@ -3088,6 +3073,22 @@ edgeRendering = Vector2(0, 0)
 [sub_resource type="Resource" id="Resource_o03cg"]
 script = ExtResource("3_vj8wy")
 normal_range = SubResource("Resource_nuajy")
+weld = true
+taper_sharp_corners = false
+render = false
+z_index = 0
+z_as_relative = true
+offset = 0.0
+
+[sub_resource type="Resource" id="Resource_l7sw5"]
+script = ExtResource("2_to1aa")
+begin = 0.0
+distance = 360.0
+edgeRendering = Vector2(0, 0)
+
+[sub_resource type="Resource" id="Resource_myy32"]
+script = ExtResource("3_vj8wy")
+normal_range = SubResource("Resource_l7sw5")
 weld = true
 taper_sharp_corners = false
 render = false
@@ -30201,8 +30202,7 @@ gravity = Vector3(0, 0, 0)
 scale_min = 2.0
 scale_max = 2.0
 scale_curve = SubResource("CurveTexture_y3wb3")
-hue_variation_min = -0.05
-hue_variation_max = 0.06
+hue_variation_max = 0.2
 turbulence_enabled = true
 turbulence_noise_speed_random = 0.05
 turbulence_influence_min = 0.0
@@ -30218,8 +30218,8 @@ gravity = Vector3(0, 0, 0)
 scale_min = 2.0
 scale_max = 2.0
 scale_curve = SubResource("CurveTexture_y3wb3")
-hue_variation_min = -0.1
-hue_variation_max = 0.1
+hue_variation_min = 0.11
+hue_variation_max = 0.28
 turbulence_enabled = true
 turbulence_noise_speed_random = 0.05
 turbulence_influence_min = 0.0
@@ -30235,8 +30235,8 @@ gravity = Vector3(0, 0, 0)
 scale_min = 2.0
 scale_max = 2.0
 scale_curve = SubResource("CurveTexture_y3wb3")
-hue_variation_min = -0.1
-hue_variation_max = 0.1
+hue_variation_min = 0.00999998
+hue_variation_max = 0.42
 turbulence_enabled = true
 turbulence_noise_speed_random = 0.05
 turbulence_influence_min = 0.0
@@ -30252,8 +30252,8 @@ gravity = Vector3(0, 0, 0)
 scale_min = 2.0
 scale_max = 2.0
 scale_curve = SubResource("CurveTexture_y3wb3")
-hue_variation_min = -0.1
-hue_variation_max = 0.1
+hue_variation_min = -2.23517e-08
+hue_variation_max = 0.21
 turbulence_enabled = true
 turbulence_noise_speed_random = 0.05
 turbulence_influence_min = 0.0
@@ -30272,8 +30272,7 @@ gravity = Vector3(0, 0, 0)
 scale_min = 2.0
 scale_max = 2.0
 scale_curve = SubResource("CurveTexture_y3wb3")
-hue_variation_min = -0.1
-hue_variation_max = 0.1
+hue_variation_max = 0.2
 turbulence_enabled = true
 turbulence_noise_speed_random = 0.05
 turbulence_influence_min = 0.0
@@ -30292,8 +30291,7 @@ gravity = Vector3(0, 0, 0)
 scale_min = 2.0
 scale_max = 2.0
 scale_curve = SubResource("CurveTexture_y3wb3")
-hue_variation_min = -0.1
-hue_variation_max = 0.1
+hue_variation_max = 0.2
 turbulence_enabled = true
 turbulence_noise_speed_random = 0.05
 turbulence_influence_min = 0.0
@@ -30312,8 +30310,7 @@ gravity = Vector3(0, 0, 0)
 scale_min = 2.0
 scale_max = 2.0
 scale_curve = SubResource("CurveTexture_y3wb3")
-hue_variation_min = -0.1
-hue_variation_max = 0.1
+hue_variation_max = 0.2
 turbulence_enabled = true
 turbulence_noise_speed_random = 0.05
 turbulence_influence_min = 0.0
@@ -30332,8 +30329,7 @@ gravity = Vector3(0, 0, 0)
 scale_min = 2.0
 scale_max = 2.0
 scale_curve = SubResource("CurveTexture_y3wb3")
-hue_variation_min = -0.1
-hue_variation_max = 0.1
+hue_variation_max = 0.2
 turbulence_enabled = true
 turbulence_noise_speed_random = 0.05
 turbulence_influence_min = 0.0
@@ -30352,8 +30348,7 @@ gravity = Vector3(0, 0, 0)
 scale_min = 2.0
 scale_max = 2.0
 scale_curve = SubResource("CurveTexture_y3wb3")
-hue_variation_min = -0.1
-hue_variation_max = 0.1
+hue_variation_max = 0.2
 turbulence_enabled = true
 turbulence_noise_speed_random = 0.05
 turbulence_influence_min = 0.0
@@ -30372,8 +30367,7 @@ gravity = Vector3(0, 0, 0)
 scale_min = 2.0
 scale_max = 2.0
 scale_curve = SubResource("CurveTexture_y3wb3")
-hue_variation_min = -0.1
-hue_variation_max = 0.1
+hue_variation_max = 0.2
 turbulence_enabled = true
 turbulence_noise_speed_random = 0.05
 turbulence_influence_min = 0.0
@@ -30392,8 +30386,7 @@ gravity = Vector3(0, 0, 0)
 scale_min = 2.0
 scale_max = 2.0
 scale_curve = SubResource("CurveTexture_y3wb3")
-hue_variation_min = -0.1
-hue_variation_max = 0.1
+hue_variation_max = 0.2
 turbulence_enabled = true
 turbulence_noise_speed_random = 0.05
 turbulence_influence_min = 0.0
@@ -30412,8 +30405,7 @@ gravity = Vector3(0, 0, 0)
 scale_min = 2.0
 scale_max = 2.0
 scale_curve = SubResource("CurveTexture_y3wb3")
-hue_variation_min = -0.1
-hue_variation_max = 0.1
+hue_variation_max = 0.2
 turbulence_enabled = true
 turbulence_noise_speed_random = 0.05
 turbulence_influence_min = 0.0
@@ -30432,8 +30424,7 @@ gravity = Vector3(0, 0, 0)
 scale_min = 2.0
 scale_max = 2.0
 scale_curve = SubResource("CurveTexture_y3wb3")
-hue_variation_min = -0.1
-hue_variation_max = 0.1
+hue_variation_max = 0.2
 turbulence_enabled = true
 turbulence_noise_speed_random = 0.05
 turbulence_influence_min = 0.0
@@ -30452,8 +30443,7 @@ gravity = Vector3(0, 0, 0)
 scale_min = 2.0
 scale_max = 2.0
 scale_curve = SubResource("CurveTexture_y3wb3")
-hue_variation_min = -0.1
-hue_variation_max = 0.1
+hue_variation_max = 0.2
 turbulence_enabled = true
 turbulence_noise_speed_random = 0.05
 turbulence_influence_min = 0.0
@@ -30472,8 +30462,7 @@ gravity = Vector3(0, 0, 0)
 scale_min = 2.0
 scale_max = 2.0
 scale_curve = SubResource("CurveTexture_y3wb3")
-hue_variation_min = -0.1
-hue_variation_max = 0.1
+hue_variation_max = 0.2
 turbulence_enabled = true
 turbulence_noise_speed_random = 0.05
 turbulence_influence_min = 0.0
@@ -30499,8 +30488,7 @@ gravity = Vector3(0, 0, 0)
 scale_min = 2.0
 scale_max = 2.0
 scale_curve = SubResource("CurveTexture_y3wb3")
-hue_variation_min = -0.1
-hue_variation_max = 0.1
+hue_variation_max = 0.2
 turbulence_enabled = true
 turbulence_noise_speed_random = 0.05
 turbulence_influence_min = 0.0
@@ -30516,8 +30504,7 @@ gravity = Vector3(0, 0, 0)
 scale_min = 2.0
 scale_max = 2.0
 scale_curve = SubResource("CurveTexture_y3wb3")
-hue_variation_min = -0.1
-hue_variation_max = 0.1
+hue_variation_max = 0.2
 turbulence_enabled = true
 turbulence_noise_speed_random = 0.05
 turbulence_influence_min = 0.0
@@ -30536,8 +30523,7 @@ gravity = Vector3(0, 0, 0)
 scale_min = 2.0
 scale_max = 2.0
 scale_curve = SubResource("CurveTexture_y3wb3")
-hue_variation_min = -0.1
-hue_variation_max = 0.1
+hue_variation_max = 0.2
 turbulence_enabled = true
 turbulence_noise_speed_random = 0.05
 turbulence_influence_min = 0.0
@@ -30556,8 +30542,7 @@ gravity = Vector3(0, 0, 0)
 scale_min = 2.0
 scale_max = 2.0
 scale_curve = SubResource("CurveTexture_y3wb3")
-hue_variation_min = -0.1
-hue_variation_max = 0.1
+hue_variation_max = 0.2
 turbulence_enabled = true
 turbulence_noise_speed_random = 0.05
 turbulence_influence_min = 0.0
@@ -30576,8 +30561,7 @@ gravity = Vector3(0, 0, 0)
 scale_min = 2.0
 scale_max = 2.0
 scale_curve = SubResource("CurveTexture_y3wb3")
-hue_variation_min = -0.1
-hue_variation_max = 0.1
+hue_variation_max = 0.2
 turbulence_enabled = true
 turbulence_noise_speed_random = 0.05
 turbulence_influence_min = 0.0
@@ -30593,8 +30577,7 @@ gravity = Vector3(0, 0, 0)
 scale_min = 2.0
 scale_max = 2.0
 scale_curve = SubResource("CurveTexture_y3wb3")
-hue_variation_min = -0.1
-hue_variation_max = 0.1
+hue_variation_max = 0.2
 turbulence_enabled = true
 turbulence_noise_speed_random = 0.05
 turbulence_influence_min = 0.0
@@ -30617,8 +30600,7 @@ gravity = Vector3(0, 0, 0)
 scale_min = 2.0
 scale_max = 2.0
 scale_curve = SubResource("CurveTexture_y3wb3")
-hue_variation_min = -0.1
-hue_variation_max = 0.1
+hue_variation_max = 0.2
 turbulence_enabled = true
 turbulence_noise_speed_random = 0.05
 turbulence_influence_min = 0.0
@@ -30648,8 +30630,7 @@ gravity = Vector3(0, 0, 0)
 scale_min = 2.0
 scale_max = 2.0
 scale_curve = SubResource("CurveTexture_euhjb")
-hue_variation_min = -0.1
-hue_variation_max = 0.1
+hue_variation_max = 0.2
 turbulence_enabled = true
 turbulence_noise_speed_random = 0.05
 turbulence_influence_min = 0.0
@@ -30668,8 +30649,7 @@ gravity = Vector3(0, 0, 0)
 scale_min = 2.0
 scale_max = 2.0
 scale_curve = SubResource("CurveTexture_euhjb")
-hue_variation_min = -0.1
-hue_variation_max = 0.1
+hue_variation_max = 0.2
 turbulence_enabled = true
 turbulence_noise_speed_random = 0.05
 turbulence_influence_min = 0.0
@@ -30685,8 +30665,7 @@ gravity = Vector3(0, 0, 0)
 scale_min = 2.0
 scale_max = 2.0
 scale_curve = SubResource("CurveTexture_euhjb")
-hue_variation_min = -0.1
-hue_variation_max = 0.1
+hue_variation_max = 0.2
 turbulence_enabled = true
 turbulence_noise_speed_random = 0.05
 turbulence_influence_min = 0.0
@@ -30702,8 +30681,7 @@ gravity = Vector3(0, 0, 0)
 scale_min = 2.0
 scale_max = 2.0
 scale_curve = SubResource("CurveTexture_euhjb")
-hue_variation_min = -0.1
-hue_variation_max = 0.1
+hue_variation_max = 0.2
 turbulence_enabled = true
 turbulence_noise_speed_random = 0.05
 turbulence_influence_min = 0.0
@@ -30719,8 +30697,7 @@ gravity = Vector3(0, 0, 0)
 scale_min = 2.0
 scale_max = 2.0
 scale_curve = SubResource("CurveTexture_euhjb")
-hue_variation_min = -0.1
-hue_variation_max = 0.1
+hue_variation_max = 0.2
 turbulence_enabled = true
 turbulence_noise_speed_random = 0.05
 turbulence_influence_min = 0.0
@@ -30736,8 +30713,7 @@ gravity = Vector3(0, 0, 0)
 scale_min = 2.0
 scale_max = 2.0
 scale_curve = SubResource("CurveTexture_euhjb")
-hue_variation_min = -0.1
-hue_variation_max = 0.1
+hue_variation_max = 0.2
 turbulence_enabled = true
 turbulence_noise_speed_random = 0.05
 turbulence_influence_min = 0.0
@@ -30756,8 +30732,7 @@ gravity = Vector3(0, 0, 0)
 scale_min = 2.0
 scale_max = 2.0
 scale_curve = SubResource("CurveTexture_euhjb")
-hue_variation_min = -0.1
-hue_variation_max = 0.1
+hue_variation_max = 0.2
 turbulence_enabled = true
 turbulence_noise_speed_random = 0.05
 turbulence_influence_min = 0.0
@@ -30776,8 +30751,7 @@ gravity = Vector3(0, 0, 0)
 scale_min = 2.0
 scale_max = 2.0
 scale_curve = SubResource("CurveTexture_euhjb")
-hue_variation_min = -0.1
-hue_variation_max = 0.1
+hue_variation_max = 0.2
 turbulence_enabled = true
 turbulence_noise_speed_random = 0.05
 turbulence_influence_min = 0.0
@@ -30799,8 +30773,7 @@ gravity = Vector3(0, 0, 0)
 scale_min = 2.0
 scale_max = 2.0
 scale_curve = SubResource("CurveTexture_euhjb")
-hue_variation_min = -0.1
-hue_variation_max = 0.1
+hue_variation_max = 0.2
 turbulence_enabled = true
 turbulence_noise_speed_random = 0.05
 turbulence_influence_min = 0.0
@@ -30819,8 +30792,7 @@ gravity = Vector3(0, 0, 0)
 scale_min = 2.0
 scale_max = 2.0
 scale_curve = SubResource("CurveTexture_euhjb")
-hue_variation_min = -0.1
-hue_variation_max = 0.1
+hue_variation_max = 0.2
 turbulence_enabled = true
 turbulence_noise_speed_random = 0.05
 turbulence_influence_min = 0.0
@@ -74653,6 +74625,7 @@ zoom_level = Vector2(2.5, 2.5)
 offset = Vector2(0, -25)
 
 [node name="Fireflies" type="Node2D" parent="."]
+script = ExtResource("9_778i4")
 
 [node name="Fireflies" parent="Fireflies" instance=ExtResource("7_yptsg")]
 material = SubResource("ShaderMaterial_bowcq")
@@ -74698,6 +74671,7 @@ process_material = SubResource("ParticleProcessMaterial_wue7r")
 visibility_rect = Rect2(-419.621, -371.996, 832.283, 637.335)
 
 [node name="LightObject" parent="Fireflies/Block" node_paths=PackedStringArray("light_collider", "light_origin") instance=ExtResource("10_rtcur")]
+visible = false
 position = Vector2(17068, 3172)
 light_collider = NodePath("Area2D")
 light_origin = NodePath("Marker2D")
@@ -75031,6 +75005,7 @@ shape = SubResource("RectangleShape2D_pkc5v")
 
 [node name="Block2" type="Node2D" parent="Fireflies"]
 position = Vector2(49041, 10693)
+script = ExtResource("9_778i4")
 
 [node name="Fireflies19" parent="Fireflies/Block2" instance=ExtResource("7_yptsg")]
 material = null
@@ -75100,6 +75075,7 @@ shape = SubResource("RectangleShape2D_76cgn")
 [node name="Block3" type="Node2D" parent="Fireflies"]
 position = Vector2(49842, 11939)
 rotation = -0.127422
+script = ExtResource("9_778i4")
 
 [node name="Fireflies25" parent="Fireflies/Block3" instance=ExtResource("7_yptsg")]
 material = null

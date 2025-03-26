@@ -1,16 +1,13 @@
-[gd_scene load_steps=21 format=4 uid="uid://nsfenexf57o1"]
+[gd_scene load_steps=18 format=4 uid="uid://nsfenexf57o1"]
 
 [ext_resource type="TileSet" uid="uid://b30kfa4ed8aqy" path="res://assets/tileset.tres" id="1_6f6xr"]
 [ext_resource type="PackedScene" uid="uid://brkdvlqw0t3sp" path="res://scenes/characters/player.tscn" id="2_x1y1f"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/shape_texture_2d.gd" id="3_kvnmx"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/drawable_ellipse.gd" id="4_rcsnt"]
 [ext_resource type="PackedScene" uid="uid://dkupc0hcgqo8k" path="res://scenes/environment/lights/thick_light.tscn" id="5_j48hb"]
-[ext_resource type="PackedScene" uid="uid://cwvhio0pg786r" path="res://scenes/yank_pickup.tscn" id="6_eg85y"]
 [ext_resource type="PackedScene" uid="uid://ciq52b3cuisor" path="res://scenes/environment/win_area.tscn" id="7_2yaey"]
-[ext_resource type="PackedScene" uid="uid://cunvwyyo5nyju" path="res://scenes/characters/enemies/enemy_basic.tscn" id="8_ywse6"]
 [ext_resource type="PackedScene" uid="uid://c22877u0nrk3r" path="res://scenes/environment/moving_platform.tscn" id="9_2skja"]
 [ext_resource type="Script" path="res://addons/shape_texture_2d/drawable_rectangle.gd" id="10_narhn"]
-[ext_resource type="Script" path="res://scripts/characters/components/arm_upgrade_system/arm_upgrade_components/tether_arm_upgrade.gd" id="11_uhcis"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ekj6v"]
 radius = 89.0898
@@ -88,6 +85,7 @@ scale = Vector2(1, 1)
 position = Vector2(0, 43)
 
 [node name="ColorRect" type="ColorRect" parent="."]
+visible = false
 offset_left = -61583.0
 offset_top = -35477.0
 offset_right = 78588.0
@@ -149,12 +147,9 @@ position = Vector2(61320, -4469)
 position = Vector2(-7, -45)
 cutoff_speed = 10
 
-[node name="EnemyBasic" parent="." node_paths=PackedStringArray("path_follow_2d") instance=ExtResource("8_ywse6")]
-position = Vector2(1155, -1107)
-path_follow_2d = NodePath("../Path2D/PathFollow2D")
-
 [node name="Path2D" type="Path2D" parent="."]
-position = Vector2(-98, -996)
+visible = false
+position = Vector2(3, -7)
 curve = SubResource("Curve2D_ph0sy")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="Path2D"]
@@ -162,7 +157,8 @@ position = Vector2(1201, -141)
 rotation = -0.0873685
 
 [node name="MovingPlatform" parent="." node_paths=PackedStringArray("platform_body") instance=ExtResource("9_2skja")]
-position = Vector2(191, -1316)
+visible = false
+position = Vector2(151, -51)
 curve = SubResource("Curve2D_kirl2")
 do_rotation = true
 platform_body = NodePath("AnimatableBody2D")
@@ -178,6 +174,10 @@ position = Vector2(84.5, -5.66244e-07)
 scale = Vector2(1.47656, 0.15625)
 texture = SubResource("Texture2D_s5f17")
 
-[node name="Yank Pickup2" parent="." instance=ExtResource("6_eg85y")]
-position = Vector2(914, -145)
-upgrade = ExtResource("11_uhcis")
+[node name="ColorRect2" type="ColorRect" parent="."]
+z_index = -1
+offset_left = -8726.0
+offset_top = -12562.0
+offset_right = 46643.0
+offset_bottom = 6561.0
+color = Color(0.149217, 0.136217, 0.101383, 1)

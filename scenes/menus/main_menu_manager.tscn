@@ -6,13 +6,14 @@
 [ext_resource type="PackedScene" uid="uid://dblwhb4ehhk3q" path="res://scenes/menus/settings.tscn" id="3_nymtc"]
 [ext_resource type="PackedScene" uid="uid://dqfg08nv25mls" path="res://jungle_polish.tscn" id="3_om8uu"]
 
-[node name="MainMenuManager" type="Control" groups=["SceneManager"]]
+[node name="MainMenuRoot" type="Control" groups=["SceneManager"]]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_3uo8s")
 level_one_scene = ExtResource("2_qlpjl")
 level_two_scene = ExtResource("3_om8uu")

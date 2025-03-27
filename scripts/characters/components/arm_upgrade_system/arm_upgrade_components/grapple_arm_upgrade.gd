@@ -23,7 +23,7 @@ func update_process(player: Player, _root: Node):
 			player.global_position = player.player_physics_follow.global_position
 			if spring_joint != null:
 				var physics_follow_rotation = player.player_physics_follow.global_position.angle_to_point(cache_target) + PI/2
-				player.global_rotation = move_toward(player.global_rotation, physics_follow_rotation, 2 * player.get_process_delta_time())
+				player.global_rotation = move_toward(player.global_rotation, physics_follow_rotation, 3 * player.get_process_delta_time())
 			else:
 				var physics_follow_rotation = player.player_physics_follow.linear_velocity.angle()
 				var max_rotation_angle = PI/6

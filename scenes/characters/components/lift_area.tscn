@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5g70rjgx8onv"]
+
+[ext_resource type="Script" path="res://scripts/characters/components/lift_area.gd" id="1_65ci3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0f3nj"]
+
+[node name="LiftArea" type="ColorRect"]
+offset_right = 32.0
+offset_bottom = 32.0
+mouse_filter = 1
+color = Color(0.0349121, 0, 0.203125, 0.113725)
+script = ExtResource("1_65ci3")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 328
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("RectangleShape2D_0f3nj")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

@@ -1,0 +1,69 @@
+[gd_scene load_steps=6 format=3 uid="uid://yblfwg4towu7"]
+
+[ext_resource type="Script" path="res://scripts/temp/node_2d.gd" id="1_1qdw7"]
+[ext_resource type="Texture2D" uid="uid://cbruom30yln6t" path="res://addons/kenney_input_prompts/Flairs/Default/controller_connecting_b.png" id="1_jnkuu"]
+
+[sub_resource type="Animation" id="Animation_b7usi"]
+resource_name = "new_animation"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 9.96667),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 1000)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(3.93333),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"pause"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_g1v0w"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_382ip"]
+_data = {
+"RESET": SubResource("Animation_g1v0w"),
+"new_animation": SubResource("Animation_b7usi")
+}
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_1qdw7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(4, 4)
+texture = ExtResource("1_jnkuu")
+offset = Vector2(125, 125)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_382ip")
+}
+autoplay = "new_animation"

@@ -71,9 +71,6 @@ func damage(damage_amount: float, damage_type: Enums.DamageType = Enums.DamageTy
 				if health <= 0:
 					entity_died.emit(damage_amount, damage_type, damage_source)
 					get_parent().get_parent().modulate = Color(1.0, 0.0, 0.0)
-					get_parent().get_parent().get_node("DeathScreen").visible = true
-					get_parent().get_parent().get_node("DeathScreen/Label").text = "You died to a: light :("
-					get_parent().get_parent().get_node("DeathScreen/Button").disabled = false
 
 func _on_health_regen_timer_timeout():
 	if health < max_health:

@@ -1,38 +1,70 @@
-[gd_scene load_steps=3 format=3 uid="uid://bq2odgvhm7i2r"]
+[gd_scene load_steps=6 format=3 uid="uid://bq2odgvhm7i2r"]
 
 [ext_resource type="Texture2D" uid="uid://1dbhajxjhdcv" path="res://assets/images/player_corpse.png" id="1_mrcu0"]
-[ext_resource type="Texture2D" uid="uid://dw12t0jtmyoqm" path="res://assets/images/play_button.png" id="2_f0ryq"]
+[ext_resource type="Script" path="res://scripts/menus/death_screen.gd" id="1_wr2uq"]
+[ext_resource type="Texture2D" uid="uid://n6ya0mi4rkr5" path="res://assets/images/play_button_white.png" id="4_25jtg"]
+[ext_resource type="Texture2D" uid="uid://c7rfprc6foyb0" path="res://assets/images/quit_button.png" id="5_t4pwi"]
 
-[node name="PanelContainer" type="PanelContainer"]
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tds43"]
+
+[node name="DeathScreen" type="PanelContainer"]
+z_index = 256
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_wr2uq")
 
-[node name="DeathScreen" type="CenterContainer" parent="."]
+[node name="CenterContainer" type="CenterContainer" parent="."]
 layout_mode = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="DeathScreen"]
+[node name="VBoxContainer" type="VBoxContainer" parent="CenterContainer"]
 layout_mode = 2
 theme_override_constants/separation = 215
 
-[node name="TextureRect" type="TextureRect" parent="DeathScreen/VBoxContainer"]
+[node name="MarginContainer" type="MarginContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 65
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer/VBoxContainer/MarginContainer"]
 texture_filter = 1
 custom_minimum_size = Vector2(512, 512)
 layout_mode = 2
 texture = ExtResource("1_mrcu0")
 
-[node name="Button" type="Button" parent="DeathScreen/VBoxContainer"]
+[node name="HBoxContainer" type="HBoxContainer" parent="CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 50
+alignment = 1
+
+[node name="Button" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
 texture_filter = 1
 custom_minimum_size = Vector2(128, 128)
 layout_mode = 2
 theme_override_colors/icon_normal_color = Color(0.485703, 0.485704, 0.485703, 1)
-theme_override_colors/icon_focus_color = Color(0.446777, 0.446777, 0.446777, 1)
+theme_override_colors/icon_focus_color = Color(0.486275, 0.486275, 0.486275, 1)
 theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
 theme_override_colors/icon_hover_color = Color(0.351563, 0.351563, 0.351563, 1)
 theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
-icon = ExtResource("2_f0ryq")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_tds43")
+icon = ExtResource("4_25jtg")
 flat = true
 icon_alignment = 1
 expand_icon = true
+
+[node name="Button3" type="Button" parent="CenterContainer/VBoxContainer/HBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(128, 128)
+layout_mode = 2
+theme_override_colors/icon_normal_color = Color(0.485703, 0.485704, 0.485703, 1)
+theme_override_colors/icon_focus_color = Color(0.485703, 0.485704, 0.485703, 1)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(0.351563, 0.351563, 0.351563, 1)
+theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
+icon = ExtResource("5_t4pwi")
+flat = true
+expand_icon = true
+
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Button" to="." method="respawn"]
+[connection signal="pressed" from="CenterContainer/VBoxContainer/HBoxContainer/Button3" to="." method="_on_button_3_pressed"]

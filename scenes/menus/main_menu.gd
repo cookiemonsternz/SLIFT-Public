@@ -22,3 +22,4 @@ func _on_quit_button_pressed() -> void:
 
 func _on_play_button_pressed() -> void:
 	play_game.emit()
+	get_tree().get_first_node_in_group("SceneManager").del_menus()

@@ -1,13 +1,16 @@
-[gd_scene load_steps=83 format=3 uid="uid://jhsr4kn0htoa"]
+[gd_scene load_steps=86 format=3 uid="uid://jhsr4kn0htoa"]
 
 [ext_resource type="Script" path="res://scenes/menus/main_menu.gd" id="1_kmjr8"]
 [ext_resource type="FontFile" uid="uid://bfuak37f8ee2d" path="res://assets/fonts/Times New Roman/times new roman bold.ttf" id="1_njq5k"]
 [ext_resource type="Texture2D" uid="uid://snj1a6t8dayb" path="res://assets/images/logo_rock.png" id="1_qd4sm"]
 [ext_resource type="FontFile" uid="uid://cjfkh5yysmaqo" path="res://assets/fonts/Times New Roman/times new roman.ttf" id="3_waxdg"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/shapes/shape.gd" id="4_wvjws"]
+[ext_resource type="Texture2D" uid="uid://n6ya0mi4rkr5" path="res://assets/images/play_button_white.png" id="5_kdiee"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/vertex_properties.gd" id="5_om51h"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/shapes/point.gd" id="6_rtsil"]
+[ext_resource type="Texture2D" uid="uid://cmdifc436npln" path="res://assets/images/options_button.png" id="6_soehi"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/shapes/point_array.gd" id="7_01qfq"]
+[ext_resource type="Texture2D" uid="uid://c7rfprc6foyb0" path="res://assets/images/quit_button.png" id="7_4hv7q"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material_metadata.gd" id="8_2663f"]
 [ext_resource type="Script" path="res://addons/rmsmartshape/materials/edge_material.gd" id="9_ob8q2"]
 [ext_resource type="Texture2D" uid="uid://b0ay5w2mtfn5r" path="res://assets/images/rock_smart_shape_2d/top_center.png" id="10_dlclk"]
@@ -52,10 +55,10 @@ Button/colors/font_hover_pressed_color = Color(0.286275, 0.286275, 0.286275, 1)
 Button/colors/font_outline_color = Color(0, 0, 0, 0)
 Button/colors/font_pressed_color = Color(0.28485, 0.28485, 0.28485, 1)
 Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
-Button/colors/icon_focus_color = Color(1, 1, 1, 1)
-Button/colors/icon_hover_color = Color(1, 1, 1, 1)
+Button/colors/icon_focus_color = Color(0.670588, 0.670588, 0.670588, 1)
+Button/colors/icon_hover_color = Color(0.470076, 0.470076, 0.470076, 1)
 Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
-Button/colors/icon_normal_color = Color(1, 1, 1, 1)
+Button/colors/icon_normal_color = Color(0.67069, 0.67069, 0.67069, 1)
 Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
 Button/constants/align_to_largest_stylebox = 0
 Button/constants/h_separation = 4
@@ -68,7 +71,7 @@ Button/styles/hover = SubResource("StyleBoxEmpty_lp4pc")
 Button/styles/normal = SubResource("StyleBoxEmpty_bhu8x")
 Button/styles/pressed = SubResource("StyleBoxEmpty_3u3sm")
 
-[sub_resource type="Resource" id="Resource_wi6sv"]
+[sub_resource type="Resource" id="Resource_tdqkf"]
 script = ExtResource("5_om51h")
 texture_idx = 0
 flip = false
@@ -79,9 +82,9 @@ script = ExtResource("6_rtsil")
 position = Vector2(537.635, 375.96)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_wi6sv")
+properties = SubResource("Resource_tdqkf")
 
-[sub_resource type="Resource" id="Resource_pnj7q"]
+[sub_resource type="Resource" id="Resource_rcgll"]
 script = ExtResource("5_om51h")
 texture_idx = 0
 flip = false
@@ -92,9 +95,9 @@ script = ExtResource("6_rtsil")
 position = Vector2(514.446, 190.444)
 point_in = Vector2(12.7424, 12.7423)
 point_out = Vector2(-12.7424, -12.7423)
-properties = SubResource("Resource_pnj7q")
+properties = SubResource("Resource_rcgll")
 
-[sub_resource type="Resource" id="Resource_3o1tm"]
+[sub_resource type="Resource" id="Resource_hh176"]
 script = ExtResource("5_om51h")
 texture_idx = 0
 flip = false
@@ -105,9 +108,9 @@ script = ExtResource("6_rtsil")
 position = Vector2(428.228, 157.741)
 point_in = Vector2(22.1811, 20.7652)
 point_out = Vector2(-22.1811, -20.7652)
-properties = SubResource("Resource_3o1tm")
+properties = SubResource("Resource_hh176")
 
-[sub_resource type="Resource" id="Resource_gtif4"]
+[sub_resource type="Resource" id="Resource_x2ma2"]
 script = ExtResource("5_om51h")
 texture_idx = 0
 flip = false
@@ -118,9 +121,9 @@ script = ExtResource("6_rtsil")
 position = Vector2(754.402, 141.308)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_gtif4")
+properties = SubResource("Resource_x2ma2")
 
-[sub_resource type="Resource" id="Resource_ewoej"]
+[sub_resource type="Resource" id="Resource_6rsl8"]
 script = ExtResource("5_om51h")
 texture_idx = 0
 flip = false
@@ -131,9 +134,9 @@ script = ExtResource("6_rtsil")
 position = Vector2(740.99, 375.96)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_ewoej")
+properties = SubResource("Resource_6rsl8")
 
-[sub_resource type="Resource" id="Resource_x3s1i"]
+[sub_resource type="Resource" id="Resource_km36h"]
 script = ExtResource("5_om51h")
 texture_idx = 0
 flip = false
@@ -144,9 +147,9 @@ script = ExtResource("6_rtsil")
 position = Vector2(537.635, 375.96)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_x3s1i")
+properties = SubResource("Resource_km36h")
 
-[sub_resource type="Resource" id="Resource_k1ape"]
+[sub_resource type="Resource" id="Resource_emv6w"]
 script = ExtResource("5_om51h")
 texture_idx = 0
 flip = false
@@ -157,7 +160,7 @@ script = ExtResource("6_rtsil")
 position = Vector2(494.607, 144.041)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_k1ape")
+properties = SubResource("Resource_emv6w")
 
 [sub_resource type="Resource" id="Resource_cg2to"]
 script = ExtResource("7_01qfq")
@@ -259,7 +262,7 @@ render_offset = 0.0
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_lmttp"]
 polygon = PackedVector2Array(2150.54, 1503.84, 2093.78, 899.227, 2076.4, 808.296, 2067.22, 778.51, 2057.78, 761.776, 2046.49, 752.82, 2031.97, 744.929, 1994.87, 731.515, 1797.06, 679.277, 1751.12, 658.342, 1730.85, 645.561, 1712.91, 630.964, 1701.27, 616.66, 1698.85, 604.761, 1704.47, 595.063, 1716.97, 587.36, 1735.18, 581.448, 1757.93, 577.123, 1812.4, 572.416, 1978.43, 576.164, 3017.61, 565.233, 2963.96, 1503.84, 2150.54, 1503.84)
 
-[sub_resource type="Resource" id="Resource_d5awl"]
+[sub_resource type="Resource" id="Resource_h3uoy"]
 script = ExtResource("5_om51h")
 texture_idx = 0
 flip = false
@@ -270,9 +273,9 @@ script = ExtResource("6_rtsil")
 position = Vector2(490.073, -152.511)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_d5awl")
+properties = SubResource("Resource_h3uoy")
 
-[sub_resource type="Resource" id="Resource_b85cp"]
+[sub_resource type="Resource" id="Resource_5ckju"]
 script = ExtResource("5_om51h")
 texture_idx = 0
 flip = false
@@ -283,9 +286,9 @@ script = ExtResource("6_rtsil")
 position = Vector2(435.964, -40.7258)
 point_in = Vector2(4.75684, 33.8924)
 point_out = Vector2(-4.75684, -33.8924)
-properties = SubResource("Resource_b85cp")
+properties = SubResource("Resource_5ckju")
 
-[sub_resource type="Resource" id="Resource_w3e3k"]
+[sub_resource type="Resource" id="Resource_6l2iv"]
 script = ExtResource("5_om51h")
 texture_idx = 0
 flip = false
@@ -296,9 +299,9 @@ script = ExtResource("6_rtsil")
 position = Vector2(469.261, 28.2482)
 point_in = Vector2(17.649, 16.3661)
 point_out = Vector2(-17.649, -16.3661)
-properties = SubResource("Resource_w3e3k")
+properties = SubResource("Resource_6l2iv")
 
-[sub_resource type="Resource" id="Resource_iwx6n"]
+[sub_resource type="Resource" id="Resource_lfcye"]
 script = ExtResource("5_om51h")
 texture_idx = 0
 flip = false
@@ -309,9 +312,9 @@ script = ExtResource("6_rtsil")
 position = Vector2(588.777, 36.5726)
 point_in = Vector2(92.1636, -15.4597)
 point_out = Vector2(-92.1636, 15.4597)
-properties = SubResource("Resource_iwx6n")
+properties = SubResource("Resource_lfcye")
 
-[sub_resource type="Resource" id="Resource_8ql84"]
+[sub_resource type="Resource" id="Resource_1q6h5"]
 script = ExtResource("5_om51h")
 texture_idx = 0
 flip = false
@@ -322,9 +325,9 @@ script = ExtResource("6_rtsil")
 position = Vector2(737.428, 1.49101)
 point_in = Vector2(27.9464, -29.7302)
 point_out = Vector2(-27.9464, 29.7302)
-properties = SubResource("Resource_8ql84")
+properties = SubResource("Resource_1q6h5")
 
-[sub_resource type="Resource" id="Resource_hcmib"]
+[sub_resource type="Resource" id="Resource_pfiwy"]
 script = ExtResource("5_om51h")
 texture_idx = 0
 flip = false
@@ -335,9 +338,9 @@ script = ExtResource("6_rtsil")
 position = Vector2(751.104, -187.593)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_hcmib")
+properties = SubResource("Resource_pfiwy")
 
-[sub_resource type="Resource" id="Resource_71hhx"]
+[sub_resource type="Resource" id="Resource_syw4y"]
 script = ExtResource("5_om51h")
 texture_idx = 0
 flip = false
@@ -348,7 +351,7 @@ script = ExtResource("6_rtsil")
 position = Vector2(490.073, -152.511)
 point_in = Vector2(0, 0)
 point_out = Vector2(0, 0)
-properties = SubResource("Resource_71hhx")
+properties = SubResource("Resource_syw4y")
 
 [sub_resource type="Resource" id="Resource_ker82"]
 script = ExtResource("7_01qfq")
@@ -1107,7 +1110,7 @@ sources/0 = SubResource("TileSetAtlasSource_dql4x")
 sources/1 = SubResource("TileSetAtlasSource_4rem7")
 
 [node name="MainMenu" type="MarginContainer"]
-z_index = 256
+z_index = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
@@ -1163,24 +1166,33 @@ layout_mode = 2
 theme_override_constants/separation = 70
 
 [node name="PlayButton" type="Button" parent="Menu/VBoxContainer/MarginContainer/VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 theme = SubResource("Theme_3qbnn")
-text = " PLAY"
+icon = ExtResource("5_kdiee")
 alignment = 0
+expand_icon = true
 
 [node name="OptionsButton" type="Button" parent="Menu/VBoxContainer/MarginContainer/VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 theme = SubResource("Theme_3qbnn")
 theme_override_font_sizes/font_size = 100
-text = " OPTIONS"
+icon = ExtResource("6_soehi")
 alignment = 0
+expand_icon = true
 
 [node name="QuitButton" type="Button" parent="Menu/VBoxContainer/MarginContainer/VBoxContainer"]
+texture_filter = 1
+custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
 theme = SubResource("Theme_3qbnn")
 theme_override_font_sizes/font_size = 100
-text = " QUIT"
+icon = ExtResource("7_4hv7q")
 alignment = 0
+expand_icon = true
 
 [node name="Background" type="Node2D" parent="."]
 

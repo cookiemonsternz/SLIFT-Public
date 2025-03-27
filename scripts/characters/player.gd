@@ -2,7 +2,7 @@ class_name Player extends CharacterBody2D
 
 #### Grappling ####
 @export var anim_sprite: AnimatedSprite2D
-
+@export var death_screen_scene: PackedScene
 
 @export_group("Grappling")
 
@@ -67,7 +67,8 @@ func _ready() -> void:
 	jump_buffer_timer.wait_time = jump_buffer_time
 	var callable = func(damage: float, damage_type: Enums.DamageType, damage_source: Node):
 		printerr("Player died, last damage : ", damage, ", damage type : ", damage_type, ", damage source : ", damage_source)
-		modulate = Color(1.0, 0.0, 0.0)
+		#modulate = Color(1.0, 0.0, 0.0)
+		get_tree().get_first_node_in_group("Player").show_death_screen()
 	health_component.entity_died.connect(callable)
 
 	# Basic grapple upgrades
@@ -383,3 +384,14 @@ func set_anim_swinging(connected: bool):
 		anim_sprite.play("Swing")
 	else:
 		anim_sprite.play("SwingMidAir")
+
+func show_death_screen():
+	print("HIHIHIHIHIHI")
+	for child in $UI.get_children():
+		if child is PanelContainer:
+			return
+	var death_screen = death_screen_scene.instantiate()
+	$UI.add_child(death_screen)
+	death_screen.modulate = Color(1, 1, 1, 0)
+	var tween = death_screen.create_tween()
+	tween.tween_property(death_screen, "modulate", Color(1,1,1,1), 1.0)

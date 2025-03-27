@@ -1,7 +1,8 @@
-[gd_scene load_steps=53 format=4 uid="uid://dblwhb4ehhk3q"]
+[gd_scene load_steps=49 format=4 uid="uid://dblwhb4ehhk3q"]
 
 [ext_resource type="Script" path="res://scripts/menus/settings.gd" id="1_mjxmy"]
 [ext_resource type="FontFile" uid="uid://cjfkh5yysmaqo" path="res://assets/fonts/Times New Roman/times new roman.ttf" id="2_rh8x0"]
+[ext_resource type="Texture2D" uid="uid://cmdifc436npln" path="res://assets/images/options_button.png" id="3_27wfp"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_if52a"]
 bg_color = Color(0.17, 0.17, 0.17, 0.756863)
@@ -1949,7 +1950,7 @@ cache/0/25/0/glyphs/69/size = Vector2(15, 21)
 cache/0/25/0/glyphs/69/uv_rect = Rect2(18, 23, 15, 21)
 cache/0/25/0/glyphs/69/texture_idx = 0
 
-[sub_resource type="Image" id="Image_6xv67"]
+[sub_resource type="Image" id="Image_w0v40"]
 data = {
 "data": PackedByteArray("////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8j////mf///77///+/////v////7////+/////v////7////+/////v////77///+Y////If///wD///8A////mf///7////+/////v////7////+/////v////7////+/////v////7////+/////v////5f///8A////AP///77///+/////v////7////+/////v////7////+/////v////7/t7e3D////v////7////++////AP///wD///+/////v////7////+/////v////7////+/////v////7+xsbHRJSUl/LKystH///+/////v////wD///8A////v////7////+/////v////7////+/////v////7+wsLDRICAg/hoaGv9UVFTr////v////7////8A////AP///7////+/////v////7////+/////v////7+wsLDRICAg/hoaGv9OTk7t+Pj4wf///7////+/////AP///wD///+/////v/39/cDe3t7G////v////7+vr6/SICAg/hoaGv9PT0/t+Pj4wf///7////+/////v////wD///8A////v/39/cBaWlrqLS0t+dTU1Miurq7SICAg/hoaGv9PT0/t+Pj4wf///7////+/////v////7////8A////AP///7/o6OjENjY29hoaGv8rKyv6ICAg/hoaGv9RUVHt+Pj4wf///7////+/////v////7////+/////AP///wD///+/////v+Li4sU2Njb2Ghoa/xoaGv9RUVHt+Pj4wf///7////+/////v////7////+/////v////wD///8A////v////7////+/4uLixTY2NvZRUVHs+Pj4wf///7////+/////v////7////+/////v////7////8A////AP///77///+/////v////7/m5ubF+Pj4wf///7////+/////v////7////+/////v////7////+9////AP///wD///+Y////v////7////+/////v////7////+/////v////7////+/////v////7////+/////lv///wD///8A////If///5f///++////v////7////+/////v////7////+/////v////7////+9////lv///yD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AA=="),
 "format": "RGBA8",
@@ -1959,9 +1960,9 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_ryn20"]
-image = SubResource("Image_6xv67")
+image = SubResource("Image_w0v40")
 
-[sub_resource type="Image" id="Image_pwop5"]
+[sub_resource type="Image" id="Image_6p3o6"]
 data = {
 "data": PackedByteArray("////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8R////TP///17///9e////Xv///17///9e////Xv///17///9e////Xv///17///9L////Ef///wD///8A////TP///17///9e////Xv///17///9e////Xv///17///9e////Xv///17///9e////Xv///0v///8A////AP///17///9e////Xv///17///9e////Xv///17///9e////Xv///17t7e1j////Xv///17///9e////AP///wD///9e////Xv///17///9e////Xv///17///9e////Xv///165ubl1Xl5eqrm5uXX///9e////Xv///wD///8A////Xv///17///9e////Xv///17///9e////Xv///164uLh2W1tbrVdXV695eXmW////Xv///17///8A////AP///17///9e////Xv///17///9e////Xv///164uLh2W1tbrVdXV691dXWY+Pj4Yf///17///9e////AP///wD///9e////Xv39/V/g4OBo////Xv///164uLh2W1tbrVdXV693d3eY+Pj4Yf///17///9e////Xv///wD///8A////Xv39/V98fHyUYmJip9bW1mq2trZ2W1tbrVdXV693d3eY+Pj4Yf///17///9e////Xv///17///8A////AP///17p6ellZ2dno1dXV69hYWGoW1tbrVdXV693d3eY+Pj4Yf///17///9e////Xv///17///9e////AP///wD///9e////XuTk5GZnZ2ejV1dXr1dXV693d3eY+Pj4Yf///17///9e////Xv///17///9e////Xv///wD///8A////Xv///17///9e5OTkZmdnZ6N4eHiX+Pj4Yf///17///9e////Xv///17///9e////Xv///17///8A////AP///17///9e////Xv///17m5uZm+Pj4Yf///17///9e////Xv///17///9e////Xv///17///9d////AP///wD///9L////Xv///17///9e////Xv///17///9e////Xv///17///9e////Xv///17///9e////Sv///wD///8A////Ef///0v///9e////Xv///17///9e////Xv///17///9e////Xv///17///9d////Sv///xD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AA=="),
 "format": "RGBA8",
@@ -1971,9 +1972,9 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_cp0dk"]
-image = SubResource("Image_pwop5")
+image = SubResource("Image_6p3o6")
 
-[sub_resource type="Image" id="Image_n6v23"]
+[sub_resource type="Image" id="Image_qx35k"]
 data = {
 "data": PackedByteArray("////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8N////YP///4j///+t////rf///4j///9f////C////wD///8A////AP///wD///8A////AP///wD///84////q/7+/sHy8vLM5OTk2eTk5Nny8vLM////wP///6j///8z////AP///wD///8A////AP///wD///84////v/Pz88vOzs70xsbG/8bGxv/Gxsb/xsbG/8/Pz/Pz8/PL////vv///zL///8A////AP///wD///8M////q/Pz88vHx8f+sLCw/1FRUf8rKyv/Kysr/1NTU/+xsbH/x8fH/vPz88v///+o////Cv///wD///8A////Yf7+/sHOzs70sLCw/yUlJf8aGhr/Ghoa/xoaGv8aGhr/Jycn/7Ozs//Pz8/z////wP///2D///8A////AP///4ny8vLMxsbG/1FRUf8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv9WVlb/xsbG//Ly8sz///+a////AP///wD///+u5OTk2cbGxv8rKyv/Ghoa/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Kysr/8bGxv/k5OTZ////tP///wD///8A////reTk5NnGxsb/Kysr/xoaGv8aGhr/Ghoa/xoaGv8aGhr/Ghoa/ywsLP/Gxsb/5OTk2f///7T///8A////AP///4jy8vLMxsbG/1NTU/8aGhr/Ghoa/xoaGv8aGhr/Ghoa/xoaGv9YWFj/xsbG//Ly8sz///+Y////AP///wD///9f////wM/Pz/OysrL/Jycn/xoaGv8aGhr/Ghoa/xoaGv8qKir/tbW1/8/Pz/P////A////Xv///wD///8A////C////6nz8/PLx8fH/rOzs/9WVlb/Kysr/ywsLP9YWFj/tbW1/8jIyP309PTK////pf///wn///8A////AP///wD///80////vvPz88vPz8/zxsbG/8bGxv/Gxsb/xsbG/8/Pz/P09PTK////vf///y7///8A////AP///wD///8A////AP///zL///+o////wPLy8szk5OTZ5OTk2fLy8sz////A////pf///y7///8A////AP///wD///8A////AP///wD///8A////Cv///2D///+a////tP///7T///+Y////Xv///wn///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AA=="),
 "format": "RGBA8",
@@ -1983,9 +1984,9 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_nh8da"]
-image = SubResource("Image_n6v23")
+image = SubResource("Image_qx35k")
 
-[sub_resource type="Image" id="Image_qwt2g"]
+[sub_resource type="Image" id="Image_6wnow"]
 data = {
 "data": PackedByteArray("////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8J////Mf///03///9a////Wv///03///8x////Cf///wD///8A////AP///wD///8A////AP///wD///8g////Wv///17///9e////Xv///17///9e////Xv///1r///8f////AP///wD///8A////AP///wD///8g////Xv///17///9e////Xv///17///9e////Xv///17///9e////Xv///x////8A////AP///wD///8J////Wv///17///9e4ODgaHx8fJRhYWGoYWFhqH19fZPg4OBo////Xv///17///9Z////CP///wD///8A////Mf///17///9e4ODgaF5eXqpXV1evV1dXr1dXV69XV1evX19fqeDg4Gj///9e////Xv///zD///8A////AP///03///9e////Xnx8fJRXV1evV1dXr1dXV69XV1evV1dXr1dXV699fX2T////Xv///17///9N////AP///wD///9a////Xv///15hYWGoV1dXr1dXV69XV1evV1dXr1dXV69XV1evYWFhqP///17///9e////Wv///wD///8A////Wv///17///9eYWFhqFdXV69XV1evV1dXr1dXV69XV1evV1dXr2JiYqf///9e////Xv///1n///8A////AP///03///9e////Xn19fZNXV1evV1dXr1dXV69XV1evV1dXr1dXV69/f3+T////Xv///17///9M////AP///wD///8x////Xv///17g4OBoX19fqVdXV69XV1evV1dXr1dXV69fX1+p4uLiZ////17///9e////MP///wD///8A////Cf///1r///9e////XuDg4Gh9fX2TYWFhqGJiYqd/f3+T4uLiZ////17///9e////Wf///wj///8A////AP///wD///8f////Xv///17///9e////Xv///17///9e////Xv///17///9e////Xv///x7///8A////AP///wD///8A////AP///x////9Z////Xv///17///9e////Xv///17///9e////Wf///x7///8A////AP///wD///8A////AP///wD///8A////CP///zD///9N////Wv///1n///9M////MP///wj///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AA=="),
 "format": "RGBA8",
@@ -1995,9 +1996,9 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_2tel8"]
-image = SubResource("Image_qwt2g")
+image = SubResource("Image_6wnow")
 
-[sub_resource type="Image" id="Image_6yg6b"]
+[sub_resource type="Image" id="Image_4bkpu"]
 data = {
 "data": PackedByteArray("////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wAqKioMGhoaQxoaGmkbGxt6GxsbehoaGmkbGxtCLi4uC////wD///8A////AP///wD///8A////AP///wAdHR0sGxsbehoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBsbG3oeHh4q////AP///wD///8A////AP///wAdHR0sGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagB4eHir///8A////AP///wAqKioMGxsbehoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAbGxt5Li4uC////wD///8AGhoaQxoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBsbG0H///8A////ABoaGmkaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAbGxto////AP///wAbGxt6GhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGxsbev///wD///8AGxsbehoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBsbG3n///8A////ABoaGmkaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAbGxtn////AP///wAbGxtCGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGxsbQf///wD///8ALi4uCxsbG3oaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGxsbeTMzMwr///8A////AP///wAeHh4qGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagB8fHyn///8A////AP///wD///8A////AB4eHiobGxt5GhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGxsbeR8fHyn///8A////AP///wD///8A////AP///wD///8ALi4uCxsbG0EbGxtoGxsbehsbG3kbGxtnGxsbQTMzMwr///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AA=="),
 "format": "RGBA8",
@@ -2007,9 +2008,9 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_53uqy"]
-image = SubResource("Image_6yg6b")
+image = SubResource("Image_4bkpu")
 
-[sub_resource type="Image" id="Image_7r66x"]
+[sub_resource type="Image" id="Image_2esas"]
 data = {
 "data": PackedByteArray("////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wAqKioGHh4eIhwcHDUdHR09HR0dPRwcHDUfHx8hKioqBv///wD///8A////AP///wD///8A////AP///wAiIiIWHR0dPRwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQB0dHT0kJCQV////AP///wD///8A////AP///wAiIiIWHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQCQkJBX///8A////AP///wAqKioGHR0dPRwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAdHR09KioqBv///wD///8AHh4eIhwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQB8fHyH///8A////ABwcHDUcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAdHR00////AP///wAdHR09HBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHR0dPf///wD///8AHR0dPRwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQB0dHT3///8A////ABwcHDUcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAdHR00////AP///wAfHx8hHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHx8fIf///wD///8AKioqBh0dHT0cHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHR0dPTMzMwX///8A////AP///wAkJCQVHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQCQkJBX///8A////AP///wD///8A////ACQkJBUdHR09HBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHR0dPSQkJBX///8A////AP///wD///8A////AP///wD///8AKioqBh8fHyEdHR00HR0dPR0dHT0dHR00Hx8fITMzMwX///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AA=="),
 "format": "RGBA8",
@@ -2019,9 +2020,9 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_irtlj"]
-image = SubResource("Image_7r66x")
+image = SubResource("Image_2esas")
 
-[sub_resource type="Image" id="Image_qhboy"]
+[sub_resource type="Image" id="Image_f4k7d"]
 data = {
 "data": PackedByteArray("////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wAhISEXGxsbZxoaGn8aGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGn8bGxtmIiIiFv///wD///8AGxsbZxoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBsbG2X///8A////ABoaGn8aGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhp/////AP///wAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagP///wD///8AGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoD///8A////ABoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqA////AP///wAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagP///wD///8AGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoD///8A////ABoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqA////AP///wAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagP///wD///8AGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoD///8A////ABoaGn8aGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhp/////AP///wAbGxtmGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhqAHBwcZP///wD///8AIiIiFhsbG2UaGhp/GhoagBoaGoAaGhqAGhoagBoaGoAaGhqAGhoagBoaGoAaGhp/HBwcZCQkJBX///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AA=="),
 "format": "RGBA8",
@@ -2031,9 +2032,9 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_nt5u0"]
-image = SubResource("Image_qhboy")
+image = SubResource("Image_f4k7d")
 
-[sub_resource type="Image" id="Image_s3gej"]
+[sub_resource type="Image" id="Image_j064q"]
 data = {
 "data": PackedByteArray("////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wAqKioMHR0dNBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAeHh4zLi4uC////wD///8AHR0dNBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQB4eHjP///8A////ABwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxA////AP///wAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQP///wD///8AHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHED///8A////ABwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxA////AP///wAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQP///wD///8AHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHED///8A////ABwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxA////AP///wAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQP///wD///8AHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHED///8A////ABwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxA////AP///wAeHh4zHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHh4eMv///wD///8ALi4uCx4eHjMcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHBwcQBwcHEAcHBxAHh4eMi4uLgv///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AA=="),
 "format": "RGBA8",
@@ -2043,7 +2044,7 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_4tyf4"]
-image = SubResource("Image_s3gej")
+image = SubResource("Image_j064q")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t72hw"]
 content_margin_left = 4.0
@@ -2113,7 +2114,7 @@ Label/font_sizes/font_size = 64
 Label/fonts/font = ExtResource("2_rh8x0")
 Label/styles/normal = SubResource("StyleBoxEmpty_acjs1")
 
-[sub_resource type="Image" id="Image_lwnjr"]
+[sub_resource type="Image" id="Image_3j4b4"]
 data = {
 "data": PackedByteArray("////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////ALOzs5mysrKmuLi4Ev///wD///8A////AP///wC4uLgSsrKyprKyspf///8A////ALKysqaysrLZsbGxs7i4uBL///8A////ALi4uBKysrKzsrKy2bKysqX///8A////ALi4uBKxsbGzsrKy2bGxsbO4uLgSuLi4ErKysrOysrLZsbGxs7S0tBH///8A////AP///wC4uLgSsbGxs7KystmysrLFsrKyxbKystmxsbGztLS0Ef///wD///8A////AP///wD///8AuLi4ErGxsbOysrLZsrKy2bGxsbO0tLQR////AP///wD///8A////AP///wD///8A////ALi4uBKysrKlsrKypbS0tBH///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A////AP///wD///8A"),
 "format": "RGBA8",
@@ -2123,7 +2124,7 @@ data = {
 }
 
 [sub_resource type="ImageTexture" id="ImageTexture_w1bj1"]
-image = SubResource("Image_lwnjr")
+image = SubResource("Image_3j4b4")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_x4bb2"]
 content_margin_left = 8.0
@@ -2284,39 +2285,6 @@ OptionButton/styles/normal_mirrored = SubResource("StyleBoxFlat_hxg37")
 OptionButton/styles/pressed = SubResource("StyleBoxFlat_8hr4i")
 OptionButton/styles/pressed_mirrored = SubResource("StyleBoxFlat_7y08h")
 
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ttu2c"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lp4pc"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bhu8x"]
-
-[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3u3sm"]
-
-[sub_resource type="Theme" id="Theme_ord1m"]
-Button/colors/font_color = Color(1, 1, 1, 1)
-Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
-Button/colors/font_focus_color = Color(1, 1, 1, 1)
-Button/colors/font_hover_color = Color(0.41, 0.41, 0.41, 1)
-Button/colors/font_hover_pressed_color = Color(0.286275, 0.286275, 0.286275, 1)
-Button/colors/font_outline_color = Color(0, 0, 0, 0)
-Button/colors/font_pressed_color = Color(0.28485, 0.28485, 0.28485, 1)
-Button/colors/icon_disabled_color = Color(1, 1, 1, 0.4)
-Button/colors/icon_focus_color = Color(1, 1, 1, 1)
-Button/colors/icon_hover_color = Color(1, 1, 1, 1)
-Button/colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
-Button/colors/icon_normal_color = Color(1, 1, 1, 1)
-Button/colors/icon_pressed_color = Color(1, 1, 1, 1)
-Button/constants/align_to_largest_stylebox = 0
-Button/constants/h_separation = 4
-Button/constants/icon_max_width = 0
-Button/constants/outline_size = 0
-Button/font_sizes/font_size = 125
-Button/fonts/font = ExtResource("2_rh8x0")
-Button/styles/focus = SubResource("StyleBoxEmpty_ttu2c")
-Button/styles/hover = SubResource("StyleBoxEmpty_lp4pc")
-Button/styles/normal = SubResource("StyleBoxEmpty_bhu8x")
-Button/styles/pressed = SubResource("StyleBoxEmpty_3u3sm")
-
 [node name="Settings" type="Control"]
 light_mask = 0
 layout_mode = 3
@@ -2325,6 +2293,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_mjxmy")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
@@ -2348,6 +2317,7 @@ layout_mode = 2
 [node name="PanelContainer" type="PanelContainer" parent="MarginContainer/CenterContainer"]
 light_mask = 0
 layout_mode = 2
+mouse_filter = 1
 theme_override_styles/panel = SubResource("StyleBoxFlat_if52a")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/CenterContainer/PanelContainer"]
@@ -2440,11 +2410,20 @@ popup/item_2/id = 2
 
 [node name="BackButton" type="Button" parent="MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer"]
 light_mask = 0
+texture_filter = 1
+custom_minimum_size = Vector2(0, 120)
 layout_mode = 2
-theme = SubResource("Theme_ord1m")
+theme_override_colors/icon_normal_color = Color(0.589096, 0.589096, 0.589096, 1)
+theme_override_colors/icon_focus_color = Color(0.588235, 0.588235, 0.588235, 1)
+theme_override_colors/icon_pressed_color = Color(1, 1, 1, 1)
+theme_override_colors/icon_hover_color = Color(0.695503, 0.695503, 0.695503, 1)
+theme_override_colors/icon_hover_pressed_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("2_rh8x0")
 theme_override_font_sizes/font_size = 64
-text = "Back"
+icon = ExtResource("3_27wfp")
+flat = true
+icon_alignment = 1
+expand_icon = true
 
 [node name="ColorRect" type="ColorRect" parent="."]
 light_mask = 0
@@ -2454,8 +2433,8 @@ offset_left = -3278.0
 offset_top = -1618.0
 offset_right = 5506.0
 offset_bottom = 3133.0
-mouse_filter = 1
-color = Color(0, 0, 0, 0.729412)
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
 
 [connection signal="value_changed" from="MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer/VolumeSlider" to="." method="_on_volume_slider_value_changed"]
 [connection signal="toggled" from="MarginContainer/CenterContainer/PanelContainer/MarginContainer/VBoxContainer/HBoxContainer2/MuteCheckBox" to="." method="_on_mute_check_box_toggled"]

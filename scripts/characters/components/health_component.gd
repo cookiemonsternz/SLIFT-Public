@@ -39,7 +39,6 @@ func _ready() -> void:
 		self.add_child(shield_regen_timer)
 
 func damage(damage_amount: float, damage_type: Enums.DamageType = Enums.DamageType.World, damage_source: Node = null):
-	print(damage_amount, ", ", damage_type, ", ", damage_source)
 	if owning_entity is Player:
 		owning_entity.arm_upgrade_component.player_damaged(damage_amount, damage_type)
 	
@@ -70,7 +69,7 @@ func damage(damage_amount: float, damage_type: Enums.DamageType = Enums.DamageTy
 				health -= damage_amount
 				if health <= 0:
 					entity_died.emit(damage_amount, damage_type, damage_source)
-					get_parent().get_parent().modulate = Color(1.0, 0.0, 0.0)
+					#get_parent().get_parent().modulate = Color(1.0, 0.0, 0.0)
 
 func _on_health_regen_timer_timeout():
 	if health < max_health:

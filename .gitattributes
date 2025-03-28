@@ -1,6 +1,4 @@
 build/MacOS/*.zip filter=lfs diff=lfs merge=lfs -text
 build/Win64/*.exe filter=lfs diff=lfs merge=lfs -text
-build/MacOS/SLIFTBuild0.2.3.zip filter=lfs diff=lfs merge=lfs -text
-build/Win64/SLIFTBuild0.2.3.exe filter=lfs diff=lfs merge=lfs -text
 *.zip filter=lfs diff=lfs merge=lfs -text
 *.exe filter=lfs diff=lfs merge=lfs -text

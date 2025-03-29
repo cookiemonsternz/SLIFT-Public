@@ -28,7 +28,7 @@ func _ready() -> void:
 
 
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entered(_body: Node2D) -> void:
 	print("Entered area")
 	var tween = get_tree().create_tween()
 	
@@ -42,7 +42,7 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 	tween2.tween_property(camera, "offset", offset, tween_time)
 
 
-func _on_area_2d_body_exited(body: Node2D) -> void:
+func _on_area_2d_body_exited(_body: Node2D) -> void:
 	if not reset_on_exit: return;
 	print("Exited Area")
 	var tween = get_tree().create_tween()

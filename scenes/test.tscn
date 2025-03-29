@@ -6,7 +6,7 @@
 [ext_resource type="TileSet" uid="uid://b30kfa4ed8aqy" path="res://assets/tileset.tres" id="5_0y1ac"]
 [ext_resource type="PackedScene" uid="uid://brv1ny6q731fn" path="res://scenes/environment/lights/lamp_beam.tscn" id="5_fo8p6"]
 [ext_resource type="Script" path="res://scripts/temp/box_health_interface thingy.gd" id="6_17cax"]
-[ext_resource type="Texture2D" uid="uid://dde1a644jsvar" path="res://assets/Images/rock.png" id="6_o1id5"]
+[ext_resource type="Texture2D" uid="uid://dde1a644jsvar" path="res://assets/images/rock.png" id="6_o1id5"]
 [ext_resource type="PackedScene" uid="uid://cy1yu1wo4m8n" path="res://scenes/health_component.tscn" id="7_0ce4d"]
 [ext_resource type="PackedScene" uid="uid://cq1dq0pgfte7e" path="res://scenes/environment/button.tscn" id="7_cxxk3"]
 [ext_resource type="PackedScene" uid="uid://cm5ngvdr2ih4g" path="res://scenes/environment/door.tscn" id="8_aaxen"]

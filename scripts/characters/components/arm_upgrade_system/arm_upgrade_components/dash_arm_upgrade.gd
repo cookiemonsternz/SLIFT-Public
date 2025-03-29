@@ -19,10 +19,10 @@ func _init():
 
 
 # Called once every process frame
-func update_process(player: Player, _root: Node):
-	pass
+#func update_process(player: Player, _root: Node):
+	#pass
 
-func update_physics(player: Player, root: Node):
+func update_physics(player: Player, _root: Node):
 	if player.current_move_mode == Enums.MoveModes.DASH:
 		# Bit long, but better safe than sorry
 		if player.global_position.distance_to(dash_target) < 100:

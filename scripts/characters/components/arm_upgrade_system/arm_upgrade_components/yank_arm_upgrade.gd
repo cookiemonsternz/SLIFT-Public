@@ -16,7 +16,7 @@ func _init() -> void:
 	#pass
 
 # Called once every physics frame
-func update_physics(player: Player, root: Node):
+func update_physics(player: Player, _root: Node):
 	if queue_yank:
 		player.player_physics_follow.apply_impulse(player.player_physics_follow.global_position.direction_to(queued_target_pos).normalized() * YANK_AMOUNT)
 		if player.grapple_targets[queued_side] is RigidBody2D:
@@ -30,7 +30,7 @@ func update_physics(player: Player, root: Node):
 	#pass
 
 # Called when an arm connects (e.g the spring is created)
-func _on_arm_connected(side: int, target_position: Vector2, target_body: PhysicsBody2D, player: Player, root: Node):
+func _on_arm_connected(side: int, target_position: Vector2, _target_body: PhysicsBody2D, _player: Player, _root: Node):
 	queue_yank = true
 	queued_target_pos = target_position
 	queued_side = side

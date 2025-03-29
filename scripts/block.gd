@@ -51,7 +51,7 @@ func _on_delete_colliders():
 	for child in get_children():
 		child.queue_free()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Engine.is_editor_hint():
 		if do_add:
 			#print("HELLO")

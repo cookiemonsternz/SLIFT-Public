@@ -13,5 +13,5 @@ func _on_player_detected(_body) -> void:
 	animation_finished.connect(play_flying)
 	direction = Vector2(randf_range(1, 3), -randf_range(1, 3)) * 2.5
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	position += direction

@@ -8,12 +8,10 @@ var gotten: bool = false
 func _ready():
 	$Sprite2D3.texture = upgrade.new().texture
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if gotten:
 		if Input.is_action_just_pressed("arm_upgrade_ui"):
 			print("IHIHIH")
-			var queue_free_func = func():
-				queue_free()
 			$Sprite2D4.create_tween().tween_property($Sprite2D4, "modulate", Color(1,1,1,0), 1.0)
 	if can_get:
 		#$Sprite2D.visible = false
@@ -51,6 +49,4 @@ func _on_display_input_area_body_exited(body: Node2D) -> void:
 		$Sprite2D2.create_tween().tween_property($Sprite2D2, "modulate", Color(1,1,1,0), 1.0)
 	elif body.is_in_group("Player") and can_get:
 		print("HI")
-		var queue_free_func = func():
-			queue_free()
 		$Sprite2D4.create_tween().tween_property($Sprite2D4, "modulate", Color(1,1,1,0), 1.0)

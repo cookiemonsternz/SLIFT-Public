@@ -51,7 +51,7 @@ func close():
 	visible = false
 	is_open = false
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("arm_upgrade_ui"):
 		if is_open:
 			close()

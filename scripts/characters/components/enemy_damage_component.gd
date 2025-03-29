@@ -21,7 +21,3 @@ func _ready() -> void:
 func _on_body_entered(body: Node2D):
 	if body is Player:
 		body.health_component.damage(damage, damage_type, owning_entity)
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
-	pass

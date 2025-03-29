@@ -27,7 +27,7 @@ func _on_body_entered(body: Node):
 			body.global_position.y -= 30
 		queue_knockback = body
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if queue_knockback != null:
 		var direction = -(knockback_origin.global_position - queue_knockback.player_physics_follow.global_position).normalized() * knockback_amount
 		queue_knockback.player_physics_follow.apply_central_impulse(direction)

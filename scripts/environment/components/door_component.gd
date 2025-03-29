@@ -18,7 +18,7 @@ var is_open: bool = false
 signal door_opened
 signal door_closed
 
-func open(a=null, b=null, c=null, d=null, e=null, f=null):
+func open(_a=null, _b=null, _c=null, _d=null, _e=null, _f=null):
 	print("OPENEING : " + name)
 	if not is_open:
 		door_opened.emit()

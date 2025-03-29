@@ -46,25 +46,25 @@ func damage(damage_amount: float, damage_type: Enums.DamageType = Enums.DamageTy
 	#print("DAMAGED")
 	match damage_type:
 		Enums.DamageType.World:
-			shield = shield - damage_amount if shield > 0 else 0
+			shield = (shield - damage_amount) if shield > 0.0 else 0.0
 			if shield == 0:
 				health -= damage_amount
 				if health <= 0:
 					entity_died.emit(damage_amount, damage_type, damage_source)
 		Enums.DamageType.Enemy:
-			shield = shield - damage_amount if shield > 0 else 0
+			shield = (shield - damage_amount) if shield > 0.0 else 0.0
 			if shield == 0:
 				health -= damage_amount
 				if health <= 0:
 					entity_died.emit(damage_amount, damage_type, damage_source)
 		Enums.DamageType.Obstacle:
-			shield = shield - damage_amount if shield > 0 else 0
+			shield = (shield - damage_amount) if shield > 0.0 else 0.0
 			if shield == 0:
 				health -= damage_amount
 				if health <= 0:
 					entity_died.emit(damage_amount, damage_type, damage_source)
 		Enums.DamageType.Light:
-			shield = shield - damage_amount if shield > 0 else 0
+			shield = (shield - damage_amount) if shield > 0.0 else 0.0
 			if shield == 0:
 				health -= damage_amount
 				if health <= 0:

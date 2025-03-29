@@ -1,4 +1,4 @@
-[gd_scene load_steps=71 format=3 uid="uid://brkdvlqw0t3sp"]
+[gd_scene load_steps=70 format=3 uid="uid://brkdvlqw0t3sp"]
 
 [ext_resource type="Script" path="res://addons/shape_texture_2d/shape_texture_2d.gd" id="1_42r4y"]
 [ext_resource type="Script" path="res://scripts/characters/player.gd" id="1_x5w3x"]
@@ -13,7 +13,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_rh5mj"]
 radius = 16.0
-height = 64.0
+height = 48.0
 
 [sub_resource type="Resource" id="Resource_12rae"]
 script = ExtResource("2_61cpy")
@@ -426,9 +426,6 @@ animations = [{
 "speed": 24.0
 }]
 
-[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_lavc5"]
-polygon = PackedVector2Array(0, -32, 9, -29, 15, -21, 16, 18, 12, 27, 5, 32, -4, 32, -11, 28, -16, 20, -16, 6, -16, -18, -13, -24, -8, -30)
-
 [sub_resource type="Curve" id="Curve_5ylw7"]
 min_value = -1.0
 _data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.320225, 0.648352), 0.0, 0.0, 0, 0, Vector2(0.724719, -0.560439), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
@@ -443,7 +440,7 @@ friction = 0.0
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_eru5a"]
 radius = 16.0
-height = 64.0
+height = 48.0
 
 [node name="Player" type="CharacterBody2D" node_paths=PackedStringArray("anim_sprite", "grapple_origin", "rope1", "rope2", "raycast", "player_physics_follow", "do_delete_timer", "jump_buffer_timer", "coyote_time_timer", "ground_casts", "health_component", "arm_upgrade_component") groups=["Player"]]
 collision_layer = 8
@@ -473,6 +470,7 @@ health_component = NodePath("Components/HealthComponent")
 arm_upgrade_component = NodePath("Components/ArmUpgradeComponent")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
 shape = SubResource("CapsuleShape2D_rh5mj")
 
 [node name="PlayerSprite" type="Sprite2D" parent="."]
@@ -513,10 +511,6 @@ one_shot = true
 [node name="VelocityTimer" type="Timer" parent="."]
 wait_time = 0.327
 one_shot = true
-
-[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
-occluder = SubResource("OccluderPolygon2D_lavc5")
-occluder_light_mask = 2
 
 [node name="GroundCasts" type="Node2D" parent="."]
 
@@ -593,6 +587,7 @@ lock_rotation = true
 script = ExtResource("5_8xicw")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="GrappleComponentS/PlayerPhysicsFollow"]
+position = Vector2(0, 8)
 shape = SubResource("CapsuleShape2D_eru5a")
 
 [node name="Timer" type="Timer" parent="."]
@@ -604,10 +599,10 @@ layer = 128
 
 [node name="ArmUpgradeUI" parent="UI" instance=ExtResource("2_fyt53")]
 visible = false
-offset_left = -333.0
-offset_top = -120.0
-offset_right = -111.0
-offset_bottom = -42.0
+offset_left = -335.0
+offset_top = -115.0
+offset_right = -113.0
+offset_bottom = -33.0
 scale = Vector2(3, 3)
 
 [connection signal="timeout" from="VelocityTimer" to="." method="_on_velocity_timer_timeout"]

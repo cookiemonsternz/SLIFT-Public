@@ -15,9 +15,9 @@ func play_loop():
 	play("loop_fire")
 	set_frame_and_progress(8, 0)
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	if animation == "loop_fire" or animation == "start_fire":
 		update_light()
 
 func update_light():
-	$PointLight2D.energy = light_intensity_curve.sample_baked(float(frame / 2) / float(sprite_frames.get_frame_count("loop_fire")))
+	$PointLight2D.energy = light_intensity_curve.sample_baked(float(frame / 2.0) / float(sprite_frames.get_frame_count("loop_fire")))

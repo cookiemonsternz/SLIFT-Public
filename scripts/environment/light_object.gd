@@ -31,7 +31,7 @@ func _ready() -> void:
 		light_collider.body_entered.connect(_on_body_entered_light_collider)
 		light_collider.body_exited.connect(_on_body_exited_light_collider)
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if not Engine.is_editor_hint():
 		#print(bodies_in_light)
 		for body: PhysicsBody2D in bodies_in_light:

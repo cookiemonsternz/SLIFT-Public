@@ -1,9 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://bq2odgvhm7i2r"]
+[gd_scene load_steps=7 format=3 uid="uid://bq2odgvhm7i2r"]
 
 [ext_resource type="Texture2D" uid="uid://1dbhajxjhdcv" path="res://assets/images/player_corpse.png" id="1_mrcu0"]
 [ext_resource type="Script" path="res://scripts/menus/death_screen.gd" id="1_wr2uq"]
 [ext_resource type="Texture2D" uid="uid://n6ya0mi4rkr5" path="res://assets/images/play_button_white.png" id="4_25jtg"]
 [ext_resource type="Texture2D" uid="uid://c7rfprc6foyb0" path="res://assets/images/quit_button.png" id="5_t4pwi"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_6icl1"]
+bg_color = Color(0.128552, 0.0789572, 0.0609778, 1)
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_tds43"]
 
@@ -14,6 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_6icl1")
 script = ExtResource("1_wr2uq")
 
 [node name="CenterContainer" type="CenterContainer" parent="."]

@@ -24,12 +24,12 @@ func update(item: ArmUpgrade):
 		item_display.visible = true
 		item_display.texture = item.texture
 
-func _on_area_2d_input_event(viewport: Node, event: InputEvent, shape_idx: int) -> void:
+func _on_area_2d_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> void:
 	if event is InputEventMouseButton \
 	and event.is_pressed():
 		on_click()
 
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	if dragging:
 		copy.global_position = get_global_mouse_position()
 		if not Input.is_mouse_button_pressed(MOUSE_BUTTON_LEFT):
@@ -59,7 +59,6 @@ func get_hovering():
 		if child is not Panel:
 			continue
 		#print(child)
-		var area: Area2D = child.area_2d
 		if child.mouse_in_area:
 			get_tree().get_first_node_in_group("Player").arm_upgrade_component.add_upgrade(child.side, child.index, arm_upgrade)
 			get_tree().get_first_node_in_group("Player").arm_upgrade_component.remove_upgrade_pool(arm_upgrade)

@@ -103,7 +103,7 @@ polygon = PackedVector2Array(368, 547.156, 521, 493.337, 559, 392.677, 559, 256.
 [sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_xrhpx"]
 polygon = PackedVector2Array(194, 151.49, 307, 151.49, 405, 158.466, 453, 166.439, 549, 308.959, -41, 313.942, -2699, 203.315, -3788, 193.348, -4604, 138.533, -5373, 110.627, -6547, 148.5, -7905, 93.6843, -9122, 22.9226, -10082, 72.7549, -10647, 72.7549, -11738, -170.426, -12559, -140.526, -13613, -165.442, -14336, -59.7986, -14419, -64.7817, -14404, -421.579, -13711, -350.818, -13232, -381.714, -12658, -366.764, -12466, -320.918, -12015, -338.858, -11574, -343.841, -10989, -278.063, -10632, -230.224, -10009, -271.086, -9475, -223.248, -8893, -162.453, -8016, -127.57, -7106, -41.8589, -6514, -26.9094, -5516, -36.8757, -4654, -19.9329, -3967, 67.7715, -3233, 22.9226, -2205, 0, -1495, 57.8052, -1290, 65.7783)
 
-[sub_resource type="Resource" id="Resource_hjrml"]
+[sub_resource type="Resource" id="Resource_hg38h"]
 script = ExtResource("6_o14w2")
 corner_rounding = 0.0
 
@@ -112,7 +112,7 @@ resource_local_to_scene = false
 resource_name = ""
 script = ExtResource("5_mtndk")
 size = Vector2i(128, 128)
-shape = SubResource("Resource_hjrml")
+shape = SubResource("Resource_hg38h")
 fill_type = 0
 fill_color = Color(1, 1, 1, 1)
 fill_from = Vector2(0, 0)
@@ -141,11 +141,11 @@ size = Vector2(445, 509)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hm1pf"]
 size = Vector2(406, 5884)
 
-[sub_resource type="Gradient" id="Gradient_obl8v"]
+[sub_resource type="Gradient" id="Gradient_fclpa"]
 offsets = PackedFloat32Array(0, 0.0704961, 0.159269, 0.232376, 0.29765, 0.365535, 0.417755, 0.456919, 0.501305, 0.574413, 0.631854, 0.691906, 0.738903, 0.848564, 0.91906, 1)
 colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 0, 0, 0, 1)
 
-[sub_resource type="Resource" id="Resource_hvf21"]
+[sub_resource type="Resource" id="Resource_bg08v"]
 script = ExtResource("6_o14w2")
 corner_rounding = 0.0
 
@@ -154,10 +154,10 @@ resource_local_to_scene = false
 resource_name = ""
 script = ExtResource("5_mtndk")
 size = Vector2i(128, 128)
-shape = SubResource("Resource_hvf21")
+shape = SubResource("Resource_bg08v")
 fill_type = 1
 fill_color = Color(1, 1, 1, 1)
-fill_gradient = SubResource("Gradient_obl8v")
+fill_gradient = SubResource("Gradient_fclpa")
 fill_from = Vector2(0, 0)
 fill_to = Vector2(0, 0.1)
 fill_repeat = "repeat"
@@ -187,7 +187,7 @@ polygon = PackedVector2Array(-8, -218.266, -16, 553.135, 366, 551.143, 363, -215
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ajj0d"]
 size = Vector2(700, 194)
 
-[sub_resource type="Resource" id="Resource_n08f5"]
+[sub_resource type="Resource" id="Resource_ucscw"]
 script = ExtResource("6_o14w2")
 corner_rounding = 0.0
 
@@ -196,7 +196,7 @@ resource_local_to_scene = false
 resource_name = ""
 script = ExtResource("5_mtndk")
 size = Vector2i(700, 194)
-shape = SubResource("Resource_n08f5")
+shape = SubResource("Resource_ucscw")
 fill_type = 0
 fill_color = Color(1, 1, 1, 1)
 fill_from = Vector2(0, 0)

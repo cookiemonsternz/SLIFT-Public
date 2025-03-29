@@ -68,7 +68,7 @@ func remove_upgrade_pool(upgrade: ArmUpgrade):
 # These functions are triggered by player events and are called on all installed upgrades
 
 
-func _on_process(delta: float) -> void:
+func _on_process(_delta: float) -> void:
 	var player = get_tree().get_first_node_in_group("Player")
 	var root = get_tree().root
 	for upgrade in installed_upgrades_left.values():
@@ -78,7 +78,7 @@ func _on_process(delta: float) -> void:
 		if upgrade.has_method("update_process"):
 			upgrade.update_process(player, root)
 
-func _on_physics_process(delta: float) -> void:
+func _on_physics_process(_delta: float) -> void:
 	var player = get_tree().get_first_node_in_group("Player")
 	var root = get_tree().root
 	for upgrade in installed_upgrades_left.values():

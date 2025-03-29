@@ -14,7 +14,7 @@ func _ready() -> void:
 	collision_shape.shape = shape
 	collision_shape.position = size/2
 
-func _on_area_2d_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entered(_body: Node2D) -> void:
 	print("Entered area")
 	for bg: Node2D in backgrounds:
 		bg.hide()
